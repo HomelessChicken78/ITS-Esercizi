@@ -1,4 +1,4 @@
-'''Exercise 5
+'''Exercise 1-5
 Si scriva un programma che converta la temperatura da Fahrenheit a Celsius utilizzando la formula
 
 gradiCelsius=5∗(gradiFahrenheit−32)/9

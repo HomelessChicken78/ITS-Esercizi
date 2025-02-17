@@ -1,4 +1,4 @@
-'''Exercise 4
+'''Exercise 1-4
 Si scriva un programma che dato un intero di quattro cifre, per esempio 2024, utilizzando gli opportuni operatori, lo si visualizzi, una cifra per riga:
 
 2

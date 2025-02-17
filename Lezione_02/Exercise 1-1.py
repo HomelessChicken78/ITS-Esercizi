@@ -1,4 +1,4 @@
-'''Exercise 1
+'''Exercise 1-1
 Si scriva un programma che dimostri la natura approssimativa dei numeri in virgola mobile effettuando le seguenti attività:
 
     • Memorizzare un numero in virgola mobile nella variabile x.

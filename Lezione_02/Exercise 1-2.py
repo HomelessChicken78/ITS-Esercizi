@@ -1,4 +1,4 @@
-'''Exercise 2
+'''Exercise 1-2
 Si scriva un programma che dimostri le funzionalità dell'operatore % effettuando le seguenti attività:
 
     • Memorizzare un numero in virgola mobile nella variabile x.
