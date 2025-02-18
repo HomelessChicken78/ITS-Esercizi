@@ -10,6 +10,7 @@ La temperatura deve essere convertita e visualizzata in gradi Celsius con un num
 Un possibile esempio di output potrebbe essere il seguente:
 
 72 gradi Fahrenheit corrispondono a 22.2 gradi Celsius.'''
+
 gradiFahrenheit = int(input('Insert the temperature in Fahrenheit: '))
 gradiCelsius = 5 * (gradiFahrenheit - 32) / 9
 print("%.1f"%gradiCelsius)

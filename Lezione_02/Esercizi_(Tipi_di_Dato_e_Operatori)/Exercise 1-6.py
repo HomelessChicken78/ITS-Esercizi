@@ -36,6 +36,7 @@ Coca Cola: 3.50 euro
 Acqua: 1.50 euro
 
 Vino: 5.00 euro'''
+
 ITS_Bakery_Menu={
     'Pizza': 9.00,
     'Pasta': 10.50,

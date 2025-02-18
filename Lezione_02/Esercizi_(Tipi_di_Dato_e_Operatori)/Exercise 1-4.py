@@ -6,6 +6,7 @@ Si scriva un programma che dato un intero di quattro cifre, per esempio 2024, ut
 2
 4
 '''
+
 '''Solution I
 number = input('insert a number')
 print(f'{number[0]}\n{number[1]}\n{number[2]}\n{number[3]}\n')'''
