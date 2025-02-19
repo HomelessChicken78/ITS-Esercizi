@@ -37,7 +37,7 @@ Acqua: 1.50 euro
 
 Vino: 5.00 euro'''
 
-ITS_Bakery_Menu={
+ITS_Bakery_Menu: dict[str, float]={
     'Pizza': 9.00,
     'Pasta': 10.50,
     'Zuppa': 7.00,
