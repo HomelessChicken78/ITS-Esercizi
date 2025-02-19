@@ -5,7 +5,7 @@ You’ll have to think of someone else to invite.
 • Modify your list, replacing the name of the guest who can’t make it with the name of the new person you are inviting.
 • Print a second set of invitation messages, one for each person who is still in your list."'''
 
-guests: list = ["Albert Einstein", "Melon Musk", "Steve Jobs", "Pingproxy", "Quandale Dingle", "Goofy Goof", "Tizio Caio"]
+guests: list[str] = ["Albert Einstein", "Melon Musk", "Steve Jobs", "Pingproxy", "Quandale Dingle", "Goofy Goof", "Tizio Caio"]
 for i in guests:
     print(f"Hey {i} wanna come to my party?")
 
