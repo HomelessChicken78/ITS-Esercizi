@@ -10,8 +10,7 @@ for i in guests:
     print(f"Hey {i} wanna come to my party?")
 
 print(f"\n{guests[5]} couldn't make it to the party! :(\n")
-guests.remove("Goofy Goof")
+guests[5] = "Mickey Mouse"
 
-guests.append("Mickey Mouse")
 for i in guests:
     print(f"Hello {i}, would you like to come to my party?")
