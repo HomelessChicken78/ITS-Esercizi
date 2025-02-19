@@ -7,6 +7,12 @@ Si scriva un programma che dimostri le funzionalità dell'operatore % effettuand
 
 Si esegua il programma con valori positivi e negativi di x. Che cosa cambia nel comportamento dell’applicazione quando i valori di x sono positivi o negativi?'''
 
-x = float(input('insert a number: '))
-y = x % 2
-print(f'The value of x is: {x}\nThe value of y is: {y}')
+x: float = 3.2
+y: float = x % 2.0
+
+print(f'The value of x is: {x:.3f}\nThe value of y is: {y:.3f}')
+
+x: float = -3.2
+y: float = x % 2.0
+
+print(f'The value of x is: {x:.3f}\nThe value of y is: {y:.3f}')
