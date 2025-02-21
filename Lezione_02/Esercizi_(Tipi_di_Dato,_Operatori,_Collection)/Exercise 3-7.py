@@ -68,6 +68,5 @@ print("\n")
 for i in guests:
     print(f"Hi {i}, you are still in!!!")
 
-guests.remove("Leandro Pazienza")
-guests.remove("Albert Einstein")
+del guests[:]
 print(guests)
