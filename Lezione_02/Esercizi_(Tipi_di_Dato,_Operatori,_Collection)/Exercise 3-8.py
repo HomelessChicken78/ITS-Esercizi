@@ -11,3 +11,4 @@ Seeing the World: Think of at least five places in the world you’d like to vis
 • Use sort() to change your list so it’s stored in alphabetical order. Print the list to show that its order has been changed.
 • Use sort() to change your list so it’s stored in reverse-alphabetical order.
 Print the list to show that its order has changed.'''
+#TIP: Use ".reverse", ".sort", ".sorted" and ".sorted(..., reverse=True)"
