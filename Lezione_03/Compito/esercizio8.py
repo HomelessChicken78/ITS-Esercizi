@@ -14,3 +14,18 @@ Se l'utente inserisce i numeri 5, 8, 3, 12, 7, il programma deve stampare:
 ************
 *******
 '''
+
+
+numbers: list[int] = [ ]
+for i in range(5):
+    #Più o meno equivalente di un repeat until
+    number = int(input("Inserisci un numero compreso tra 1 e 30: \n>\t"))
+    if(not((number >= 1) and (number <= 30))):
+        while(number < 1 or number > 30):
+            number = int(input("NO! Il numero deve esser compreso tra 1 e 30\nInserisci un numero compreso tra 1 e 30: \n>\t"))
+    #Dopo aver fatto il "repeat until" metti il numero nella lista
+    numbers.append(number)
+
+#Printa gli *
+for i in numbers:
+    print("*" * i)
