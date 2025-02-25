@@ -33,10 +33,10 @@ name: str = input("Quale è il tuo nome?\n>\t")
 g: str = input("Inserire il tuo genere (f = femmina, m = maschio):\n>\t")
 
 print("\n-----------------------------------------------------\n")
-match name, g:
-    case NAME, "m":
-        print(f"Nome: {NAME}\nGender: Maschio")
-    case NAME, "f":
-        print(f"Nome: {NAME}\nGender: Femmina")
-    case NAME, _:
+match g:
+    case "m":
+        print(f"Nome: {name}\nGender: Maschio")
+    case "f":
+        print(f"Nome: {name}\nGender: Femmina")
+    case _:
         print(f"Mi dispiace {name}, non e' possibile procedere con la generazione di un documento di identità!")
