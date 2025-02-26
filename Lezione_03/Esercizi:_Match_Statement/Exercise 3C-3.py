@@ -26,6 +26,7 @@ for i in range(3):
     oggetto = input("Scrivi il nome di un oggetto:\n>\t")
     oggetti.append(oggetto.lower())
 
+#Controlla se la lista contiene X elementi
 match oggetti:
     case ["penna", "matita", "quaderno"]:
         print("Materiale scolastico")
