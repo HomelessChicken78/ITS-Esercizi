@@ -25,26 +25,30 @@ Inserisci il voto di laurea: 65
 Output: Voto non valido
 '''
 
-voto: int = int(input("Inserire un voto universitario tra 66 e 110:\n>\t"))
+voto: int = input("Inserire un voto universitario tra 66 e 110:\n>\t")
 
-match voto:
-    case voto if voto >= 106 and voto <= 110:
-        print("GPA: 4.0")
-    case voto if voto >= 101 and voto <= 105:
-        print("GPA: 3.7")
-    case voto if voto >= 96 and voto <= 100:
-        print("GPA: 3.3")
-    case voto if voto >= 91 and voto <= 95:
-        print("GPA 3.0")
-    case voto if voto >= 86 and voto <= 90:
-        print("GPA 2.7")
-    case voto if voto >= 81 and voto <= 85:
-        print("GPA 2.3")
-    case voto if voto >= 76 and voto <= 80:
-        print("GPA 2.0")
-    case voto if voto >= 70 and voto <= 75:
-        print("GPA 1.7")
-    case voto if voto >= 66 and voto <= 69:
-        print("GPA 1.0")
-    case _:
-        print("Voto non valido")
+if not voto.isnumeric():
+    print("Perfavore inserire un numero!")
+else:
+    voto = int(voto)
+    match voto:
+        case voto if voto >= 106 and voto <= 110:
+            print("GPA: 4.0")
+        case voto if voto >= 101 and voto <= 105:
+            print("GPA: 3.7")
+        case voto if voto >= 96 and voto <= 100:
+            print("GPA: 3.3")
+        case voto if voto >= 91 and voto <= 95:
+            print("GPA 3.0")
+        case voto if voto >= 86 and voto <= 90:
+            print("GPA 2.7")
+        case voto if voto >= 81 and voto <= 85:
+            print("GPA 2.3")
+        case voto if voto >= 76 and voto <= 80:
+          print("GPA 2.0")
+        case voto if voto >= 70 and voto <= 75:
+            print("GPA 1.7")
+        case voto if voto >= 66 and voto <= 69:
+            print("GPA 1.0")
+        case _:
+           print("Voto non valido")
