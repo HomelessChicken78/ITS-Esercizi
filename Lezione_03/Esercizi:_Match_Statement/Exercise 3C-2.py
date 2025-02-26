@@ -25,7 +25,7 @@ Inserisci il voto di laurea: 65
 Output: Voto non valido
 '''
 
-voto: int = input("Inserire un voto universitario tra 66 e 110:\n>\t")
+voto: str = input("Inserire un voto universitario tra 66 e 110:\n>\t")
 
 if not voto.isnumeric():
     print("Perfavore inserire un numero!")
