@@ -10,6 +10,8 @@ many_words: list[str] = string.split()
 
 result: list[str]  = []
 
+#Put last word capitalized:
+#split the word into the last letter and all the other. capitalize the last letter and then  unify the two variables again
 for singular_word in many_words:
     almost_all: str = singular_word[:-1]
     last: str = singular_word[-1]
