@@ -6,13 +6,13 @@ string: str = input("Inserisci una stringa:\n>\t")
 string = string.title()
 
 #Split the string
-word: list[str] = string.split()
+many_words: list[str] = string.split()
 
 result: list[str]  = []
 
-for letter in word:
-    almost_all: str = letter[:-1]
-    last: str = letter[-1]
+for singular_word in many_words:
+    almost_all: str = singular_word[:-1]
+    last: str = singular_word[-1]
     full = almost_all + last.upper()
     result.append(full)
 
