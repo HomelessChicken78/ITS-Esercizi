@@ -37,3 +37,16 @@ match oggetti:
         print("Dispositivi elettronici")
     case _:
         print("Categoria sconosciuta")
+
+'''INDIFFERENTEMENTE DALL'ORDINE
+match oggetti:
+    case oggetti if "penna" and "matita" and "quaderno" in oggetti:
+        print("Materiale scolastico")
+    case oggetti if "pane" and "latte" and "uova" in oggetti:
+        print("Prodotti alimentari")
+    case oggetti if "sedia" and "tavolo" and "armadio" in oggetti:
+        print("Mobili")
+    case oggetti if "telefono" and "computer"and "tablet" in oggetti:
+        print("Dispositivi elettronici")
+    case _:
+        print("Categoria sconosciuta")'''
