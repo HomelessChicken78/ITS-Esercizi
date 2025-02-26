@@ -30,7 +30,7 @@ Mi dispiace Alex, non e' possibile procedere con la generazione di un documento 
 '''
 
 name: str = input("Quale è il tuo nome?\n>\t")
-g: str = input("Inserire il tuo genere (f = femmina, m = maschio):\n>\t")
+g: str = input("Inserire il tuo genere (f = femmina, m = maschio):\n>\t").lower()
 
 print("\n-----------------------------------------------------\n")
 match g:
