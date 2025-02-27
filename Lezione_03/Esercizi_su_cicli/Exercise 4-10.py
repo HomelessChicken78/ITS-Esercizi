@@ -13,3 +13,7 @@ for n in range(1, 11):
 #Add several lines to the end of the program
 print(f"The first three items are: ", end="")
 print(", ".join(cubes[:3]))
+print("Three items from the middle of the list are: ", end="")
+print(", ".join(cubes[(len(cubes)//2-1):(len(cubes)//2+2)]))
+print("The last three items in the list are: ", end="")
+print(", ".join(cubes[-3:]))
