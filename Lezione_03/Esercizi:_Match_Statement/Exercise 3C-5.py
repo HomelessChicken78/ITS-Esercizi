@@ -39,7 +39,11 @@ Output: Salve Luca Verdi! Può gestire i contenuti ma non modificare le impostaz
 '''
 
 #Inizializzazione del dizionario
-persona: dict[list[str]]  = {"name" : input("Inserire il proprio nome:\n>\t"), "ruolo" : (input("Quale ruolo possiede?\n>\t")).lower(), "età" : int(input("Quanti anni ha?\n>\t"))}
+persona: dict[list[str]]  = {
+    "name" : input("Inserire il proprio nome:\n>\t"),
+    "ruolo" : (input("Quale ruolo possiede?\n>\t")).lower(),
+    "età" : int(input("Quanti anni ha?\n>\t"))
+    }
 
 match persona:
     case {"name" : name, "ruolo" : "admin", "età" : age}:
