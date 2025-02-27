@@ -7,16 +7,16 @@ For each pizza, you should have one line of output containing a simple statement
 The output should consist of three or more lines about the kinds of pizza you like and then an additional sentence, such as I really love pizza!'''
 
 #Making the list for the kind of pizza
-Pizza_Names: list[str] = ["Margherita", "4 Stagioni", "Diavola"]
+pizza_names: list[str] = ["Margherita", "4 Stagioni", "Diavola"]
 
 #Making a loop
-'''for i in Pizza_Names:
+'''for i in pizza_names:
     print(i)'''
 
 print("-----------------------------------------------")
 
 #Modifying the loop
-for i in Pizza_Names:
+for i in pizza_names:
     print(f"Here is the name of a kind of pizza: {i}")
 
 print("I LOVE PIZZA!!!!")
