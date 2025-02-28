@@ -10,3 +10,11 @@ print(car == 'audi')
 evaluates to True or False.
 • Create at least 10 tests. Have at least 5 tests evaluate to True and another
 5 tests evaluate to False.'''
+
+color: str = ""
+money: float = 0.0
+amount_candies: int = 0
+light_on: bool = False
+
+print("Did i turn off the light? I predict True")
+print(light_on == False)
