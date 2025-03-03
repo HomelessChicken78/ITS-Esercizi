@@ -13,11 +13,13 @@ Output: Tu dici "di essere bellissimo"
 #Input
 phrase: str = input("Inserire una frase: \n>\t")
 
-#Verifica se la frase soddisfa uno dei requisiti
+#Verifica se l'ultima lettera della frase è un "!", un "?" o nessuno dei due
 match phrase[-1]:
     case "?":
+        #Pari
         if len(phrase) % 2 == 0: 
             print("Si")
+        #Dispari
         else:
             print("No")
     case "!":
