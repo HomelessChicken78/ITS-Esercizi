@@ -13,12 +13,12 @@ Output: Tu dici "di essere bellissimo"
 phrase: str = input("Inserire una frase: \n>\t")
 
 match phrase:
-    case phrase if phrase[len(phrase) - 1] == "?":
+    case phrase if phrase[-1] == "?":
         if len(phrase) % 2 == 0: 
             print("Si")
         else:
             print("No")
-    case phrase if phrase[len(phrase) - 1] == "!":
+    case phrase if phrase[-1] == "!":
         print("Wow")
     case _:
         print(f"Tu dici \"{phrase}\"")
