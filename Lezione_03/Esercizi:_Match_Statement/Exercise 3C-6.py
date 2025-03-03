@@ -90,23 +90,23 @@ match animale:
 #L'animale appartiene nell'habitant inserito dall'utente? Controlla l'habitat e poi controlla se l'animale appartiene in quell'habitat
 animal_info = {"name" : animale, "type" : animal_type, "habitat" : habitat}
 match animal_info:
-    case {"name" : animale, "type" : animal_type, "habitat" : "terra"}:
+    case {"name" : animale, "type" : animal_type, "habitat" : "terra"}:  #Se l'utente ha digitato "terra":
         match animal_info["name"]:
-            case "cane"|"gatto"|"cavallo"|"elefante"|"leone"|"serpente"|"lucertola"|"tartaruga"|"coccodrillo"|"gallina"|"tacchino":
+            case "cane"|"gatto"|"cavallo"|"elefante"|"leone"|"serpente"|"lucertola"|"tartaruga"|"coccodrillo"|"gallina"|"tacchino": 
                 print(f"L'animale {animale} è un {animal_type} che può vivere sulla {habitat}")
             case _:
                 print(f"Non ho mai visto l'animale {animale} vivere nell'habitat {habitat}.")
-    case {"name" : animale, "type" : animal_type, "habitat" : "aria"}:
+    case {"name" : animale, "type" : animal_type, "habitat" : "aria"}:  #Se l'utente ha digitato "aria":
         match animal_info["name"]:
-            case "aquila"|"pappagallo"|"gufo"|"falco"|"cigno"|"anatra":
+            case "aquila"|"pappagallo"|"gufo"|"falco"|"cigno"|"anatra":  #Controlla se l'animale è uno di quelli che sono dell'habitat "aria"
                 print(f"L'animale {animale} è un {animal_type} che può vivere nell'{habitat}")
             case _:
                 print(f"Non ho mai visto l'animale {animale} vivere nell'habitat {habitat}.")
-    case {"name" : animale, "type" : animal_type, "habitat" : "acqua"}:
+    case {"name" : animale, "type" : animal_type, "habitat" : "acqua"}:  #Se l'utente ha digitato "acqua":
         match animal_info["name"]:
             case "delfino"|"balena"|"tartaruga"|"coccodrillo"|"cigno"|"anatra"|"squalo"|"trota"|"salmone"|"carpa":
                 print(f"L'animale {animale} è un {animal_type} che può vivere in {habitat}")
             case _:
                 print(f"Non ho mai visto l'animale {animale} vivere nell'habitat {habitat}.")
-    case _:
+    case _:                                                             #Se l'utente digita un habitat non riconosciuto:
         print("Non conosco l'habitat a cui ti riferisci")
