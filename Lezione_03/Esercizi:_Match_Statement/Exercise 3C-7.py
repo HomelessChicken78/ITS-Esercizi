@@ -30,7 +30,7 @@ Percentuale "croce": 37.50%
 #Crea e riempi la lista con i "t" o "c". Se l'utente inserisce altro, forzane l'inserimento
 lanci: list[str] = []
 testa: int = 0
-croce: int = 0  #Fun fact: questa variabile si può anche calcolare facendo  8 - testa
+croce: int = 0  #Fun fact: questa variabile si può anche calcolare facendo 8 - testa
 for i in range(0, 8):
     lancio: str = input("Inserire \"t\" se esce testa o \"c\" se esce croce:\n>\t")
     lancio = lancio.lower()
