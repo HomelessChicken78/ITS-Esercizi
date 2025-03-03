@@ -39,8 +39,12 @@ for i in range(0, 8):
     lanci.append(lancio)
 
 #Incrementa le variabili a seconda se l'elemento della lista su cui si itera è "c" o "t" (NB: non vi è un caso default in quanto non è possibile altri casi oltre a "t" e "c")
-testa = lanci.count("t")
-croce = lanci.count("c")
+for lancio in lanci:
+    match lancio:
+        case "t":
+            testa += 1
+        case "c":
+            croce += 1
 
 #Calcola il risultato in percentuale (fatto direttamente nel print) e stampalo a schermo
 print("\n------------------------------------\n")
