@@ -92,7 +92,7 @@ animal_info = {"name" : animale, "type" : animal_type, "habitat" : habitat}
 match animal_info:
     case {"name" : animale, "type" : animal_type, "habitat" : "terra"}:  #Se l'utente ha digitato "terra":
         match animal_info["name"]:
-            case "cane"|"gatto"|"cavallo"|"elefante"|"leone"|"serpente"|"lucertola"|"tartaruga"|"coccodrillo"|"gallina"|"tacchino": 
+            case "cane"|"gatto"|"cavallo"|"elefante"|"leone"|"serpente"|"lucertola"|"tartaruga"|"coccodrillo"|"gallina"|"tacchino": #Controlla se l'animale è uno di quelli che sono dell'habitat "terra"
                 print(f"L'animale {animale} è un {animal_type} che può vivere sulla {habitat}")
             case _:
                 print(f"Non ho mai visto l'animale {animale} vivere nell'habitat {habitat}.")
@@ -104,7 +104,7 @@ match animal_info:
                 print(f"Non ho mai visto l'animale {animale} vivere nell'habitat {habitat}.")
     case {"name" : animale, "type" : animal_type, "habitat" : "acqua"}:  #Se l'utente ha digitato "acqua":
         match animal_info["name"]:
-            case "delfino"|"balena"|"tartaruga"|"coccodrillo"|"cigno"|"anatra"|"squalo"|"trota"|"salmone"|"carpa":
+            case "delfino"|"balena"|"tartaruga"|"coccodrillo"|"cigno"|"anatra"|"squalo"|"trota"|"salmone"|"carpa": #Controlla se l'animale è uno di quelli che sono dell'habitat "acqua"
                 print(f"L'animale {animale} è un {animal_type} che può vivere in {habitat}")
             case _:
                 print(f"Non ho mai visto l'animale {animale} vivere nell'habitat {habitat}.")
