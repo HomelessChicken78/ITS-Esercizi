@@ -10,8 +10,10 @@ frase: di essere bellissimo
 Output: Tu dici "di essere bellissimo"
 '''
 
+#Input
 phrase: str = input("Inserire una frase: \n>\t")
 
+#Verifica se la frase soddisfa uno dei requisiti
 match phrase:
     case phrase if phrase[-1] == "?":
         if len(phrase) % 2 == 0: 
