@@ -1,0 +1,104 @@
+Iniziamo con esercizio che ci consente di capire le funzione:
+"
+Suppose that you need to find the sum of integers from 1 to 10, 20 to 37, and 35 to 49. Write a Python program that
+compute these three different sums.
+Expected Output:
+Sum of integers from 1 to 10 is 55
+Sum of integers from 20 to 37 is 513
+Sum of integers from 35 to 49 is 630
+"
+
+Senza usare funzioni il risultato sarebbe all'incirca il seguente:
+"
+#Without function look at this mess:
+#from 1 to 10 
+sum: int = 0
+for i in range(1, 11):
+    sum += i
+print(sum)
+
+#from 20 to 37
+sum: int = 0
+for i in range(20, 38):
+    sum += i
+print(sum)
+
+#from 35 to 49
+sum: int = 0
+for i in range(35, 50):
+    sum += i
+print(sum)
+"
+
+Notare che per ogni iterazione il codice è per il 99% lo stesso:
+sempre gli stessi blocchi di istruzioni venogno impiegati, con l'unica differenza del "range".
+Abbiamo dovuto dunque riscrivere la stessa procedura per ben 3 volte. Ridondante no?
+Non sarebbe figo poter scrivere il codice una sola volta e re-impiegarlo per ogni istanza?
+
+Le funzioni incentivano la re-usabilità del codice.
+Esse ci consentono di scrivere un pezzo di codice una sola volta, per poi reimpiegarlo quante volte voglio.
+È dunque un modello, un modo per ottimizzare e rendere più leggibile il codice, oltre che rendere più veloce la programmazione!
+
+LA SINTASSI
+Per poterla utilizzare, abbiamo bisogno di due step da compiere:
+1. Definire una funzione
+2. Utilizzarla
+Non è dunque possibile utilizzare una funzione che non è state precedentemente definita.
+
+Come si definisce una funzione?
+Per distinguere una funzione da altre parti del codice, poichè, quando viene richiamata, segue sempre una sintassi: functionName(parametro)
+"
+def functionName(list of parameters):
+instructions for function body
+"
+- def: una keyword che consente a python di capire che da quel punto in poi noi stiamo scrivendo una funzione
+- functionName: è il nome della nostra funzione. Questa è a piacimento, ma dovrebbe comunque rappresentare cosa la funziona si occupa di fare.
+- . i parametri: sono dei valori che vengono passati alla funzione. Questi verranno poi impiegati e rimpiazzati all'interno della funzione.
+- function body: ovvero le istruzioni che la funzione dovrà effettivamente eseguire ogni qual volta che essa verrà successivamente richiamata.
+Molte funzioni ne hanno bisogno per funzionare, poichè hanno bisono di capire su quale valore lavorare.
+Non tutte le funzioni devono avere necessariamente dei parametri, mentre altre ne vogliono più di uno.
+
+esempi di funzioni:
+- .lower(): un tipo di funzione che non prende nulla come parametro
+- print(): che ha bisogno di determinati valori in input
+
+Il codice scritto prima quindi diviene
+"
+def sumInRange(a:int, b:int):
+    result:int = 0
+    for i in range(a, b+1):
+        result = result + i
+
+    return resultt
+"
+Notare come tutte le istruzioni nella funzione sono indentati: è un modo per dire a python da quando inizia e fin dove arriva la funzione stessa.
+
+Una volta definita la funzione, per usarla, essa va chiamata.
+Quando si chiama una funzione, tutte le istruzioni al suo interno vengono eseguite normalmente.
+Per farlo si usa il suo nome cosi:
+"
+functionName(value_of_parameter1, value_of_parameter2, value_of_parameter3, value_of_parameter4, ...)
+
+quindi se volessimo utilizzare la nostra funzione - con denominazione "sumInRange" - per fare la somma tra 1 e 10, possiamo fare
+"
+sumInRange(1, 10)
+"
+
+Tuttavia facendo cosi, la funzione è a fine a se stessa. Invece possiamo mettere il risultato di sumInRange(1, 10) in una variabile
+"
+mySum: int = sumInRange(1, 10)
+"
+
+Cosi facendo abbiamo messo il risultato de "sumInRange" in una variabile.
+È di questo infatti che si occupa return: restituire alla chiamata un valore quando la sequenza di istruzioni finisce.
+Se infatti modificassimo la funzione "sumInRange" per avere nella riga di "return 42" invece di "return result",
+la funzione restituirà sempre 42, a prescindere dai parametri passatele.
+Dunque il "return" definisce quale valore deve restituire alla chiamata la nostra funzione.
+
+DEFINIRE UNA FUNZIONE
+La funzione è un gruppo di statement che devono realizzare una specifica funzione.
+A questo gruppo viene dato un nome, che mi consentono di identificare l'operazione specifica compiuta da questo gruppo di operazione.
+
+ Queste ci consentono di dividere il nostro codice in parti piu piccole e riutilizzabili.
+
+Queste prendono valori in input, fare delle operazioni e ritornare un output
