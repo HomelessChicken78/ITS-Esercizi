@@ -101,4 +101,17 @@ A questo gruppo viene dato un nome, che mi consentono di identificare l'operazio
 
  Queste ci consentono di dividere il nostro codice in parti piu piccole e riutilizzabili.
 
-Queste prendono valori in input, fare delle operazioni e ritornare un output
+Queste prendono valori in input, fare delle operazioni e ritornare un outputx
+
+TIPI FUNZIONE:
+Esistono due tipo di funzioni:
+- Built-In: Funzioni già fatte e completate che vengono fornite direttamente da Python. (print, lower, split, isinteger etc)
+che consentono di gestire al meglio il problema
+- User-Defined: Sono definite e implementate dall'utente stesso.
+
+RETURN:
+In molte le funzioni, dentro il corpo (di solito alla fine, ma non è detto), contengono il return.
+Alcune funzioni dunque ritornano un valore a chi la chiama.
+Il valore ritornato può essere poi utilizzato per esempio nel print oppure per metterlo in una variabile.
+Il return è l'unica cosa che effettivamente verrà riportato indietro. Tutto il resto viene perso dai calcoli della funzione.
+Senza return la funzione perde di senzo, in quanto fa i calcoli ma di fatto non restituisce niente.
