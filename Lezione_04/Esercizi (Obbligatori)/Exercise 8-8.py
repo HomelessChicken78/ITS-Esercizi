@@ -17,12 +17,16 @@ artists: list[str] = []
 albums: list[str] = []
 infos: list[dict[str, str]] = []
 i: int = 0
+
+#Ask information about 3 different albums
 while i < 3:
+    #Ask informations:
     artists.append(input("Insert an artist:\n>\t"))
     albums.append(input("Insert an album:\n>\t"))
-    infos.append(make_album(artists[i], albums[i]))
+    infos.append(make_album(artists[i], albums[i]))  #Append the dictionary to the list
     i += 1
 
+#Print the list of dictionaries
 for i in infos:
     for k, v in i.items():
         print(f"{k} : {v}")
