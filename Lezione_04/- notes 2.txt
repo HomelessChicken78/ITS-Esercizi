@@ -1,0 +1,8 @@
+Per errore si intende come una deviazione dal risultato atteso di un programma.
+Esistono tre tipi di errore:
+    - Errori di sintassi: che non rispetta delle regole della sintassi del programma.
+    Non richiede di eseguire il codice per esser trovati. Impediscono del tutto l'esecuzione.
+    - Errori di runtime: l'interprete interpreta correttamente il codice,
+    ma quando durante l'esecuzione stessa, trova degli errori.
+    Questi non possono esser trovati prima dell'esecuzione del codice. (eg divison by 0, out of index etc)
+    - Errori di logici: effettivamente il programma va in esecuzione, ma il programma non si comporta come aspettato.
