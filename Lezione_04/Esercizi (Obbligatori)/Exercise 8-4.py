@@ -4,7 +4,7 @@ Make a large shirt and a medium shirt with the default message, and a shirt of a
 def make_shirt(size: str = "Large", text: str = "I love Python") -> None:
     print(f"The size of the shirt is: {size}\nThe message written on it is \"{text}\"")
 
-make_shirt("Large")
+make_shirt()
 print("----------------------------")
 make_shirt("Medium")
 print("----------------------------")
