@@ -12,7 +12,9 @@ def make_album(artist: str, album: str, number: int = None) -> str:
         "artist" : artist,
         "album" : album
         }
-    if number != None:
+    if number is None:
+        info["number of songs"] = 0
+    else:
         info["number of songs"] = number
     return info
 
