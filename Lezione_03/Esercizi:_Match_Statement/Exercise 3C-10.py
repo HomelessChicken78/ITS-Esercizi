@@ -52,7 +52,7 @@ while day not in range (1, (date_rules[month])+1):
     day: int = int(input(f"Il giorno {day}/{month} non esiste. Inserisci il giorno:\n>\t"))
 
 #Once you know the date exists, put it in a tuple
-date: tuple[int, int] = ()
+date: tuple[int, int] = (day, month)
 
 #Do the match case to check if it is a festivity
 match date:
