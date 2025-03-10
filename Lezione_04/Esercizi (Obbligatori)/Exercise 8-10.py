@@ -5,9 +5,11 @@ After calling the function, print both of your lists to make sure the messages w
 
 def send_messages(text: list[str]) -> list[str]:
     sent_messages: list[str] = []
-    for i in text:
+    original: list[str] = text[:]
+    for i in original:
         print(i)
         sent_messages.append(i)
+        text.remove(i)
     return sent_messages
 
 text: list[str] = [
