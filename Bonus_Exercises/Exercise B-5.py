@@ -30,9 +30,9 @@ def order(nums: list[int]) -> list[int]:
     return nums
 
 #This function creates two list, each one of them only contain elements of a specific type
-def list_subtype(mylist: list[Any]) -> tuple(list[Any]):
-    strings: mylist[str] = []
-    numbers: mylist[int] = []
+def list_subtype(mylist: list[Any]) -> tuple:
+    strings: list[str] = []
+    numbers: list[int] = []
     for i in mylist:
         #Fill a list with only numbers
         if isinstance(i, int) or isinstance(1, float):
