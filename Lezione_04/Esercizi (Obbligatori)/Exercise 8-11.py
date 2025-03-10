@@ -18,5 +18,6 @@ text: list[str] = [
     "The cake is a lie",
     "How did we get here?"
     ]
-sent_messages:list[str] = send_messages(text)
-print("Here are both the lists:\ntext:\t\t",text, "\nsent_messages:\t", sent_messages)
+text2: list[str] = text[:]
+sent_messages:list[str] = send_messages(text2)
+print("Here are both the lists:\ntext:\t\t",text, "\ntext2:\t\t", text2, "\nsent_messages:\t", sent_messages)
