@@ -1,2 +1,4 @@
 The following exercises were taken from the following sources:
 - B-1: https://genepy.org/exercises/
+- From B-2 to B-6: Made by me, based on common exercises
+- B-7 & B-8: Exercise from 42 - C-piscine. B-8 is from C05 ex00
