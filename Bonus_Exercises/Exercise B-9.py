@@ -16,5 +16,6 @@ def ft_fibonacci(index: int) -> int:
         return 1
     elif index == 0:
         return 0
-    
+
+#Output Check
 print(ft_fibonacci(11))
