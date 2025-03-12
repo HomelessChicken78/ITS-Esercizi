@@ -4,8 +4,8 @@ def isrepeated(num_sys: str) -> bool:
     duplicate: str = num_sys  #This is a duplicate of the original string which can be modified freely without messing with the while loop
     i: int = 0
 
-    while i < len(num_sys):
-        #If the number appears again in future
+    while i < len(num_sys):  #Check each index in the string one by one
+        #If the character appears again in future return False
         if num_sys[i] in num_sys[i+1:]:
             return False
         i += 1
