@@ -5,10 +5,7 @@ def isrepeated(num_sys: str) -> bool:
     i: int = 0
 
     while i < len(num_sys):
-        #Update the list with the characters in the string which haven't been checked yet
-        #duplicate = duplicate[1:]  #Remove the first character from the string
-        
-        #If the number appears again in future (aka if it is present in the duplicate of the string):
+        #If the number appears again in future
         if num_sys[i] in num_sys[i+1:]:
             return False
         i += 1
