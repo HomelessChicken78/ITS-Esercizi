@@ -1,0 +1,32 @@
+Allowed built-in functions: TBA
+• Create a function that displays a number in a base system in the terminal.
+• This number is given in the shape of an int, and the radix in the shape of a string
+of characters.
+• The base-system contains all useable symbols to display that number :
+◦ 0123456789 is the commonly used base system to represent decimal numbers
+◦ 01 is a binary base system ;
+◦ 0123456789ABCDEF an hexadecimal base system ;
+◦ poneyvif is an octal base system.
+• The function must handle negative numbers.
+• If there’s an invalid argument, an error should be displayed. Examples of invalid
+arguments :
+◦ base is empty or size of 1;
+◦ base contains the same character twice ;
+◦ base contains + or - ;
+◦ base contains characters that are not alphanumerical (eg parenthesis or slashes are not allowed)
+
+
+WHAT TO DO:
+1. ask the user the input numbers
+2. check if the input is correct:
+2.1 check if it contains only one character
+2.2 if it does not, check if there is any + or - in the string
+2.3 if there are not, check if there are non-alphanumerical characters
+2.3.1 
+2.4 if there are not, check if any character is repeated
+2.4.1
+3. Ask the number in decimal
+3.1 check if the number is valid. If it is not an integer, ask it again
+4. Convert the number into the new base provided by the user
+4.1
+5. print the result!
