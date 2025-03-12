@@ -18,4 +18,4 @@ def ft_fibonacci(index: int) -> int:
         return 0
 
 #Output Check
-print(ft_fibonacci(11))
+print(ft_fibonacci(int(input("Insert a number:\n>\t"))))
