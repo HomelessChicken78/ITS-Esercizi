@@ -1,8 +1,9 @@
 '''2.1 check if it contains only one character'''
 
-def check_input(num_sys: str) -> bool:
+def is_long_enough(num_sys: str) -> bool:
     if len(num_sys) <= 1:
         return False
+    return True
     
 if __name__ == "__main__":
-    print(check_input(input("Insert something:\n>\t")))
+    print(is_long_enough(input("Insert something:\n>\t")))

@@ -1,6 +1,6 @@
 '''2.3 if there are not, check if there are non-alphanumerical characters'''
 
-def check_input(num_sys: str) -> bool:
+def isvalid(num_sys: str) -> bool:
     valid_char: list = [
         "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m",
         "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z",
@@ -11,6 +11,7 @@ def check_input(num_sys: str) -> bool:
     for char in num_sys:
         if char not in valid_char:
             return False
+    return True
 
 if __name__ == "__main__":
-    print(check_input(input("Insert something:\n>\t")))
+    print(isvalid(input("Insert something:\n>\t")))
