@@ -1,0 +1,25 @@
+Object orientation:
+un paradigma di programmazione in cui il codice è composto da oggetti.
+Alla base ci sono le classi: delle strutture che ci permettono di modellare delle entità della vita reale.
+Ma in che senso modello? potremo definire un modello come un'approssimazione della realtà. Approssimazione poichè non si tiene conto di alcuni fattori.
+Un esempio è la legge di gravitazione di Newtone, che non teneva conto dell'orbita di Mercurio, poichè non ne teneva in considerazione alcuni fattori.
+
+Le classi
+Le classi sono 'stampi', ovvero un modo per creare diverse istanze che hanno la stessa forma. Per istanza diversa si intende che si trovano in parti di
+memoria differenti.
+Esempio: studenti è una class che contiene 3 istanze: Alice, Bob e Charley.
+Le classi hanno attributi e metodi:
+- Gli attributi sono variabili che possono contenere informazione per ciascuna istanza della classe stessa.
+  Possiamo vederli come lo "stato" di un'istanza.
+- I metodi, opvvero le funzioni all'interno della classe stessa (per esempio calcola la media dei voti).
+  Possiamo vederle come i comportamenti di una singola istanza.
+Entrambi di solito si decidono prima di scrivere il codice.
+
+Ereditarietà
+È utile per strutturare il codice e di avere gerarchie di classi.
+Con l'ereditarietà si crea una gerarchia in cui la classe sopra "porta" alle classi sotto i suoi attributi.
+Tra le varie classi si crea quindi una relazione in cui vi è una classe al di sopra di tutte, la quale ha delle classi figlie.
+Queste a sua volta hanno altri classi figlie e cosi via.
+La classe alla quale una classe figlia eredita è detta classe padre.
+Notare: logicamente parlando, un'istanza della classe figlia è parte anche della classe padre, ma non è detto che un'istanza della classe padre sia anche
+parte della classe figlia (esempio: uno studente è una persona, ma una persona non è perforza uno studente).
