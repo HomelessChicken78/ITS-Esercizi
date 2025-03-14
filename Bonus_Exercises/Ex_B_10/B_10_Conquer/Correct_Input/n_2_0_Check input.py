@@ -1,5 +1,7 @@
 '''2. check if the input is correct'''
 
+from B_10_Conquer.Correct_Input.2_1_Only_one_character
+
 def check_input(num_sys: str) -> bool:
     if len(num_sys) <= 1:
         return False
