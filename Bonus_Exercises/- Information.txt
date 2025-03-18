@@ -1,4 +1,7 @@
 The following exercises were taken from the following sources:
-- B-1: https://genepy.org/exercises/
-- From B-2 to B-6: Made by me, based on common exercises
-- B-7 & B-8: Exercise from 42 - C-piscine. B-8 is from C05 ex00
+- B-01: https://genepy.org/exercises/
+- From B-02 to B-06: Made by me, based on common exercises
+- from B-07 to B-10: Exercise from 42 - C-piscine.
+-- B-08 and B-09 are from C05 (ex00 & ex04 respectively)
+-- B-10 is from C04 (ex04)
+- B-11: https://pynative.com/python-functions-exercise-with-solutions/#h-exercise-1-create-a-function-in-python
