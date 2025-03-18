@@ -7,8 +7,9 @@ def isrepeated(num_sys: str) -> bool:
     while i < len(num_sys):  #Check each index in the string one by one
         #If the character appears again in future return False
         if num_sys[i] in num_sys[i+1:]:
-            return False
+            return True
         i += 1
+        return False
 
 if __name__ == "__main__":
     print(isrepeated(input("Insert something:\n>\t")))
