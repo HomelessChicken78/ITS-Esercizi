@@ -28,5 +28,12 @@ WHAT TO DO:
 3. Ask the number in decimal
 3.1 check if the number is valid. If it is not an integer, ask it again
 4. Convert the number into the new base provided by the user
-4.1
+4.1 Calculate the lenght of the base and call it "base"
+4.2 Do the conversion from base 10 to base <base>
+4.2.1 Store the result of dec_num % base in a list of integers
+4.2.2 Update dec_num by dividing it with the base (dec_num // 2)
+4.2.3 Repeat until dec_num == 0
+4.2.4 Convert the various numbers in the list of integers into the correspective base
+4.2.5 Invert the list
+4.2.6 Use .join to convert the list into a single string
 5. print the result!
