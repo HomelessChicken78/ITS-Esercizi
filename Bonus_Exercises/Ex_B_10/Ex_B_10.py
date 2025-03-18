@@ -26,6 +26,13 @@ from B_10_Conquer.Correct_Input.n_2_0_Check_input import check_input
 #Ask how the number system is composed. Force the user to make it valid
 num_system: str = input("Type the characters that the number system is composed of. The order matters!:\n>\t")
 while not check_input(num_system):
-    print("The input is not correct. It may contain repeated or unsupported characters or the string is not long enough!")
+    print("\n---WARNING: The input is not correct. It may contain repeated or unsupported characters or the string is not long enough!---\n")
     num_system: str = input("Type the characters that the number system is composed of. The order matters!:\n>\t")
+
+#Ask the decimal number to be converted into the new system. Force the user to insert a number and not anything else
+dec_num: str = input("Insert a decimal number:\n>\t")
+while not dec_num.isnumeric():
+    print("\n---WARNING: The number typed is not a decimal integer number!---\n")
+    dec_num: str = input("Insert a decimal number:\n>\t")
+dec_num = int(dec_num)  #When the user insert a number, convert the string into an integer
 
