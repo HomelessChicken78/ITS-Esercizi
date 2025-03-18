@@ -1,9 +1,9 @@
 '''2. check if the input is correct'''
 
-from n_2_1_Only_one_character import islongenough
-from n_2_2_hassign import has_sign
-from n_2_3_Non_alphanumeric import isvalid
-from n_2_4_repeated_char import isrepeated
+from B_10_Conquer.Correct_Input.n_2_1_Only_one_character import islongenough
+from B_10_Conquer.Correct_Input.n_2_2_hassign import has_sign
+from B_10_Conquer.Correct_Input.n_2_3_Non_alphanumeric import isvalid
+from B_10_Conquer.Correct_Input.n_2_4_repeated_char import isrepeated
 
 def check_input(num_sys: str) -> bool:
     if islongenough(num_sys) and (not has_sign(num_sys)) and isvalid(num_sys) and (not isrepeated(num_sys)):

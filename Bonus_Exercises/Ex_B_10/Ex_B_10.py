@@ -21,4 +21,11 @@ arguments :
 ◦ base contains + or - ;
 ◦ base contains characters that are not alphanumerical (eg parenthesis or slashes are not allowed)'''
 
+from B_10_Conquer.Correct_Input.n_2_0_Check_input import check_input
+
+#Ask how the number system is composed. Force the user to make it valid
 num_system: str = input("Type the characters that the number system is composed of. The order matters!:\n>\t")
+while not check_input(num_system):
+    print("The input is not correct. It may contain repeated or unsupported characters or the string is not long enough!")
+    num_system: str = input("Type the characters that the number system is composed of. The order matters!:\n>\t")
+
