@@ -12,6 +12,7 @@ def check_parentheses(expression: str) -> bool:
     remove_parenthesis: list[str] = list(expression)
     print("".join(remove_parenthesis))
     for char in expression:
+        print(f"Currently checking {char}:")
         if char == '(':
             found = False
 
@@ -27,6 +28,10 @@ def check_parentheses(expression: str) -> bool:
             #If there is no ")" return false
             if found == False:
                 return False
+    
+        if char == ')':
+            print("found a )")
+            return False
 
     if remove_parenthesis:
         print("list is not empty, returning false")
@@ -39,4 +44,4 @@ def check_parentheses(expression: str) -> bool:
 
 
 if __name__ ==  "__main__":
-    print(check_parentheses(")("))
+    print(check_parentheses("()()"))
