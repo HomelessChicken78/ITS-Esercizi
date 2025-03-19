@@ -36,3 +36,5 @@ while not dec_num.isnumeric():
     dec_num: str = input("Insert a decimal number:\n>\t")
 dec_num = int(dec_num)  #When the user insert a number, convert the string into an integer
 
+base: int = len(num_system)
+

@@ -35,5 +35,4 @@ WHAT TO DO:
 4.2.3 Repeat until dec_num == 0
 4.2.4 Convert the various numbers in the list of integers into the correspective base
 4.2.5 Invert the list
-4.2.6 Use .join to convert the list into a single string
 5. print the result!
