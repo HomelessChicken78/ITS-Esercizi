@@ -9,39 +9,30 @@ print(check_parentheses("(()))("))
 >>>False'''
 
 def check_parentheses(expression: str) -> bool:
-    remove_parenthesis: list[str] = list(expression)
-    print("".join(remove_parenthesis))
-    for char in expression:
-        print(f"Currently checking {char}:")
-        if char == '(':
-            found = False
-
-            #Try to find a ")"
-            for nxt_char in remove_parenthesis:
-                if nxt_char == ')':
-                    remove_parenthesis.remove('(')
-                    remove_parenthesis.remove(')')
-                    print(f"New expression: {remove_parenthesis}")
-                    found = True
-                    break
-            
-            #If there is no ")" return false
-            if found == False:
-                return False
+    parentheses = 0
     
-        if char == ')':
-            print("found a )")
-            return False
+    #Check each character. If it is a '(' the counter increases, else, if it is a ')' it decreases
+    for char in expression:
+        if char == "(":
+            parentheses += 1
+        elif char == ")":
+            #If there was an open parenthesis before:
+            if parentheses >= 1:
+                parentheses -= 1
 
-    if remove_parenthesis:
-        print("list is not empty, returning false")
+            #This is to avoid that the program may find in future closed parenthesis
+            else:
+                 return False
+    
+    #If there is no disparity between "(" and ")" return True. Else something does not add up and you return False
+    if parentheses == 0:
+        return True
+    else:
         return False
-
-    return True
         
 
 
 
 
 if __name__ ==  "__main__":
-    print(check_parentheses("()()"))
+ 	print(check_parentheses("((()))"))
