@@ -22,6 +22,8 @@ arguments :
 ◦ base contains characters that are not alphanumerical (eg parenthesis or slashes are not allowed)'''
 
 from B_10_Conquer.Correct_Input.n_2_0_Check_input import check_input
+from B_10_Conquer.Conversion.n_4_2_from_decimal_to_other import base_conversion
+from B_10_Conquer.Conversion.n_4_2_4_new_base import from_remainders_to_new_base
 
 #Ask how the number system is composed. Force the user to make it valid
 num_system: str = input("Type the characters that the number system is composed of. The order matters!:\n>\t")
@@ -37,4 +39,6 @@ while not dec_num.isnumeric():
 dec_num = int(dec_num)  #When the user insert a number, convert the string into an integer
 
 base: int = len(num_system)
+
+print(from_remainders_to_new_base(base_conversion(dec_num, base), num_system))
 
