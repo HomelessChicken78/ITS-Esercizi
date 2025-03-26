@@ -6,6 +6,7 @@ def hare_movement(raining: bool, stamina: int) -> int:
     if raining:
         weather_modifier = 2
 
+    #Randomly pick a movement
     match i:
         #Riposo
         case 1|2:
@@ -30,7 +31,7 @@ def hare_movement(raining: bool, stamina: int) -> int:
         case _:
             if stamina >= 8:
                 return -2 - weather_modifier, stamina - 8
-    return 0, stamina
+    return 0, stamina  #In case the picked movement cannot be done due to stamina
             
 
 def turtle_movement(raining: bool, stamina: int) -> int:
@@ -40,6 +41,7 @@ def turtle_movement(raining: bool, stamina: int) -> int:
     if raining:
         weather_modifier = 1
 
+    #Randomly pick a movement
     #Passo veloce
     if i >= 1 and i <= 5:
         if stamina >= 5:
@@ -54,7 +56,7 @@ def turtle_movement(raining: bool, stamina: int) -> int:
     elif stamina >= 3:
         return 1 - weather_modifier, stamina - 3
     
-    return 0, stamina + 10
+    return 0, stamina + 10  #In case the picked movement cannot be done due to stamina
 
 def calculate_path(T: int, H: int) -> list[str]:
     path: list[str] = []
@@ -73,7 +75,7 @@ def calculate_path(T: int, H: int) -> list[str]:
 tick: int = 0
 square: dict[str, int] = {"Turtle" : 1, "Hare" : 1}  #Starting point for both
 stamina: dict[str, int] = {"Turtle" : 100, "Hare" : 100}  #Starting stamina for both
-info: tuple[dict[str, int], dict[str, int]] = ()
+info: tuple[dict[str, int], dict[str, int]] = ()  #Used to return multiple dictionaries from the movement functions
 path: list[str] = []
 raining: bool = False
 
