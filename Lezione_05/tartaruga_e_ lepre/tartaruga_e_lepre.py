@@ -1,7 +1,13 @@
 from random import randint
 
-def random_hare() -> int:
+def hare_movement(raining: bool) -> int:
     i = randint(1, 10)
+    weather_modifier: int = 0
+
+    if raining:
+        weather_modifier = 2
+
+
     match i:
         #Riposo
         case 1|2:
@@ -9,35 +15,39 @@ def random_hare() -> int:
         
         #Grande balzo
         case 3|4:
-            return 9
+            return 9 - weather_modifier
         
         #Grande scivolata
         case 5:
-            return -12
+            return -12 - weather_modifier
         
         #Piccolo balzo
         case 6|7|8:
-            return 1
+            return 1 - weather_modifier
         
         #Piccola scivolata
         case _:
-            return -2
+            return -2 - weather_modifier
             
 
-def random_turtle() -> int:
+def turtle_movement(raining: bool) -> int:
     i = randint(1, 10)
+    weather_modifier: int = 0
+
+    if raining:
+        weather_modifier = 1
 
     #Passo veloce
     if i >= 1 and i <= 5:
-        return 3
+        return 3 - weather_modifier
     
     #Scivolata
     elif i >= 6 and i <= 7:
-        return -6
+        return -6 - weather_modifier
     
     #Passo lento
     else:
-        return 1
+        return 1 - weather_modifier
 
 def calculate_path(T: int, H: int) -> list[str]:
     path: list[str] = []
@@ -56,13 +66,23 @@ def calculate_path(T: int, H: int) -> list[str]:
 tick: int = 0
 square: dict[str, int] = {"Turtle" : 1, "Hare" : 1}  #Starting point for both
 path: list[str] = []
+raining: bool = False
 
 print("BANG !!!!! AND THEY'RE OFF !!!!!")
 while square["Hare"] < 70 and square["Turtle"] < 70:
 
+    #Weather modifications
+    if tick % 10 == 0 and tick != 0:
+        if raining:
+            raining = False
+            #print("\n\n\t\t\tIt's sunny now!!!")
+        else:
+            raining = True
+            #print("\n\n\t\t\tIt started to rain")
+
     #Make them move (randomly)
-    square["Hare"] += random_hare()
-    square["Turtle"] += random_turtle()
+    square["Hare"] += hare_movement(raining)
+    square["Turtle"] += turtle_movement(raining)
 
     #Prevent the hare to go behind the start
     if square["Hare"] < 1:
