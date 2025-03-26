@@ -1,36 +1,39 @@
 from random import randint
 
-def hare_movement(raining: bool) -> int:
+def hare_movement(raining: bool, stamina: int) -> int:
     i = randint(1, 10)
     weather_modifier: int = 0
-
     if raining:
         weather_modifier = 2
-
 
     match i:
         #Riposo
         case 1|2:
-            return 0
-        
+            return 0, stamina + 10
+
         #Grande balzo
         case 3|4:
-            return 9 - weather_modifier
+            if stamina >= 15:
+                return 9 - weather_modifier, stamina - 15
         
         #Grande scivolata
         case 5:
-            return -12 - weather_modifier
+            if stamina >= 20:
+                return -12 - weather_modifier, stamina - 20
         
         #Piccolo balzo
         case 6|7|8:
-            return 1 - weather_modifier
+            if stamina >= 5:
+                return 1 - weather_modifier, stamina - 5
         
         #Piccola scivolata
         case _:
-            return -2 - weather_modifier
+            if stamina >= 8:
+                return -2 - weather_modifier, stamina - 8
+    return 0, stamina
             
 
-def turtle_movement(raining: bool) -> int:
+def turtle_movement(raining: bool, stamina: int) -> int:
     i = randint(1, 10)
     weather_modifier: int = 0
 
@@ -39,15 +42,19 @@ def turtle_movement(raining: bool) -> int:
 
     #Passo veloce
     if i >= 1 and i <= 5:
-        return 3 - weather_modifier
+        if stamina >= 5:
+            return 3 - weather_modifier, stamina - 5
     
     #Scivolata
     elif i >= 6 and i <= 7:
-        return -6 - weather_modifier
+        if stamina >= 10:
+            return -6 - weather_modifier, stamina - 10
     
     #Passo lento
-    else:
-        return 1 - weather_modifier
+    elif stamina >= 3:
+        return 1 - weather_modifier, stamina - 3
+    
+    return 0, stamina + 10
 
 def calculate_path(T: int, H: int) -> list[str]:
     path: list[str] = []
@@ -65,6 +72,8 @@ def calculate_path(T: int, H: int) -> list[str]:
 
 tick: int = 0
 square: dict[str, int] = {"Turtle" : 1, "Hare" : 1}  #Starting point for both
+stamina: dict[str, int] = {"Turtle" : 100, "Hare" : 100}  #Starting stamina for both
+info: tuple[dict[str, int], dict[str, int]] = ()
 path: list[str] = []
 raining: bool = False
 
@@ -81,8 +90,13 @@ while square["Hare"] < 70 and square["Turtle"] < 70:
             #print("\n\n\t\t\tIt started to rain")
 
     #Make them move (randomly)
-    square["Hare"] += hare_movement(raining)
-    square["Turtle"] += turtle_movement(raining)
+    info = hare_movement(raining, stamina["Hare"])
+    square["Hare"] += info[0]
+    stamina["Hare"] = info[1]
+    info = turtle_movement(raining, stamina["Turtle"])
+    square["Turtle"] += info[0]
+    stamina["Turtle"] = info[1]
+
 
     #Prevent the hare to go behind the start
     if square["Hare"] < 1:
@@ -91,6 +105,13 @@ while square["Hare"] < 70 and square["Turtle"] < 70:
     #Prevent the turtle to go behind the start
     if square["Turtle"] < 1:
         square["Turtle"] = 1
+
+    #Prevent the hare from getting more stamina than the cap
+    if stamina["Hare"] > 100:
+        stamina["Hare"] = 100
+    #Prevent the turtle from getting more stamina than the cap
+    if stamina["Turtle"] > 100:
+        stamina["Turtle"] = 100
 
     path = calculate_path(square["Turtle"], square["Hare"])
     print("".join(path))
