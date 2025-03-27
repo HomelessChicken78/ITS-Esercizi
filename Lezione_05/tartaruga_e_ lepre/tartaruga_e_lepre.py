@@ -1,6 +1,6 @@
 from random import randint
 
-def hare_movement(raining: bool, stamina: int) -> int:
+def hare_movement(init_posit: int, raining: bool, stamina: int) -> int:
     i = randint(1, 10)
     weather_modifier: int = 0
     if raining:
@@ -10,31 +10,31 @@ def hare_movement(raining: bool, stamina: int) -> int:
     match i:
         #Riposo
         case 1|2:
-            return 0, stamina + 10
+            return init_posit, stamina + 10
 
         #Grande balzo
         case 3|4:
             if stamina >= 15:
-                return 9 - weather_modifier, stamina - 15
+                return init_posit + 9 - weather_modifier, stamina - 15
         
         #Grande scivolata
         case 5:
             if stamina >= 20:
-                return -12 - weather_modifier, stamina - 20
+                return init_posit - 12 - weather_modifier, stamina - 20
         
         #Piccolo balzo
         case 6|7|8:
             if stamina >= 5:
-                return 1 - weather_modifier, stamina - 5
+                return init_posit + 1 - weather_modifier, stamina - 5
         
         #Piccola scivolata
         case _:
             if stamina >= 8:
-                return -2 - weather_modifier, stamina - 8
-    return 0, stamina  #In case the picked movement cannot be done due to stamina
+                return init_posit -2 - weather_modifier, stamina - 8
+    return init_posit, stamina  #In case the picked movement cannot be done due to stamina
             
 
-def turtle_movement(raining: bool, stamina: int) -> int:
+def turtle_movement(init_posit: int, raining: bool, stamina: int) -> int:
     i = randint(1, 10)
     weather_modifier: int = 0
 
@@ -45,18 +45,18 @@ def turtle_movement(raining: bool, stamina: int) -> int:
     #Passo veloce
     if i >= 1 and i <= 5:
         if stamina >= 5:
-            return 3 - weather_modifier, stamina - 5
+            return init_posit + 3 - weather_modifier, stamina - 5
     
     #Scivolata
     elif i >= 6 and i <= 7:
         if stamina >= 10:
-            return -6 - weather_modifier, stamina - 10
+            return init_posit - 6 - weather_modifier, stamina - 10
     
     #Passo lento
     elif stamina >= 3:
-        return 1 - weather_modifier, stamina - 3
+        return init_posit + 1 - weather_modifier, stamina - 3
     
-    return 0, stamina + 10  #In case the picked movement cannot be done due to stamina
+    return init_posit, stamina + 10  #In case the picked movement cannot be done due to stamina
 
 def calculate_path(T: int, H: int) -> list[str]:
     path: list[str] = []
@@ -76,6 +76,29 @@ tick: int = 0
 square: dict[str, int] = {"Turtle" : 1, "Hare" : 1}  #Starting point for both
 stamina: dict[str, int] = {"Turtle" : 100, "Hare" : 100}  #Starting stamina for both
 info: tuple[dict[str, int], dict[str, int]] = ()  #Used to return multiple dictionaries from the movement functions
+
+#Obstacles scattered around the map
+obstacles: dict[int, int] = {
+    5 : 1, 10 : 1,
+    17 : 2, 29 : 1,
+    33 : 1, 37 : 2,
+    48 : 3, 51 : 1,
+    52 : 2, 60 : 3,
+    67 : 2, 69 : 9,
+    81 : 5, 84 : 2,
+    90 : 3, 95 : 2
+}
+
+#Bonus scattered around the map
+bonus: dict[int, int] = {
+    12 : 1, 18 : 1,
+    25 : 3, 36 : 2,
+    50 : 9, 57 : 2,
+    64 : 3, 71 : 2,
+    79 : 2, 88 : 3,
+    94 : 1, 98 : 1
+}
+
 path: list[str] = []
 raining: bool = False
 
@@ -92,13 +115,14 @@ while square["Hare"] < 70 and square["Turtle"] < 70:
             #print("\n\n\t\t\tIt started to rain")
 
     #Make them move (randomly)
-    info = hare_movement(raining, stamina["Hare"])
-    square["Hare"] += info[0]
-    stamina["Hare"] = info[1]
-    info = turtle_movement(raining, stamina["Turtle"])
-    square["Turtle"] += info[0]
-    stamina["Turtle"] = info[1]
+    square["Hare"], stamina["Hare"] = hare_movement(square["Hare"], raining, stamina["Hare"])
+    square["Turtle"], stamina["Turtle"] = turtle_movement(square["Turtle"], raining, stamina["Turtle"])
 
+    #If they end up on an obstacle, make sure the obstacle does their job
+    if square["Hare"] in obstacles:
+        square["Hare"] -= obstacles[square["Hare"]]
+    if square["Turtle"] in obstacles:
+        square["Turtle"] -= obstacles[square["Turtle"]]
 
     #Prevent the hare to go behind the start
     if square["Hare"] < 1:
