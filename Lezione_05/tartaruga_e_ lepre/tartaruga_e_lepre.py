@@ -1,5 +1,6 @@
 from random import randint
 
+#This function manages the movement of the hare
 def hare_movement(init_posit: int, raining: bool, stamina: int) -> int:
     i = randint(1, 10)
     weather_modifier: int = 0
@@ -33,7 +34,7 @@ def hare_movement(init_posit: int, raining: bool, stamina: int) -> int:
                 return init_posit -2 - weather_modifier, stamina - 8
     return init_posit, stamina  #In case the picked movement cannot be done due to stamina
             
-
+#This function manages the movement of the turtle
 def turtle_movement(init_posit: int, raining: bool, stamina: int) -> int:
     i = randint(1, 10)
     weather_modifier: int = 0
@@ -58,6 +59,7 @@ def turtle_movement(init_posit: int, raining: bool, stamina: int) -> int:
     
     return init_posit, stamina + 10  #In case the picked movement cannot be done due to stamina
 
+#This functions create (and returns) a string, which contains H for the position of the Hare, T for the position of the turtle and "_" for anything else
 def calculate_path(T: int, H: int) -> list[str]:
     path: list[str] = []
     for square in range(1, 70):
@@ -139,9 +141,11 @@ while square["Hare"] < 70 and square["Turtle"] < 70:
     if stamina["Turtle"] > 100:
         stamina["Turtle"] = 100
 
+    #Calculate the new state of the race and then print it
     path = calculate_path(square["Turtle"], square["Hare"])
     print("".join(path))
 
+    #Print the result of the race
     if square["Turtle"] >= 70:
         print("TORTOISE WINS! || VAY!!!")
     elif square["Hare"] >= 70:
