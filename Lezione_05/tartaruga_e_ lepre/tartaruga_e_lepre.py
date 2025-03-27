@@ -3,9 +3,7 @@ from random import randint
 #This function manages the movement of the hare
 def hare_movement(init_posit: int, raining: bool, stamina: int) -> int:
     i = randint(1, 10)
-    weather_modifier: int = 0
-    if raining:
-        weather_modifier = 2
+    weather_modifier: int = 2 if raining else 0
 
     #Randomly pick a movement
     match i:
@@ -37,10 +35,7 @@ def hare_movement(init_posit: int, raining: bool, stamina: int) -> int:
 #This function manages the movement of the turtle
 def turtle_movement(init_posit: int, raining: bool, stamina: int) -> int:
     i = randint(1, 10)
-    weather_modifier: int = 0
-
-    if raining:
-        weather_modifier = 1
+    weather_modifier: int = 2 if raining else 0
 
     #Randomly pick a movement
     #Passo veloce
