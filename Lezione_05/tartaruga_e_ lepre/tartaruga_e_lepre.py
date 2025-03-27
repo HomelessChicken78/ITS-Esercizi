@@ -115,11 +115,13 @@ while square["Hare"] < 70 and square["Turtle"] < 70:
     square["Hare"], stamina["Hare"] = hare_movement(square["Hare"], raining, stamina["Hare"])
     square["Turtle"], stamina["Turtle"] = turtle_movement(square["Turtle"], raining, stamina["Turtle"])
 
-    #If they end up on an obstacle, make sure the obstacle does their job
-    if square["Hare"] in obstacles:
-        square["Hare"] -= obstacles[square["Hare"]]
-    if square["Turtle"] in obstacles:
-        square["Turtle"] -= obstacles[square["Turtle"]]
+    #If they end up on an obstacle, make sure the obstacle does its job
+    square["Hare"] -= obstacles[square["Hare"]] if square["Hare"] in obstacles else 0
+    square["Turtle"] -= obstacles[square["Turtle"]] if square["Turtle"] in obstacles else 0
+
+    #If they end up on a bonus, make sure the bonus does its job
+    square["Hare"] += bonus[square["Hare"]] if square["Hare"] in bonus else 0
+    square["Turtle"] += bonus[square["Turtle"]] if square["Turtle"] in bonus else 0
 
     #Prevent the hare to go behind the start
     if square["Hare"] < 1:
