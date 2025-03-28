@@ -41,7 +41,7 @@ def add_to_cart(cart: dict[str, list[float, int]], product_stock: dict[str, list
         print("Product added to cart!")
 
     else:
-        print("\nWARNING: The product is out of stock or the asked quantity exceed the stock\n")
+        print("\n-- WARNING: The product is out of stock or the asked quantity exceed the stock --\n")
     return cart
 
 #This function remove products from the cart
