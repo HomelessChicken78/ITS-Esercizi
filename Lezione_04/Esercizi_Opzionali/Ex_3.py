@@ -155,8 +155,17 @@ while action != "finish" and action != "pay":
                 print("\n -- WARNING: The product does not exist. Type \"add\" without any argument to see the stock list --\n")
 
         case "remove":
-            pass
+            print("WIP")
 
         case "view":
             view_cart(cart)
+        
+        case "finish"|"pay":
+            pass
+
+
+        #If the command does not exist, print a warning
+        case _:
+            print("\nWARNING: The typed command does not exist. Type \"help\" for a list of commands.\n")
+
 view_cart(cart)
