@@ -106,7 +106,7 @@ while action != "finish" and action != "pay":
                 if tertiary_action.isnumeric():
                     tertiary_action = int(tertiary_action)
                 else:
-                    print("\nWARNING: You did not type a number for the quantity\n")
+                    print("\n-- WARNING: You did not type a number for the quantity --\n")
                     continue
                 cart = add_to_cart(cart, products_stock, secondary_action, tertiary_action)
                 products_stock = remove_from_stock(products_stock, secondary_action, tertiary_action)
@@ -136,14 +136,14 @@ while action != "finish" and action != "pay":
                     if tertiary_action.isnumeric():
                         tertiary_action = int(tertiary_action)
                     else:
-                        print("\nWARNING: You did not type a number for the quantity\n")
+                        print("\n-- WARNING: You did not type a number for the quantity --\n")
                         continue
                     cart = add_to_cart(cart, products_stock, secondary_action, tertiary_action)
                     products_stock = remove_from_stock(products_stock, secondary_action, tertiary_action)
 
 
                 elif secondary_action == "":
-                    print("\nWARNING: You did not specify what product you want to add!\n")
+                    print("\n-- WARNING: You did not specify what product you want to add!\n --")
                     continue
                 
                 else:
@@ -168,6 +168,6 @@ while action != "finish" and action != "pay":
 
         #If the command does not exist, print a warning
         case _:
-            print("\nWARNING: The typed command does not exist. Type \"help\" for a list of commands.\n")
+            print("\n-- WARNING: The typed command does not exist. Type \"help\" for a list of commands --\n")
 
 view_cart(cart)
