@@ -154,15 +154,17 @@ while action != "finish" and action != "pay":
             else:
                 print("\n -- WARNING: The product does not exist. Type \"add\" without any argument to see the stock list --\n")
 
+        #If the user types "remove"
         case "remove":
             print("WIP")
 
+        #If the user types "view"
         case "view":
             view_cart(cart)
-        
+
+        #This is used to not go into the default case. If this case was not present, those commands would trigger the error message, but still end the program
         case "finish"|"pay":
             pass
-
 
         #If the command does not exist, print a warning
         case _:
