@@ -98,7 +98,7 @@ while action != "finish" and action != "pay":
 
         #If the user types "add"
         case "add":
-            #Check if the user has typed a secondary action
+            #Check if typed product is in the stock
             if secondary_action in products_stock:
                 tertiary_action = "1" if not tertiary_action else tertiary_action  #If the user has not typed the quantity, bring the quantity automatically to 1
                 
@@ -111,7 +111,7 @@ while action != "finish" and action != "pay":
                 cart = add_to_cart(cart, products_stock, secondary_action, tertiary_action)
                 products_stock = remove_from_stock(products_stock, secondary_action, tertiary_action)
 
-            #If not, ask the user to type the secondary action
+            #If not, check if the user has even typed something. If it did not type anything, it means they forgot. Ask the user to type the secondary action
             elif secondary_action == "":
 
                 #Print out the product's stock
@@ -143,13 +143,19 @@ while action != "finish" and action != "pay":
 
 
                 elif secondary_action == "":
+                    print("\nWARNING: You did not specify what product you want to add!\n")
                     continue
                 
                 else:
                     print("\n -- WARNING: The product does not exist. Type \"add\" without any argument to see the stock list --\n")
 
+
+            #Finally, if the user typed something, but the product does not exist in the market, it means they are searching for an unexistant item. Print a warning
             else:
                 print("\n -- WARNING: The product does not exist. Type \"add\" without any argument to see the stock list --\n")
+
+        case "remove":
+            pass
 
         case "view":
             view_cart(cart)
