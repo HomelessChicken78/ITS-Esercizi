@@ -19,7 +19,7 @@ def  uppercaseNumber(string: str) -> bool:
     for char in string:
         if char in uppercases:
             i += 1
-    return i
+    return i    
 
 #Return the number of special characters
 def specialCharNumber(string: str) -> bool:
@@ -39,3 +39,11 @@ def validate_password(password: str) -> bool:
         return True
     else:
         raise ValueError("The criteria were not met :(")
+    
+if __name__ == "__main__":
+    try:
+        validate_password(input("Insert your password:\n>\t"))
+    except ValueError:
+        print("Password does not meet all the criteria!")
+    else:
+        print("You password has been updated!")
