@@ -11,8 +11,7 @@ significa che il numero n ha una sola cifra. In caso negativo, significa che il 
 per 10 per rimuovere l'ultima cifra e richiama ricorsivamente la funzione, fino a ottenere un numero con una sola cifra.'''
 
 # def recursiveDigitCounter(n):
-#     n = abs(n)
-#     return len(str(n))
+#     return len(str(abs(n)))
 
 def recursiveDigitCounter(n: int) -> int:
     if abs(n) < 10:
