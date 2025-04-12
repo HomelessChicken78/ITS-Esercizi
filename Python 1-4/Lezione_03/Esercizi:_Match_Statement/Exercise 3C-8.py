@@ -1,4 +1,4 @@
-'''rEsercizio 3C-8. Scrivere un programma in Python che legga una frase di una riga e mostri una delle seguenti risposte:
+'''Esercizio 3C-8. Scrivere un programma in Python che legga una frase di una riga e mostri una delle seguenti risposte:
 - "Si" -> se la frase termina con un punto interrogativo (?) ed il numero dei caratteri è pari;
 - "No" -> se la frase termina con un punto interrogativo (?) ed il numero dei caratteri è dispari;
 - "Wow!" -> se la frase termina con un punto esclamativo (!)

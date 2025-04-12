@@ -1,4 +1,4 @@
-'''r
+'''
 Esercizio 3C-10. Scrivere un programma in Python che permetta all'utente di inserire una data
 (giorno e mese espressi in forma numerica),
 salvi la data in una tupla e utilizzi un match statement per verificare se la data corrisponde a una festività o a un evento speciale:

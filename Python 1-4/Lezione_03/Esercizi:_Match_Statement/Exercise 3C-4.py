@@ -1,4 +1,4 @@
-'''r
+'''
 Esercizio 3C-4. Scrivere un programma in Python che permetta all'utente di inserire il nome di un animale e,
 utilizzando un match statement, identifichi a quale categoria esso appartiene.
 L'animale deve essere classificato in una delle seguenti categorie:
