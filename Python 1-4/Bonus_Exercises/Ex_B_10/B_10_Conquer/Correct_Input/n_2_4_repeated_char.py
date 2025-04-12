@@ -1,4 +1,4 @@
-'''2.4 if there are not, check if any character is repeated'''
+'''r2.4 if there are not, check if any character is repeated'''
 
 def isrepeated(num_sys: str) -> bool:
     duplicate: str = num_sys  #This is a duplicate of the original string which can be modified freely without messing with the while loop

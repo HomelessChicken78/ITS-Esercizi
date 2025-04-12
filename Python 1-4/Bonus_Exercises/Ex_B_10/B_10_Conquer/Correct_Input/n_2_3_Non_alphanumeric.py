@@ -1,4 +1,4 @@
-'''2.3 if there are not, check if there are non-alphanumerical characters'''
+'''r2.3 if there are not, check if there are non-alphanumerical characters'''
 
 def isvalid(num_sys: str) -> bool:
     valid_char: list = [
