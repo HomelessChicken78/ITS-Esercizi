@@ -10,7 +10,7 @@ than, greater than or equal to, and less than or equal to
 • Tests using the and keyword and the or keyword
 • Test whether an item is in a list
 • Test whether an item is not in a list'''
-#o
+
 name: str = "Cristiano"
 username: str = "cristiano03"
 age: int = 20
