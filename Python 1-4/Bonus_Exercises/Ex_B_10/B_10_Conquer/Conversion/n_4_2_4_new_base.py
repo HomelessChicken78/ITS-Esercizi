@@ -1,6 +1,6 @@
 '''4.2.4 Convert the various numbers in the list of integers into the correspective base'''
 
-#Trasform the remainders (that are written in decimal) into the characters used by the new base
+#rTrasform the remainders (that are written in decimal) into the characters used by the new base
 def from_remainders_to_new_base(remainders: list[int], num_system: str) -> str:
     result: str = ""
     for r in remainders[::-1]:
