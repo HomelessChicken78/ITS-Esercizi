@@ -1,4 +1,4 @@
-'''r2. check if the input is correct'''
+'''2. check if the input is correct'''
 
 from B_10_Conquer.Correct_Input.n_2_1_Only_one_character import islongenough
 from B_10_Conquer.Correct_Input.n_2_2_hassign import has_sign

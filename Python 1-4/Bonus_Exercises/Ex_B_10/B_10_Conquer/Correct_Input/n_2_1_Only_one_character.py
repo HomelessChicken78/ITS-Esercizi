@@ -1,4 +1,4 @@
-'''r2.1 check if it contains only one character'''
+'''2.1 check if it contains only one character'''
 
 def islongenough(num_sys: str) -> bool:
     if len(num_sys) <= 1:
