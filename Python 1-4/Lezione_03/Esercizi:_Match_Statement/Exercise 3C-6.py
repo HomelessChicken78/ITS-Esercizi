@@ -1,4 +1,4 @@
-'''
+'''r
 Esercizio 3C-6. Modificare il codice dell'esercizio 3C-4,
 affinchè si possa scrivere un codice python che consenta all'utente di inserire il nome di un animale ed un habitat.
 Quando il codice dell'esercizo 3C-4 classifica l'animale inserito in una delle categorie tra mammiferi, rettili, uccelli o pesci,
