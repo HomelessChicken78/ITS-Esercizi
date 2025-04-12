@@ -1,0 +1,25 @@
+Bonus – Errori comuni
+
+Obiettivo: Trovare errori in RegEx sbagliate.
+
+    Esercizio 8.1: Qual è l’errore nella RegEx ^\d{2,5}?$ se voglio matchare da 2 a 5 cifre?
+
+È stato utilizzato il costrutto sbagliato.
+{2, 5} è un quantificatore che serve a dire "accetto tutti i <carattere precedente> che compaiono almeno 2 volte e massimo 5".
+Tuttavia noi non vogliamo dire  ciò, e vogliamo invece che la cifra compaia una sola volta. Quindi possiamo toglierlo.
+Simo rimasti con "\d".
+Tuttavia anche \d è sbagliato.
+\d serve a matchare tutte le cifre da 0-9, il che significa che andrebbe ristretto.
+Per farlo, invece di utilizzare \d utilizziamo un range, scritto con le parentesi quadre invece di \d:
+^[2-5]$
+ciò ci dice "matcha una cifra che sia  da 2 a 5
+
+    Esercizio 8.2: La RegEx [A-z] funziona per lettere? Perché può essere rischiosa?
+
+il costrutto [<primo carattere>-<ultimo carattere>] va ad individuare tutti i caratteri che vanno dal primo all'ultimo carattere.
+Notare come ho detto carattere e NON lettera. Mentre l'ordine a-z e A-Z comprende per sua natura tutte le lettere che vanno dalla
+"a" alla "z" e dalla "A" alla "Z", poichè quest'ultime sono messe in ordine alfabetico, dire [A-z] non sarebbe come scrivere
+[A-Za-z]: infatti tra la Z (maiuscola) e la a (minuscola) potrebbero esserci altri caratteri in mezzo, a seconda di quale
+sistema è impiegato per determinare l'ordine lessicografico. Quindi potenzialmente potrebbe individuare caratteri in più oltre
+a quelli desiderati. Per capire meglio, da terminale si può fare "man ascii", il che fa vedere l'ordine utilizzato dalla tabella
+Ascii. Si noti che tra la "Z" (maiuscola) e la "a" (minuscola) vi sono altri caratteri, come "[", "^", "\" ecc.
