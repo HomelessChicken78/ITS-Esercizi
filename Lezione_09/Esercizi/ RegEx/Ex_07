@@ -1,0 +1,32 @@
+Esercizi – Comprensione di RegEx
+
+Data la RegEx, occorre interpretarla.
+
+    Esercizio 7.1: Cosa fa questa RegEx? ^[A-Z][a-z]{2,}$
+
+Identifica una stringa che contiene esattamente una lettera maiuscola, poi almeno due lettere minuscole.
+In pratica cattura una parola che è scritta con la prima lettera maiuscola e che contiene almeno 3 lettere
+Per esempio, stringhe accettate sarebbero:
+Cristiano
+Python
+Pizza
+
+    Esercizio 7.2: Quali stringhe sono accettate da \d{3}-\d{2}-\d{4}?
+
+tre numeri, seguiti da un trattino, altri due numeri seguiti da un trattino, altri quattro seguiti da un trattino.
+Quindi:
+100-10-1000
+123-12-1234
+122-42-4242
+ecc.
+
+1000-... non è accettato
+100-100-... non è accettato
+1-... non è accettato
+100101000 non è accettato
+
+    Esercizio 7.3: Qual è l’effetto del simbolo ? in questa RegEx: colou?r
+
+Il carattere che lo precede diviene opzionale (nessuno o uno).
+Quindi la "u" può esserci, ma va bene anche se non ci fosse.
+Dunque si accetta sia "color" che "colour"
