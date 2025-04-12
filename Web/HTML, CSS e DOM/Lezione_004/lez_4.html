@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My title</title>
+    <script>
+        function test() {
+
+            var x = 10;
+
+            var mioelemento = document.getElementById("paperino"); // recuperato l'elemento (TAG)
+
+            if(x < 10) {
+
+                mioelemento.innerHTML = "X è minore di 10";
+                mioelemento.style.color = "red";
+
+            }else{
+
+                mioelemento.innerHTML = "X è maggiore di 10";
+                mioelemento.style.color = "blue";
+
+            }
+        }
+    </script>
+</head>
+
+<body>
+<h1>Titolo della pagina</h1>
+<!-- DOM (non è javascript, si trova nel browser) : document
+    1 - gestione eventi : tastiera e mouse
+    html mi mette a disposizione "EVENTI" che si possono eseguire con DOM
+    Fa uso di un oggetto chiamato
+
+    document
+    
+    mi permette di fare tre cose una volta individuato l'elemento (TAG) | Gestire attributo, evento e style
+    2 - tramite javascript
+    -->
+
+    <h1 id="paperino">Scritta personalizzata</h1>
+
+    <h2 onclick="test()">Clicca qui per cambiare contenuto</h2>
+<h1 onclick="document.body.style.background = 'red'">Hello world</h1>
+
+</body>
+</html>

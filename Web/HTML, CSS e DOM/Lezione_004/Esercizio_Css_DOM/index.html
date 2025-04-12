@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<HTML>
+<head>
+    <title>Lista della Spesa Semplice</title>
+    <script>
+        function is_not_empty(str) {
+            /* checks whether the string passed as an argument is not empty*/
+            if (str === "")  {
+                return false
+            } else {
+                return true
+            }
+        }
+        function new_prod() {
+            var nuovo = document.createElement("li");  //crea un attributo <li>
+
+            //prendi il testo digitato nell'input e mettilo all'interno dell'elemento appena creato
+            var prod = document.getElementById("prodotto").value.trim();
+            nuovo.innerText = prod;
+
+            //inserisci il risultato nella lista della spesa
+            var append_here = document.getElementById("lista_spesa");
+                if (is_not_empty(prod) && prod.length < 50) {
+                    append_here.appendChild(nuovo);
+                    document.getElementById("error_msg").innerHTML = ''
+                    
+                } else if (!is_not_empty(prod)){
+                    document.getElementById("error_msg").innerHTML = '** Write a product you would like to add! **'
+                } else {
+                    document.getElementById("error_msg").innerHTML = '** The product name is too long! **'
+                }
+        }
+
+        function reset() {
+            var remove_here = document.getElementById("lista_spesa");
+            remove_here.innerHTML = '';
+            document.getElementById("error_msg").innerHTML = ''
+        }
+    </script>
+</head>
+
+<style>
+    .table1 {
+        margin: auto;
+    }
+    .table2 {
+        margin: 10px;
+        padding: 5px;
+        border-style: solid;
+        border-color: aliceblue;
+    }
+</style>
+
+<body>
+    <table class="table1"><tr><td><table class="table2">
+        <tr><td style="text-align: center;">
+            <input type="text" name="prodotto" id="prodotto">
+            <button onclick="new_prod()">Invia</button>
+            <button onclick="reset()">Reset</button>
+        </td></tr>
+        <tr><td>
+            <ul id="lista_spesa">
+            </ul>
+        </td></tr>
+    </table></td></tr></table>
+    <div id="error_msg" style="color: rgb(141, 0, 0); text-align: center;"></div>
+</body>
+</HTML>

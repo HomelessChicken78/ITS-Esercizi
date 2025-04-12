@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<head>
+    <title>Love the lesson</title>
+</head>
+<body>
+    <!-- Commento: (nessuno vedrà questo)-->
+    <h1>Elenchi</h1>
+    <ul>
+        <li> lunedì </li>
+        <li> martedì </li>
+        <li> mercoledì </li>
+    </ul>
+
+    <!-- Tabelle 
+     all'inizio del 1990 si usavano SOLO tabelle
+     ma nel 2000 arrivano gli smartphone, che danno problemi con l'uso delle tabelle, che quindi sono andate in disuso
+     si sono dunque diffusi i div
+     
+     i div tuttavia utilizzano la stessa logica delle tabelle
+     -->
+
+     <table border="1">
+        <tr>
+            <td><div>A1</div></td>
+            <td><div>B1</div></td>
+            <td><div>C1</div></td>
+            <td>D1</td>
+            <td></td>
+            <td>F1</td>
+            <td>G1</td>
+            <td>H1</td>
+            <td>I1</td>
+            <td><h1>BANNER DEL MIO SITO</h1></td>
+        </tr>
+        <tr>
+            <td>A2</td>
+            <td>B2</td>
+            <td>C2</td>
+            <td>D2</td>
+            <td>E2</td>
+            <td>F2</td>
+            <td>G2</td>
+            <td>H2</td>
+            <td>I2</td>
+            <td>
+                <table border="2" width="100%">
+                    <tr>
+                        <td>Primo articolo</td>
+                        <td>Secondo articolo</td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+     </table>
+     <!-- Form rendere la nostra pagina interattiva -->
+      <!-- nel tag form:
+            action : destinatario
+            method : get/post
+            name : nome del form 
+            value : si mette nei valori non riconoscibili
+            
+            invio i dati:
+                chiaro (get)            dati non sensibili | si passano dati tramite la hall (aka url box)
+                nascosti (post)
+            
+            Request    -->
+      <form action="https://www.google.com" method="get">
+        <input type="text" name="q">
+        <input type="file" name="cv">
+        <input type="checkbox" value="yes" name="privacy">
+
+        <!-- più scelte-->
+        <input type="radio" value="maschio" name="genere">
+        <input type="radio" value="femmina" name="genere">
+        <input type="radio" value="N/D" name="genere">
+
+        <select name="giorno">
+            <option>cdshiau</option>
+            <option>2</option>
+            <option>3</option>
+            <option>39</option>
+        </select>
+        <textarea name="extra"></textarea>
+        <input type="submit">
+      </form>
+      <!-- INVIARE IL FORM: prende tutti i valori e li spedisce al destinatario-->
+</body>

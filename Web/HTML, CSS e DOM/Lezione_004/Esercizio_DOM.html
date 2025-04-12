@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<!--Esercizio 1
+Scrivere un documento HTML contenente un form con i seguenti campi:
+•cognome (casella di testo editabile lunga 40 caratteri)
+•nome (casella di testo editabile lunga 30 caratteri)
+•matricola (casella di testo editabile lunga 12 caratteri)
+•regione di residenza (da scegliere da un menu che riporta le 20 regioni italiane)
+•email (casella di testo editabile lunga 30 caratteri)
+•telefono (casella di testo editabile lunga 15 caratteri)
+•richieste particolari (area di testo editabile di 12 righe per 60 colonne)
+•bottone di invio
+•bottone di reset
+
+Aggiungere al documento HTML una funzione JavaScript (non usare required) che esegue i seguenti
+controlli:
+•verifica che il cognome non sia vuoto;
+•verifica che il nome non sia vuoto;
+•verifica che la matricola sia un numero;
+•verifica che sia stata selezionata una regione;
+•verifica che o l’email o il telefono siano non vuoti.
+Inoltre, fare in modo che, nel documento HTML, tale funzione JavaScript venga eseguita quando l’utente
+invia la form-->
+<html>
+<head>
+    <title>Esercizio 1</title>
+</head>
+<style>
+    td {
+        font-weight: bold;
+    }
+</style>
+<script>
+    function check() {
+        var surname = document.getElementById("surname").value.trim();
+        var name = document.getElementById("name").value.trim();
+        var region = document.getElementById("region").value.trim();
+        var mail = document.getElementById("email").value.trim();
+        var phone = document.getElementById("phone_number").value.trim();
+        if(surname==="") {
+            alert ("Campo cognome vuoto")
+        }
+
+        if(name==="") {
+            alert ("Campo nome vuoto")
+        }
+        
+        if(region==="- scelta -") {
+            alert ("Selezionare una Regione")
+        }
+
+        if(mail ==="" && phone==="") {
+            alert ("Inserire una email o un numero di telefono")
+        }
+    }
+</script>
+<body>
+    <form style="margin-left: 40%; margin-right: 40%;">
+        <table>
+        <tr><td>Cognome</td><td><input type="text" maxlength="40" id="surname"></td></tr>
+        <tr><td>Nome</td><td><input type="text" maxlength="30" id="name"></td></tr>
+        <tr><td>Matricola</td><td><input type="number" maxlength="12" id="matricola"></td></tr>
+        <tr><td>Regione</td><td><select id="region">
+            <option>- scelta -</option>
+            <option>Abruzzo</option>
+            <option>Basilicata</option>
+            <option>Calabria</option>
+            <option>Campania</option>
+            <option>Emilia-Romagna</option>
+            <option>Friuli Venezia Giulia</option>
+            <option>Lazio</option>
+            <option>Liguria</option>
+            <option>Lombardia</option>
+            <option>Marche</option>
+            <option>Molise</option>
+            <option>Piemonte</option>
+            <option>Puglia</option>
+            <option>Sardegna</option>
+            <option>Sicilia</option>
+            <option>Toscana</option>
+            <option>Trentino-Alto-Adige</option>
+            <option>Umbria</option>
+            <option>Valle d'Aosta</option>
+            <option>Veneto</option>
+        </select></td></tr>
+        <tr><td>Email</td><td><input type="text" maxlength="30" id="email"></td></tr>
+        <tr><td>Telefono</td><td><input type="text" maxlength="15" id="phone_number"></td></tr>
+        <tr><td style="vertical-align: top;">Richieste particolari</td><td><textarea rows="12" cols="60" id="peculiar_requests"></textarea></td></tr>
+        </table>
+
+        <input type="submit" onclick="check()" style="margin-left: 35%; margin-right: 35%; margin-top: 10%; margin-bottom: 2%;">
+        <input type="reset" style="margin-left: 35%; margin-right: 35%; margin-bottom: 10%;">
+    </form>
+</body>
+</html>

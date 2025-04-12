@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>This is the head</title>
+</head>
+<link href="miostile.css" rel="stylesheet"></link>
+<!-- Se css va in conflitto l'ultimo vince -->
+<style>
+    h1 {
+        color : green
+    }
+    .paperino {
+        color : blue
+    }
+    
+    h3 {
+        color : white
+    }
+    div {
+        text-align : center;
+        color : red;
+        background-color : yellow;
+        border : 10px dashed black;
+        padding : 20px;
+        margin : 50px
+    }
+</style>
+<body>
+    <!-- HTML 1993 -->
+    <h1>HTML: contenitore che stabilisce solo la posizione</h1>
+    <!--- CSS 1996 Foglio di stile a cascata-->
+    <!-- 2 attributi : style e class. Attributi per permettere a css di esser usato con html -->
+     <!--   
+            style | solo per il codice inline
+            class | per richiamare classi incorporate o esterne
+            Per capire la differenza, CSS può esser scritto in 3 modi
+                inline : nel tag HTMl (dentro)
+                incorporato : nella pagina (Head) | con comando <style> e <class>. Class è un blocco di codice che si riferisce a tutti i blocchi della pagina
+                esterno : in file esterno (import nell'head)
+            -->
+     <h1> <font color="red"> Titolo nel 1993 </font></h1>
+     <h1 style="color : red"> Titolo nel 1996 con CSS   </h1>
+     <h1 class="paperino">Test 1</h1>
+     <p class="paperino"> Ciao a tutti</p>
+
+     <h3>Mio titolo h3</h3>
+
+     <a href="google.com"></a><div style="color : red">Clicca qui per entrare nel sito</div></body></a>
+</body>
+</html>

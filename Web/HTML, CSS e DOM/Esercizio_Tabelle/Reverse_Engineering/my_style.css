@@ -1,0 +1,20 @@
+.bolded {
+    font-weight: bold;
+}
+
+.top_banners {
+    background-color : rgb(204, 204, 204);
+    padding : 10px;
+    font-weight : bold;
+    text-align: center;
+    width : 100%;
+    margin-bottom: 30px;
+}
+
+.book_table {
+    background-color: rgb(244, 244, 244);
+    margin-left: 10px;
+    margin-bottom: 10px;
+    padding: 5px;
+    width: 100vw;
+}

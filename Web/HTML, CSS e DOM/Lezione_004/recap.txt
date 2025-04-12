@@ -1,0 +1,9 @@
+    1 - HTML              Linguaggio
+
+    2 - CSS               Linguaggio
+
+    3 - DOM               Libreria che si trova nel browser e permette di modificare html
+
+    4 - JAVASCRIPT        Linguaggio di programmazione
+
+HTML permette solo di fare siti statici, che non si possono modifcare senza andare a modificare il codice di per sè.
