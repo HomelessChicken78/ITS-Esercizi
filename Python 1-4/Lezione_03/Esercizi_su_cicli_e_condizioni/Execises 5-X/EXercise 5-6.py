@@ -1,5 +1,5 @@
 '''
-r5-6. Stages of Life: Write an if-elif-else chain that determines a person’s stage of life. Set a value for the variable age, and then:
+5-6. Stages of Life: Write an if-elif-else chain that determines a person’s stage of life. Set a value for the variable age, and then:
 • If the person is less than 2 years old, print a message that the person is a baby.
 • If the person is at least 2 years old but less than 4, print a message that the person is a toddler.
 • If the person is at least 4 years old but less than 13, print a message that the person is a kid.
