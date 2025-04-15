@@ -2,11 +2,10 @@
 Quick sort: what if instead you try to make something efficient'''
 
 def quick_sort(seq: list[int]) -> list[int]:
-    lenght = len(seq)
     lower: list[int] = []
     higher: list[int] = []
 
-    if lenght <= 1:
+    if len(seq) <= 1:
         return seq
 
     pivot: int = seq.pop(0)
