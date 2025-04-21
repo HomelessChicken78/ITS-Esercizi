@@ -1,0 +1,49 @@
+In questo progetto, dovrai scrivere il codice per un sistema di gestione e creazione dei corsi
+ITS.
+Il sistema gestisce aule ed edifici (Parte 1), persone -studenti e docenti- in gruppi di studio
+(parte 2), e corsi (parte 3).
+ 
+### Classe Room:
+La classe Room rappresenta un'aula. Ogni aula ha un ID (id), un piano (floor), un numero di
+posti (seats) e un'area (area). L'area è calcolata come il doppio dei posti.
+- Metodi:
+    - get_id(): Restituisce l'ID dell'aula.
+    - get_floor(): Restituisce il piano dell'aula.
+    - get_seats(): Restituisce il numero di posti dell'aula.
+    - get_area(): Restituisce l'area dell'aula.
+
+### Classe Building:
+La classe Building rappresenta un edificio. Ogni edificio ha un nome (name), un indirizzo
+(address), un intervallo di piani (floors), e una lista di aule (rooms).
+- Metodi:
+    - get_floors(): Restituisce l'intervallo di piani dell'edificio.
+    - get_rooms(): Restituisce la lista delle aule nell'edificio.
+    - add_room(room): Aggiunge un'aula all'edificio, solo se il piano dell'aula è compreso nell'intervallo di piani dell'edificio.
+    - area(): Restituisce l'area totale dell'edificio sommando le aree di tutte le aule.
+
+### Classi Person, Student e Lecturer:
+La classe Person rappresenta una persona con un codice fiscale (cf), un nome (name), un cognome (surname), un'età (age).
+Le classi Student e Lecturer ereditano da Person.
+Uno studente è associato ad un gruppo di studio (group). Quindi, la classe Student ha il seguente metodo:
+    - set_group(group): Associa un gruppo di studio allo studente
+
+### Classe Group:
+La classe Group rappresenta un gruppo di studio. Ogni gruppo ha un nome (name), un limite
+di studenti (limit), una lista di studenti (students) e una lista di docenti (lecturers).
+- Metodi:
+    - get_name(): Restituisce il nome del gruppo
+    - get_limit(): Restituisce il limite di studenti nel gruppo
+    - get_students(): Resituisce la lista di studenti nel gruppo
+    - get_limit_lecturers(): Restituisce il limite di docenti nel gruppo. E' consentito 1 docente
+    ogni 10 studenti. Il gruppo può avere almeno 1 docente, anche se ci sono meno di
+    10 studenti.
+    - add_student(student): Aggiunge uno studente al gruppo, solo se il limite per gli studenti non è stato raggiunto.
+    - add_lecturer(lecturer): Aggiunge un docente al gruppo, solo se il limite per i docenti non è stato raggiunto.
+
+
+### Classe Course:
+La classe Course rappresenta un corso accademico. Ogni corso ha un nome (name) e una lista di gruppi (groups).
+- Metodi:
+    - register(student): Registra uno studente nel primo gruppo disponibile che non ha ancora raggiunto il limite di studenti.
+    - get_groups(): Restituisce la lista dei gruppi nel corso.
+    - add_group(group): Aggiunge un gruppo al corso.
