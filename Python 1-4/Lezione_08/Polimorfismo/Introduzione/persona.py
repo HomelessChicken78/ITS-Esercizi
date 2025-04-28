@@ -54,3 +54,7 @@ class Person:
             print(f"{self.name.title()} è una persona adulta")
         else:
             print(f"{self.name.title()} è una persona anziana")
+    
+    #Metodo speack() per la classe Persona che consente di simulare un saluto
+    def speak(self) -> None:
+        print(f"\nHello my name is {self.getName()}!\n")
