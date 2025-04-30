@@ -13,7 +13,7 @@ uci.add_movie("Me stesso", ["Film1", "Film2"])
 #print(uci._MovieCatalog__catalog) # test "private" attribute
 
 # Print the list of directors
-uci.list_directors()
+print(uci.list_directors())
 
 # Query director's film
 print()
@@ -31,11 +31,11 @@ print(uci.get_movies_by_director("geOrge LuCAS"))  # ['Star Wars']
 
 # Test with removing a director if the list is empty
 print("\nBefore removing \"me stesso\":")
-uci.list_directors()
+print(uci.list_directors())
 uci.remove_movie("me stesso", "Film1")
 uci.remove_movie("me stesso", "Film2")
 print("----------------\nAfter removing \"me stesso\":")
-uci.list_directors()
+print(uci.list_directors())
 
 # Testing search_movies_by_title
 print()
