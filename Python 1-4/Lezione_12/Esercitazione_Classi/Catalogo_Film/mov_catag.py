@@ -51,8 +51,8 @@ class MovieCatalog:
     def get_movies_by_director(self, director_name: str) -> list[str]:
         '''Restituisce tutti i film di un regista specifico.'''
         # This is for making it case insensitive
-
         director_name = director_name.lower()
+
         if director_name in self.__catalog:
             return self.__catalog[director_name]
         return "No director with that name could be found."
