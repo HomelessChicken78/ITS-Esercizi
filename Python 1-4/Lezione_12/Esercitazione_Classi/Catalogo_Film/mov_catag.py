@@ -57,7 +57,7 @@ class MovieCatalog:
             return self.__catalog[director_name]
         return "No director with that name could be found."
 
-    def search_movies_by_title(self, title: str) -> list[str]:
+    def search_movies_by_title(self, title: str) -> list[str] | str:
         '''Trova tutti i film che contengono una certa parola nel titolo. Restituisce un elenco
         dei registi e dei rispettivi film che contengono la parola cercata o un messaggio di errore se nessun film contiene la
         parola cercata nel titolo.'''
