@@ -1,1 +1,0 @@
-open('Hello_World.txt')
