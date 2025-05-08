@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Variabili</title>
+
+<script>
+    test(); // esegue test
+    //test2(); // undefinded
+    // console.log(anni2); // undefined
+
+    // Dichiarazione di variabili FASE 1
+    var anni1 = 10;
+    var anni1 = 30; // Questo funzionava. Poteva causare problemi
+    // Inoltre var presenta:
+    // HOISTING - Caratteristica di js:
+    // meccanismo automatico che "sposta" il codice. Lo esegue con una sequenza diversa
+    // "sposta" le dichiarazioni di variabili alla riga 1 all'inizio
+    // "sposta" le funzioni. Per questo si usa let (guarda giu)
+    function test() {
+        console.log("sto eseguendo test");
+    }
+
+    // Dichiarazione di variabili FASE 2
+    let anni2 = 20; // Non permette la sovrascrizione e non presenta l'hoisting!
+
+    let test2 = () => {
+        console.log("sto eseguendo la funzione test2");
+    }
+
+    // il ";" non è obbligaatorio. Ma aiuta a far capire all'interprete che si tratta di una nuova istruzione
+    let soldi = 10
+    + 10
+    console.log(soldi); // stampa a schermo "20" e non "10"
+    // Ciò può causare problemi perchè l'interprete potrebbe fare cose che non si vorrebbe
+
+
+
+
+
+
+    // 5 tipi di variabili : stringhe - numeri -boolean - null - undefined
+    // JS : Tipizzazione debole | Il tipo può cambiare
+    let x = 10;
+    x = "Mario";
+
+    // fase 1
+    let y = "Stringa";
+    y = y + " " + 10 + " " + anni2 + " arrivederci";
+    console.log(y);
+
+    // fase 2 TEMPLATE STRING - backtick ` | alt gr + '
+    let z = `Stringa 10 ${anni2} arrivederci`;
+    console.log(z);
+</script>
+</head>
+
+
+
+<body>
+
+</body>
+</html>
