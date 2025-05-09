@@ -11,4 +11,4 @@ with open("folder_1/myjson.json", "w") as f:
     }
 
     # This allows to save the content of the dictionary "statistics" into "folder_1/myjson.json" (named "f") 
-    json.dump(statistics, f)
+    json.dump(statistics, f, indent=4)
