@@ -40,3 +40,15 @@ else:
     print("Done!")
     file1.close()
     print("\nHere is the content of the file:\n-----------------\n", open(PATH, "r").read(),"\n-----------------\n")
+
+# But what if i don't want to overwrite the file?
+file1 = open(PATH, "a")  # This means append
+print("\nAppending on the file \", my name is Cristiano\"...")
+try:
+    file1.write(", my name is Cristiano")
+except IOError:
+    print("Cannot open the file, it has been opened in reading mode")
+else:
+    print("Done!")
+    file1.close()
+    print("\nHere is the content of the file:\n-----------------\n", open(PATH, "r").read(),"\n-----------------\n")
