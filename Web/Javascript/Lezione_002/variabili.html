@@ -52,12 +52,58 @@
     // fase 2 TEMPLATE STRING - backtick ` | alt gr + '
     let z = `Stringa 10 ${anni2} arrivederci`;
     console.log(z);
+
+    // Numeri ... dichiarazione implicita: non ci sta
+    let numeri = 10;
+
+    //fronted - ricordati che lavoriamo con l'html, quindi i dati sono 9999 su 10000 volte stringhe.
+    function test3() {
+        let num = document.getElementById("numero1").value;
+        num = parseFloat(num);
+        console.log(`valore di ${num} dopo parseFloat: `, num);
+
+        console.log(num+" coins")
+
+        // Js non piace dare errori...
+        console.log(4 * "stringabella") // NaN
+        console.log(typeof(NaN))
+
+        if(isNaN(num)) {
+            console.log("Non è un numero");
+        }
+        else{
+            console.log("È un numero");
+        }
+
+        // ma immaginiamo di dimenticare parsefloat
+        num2 = document.getElementById("numero1").value;
+        if(isNaN(num2)) {
+            console.log("Non è un numero");
+        }
+        else{
+            console.log("È un numero");
+        }
+        // Prova a inserire una stringa vuota
+    }
+
+    // boolean
+    let controllo = true;
+    console.log(controllo + 1);
+
+    // null e undefined
+    let h = null;
+    let i; // undefined
+
+    console.log("h è di tipo " + typeof(h)); // object
+    console.log("i è di tipo " + typeof(i)); // undefined
 </script>
 </head>
 
 
 
 <body>
+    <input type="number" id="numero1">
+    <button onclick="test3()">VAI</button>
 
 </body>
 </html>

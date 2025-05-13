@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<!--Esercizio 1.2
+Creare una pagina html contenente uno script che dichiara una variabile numerica,
+assegnandole il valore iniziale di 100. 
+Stampare a video il valore della variabile all’interno di un paragrafo della pagina.
+Successivamente cambiare valore alla variabile (valore = 70) e stampare nuovamente
+all’interno di un paragrafo il nuovo valore.-->
+<head>
+<title>ESERCIZIO 1.2</title>
+
+</head>
+
+<body>
+<p id="paragrafo_1">Ciao</p>
+<script>
+    let num = 100;
+    p1 = document.getElementById("paragrafo_1");
+    p1.innerHTML = String(num);
+
+    num = 70;
+    p1.innerHTML = String(num);
+</script>
+</body>
