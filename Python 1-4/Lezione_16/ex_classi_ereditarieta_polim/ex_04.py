@@ -1,10 +1,3 @@
-'''
-Formule Matematiche:
-    Calcolo degli anni necessari per superare la popolazione di un'altra specie:
-        Hint: Loop incrementale che continua ad aggiornare la popolazione di entrambe
-        le specie finché la popolazione di questa specie non supera quella dell'altra. Per
-        evitare che le popolazioni crescano all'infinito, limitare il numero di anni a 1000.'''
-
 class Specie:
     def __init__(self, nome: str, popolazione_iniziale: int, tasso_crescita: float):
         self.nome = nome
@@ -14,11 +7,11 @@ class Specie:
     
     def cresci(self) -> None:
         '''Aggiornare la popolazione per l'anno successivo.'''
-        self.popolazione_attuale *= (1 + self.tasso_crescita/100)
+        self.popolazione_attuale = int(self.popolazione_attuale * (1 + self.tasso_crescita/100))
 
     def getDensita(self, area_kmq: float) -> int:
         '''Calcola in quanti anni la popolazione raggiungerà una densità di 1 individuo per km².'''
-        y: int = -1
+        y: int = 0
         while self.popolazione_attuale / area_kmq < 1:
             self.cresci()
             y += 1
@@ -26,7 +19,7 @@ class Specie:
     
     def anni_per_superare(self, other: 'Specie') -> int:
         '''Calcola in quanti anni la popolazione di questa specie supererà quella di un'altra specie.'''
-        y = 1
+        y = 0
         while self.popolazione_attuale <= other.popolazione_attuale and y < 1000:
             self.cresci()
             other.cresci()
