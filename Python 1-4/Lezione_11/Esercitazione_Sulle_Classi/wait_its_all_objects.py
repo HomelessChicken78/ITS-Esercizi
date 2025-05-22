@@ -12,7 +12,7 @@ print(type(print))
 import numpy
 print(type(numpy))
 
-with open("wait_its_all_objects.py", "r") as f:
+with open(__file__, "r") as f:
     print(type(f))
 
 print(type(...))
