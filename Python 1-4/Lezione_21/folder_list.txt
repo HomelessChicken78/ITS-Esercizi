@@ -1,0 +1,8 @@
+altro_testo_ancora.txt
+altro_testo.txt
+disney
+folder_list.txt
+number.txt
+sum.sh
+testo.txt
+

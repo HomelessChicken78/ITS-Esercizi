@@ -1,0 +1,1 @@
+This is a cool well hidden file. You can see hidden file by adding "-a" to "ls"
