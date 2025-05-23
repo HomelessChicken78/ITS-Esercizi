@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ESERCIZIO 3.4</title>
+</head>
+<script>
+    /*Esercizio 3.4
+    Questo codice chiede all’utente di inserire due
+    numeri, quindi ne mostra la somma. Funziona in
+    maniera errata. L’output nell’esempio qui sotto è
+    12. Perché? Prova a correggerlo, il risultato deve
+    essere 3.*/
+    function sum(){
+        var a = prompt("Inserisci il primo numero"); // 1
+        var b = prompt("Inserisci il secondo numero"); // 2
+
+        a = parseInt(a)
+        b = parseInt(b)
+        console.log(a + b); // 12
+        document.getElementById("Result").innerHTML = a + b
+    }
+</script>
+<body>
+    <div id="Result"></div>
+    <button onclick="sum()">clicca qui</button>
+</body>
+</html>
