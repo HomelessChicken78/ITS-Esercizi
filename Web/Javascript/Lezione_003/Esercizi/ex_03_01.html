@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ESERCIZIO 3.1</title>
+</head>
+<script>
+    /*Esercizio 3.1
+    Scrivere un programma che dichiara e valorizza
+    5 numeri a proprio piacimento e restituisca in
+    output la somma e la media.*/
+    function f1() {
+        let n1 = 1;
+        let n2 = 2;
+        let n3 = 3;
+        let n4 = 4;
+        let n5 = 5;
+        let result = [
+            n1+n2+n3+n4+n5,
+            (n1+n2+n3+n4+n5)/5
+        ]
+        document.getElementById("SOMMA").innerHTML = result[0];
+        document.getElementById("MEDIA").innerHTML = result[1];
+    }
+</script>
+<body>
+    <div id="SOMMA"></div>
+    <div id="MEDIA"></div>
+    <button onclick="f1()">Inizia</button>
+</body>
+</html>

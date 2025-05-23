@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ESERCIZIO 3.2</title>
+</head>
+<script>
+    /*Esercizio 3.2
+    Scrivere un programma che dichiara e valorizza
+    una variabile con l'anno corrente e un’altra
+    variabile con il proprio anno di nascita e
+    determini:
+    • l’età della persona
+    • quanti anni sono necessari per raggiungere i
+    100
+    Restituisca in output entrambi i risultati.*/
+    function f1() {
+        let y = 2025;
+        let born = 2003;
+        let age = y - born;
+        result = [
+            age,
+            100-age,
+        ]
+        document.getElementById("PersonAge").innerHTML = result[0];
+        document.getElementById("To100").innerHTML = result[1];
+    }
+</script>
+<body>
+    Age: <span id="PersonAge"></span><br />
+    To arrive to one-hundred: <span id="To100"></span><br />
+    <button onclick="f1()">Inizia</button>
+</body>
+</html>

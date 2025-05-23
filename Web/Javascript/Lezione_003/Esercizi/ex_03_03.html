@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ESERCIZIO 3.3</title>
+</head>
+<script>
+    function f1() {
+        /*
+        Esercizio 3.3
+        Scrivi un programma che dato un numero di
+        secondi, calcoli la quantità di ore, minuti e
+        secondi corrispondenti e poi stampi il risultato.
+        L'output avrà solo numeri interi.*/
+        function is_really_integer(n){
+            return (typeof(n) === "number" && ! isNaN(n))
+        }
+
+        sec = document.getElementById("seconds").value;
+        sec = parseInt(sec);
+        if (! is_really_integer(sec)) {
+            document.getElementById("Errors").innerHTML = "Please insert a valid value";
+        }else{
+            document.getElementById("Errors").innerHTML = "";
+        }
+        min = 0;
+        hrs = 0;
+        if (sec > 60){
+            min = Math.floor(sec/60);
+            sec -= 60*min;
+        }
+        if (min > 60){
+            hrs = Math.floor(min/60);
+            min -= 60*hrs;
+        }
+        min = parseInt(min);
+        hrs = parseInt(hrs);
+        if (isNaN(sec)){
+            sec = 0;
+        }
+        document.getElementById("Secondi").innerHTML = sec;
+        document.getElementById("Minuti").innerHTML = min;
+        document.getElementById("Ore").innerHTML = hrs;
+    }
+</script>
+<body>
+    <span id="Ore"></span> hrs<br />
+    <span id="Minuti"></span> min<br />
+    <span id="Secondi"></span> sec<br />
+    <input type="number", id="seconds">
+    <button onclick="f1()">Inizia</button>
+    <div id="Errors"></div>
+</body>
+</html>
