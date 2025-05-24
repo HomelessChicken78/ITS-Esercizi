@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ESERCIZIO 4.6</title>
+</head>
+<script>
+    function f1() {
+        /*Esercizio 4.6
+        Scrivere un programma che dichiara e
+        valorizza un array di 5 numeri a
+        proprio piacimento e restituisca in
+        output la somma e la media
+        utilizzando il ciclo for.*/
+        nums = []
+        for (let i = 0; i < 5; i++) {
+            nums.push(parseInt(prompt("Insert a number:")))
+        }
+
+        result = 0
+        for (n of nums) {
+            result += n
+        }
+        document.getElementById("Result1").innerHTML = result;
+        document.getElementById("Result2").innerHTML = result/nums.length;
+    }
+</script>
+<body>
+    Somma: <span id="Result1"></span><br />
+    Media: <span id="Result2"></span><br />
+    <button onclick="f1()">Inizia</button>
+</body>
+</html>

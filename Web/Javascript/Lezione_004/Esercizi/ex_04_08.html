@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ESERCIZIO 4.8</title>
+</head>
+<script>
+    function f1() {
+        /*Esercizio 4.8
+        Scrivere un programma che dichiara e
+        valorizza un array di 10 numeri a proprio
+        piacimento e restituisca in output il totale
+        di quanti numeri pari ci sono e quanti
+        numeri dispari (utilizzare il ciclo for).
+        Ad es.
+        Nell’ array ci sono 3 numeri pari e 7
+        numeri dispari*/
+        let nums = []
+        for (let i = 0; i < 10; i++) {
+            nums.push(parseInt(prompt("Insert a number:")))
+        }
+
+        let even = 0
+        for (let i of nums) {
+            if (i % 2 == 0) {
+                even++
+            }
+        }
+        document.getElementById("Result1").innerHTML = even;
+        document.getElementById("Result2").innerHTML = nums.length-even;
+    }
+</script>
+<body>
+    Amount of even numbers: <span id="Result1"></span><br />
+    Amount of odd numbers: <span id="Result2"></span><br />
+    <button onclick="f1()">Inizia</button>
+</body>
+</html>

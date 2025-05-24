@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ESERCIZIO 4.1</title>
+</head>
+<script>
+    function f1() {
+        /*Esercizio 4.1
+        Dichiarare e valorizzare un
+        numero
+        intero
+        scegliendone uno da 1 a 10 e mostrare a video la
+        relativa tabellina, ad esempio se scelgo il numero 5
+        visualizzerò a video (eseguire l’esercizio sia con il
+        ciclo for che con il ciclo while):
+        5x1=5
+        5 x 2 = 10
+        5 x 3 = 15
+        5 x 4 = 20
+        Ecc…*/
+        let multiplicand = prompt("Insert a number:");
+        multiplicand = parseInt(multiplicand);
+        let results = [];
+
+        // Create the results by increasing a counter and multiplicating the input number to the counter
+        for (let multiplier = 1; multiplier <= 10; multiplier++) {
+            results.push(multiplicand * multiplier);
+        }
+
+        // Then put the result in the table below
+        for (let i = 0; i < results.length; i++) {
+            id = "Result" + (i + 1)  // Calculate the id of the element
+            num = results[i]  // Take the number to put there, which corresponds to the index of the array
+            document.getElementById(id).innerHTML = num
+        }
+    }
+</script>
+<body>
+    <style>
+        table, th, td {
+        border: 1px solid black;
+        text-align: center;
+        margin-left: 50%;
+        }
+    </style>
+    <button onclick="f1()">Inizia</button>
+    <div style="margin-left:50%">Tabelline</div>
+    <table>
+        <tr>
+            <td>1</td>
+            <td id="Result1">⠀⠀</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td id="Result2">⠀⠀</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td id="Result3">⠀⠀</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td id="Result4">⠀⠀</td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td id="Result5">⠀⠀</td>
+        </tr>
+        <tr>
+            <td>6</td>
+            <td id="Result6">⠀⠀</td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td id="Result7">⠀⠀</td>
+        </tr>
+        <tr>
+            <td>8</td>
+            <td id="Result8">⠀⠀</td>
+        </tr>
+        <tr>
+            <td>9</td>
+            <td id="Result9">⠀⠀</td>
+        </tr>
+        <tr>
+            <td>10</td>
+            <td id="Result10">⠀⠀</td>
+        </tr>
+    </table>
+</body>
+</html>
