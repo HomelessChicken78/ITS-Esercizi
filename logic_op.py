@@ -7,7 +7,9 @@ def repeat_until(action:object|Callable, condition:bool|Callable, *action_param)
             action(*action_param)
         else:
             action()
-        if condition():
+        if callable(condition) and condition():
+            break
+        elif isinstance(condition, str|bool|int|float|list|set|frozenset|dict|tuple) and condition:
             break
 
 def xor(obj1: Any, obj2: Any) -> bool:
