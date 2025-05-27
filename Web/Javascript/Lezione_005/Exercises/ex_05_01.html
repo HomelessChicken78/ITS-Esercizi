@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ESERCIZIO 3._</title>
+</head>
+<script>
+    /*Esercizio 5.1
+    Scrivi una funzione di uguaglianza che prenda in
+    input due argomenti e restituisca TRUE se i due
+    argomenti sono IDENTICI, altrimenti FALSE.*/
+    function f1(n1, n2) {
+        document.getElementById("Result").innerHTML = n1 === n2;
+    }
+</script>
+<body>
+    <p id="Result">aaa</p>
+    Primo numero: <input type="number" id="n1"><br />
+    Secondo numero: <input type="number" id="n2"><br />
+    <button onclick="f1(parseInt(document.getElementById('n1').value), parseInt(document.getElementById('n2').value))">Inizia</button>
+</body>
+</html>

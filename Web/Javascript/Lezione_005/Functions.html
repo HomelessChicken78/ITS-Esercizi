@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Le funzioni</title>
+</head>
+<body>
+    <p id="Result"></p>
+    <p id="HI"></p>
+    <button onclick="somma(1, 2 )">somma</button>
+</body>
+<script>
+    function somma(num1, num2){
+        document.getElementById("Result").innerHTML = num1 + num2;
+    }
+
+    function benvenuto(nome = "guest") {
+        return "Welcome " + nome;
+    }
+    document.getElementById("HI").innerHTML = benvenuto("Cristiano")
+
+</script>
+</html>
+
