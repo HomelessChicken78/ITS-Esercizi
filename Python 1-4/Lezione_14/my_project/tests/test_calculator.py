@@ -42,3 +42,7 @@ def test_division(calculation):
 
 # pytest -v
 # also allows you to have a more detailed overview
+
+# pytest <path>::<function test name>
+# such as pytest my_project/tests/test_calculator.py::test_addition
+# allows only to execute a single test
