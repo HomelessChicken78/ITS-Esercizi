@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ESERCIZIO 5.6</title>
+</head>
+<script>
+    function start(op) {
+        n1 = parseInt(document.getElementById("n1").value)
+        n2 = parseInt(document.getElementById("n2").value)
+
+        if (op == "+") {
+            res = sum(n1, n2)
+        } else if (op == "-") {
+            res = sub(n1, n2)
+        }  else if (op == "/") {
+             res = div(n1, n2)
+        } else if (op == "*") {
+            res = mul(n1, n2)
+        }
+
+        if (!isNaN(res) || res == "Uncalculable") {
+            document.getElementById("Result").innerHTML = res
+        } else {
+            document.getElementById("Result").innerHTML = "<div style='color:red'>Please insert two numbers!</div>"
+        }
+    }
+
+    function sum(n1, n2) {
+        return n1 + n2
+    }
+
+    function sub(n1, n2) {
+        return n1 - n2
+    }
+
+    function div(n1, n2) {
+        if (n1 == 0 && n2 == 0) {
+            return "Uncalculable"
+        } else {
+            return n1 / n2
+        }
+    }
+
+    function mul(n1, n2) {
+        return n1 * n2
+    }
+</script>
+<body>
+    <input type="number" id="n1" style="width:60px">
+    <select id="operation">
+        <option>+</option>
+        <option>-</option>
+        <option>/</option>
+        <option>*</option>
+    </select>
+    <input type="number" id="n2" style="width:60px">
+    <button onclick="start(document.getElementById('operation').value)">Inizia</button>
+    <p id="Result"></p>
+</body>
+</html>

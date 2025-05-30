@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ESERCIZIO 5.5</title>
+</head>
+<script>
+    let done = false;
+
+    function asterischi() {
+        /*Esercizio 5.5
+        JavaScript
+        Scrivere un pagina che tramite una funzione
+        javascript stampa a video 10 asterischi, poi 11
+        poi 12 … fino a 30 (utilizzare il ciclo for)*/
+
+        if (!done) {
+            for (var i = 10; i <= 30; i++) {
+                a = ""
+                for (var j = 1; j <= i; j++) {
+                    a += "*"
+                }
+
+                document.getElementById("Result").innerHTML += a
+                br = document.createElement("br")
+                document.getElementById("Result").appendChild(br)
+            }
+        }
+        done = true
+    }
+</script>
+<body>
+    <p id="Result"></p>
+    <button onclick="asterischi()">Inizia</button>
+</body>
+</html>

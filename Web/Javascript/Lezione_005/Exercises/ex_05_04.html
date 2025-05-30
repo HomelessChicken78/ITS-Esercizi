@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ESERCIZIO 5.4</title>
+</head>
+<script>
+    let done = false;
+
+    function linee() {
+        /*Esercizio 5.4
+        Scrivere un pagina che tramite una funzione
+        javascript realizza queste linee tenendo presente
+        che hanno una lunghezza che parte da 0% fino al
+        100% con passo 5. (utilizzare il tag html <hr> per
+        fare le righe) ed utilizzare il dom per modificare
+        lo stile.*/
+        
+        if (!done) {
+            for (i = 100; i >= 0; i-=5) {
+                hr = document.createElement("hr")
+                hr.style["margin-left"] = (i / 2) + "%";
+                hr.style["margin-right"] = (i / 2) + "%";
+
+                document.getElementById("Result").appendChild(hr)
+            }
+        done = true
+        }
+        
+    }
+</script>
+<body>
+    <p id="Result"></p>
+    <button onclick="linee()">Inizia</button>
+</body>
+</html>
