@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ESERCIZIO 5.3</title>
+</head>
+<script>
+    let random = Math.floor(Math.random()*101);
+    let attempts = 0;
+    let win = false;
+
+    function rerandomize() {
+        random = Math.floor(Math.random()*101);
+        attempts = 0;
+        win = false;
+
+        document.getElementById("Result").innerHTML = "";
+        document.getElementById("conteggio").innerHTML = attempts;
+    }
+    function tentativo(n) {
+        console.log(n);
+        if (isNaN(n) && !win) {
+            document.getElementById("Result").innerHTML = "<div style='color: red'>Perfavore inserire un numero!</div>";
+        }
+        else if (n > random && !win) {
+            document.getElementById("Result").innerHTML = "<div style='color: black'>Il tuo numero è più grande del numero randomico.</div>";
+            attempts++;
+        } else if (n < random && !win) {
+            document.getElementById("Result").innerHTML = "<div style='color: black'>Il tuo numero è più piccolo del numero randomico.</div>";
+            attempts++;
+        } else {
+            win = true;
+            document.getElementById("Result").innerHTML = "<div style='color: green'>Hai vinto.</div>";
+        }
+        document.getElementById("conteggio").innerHTML = attempts;
+    }
+
+</script>
+<body>
+    <table style="margin-left:45%;">
+    <tr>
+        <td>
+            <input type="text" id="tentativo">
+        </td>
+        <td>
+            <button onclick="tentativo(parseInt(document.getElementById('tentativo').value))">Controlla</button>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <span style="font-weight:bold;">Tentativi: </span><span id="conteggio">0</span>
+        </td>
+        <td>
+            <button onclick="rerandomize()">Nuovo Gioco</button><br />
+        </td>
+    </tr>
+    </table>
+    <p id="Result" style="margin-left:43%"></p>
+</body>
+</html>
