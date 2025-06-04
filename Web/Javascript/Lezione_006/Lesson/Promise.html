@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Le promise</title>
+</head>
+<script>
+    console.log("1")
+    // Le funzioni possono esser passate come parametri (si anche in altri linguaggi)
+    let stampa = () => {
+        console.log("2")
+        console.log("Sono Stampa!")
+    }
+
+    let test = (t) => {
+        t();
+    }
+
+    console.log("3")
+    test(stampa)
+
+    // CODICE PRODUTTORE : scritto la promise
+
+    // Promise: oggetto che sostanzialmente ha due esiti: resolve (andato tutto bene) o reject (qualche cosa è andato storto)
+    // PERCHE' ESISTE LA PROMISE? Per gestire le chiamate asincroni
+    let x = new Promise( (resolve, reject) => {
+        // deve esserci una chiamata asincrona
+        console.log("4")
+        setTimeout( () => {
+            console.log("5")
+            resolve("Tutto ok! Utenti recuperati"); // chiamata fallita
+            // stampo
+        }, 2000) // 2 secondi
+    } );
+
+    console.log("6 ... codice corposo, 1000 righe che ci mette 1 secondo...")
+    // CODICE CONSUMATORE : usare la promise (per esempio stampare gli utenti)
+    // 1 - 3 - 2 - 4 - 6 - 8 - 5 - 7
+    // 1 secondo
+    
+    x.then( (risultato) => { // nel then ci entra solo alla fine (asincrona viene eseguita alla fine)
+        console.log("7")
+        console.log(risultato)
+    }).catch( (errore) => {});
+
+    console.log("8")
+</script>
+<body>
+    <h1>Promise() : è un oggetto di javascript che ci permette di gestire le chiamate asincrone</h1>
+</body>
+</html>

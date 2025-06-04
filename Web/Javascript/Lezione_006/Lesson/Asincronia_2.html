@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    // javascript : codice in modo "sincrono" ... "procedurale"
+    let A = () => {
+        console.log("Sono A: Benvenuto")
+    }
+    let B = () => {
+        console.log("Sono B")
+
+        let x = new Promise( (res, rej) => {
+            setTimeout( () => { // Questa funzione viene mandata al browser. Solo alla fine del codice riceverò la risposta da questa chiamata
+                res("STO RECUPERANDO GLI UTENTI DAL DATABASE")
+            }, 2500) // setTimeout() è una funzione del browser
+            // ritarda l'esecuzione del codice (non molto usato perchè vogliamo un codice piu veloce possibile non lento)
+        });
+
+        return x;
+    }
+    let C = () => {
+        console.log("Sono C: Calcolo codice fiscale degli utenti")
+    }
+    let D = () => {
+        console.log("Sono D: Calcolo della busta paga")
+    }
+    let E = () => {
+        console.log("Sono E")
+    }
+
+    let calcolo = () => {
+        A();
+        B().then( (res) => {
+            console.log(res)
+            C();
+            D();
+            E();
+        }).catch();
+    }
+
+    calcolo()
+    console.log("Fine!")
+
+    // js è un linguaggio "FURBO" ...
+    // jss ... sfrutta funzioni e librerie del browaser | si lega all'ambiente di esecuzione
+    // JS è un linguaggio con due ambienti di esecuzione (js - browser)
+    // ASINCRONO: ovvero che viene eseguito in un altro ambiente
+    // Quindi una chiamata asincrona è quando esegui una funzione che non builtin è del linguaggio
+    // Quando js trova una chiamata asincrone avviene una delega. IIl delegante esegue la funzione e da una risposta (return) e lo mette in una memoria (event loop)
+    // js prende il risultato dall'event loop
+
+    // setTimeout() funzione del browser
+
+    // A - B - C - D - E - Fine - Sto recuperando gli utenti
+
+    // Quindi la risposta delle funzioni asincrone viene fatta solo alla fine del codice
+</script>
+<body>
+    
+</body>
+</html>
