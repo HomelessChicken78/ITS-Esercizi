@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promise</title>
+</head>
+<script>
+    function callback1(){
+        return new Promise((res, rej) => {
+            setTimeout(() => {
+                res("sono nella callback 1")
+            }, 2000)
+        })
+    }
+
+    function callback2() {
+        return new Promise((res, rej) => {
+            setTimeout(() => {
+                res("sono nella callback 2")
+            }, 1000)
+        })
+    }
+
+    function job() {
+        callback1().then((msg) => {
+            console.log(msg)
+            return callback2()
+        }).then((msg) => {
+            console.log(msg)
+            return callback2()
+        }).then((msg) => {
+            console.log(msg)
+            return callback2()
+        }).then((msg) => {
+            console.log(msg)
+            return callback2()
+        })
+    }
+
+    job()
+</script>
+<body>
+    
+</body>
+</html>

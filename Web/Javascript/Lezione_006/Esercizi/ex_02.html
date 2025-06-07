@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promise</title>
+</head>
+<script>
+    function job(data) {
+        return new Promise((res, rej) => {
+            if (isNaN(data)) {
+                rej("errore")
+            }
+            else if (data % 2 != 0) {
+                setTimeout(() => {
+                    res("dispari")
+                }, 1000)
+            } else {
+                setTimeout(() => {
+                    res("pari")
+                }, 2000)
+            }
+        });
+    }
+
+    job("ciao").then((msg) => {
+        console.log(msg)
+    }).catch((msg) => {
+        console.log(msg)
+        job("2").then((msg) => {
+        console.log(msg)
+        job("3").then((msg) => {
+        console.log(msg)
+    }).catch((msg) => {
+        console.log(msg)
+    })
+    }).catch((msg) => {
+        console.log(msg)
+    })
+    })
+</script>
+<body>
+    
+</body>
+</html>
