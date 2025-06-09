@@ -1,0 +1,12 @@
+[V.PostConFeedback.FeedbackDopoAcquistoCompraSubito] I feedback devono esser fatti solo dopo che un post con metodo compralo subito è stato aggiudicato
+Per ogni p:PostConFeedback e p:CompraloSubito, sia ut:Privato tale che (p, ut):cs_ut deve essere vero che p.istante > (p, ut).istante
+
+
+[V.PostConFeedback.FeedbackDopoScadenzaAsta] I feedback devono esser fatti solo dopo che un'asta è scaduta
+Per ogni p:PostConFeedback e p:Asta deve essere vero che p.istante > p.scadenza
+
+[V.Privato.AcquistoDopoPublicazione] Utente non può acquistare un post prima della data di pubblicazione
+Per ogni oggetto p:Privato, sia cs:CompraloSubito tale che (p, cs):cs_ut, deve esser vero che (p, cs).istante > cs.pubblicazione
+
+[V.Privato.PublicaSoloSeRegistrato] Utente non può acquistare un comprasubito prima della data di registrazione
+Per ogni oggetto p:Privato, sia cs:CompraloSubito tale che (p, cs):cs_ut, deve essere vero che p.registrazione < (p, cs).istante

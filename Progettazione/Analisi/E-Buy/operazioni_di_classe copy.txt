@@ -1,0 +1,40 @@
+Specifica della classe VenditoreProf
+    operazione: popolarita(i: Dataora) :Popolarita
+    precondizioni:
+        - Nessuna
+
+    postcondizioni:
+        - L'operazione non modifica il livello estensionale
+        - Sia Po l'insieme dei p:PostConFeedback tali che (this, p):publica
+        - Sia tot la cardinalità di Po
+        - Se tot < 50 result=bassa, se tot >= 50 e tot < 300 result=media, se tot >= 300 result=alta
+
+
+
+    operazione: affidabilita(i: DataOra) : Reale in[0..1]
+
+    precondizioni:
+        - Sia po:PostConFeedback con valore per l'attributo po.publicazione <= i, deve esistere almeno un link dell'associazione (this, po):pubblica (deve esistere almeno un feedback)
+
+    postcondizioni:
+        - l’operazione non modifica il livello estensionale
+        - Sia P l'insieme dei po:PostConFeedback che tali che (this, po): publica con valore per l'attrivuto po.publicazine <= i
+        - Sia m definito come segue:
+            - Sia sv la somma di tutti i valori per l'attributo po.voto appartenti a P
+            - Sia FT la cardinalità di P
+            - m = sv / FT
+        - Sia z definito come segue:
+            - sia FT la cardinalità di P
+            - sia iFN l'insieme dei po:PostConFeedback tali che (this, po): publica e con valore per l'attributo po.voto <= 2
+            - sia FN la cardinalità di iFN
+            - z = FN / FT
+        - result = m*(1-z)/5
+
+Specifica della classe Asta:
+    operazione: ultimo_bid(i: DataOra) : Bid[0..1]
+        pre-condizione: Nessuna
+        post-condizioni:
+            - l'operazione non modifica il livello estensionale
+            - Sia B l'insieme di tutti i b:Bid tali che (b, this): asta_bid e con valore per b.istante <= i
+            - Allora result è il b appartenente a B con valore per l'attributo istante più elevato. Formalmente
+                result è definito come il b' in B tale che non esiste un b'' dove b'.istante < b''.istante
