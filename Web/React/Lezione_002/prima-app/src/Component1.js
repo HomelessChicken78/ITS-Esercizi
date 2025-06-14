@@ -1,8 +1,21 @@
 import React from 'react'
 
-const Component1 = () => {
+const Component1 = (props) => {
   return (
-    <div>Component1</div>
+    <>
+    <div style={{
+      color:"red",
+      border:"10px #000 solid",
+      fontWeight:"600",
+      margin:"15px",
+      padding:"15px",
+      width:"300px",
+      display:"flex",
+      }}>
+    <div>Component1 di {props.children}</div>
+    <div></div>{/* da un problema se dovesse mancare il fragment */}
+    </div>
+    </>
   )
 }
 
