@@ -12,12 +12,12 @@ Infine, scrivere un codice driver date le seguneti liste, stampi ogni lista in o
 
 '''
 
-def print_reverse(words: list[str]) -> None:
+def printListBackward(words: list[str]) -> None:
     if not words:
         return
     else:
         last_index = len(words)-1
         print(words[last_index])
-        print_reverse(words[:last_index])
+        printListBackward(words[:last_index])
 
-print_reverse(["Armatura", "Bravura", "Cane", "Diamante", "Elefante", "Furfante"])
+printListBackward(["Armatura", "Bravura", "Cane", "Diamante", "Elefante", "Furfante"])
