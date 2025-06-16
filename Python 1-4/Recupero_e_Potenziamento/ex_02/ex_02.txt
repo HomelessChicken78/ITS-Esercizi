@@ -1,0 +1,27 @@
+"Armatura", "Bravura", "Cane", "Diamante", "Elefante", "Furfante"
+StampaInversa(["Armatura", "Bravura", "Cane", "Diamante", "Elefante", "Furfante"])
+->
+"Furfante"
+
+StampaInversa(["Armatura", "Bravura", "Cane", "Diamante", "Elefante"])
+->
+"Elefante"
+
+StampaInversa(["Armatura", "Bravura", "Cane", "Diamante"])
+->
+"Diamante"
+
+StampaInversa(["Armatura", "Bravura", "Cane"])
+->
+"Cane"
+
+StampaInversa(["Armatura", "Bravura"])
+->
+"Bravura"
+
+StampaInversa(["Armatura"])
+->
+"Armatura"
+
+StampaInversa([])
+Lista Vuota: Finisce la ricorsione

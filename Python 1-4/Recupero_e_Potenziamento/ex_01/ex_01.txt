@@ -1,0 +1,50 @@
+Cliente 1:
+Input: 1.5 ore
+Expected Output: 2€
+
+Inizio
+n_ore = 1.5
+n_ore >= 24?
+2 >= 24? NO
+->
+n_ore >= 3?
+1.5 >= 3? NO
+->
+costo = 2
+stampa 2
+2
+Fine
+
+Cliente 2:
+Input: 4.0 ore
+Expected Output: 2.5€
+
+Inizio
+n_ore = 4.0
+4.0 >= 24? NO
+->
+n_ore >= 3?
+4.0 >= 3? SI
+->
+costo = 0.5*(n_ore-3)+2
+costo = 0.5*(4-3) +2
+costo = 0.5*1 + 2
+costo = 0.5 + 2
+costo = 2.5
+stampa 2.5
+2.5
+Fine
+
+Cliente 3:
+Input: 24.0 ore
+Expected Output: 10€
+
+Inizio
+n_ore = 24.0
+n_ore >= 24?
+24 >= 24? SI
+->
+costo = 10
+stampa 10
+10
+Fine
