@@ -8,9 +8,9 @@ const Persona = (props) => {
         this.nome = nome
         this.cognome = cognome
     }
-    let p1 = new persona(props.nome, props.cognome)
+    let p1 = new persona(props.name, props.cognome)
   return (
-    <div>{[p1.nome, " ", p1.cognome]}</div>
+    <div>{[p1.nome, " " , p1.cognome]}</div>
   )
 }
 

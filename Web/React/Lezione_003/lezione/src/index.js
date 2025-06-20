@@ -1,22 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-// import App from './App';
+import App from './App';
 import reportWebVitals from './reportWebVitals';
-import Persona from './Esercizio_1';
-import Tabellina from './Esercizio_2';
-import Stampanumeri from './Esercizio_3';
-import BetterStampanumeri from './Esercizio_4';
-import Biblioteca from './Esercizio_5';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Persona name="Mario" cognome="Rossi"></Persona>
-    <Tabellina multiplier="2"></Tabellina>
-    <Stampanumeri></Stampanumeri>
-    <BetterStampanumeri></BetterStampanumeri>
-    <Biblioteca></Biblioteca>
+    <App />
   </React.StrictMode>
 );
 

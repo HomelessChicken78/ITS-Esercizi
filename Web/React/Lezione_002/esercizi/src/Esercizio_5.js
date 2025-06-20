@@ -11,10 +11,12 @@ Nota Bene: al momento non ci sarà il render lato front end ma andremo a stampar
 console
 */
 
-function libro(nome, autore, id){
-  this.id = id
-  this.nome = nome
-  this.autore = autore
+class libro {
+  constructor(nome, autore, id) {
+    this.id = id
+    this.nome = nome
+    this.autore = autore
+  }
 }
 
 let libri = [new libro("Divina Commedia", "Dante Alighieri", "DADIVCOMM"), new libro("Libro", "Qualcuno", "AAAA")]
