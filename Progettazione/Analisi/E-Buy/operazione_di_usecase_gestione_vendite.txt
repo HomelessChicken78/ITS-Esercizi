@@ -1,0 +1,31 @@
+publicazione_asta(vp: VenditoreProf, descrizione: Stringa, prezzo: Reale, anni_garanzia: Intero, publicazione: DataOra, usato: Booleano, condizioni: Condizioni[0..1], prezzo_bid: Reale, scadenza: DataOra): Asta:
+precondizioni:
+    - Deve essere che il valore di prezzo >= 0
+    - Se il valore di usato = False allora deve essere che il valore di anni_garanzia >= 2, altrimenti deve essere che anni_garanzia >= 0
+    - condizioni deve essere valorizzato se e solo se anni_garanzia = True
+    - Deve essere che il valore di prezzo_bid > 0
+postcondizioni:
+    - L'operazione di use case deve creare:
+        - l'oggetto a:Asta, dove:
+            - a.descrizione = descrizione
+            - a.prezzo = prezzo
+            - a.anni_garanzia = anni_garanzia
+            - a.publicazione = publicazione
+            - a.prezzo_bid = prezzo_bid
+            - a.scadenza = scadenza
+            - a.condizioni = condizioni
+        - l'oggetto (vp, a):publica
+
+publicazione_compralo_subito(vp: VenditoreProf, descrizione: Stringa, prezzo: Reale, anni_garanzia: Intero, publicazione: DataOra, usato: Booleano, condizioni: Condizioni[0..1]): Asta:
+precondizioni:
+    - Deve essere che il valore di prezzo > 0
+    - Se il valore di usato = False allora deve essere che il valore di anni_garanzia >= 2, altrimenti deve essere che anni_garanzia >= 0
+    - condizioni deve essere valorizzato se e solo se anni_garanzia = True
+postcondizioni:
+    - L'operazione di use case deve creare:
+        - l'oggetto po:PostOggetto, dove:
+            - po.descrizione = descrizione
+            - po.prezzo = prezzo
+            - po.anni_garanzia = anni_garanzia
+            - po.publicazione = publicazione
+        - l'oggetto (vp, a):publica
