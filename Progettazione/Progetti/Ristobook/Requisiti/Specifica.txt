@@ -34,7 +34,7 @@
     5.1. Percentuale di sconto (reale tra 0 e 1)
     5.2. Massimo coperti al giorno
     5.3. I periodi di validità (anche più di uno, ma almeno uno) (v. req. 8)
-    5.4. Il ristorante a cui si riferisce
+    5.4. Il ristorante a cui si riferisce (v. req. 2)
     5.5. Utilizzo della promozione (calcolabile) (il numero medio di clienti al giorno che ha utilizzato quella promozione in una prenotazione.)
 
 6. Requisiti sulle Città:
