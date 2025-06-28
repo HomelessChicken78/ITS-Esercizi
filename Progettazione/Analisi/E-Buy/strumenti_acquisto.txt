@@ -11,7 +11,8 @@ privato_compralosubito(cs: CompraloSubito): cs_ut:
 - precondizioni:
     - Nessuna
 - postcondizioni:
-    - viene creato e restituito il link (ut, cs):cs_ut, dove ut è un oggetto della classe ut:Privato associato all'attore che invoca l'operazione
+    - viene creato e restituito il link (ut, cs):cs_ut, dove ut è un oggetto della classe ut:Privato associato all'attore che invoca l'operazione, dove:
+        - (ut, cs).istante = adesso
 
 privato_feedback(post: PostOggetto, voto: Intero in[0,5], commento:Stringa[0..1]): PostConFeedback:
 - precondizioni:
