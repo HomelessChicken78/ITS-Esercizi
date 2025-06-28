@@ -1,0 +1,17 @@
+cancella_post(po: PostOggetto): Niente:
+- precondizioni:
+    - Se po:Asta allora:
+        - po.scadenza >= adesso
+    - Altrimenti (po:CompraloSubito):
+        - Non deve esistere un link (po, ut):cs_ut
+
+- postcondizioni:
+    - viene eliminato (po, vp):publica, dove vp:VenditoreProf
+    - Sia C l'insieme di tutti le c:Categoria coinvolti nel link (po, c):cat_post, viene eliminato il link stesso (po, c):cat_post
+    - Sia MP l'insieme di tutti i mp:MetodoDiPagamento coinvolti nel link (po, mp):met_post, viene eliminato il link stesso (po, mp):met_post
+    - Se po:Asta allora:
+        - Sia B l'insieme di tutti i b:Bid coinvolti nel link (po, b):asta_bid:
+            - viene eliminato il link (ut, b):bid_ut, dove ut:Privato
+            - viene eliminato il link (b, po):asta_bid
+            - viene eliminato il b:Bid
+    - viene eliminato po:PostOggetto
