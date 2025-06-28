@@ -1,0 +1,3 @@
+Da: ciao@me.it, A: iosono@it.it
+Titolo: C
+Messaggio: Ciao
