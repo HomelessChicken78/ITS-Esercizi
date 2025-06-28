@@ -1,0 +1,13 @@
+ottieni_popolarita(vp:VenditoreProf): Popolarita:
+    - precondizioni:
+        - Nessuna
+    
+    - postcondizioni:
+        - calcola e ritorna vp.popolarita(i = adesso)
+
+ottieni_affidabilita(vp: VenditoreProf): Reale in[0..1]:
+    - precondizioni:
+        - Sia po:PostConFeedback con valore per l'attributo po.publicazione <= adesso, deve esistere almeno un link dell'associazione (vp, po):pubblica
+    
+    - postcondizioni:
+        - calcola e ritorna vp.affidabilita(i = adesso)
