@@ -1,0 +1,16 @@
+nuova_categoria(nome: Stringa, supercat: Categoria[0..*]): Categoria:
+- precondizioni:
+    - Sia C l'insieme di tutte le c:Categoria, non deve esistere una c' tale che c'.nome = nome
+    - Dopo la creazione della nuova categoria il vincolo esterno [V.Categoria.noCicli] deve essere ancora rispettato
+- postcondizioni:
+    - viene creata e restituita una c:Categoria, dove:
+        - c.nome = nome
+    - per ogni sc:Categoria in supercat, viene creato:
+        - un link (sc, c):sottocategoria
+    
+nuovo_metodo_pagamento(nome: Stringa)
+- precondizioni:
+    - Sia MP l'insieme di tutte le m:MetodoDiPagamento, non deve esistere una m' tale che m'.nome = nome
+- postcondizioni:
+    - viene creato e restituito un nuovo m:MetodoDiPagamento, dove:
+        - m.nome = nome
