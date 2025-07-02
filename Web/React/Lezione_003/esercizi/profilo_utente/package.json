@@ -1,5 +1,5 @@
 {
-  "name": "contatore",
+  "name": "profilo_utente",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
