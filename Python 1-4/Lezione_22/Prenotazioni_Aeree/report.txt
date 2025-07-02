@@ -1,0 +1,18 @@
+Posti disponibili sul volo commerciale COM123:
+{'posti disponibili': 100, 'classe economica': 70, 'classe business': 20, 'prima classe': 10}
+70 posti prenotati su COM123 in classe economica.
+{'posti disponibili': 30, 'classe economica': 0, 'classe business': 20, 'prima classe': 10}
+20 posti prenotati su COM123 in classe business.
+{'posti disponibili': 10, 'classe economica': 0, 'classe business': 0, 'prima classe': 10}
+Non è possibile riservare 70 posti in classe prima. Numero posti disponibili: 10
+{'posti disponibili': 10, 'classe economica': 0, 'classe business': 0, 'prima classe': 10}10 posti prenotati su COM123 in classe prima.
+{'posti disponibili': 0, 'classe economica': 0, 'classe business': 0, 'prima classe': 0}
+Volo COM123 al completo!
+Posti disponibili sul volo charter CHA456: 200
+Volo charter CHA456 prenotato completamente per 20000.00€
+Il volo charter CHA456 è gia prenotato.
+100 posti prenotati su COM456 in classe economica.Ecco la flotta della compagnia aerea ITA:
+volo commerciale COM123
+volo commerciale COM456Ecco la flotta della compagnia aerea ITA:
+volo commerciale COM123
+Dalla vendita dei biglietti aerei, la compagnia aerea ITA ha guadagnato 12180.0€
