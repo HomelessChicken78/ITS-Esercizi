@@ -17,6 +17,49 @@ SET xmloption = content;
 SET client_min_messages = warning;
 SET row_security = off;
 
+--
+-- Name: posint; Type: DOMAIN; Schema: public; Owner: postgres
+--
+
+CREATE DOMAIN public.posint AS integer
+	CONSTRAINT posint_check CHECK ((VALUE > 0));
+
+
+ALTER DOMAIN public.posint OWNER TO postgres;
+
+--
+-- Name: posint_not_null; Type: DOMAIN; Schema: public; Owner: postgres
+--
+
+CREATE DOMAIN public.posint_not_null AS public.posint
+	CONSTRAINT posint_not_null_check CHECK ((VALUE IS NOT NULL));
+
+
+ALTER DOMAIN public.posint_not_null OWNER TO postgres;
+
+--
+-- Name: string_not_null; Type: DOMAIN; Schema: public; Owner: postgres
+--
+
+CREATE DOMAIN public.string_not_null AS character varying(255)
+	CONSTRAINT string_not_null_check CHECK ((VALUE IS NOT NULL));
+
+
+ALTER DOMAIN public.string_not_null OWNER TO postgres;
+
+--
+-- Name: indirizzo; Type: TYPE; Schema: public; Owner: postgres
+--
+
+CREATE TYPE public.indirizzo AS (
+	via public.string_not_null,
+	cap character(5),
+	civico public.posint_not_null
+);
+
+
+ALTER TYPE public.indirizzo OWNER TO postgres;
+
 SET default_tablespace = '';
 
 SET default_table_access_method = heap;
@@ -35,11 +78,25 @@ CREATE TABLE public.corso (
 ALTER TABLE public.corso OWNER TO postgres;
 
 --
+-- Name: docente_mat_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE public.docente_mat_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER SEQUENCE public.docente_mat_seq OWNER TO postgres;
+
+--
 -- Name: docente; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE public.docente (
-    mat integer NOT NULL,
+    mat integer DEFAULT nextval('public.docente_mat_seq'::regclass) NOT NULL,
     nome character varying(100) NOT NULL,
     cognome character varying(100) NOT NULL,
     email character varying(100) NOT NULL
@@ -73,6 +130,8 @@ COPY public.corso (codice, nome, aula) FROM stdin;
 --
 
 COPY public.docente (mat, nome, cognome, email) FROM stdin;
+1	Mario	Rossi	mariorossi@yahoo.com
+3	Luigi	Verdi	lverdi@me.com
 \.
 
 
@@ -82,6 +141,13 @@ COPY public.docente (mat, nome, cognome, email) FROM stdin;
 
 COPY public.incarico (docente, corso) FROM stdin;
 \.
+
+
+--
+-- Name: docente_mat_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.docente_mat_seq', 3, true);
 
 
 --
