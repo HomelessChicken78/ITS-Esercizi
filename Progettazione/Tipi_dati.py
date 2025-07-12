@@ -1,4 +1,4 @@
-from typing import Self,Any
+from typing import Self, Any
 from datetime import date
 from enum import *
 import re
@@ -142,11 +142,6 @@ class Indirizzo:
 class Genere(StrEnum):
     uomo = auto()
     donna = auto()
-
-if __name__ == "__main__":
-
-    tel1: Telefono = Telefono("ciao")
-    
 
 from typing import *
 from weakref import WeakValueDictionary, ReferenceType
