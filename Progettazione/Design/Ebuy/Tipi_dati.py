@@ -22,23 +22,21 @@ class IntGZ(int):
             return n
         raise ValueError(f"Il valore {n} non è positivo!")
 
-
-class RealGEZ(int):
+class RealGEZ(float):
     # Tipo di dato specializzato Reale | Float >= 0 (Greater than or Equal to Zero)
     def __new__(cls, v: float | int | str | bool | Self) -> Self:
-        n: int = super().__new__(cls, v)  # prova a convertire v in un int
+        n: float = float(v)  # converto in float
         if n >= 0:
-            return n
-        raise ValueError(f"Il valore {n} è minore di 0!")
-    
-class RealGZ(int):
-    # Tipo di dato specializzato Reale | Float >= 0 (Greater than or Equal to Zero)
-    def __new__(cls, v: float | int | str | bool | Self) -> Self:
-        n: int = super().__new__(cls, v)  # prova a convertire v in un int
-        if n > 0:
-            return n
+            return super().__new__(cls, n)
         raise ValueError(f"Il valore {n} è minore di 0!")
 
+class RealGZ(float):
+    # Tipo di dato specializzato Reale | Float > 0 (Greater than Zero)
+    def __new__(cls, v: float | int | str | bool | Self) -> Self:
+        n: float = float(v)  # converto in float
+        if n > 0:
+            return super().__new__(cls, n)
+        raise ValueError(f"Il valore {n} non è positivo!")
 
 class Data(date):
     # Tipo di dato specializzato Data (solo date valide)
@@ -185,3 +183,9 @@ class Index(Generic[KeyType, ValueType]):
 
 	def __len__(self)->int:
 		return len(self._objects)
+     
+class Condizioni(StrEnum):
+     ottimo = auto()
+     buono = auto()
+     discreto = auto()
+     da_sistemare = auto()
