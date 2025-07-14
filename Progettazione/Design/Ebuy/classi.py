@@ -100,6 +100,14 @@ class bid_ut:
 
         def privato(self) -> Privato:
             return self._privato
+        
+        def __hash__(self):
+            return hash((self.bid(), self.privato()))
+        
+        def __eq__(self, other) -> bool:
+            if not isinstance(self, other) and hash(self) != hash(other):
+                return False
+            return ((self.bid(), self.privato()) == (other.bid(), other.privato()))
 
     @classmethod
     def _add(cls, bid: Bid, privato: Privato) -> None:
@@ -212,6 +220,14 @@ class asta_bid:
         
         def asta(self) -> Asta:
             return self._asta
+        
+        def __hash__(self):
+            return hash((self.bid(), self.asta()))
+        
+        def __eq__(self, other):
+            if not isinstance(self, other) and hash(self) != hash(other):
+                return False
+            return ((self.bid(), self.asta()) == (other.bid(), other.asta()))
     
     @classmethod
     def _add(cls, bid: Bid, asta: Asta) -> None:
