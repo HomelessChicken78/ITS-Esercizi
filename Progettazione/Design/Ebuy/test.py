@@ -30,7 +30,6 @@ assert asta1.scaduto()
 assert not asta2.scaduto()
 # print(asta1)
 # print(asta2)
-
 # asta1.set_scadenza(datetime(2100, 10, 30, 12, 34, 10, 20)) # Can't set attribute 'scadenza' of an Asta that has already ended.
 # asta1.set_prezzo(RealGEZ(100)) # AttributeError: Can't set attribute 'prezzo' of an Asta that has already ended.
 # asta1.set_prezzo_bid(RealGEZ(20)) # Can't set attribute 'prezzo_bid' of an Asta that has already ended.
@@ -48,6 +47,8 @@ bid6: Bid = Bid(datetime(2023, 7, 12, 10, 10), bob, asta1)
 bid7: Bid = Bid(datetime(2023, 8, 8, 13, 50), charley, asta2)
 bid8: Bid = Bid(datetime(2023, 9, 19, 15, 30), david, asta2)
 bid9: Bid = Bid(datetime(2023, 10, 1, 9, 0), david, asta2)
+
+# asta2.set_prezzo_bid(RealGZ(40)) # Cannot set attribute 'prezzo_bid' of an Asta that has one or more bids.
 
 print(f"Utente di b0: {bid0.privato()()}")
 print(f"Utente di b1: {bid1.privato()()}")
