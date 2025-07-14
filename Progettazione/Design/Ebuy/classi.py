@@ -178,18 +178,21 @@ class Asta(PostOggetto):
         else:
             self._prezzo_bid = prezzo
             
-    def set_prezzo(self, new_prezzo):
-        if not self.scaduto():
-            self._prezzo = new_prezzo
-            print("Ho eseguito questo")
-        else:
+    def set_prezzo(self, new_prezzo: RealGZ):
+        if self.scaduto():
             raise AttributeError("Can't set attribute 'prezzo' of an Asta that has already ended.")
+        elif self._bids:
+            raise AttributeError("Can't set attribute 'prezzo' of an Asta that has one or more bids.")
+        else:
+            self._prezzo = new_prezzo
     
     def set_scadenza(self, new_scadenza: datetime) -> None:
         if self.scaduto():
             raise AttributeError("Can't set attribute 'scadenza' of an Asta that has already ended.")
         elif new_scadenza < datetime.now():
             raise AttributeError("Can't set attribute 'scadenza' of Asta to a date that is before today")
+        elif self._bids:
+            raise AttributeError("Can't set attribute 'scadenza' of an Asta that has one or more bids.")
         else:
             self._scadenza = new_scadenza
 

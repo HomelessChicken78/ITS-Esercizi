@@ -34,6 +34,7 @@ assert not asta2.scaduto()
 # asta1.set_prezzo(RealGEZ(100)) # AttributeError: Can't set attribute 'prezzo' of an Asta that has already ended.
 # asta1.set_prezzo_bid(RealGEZ(20)) # Can't set attribute 'prezzo_bid' of an Asta that has already ended.
 asta2.set_prezzo_bid(RealGZ(20))
+asta2.set_scadenza(datetime.now() + timedelta(days=20))
 # asta2.set_scadenza(datetime.now() - timedelta(days=9)) # Can't set attribute 'scadenza' of Asta to a date that is before today
 
 print("\nGestione bid")
@@ -49,6 +50,8 @@ bid8: Bid = Bid(datetime(2023, 9, 19, 15, 30), david, asta2)
 bid9: Bid = Bid(datetime(2023, 10, 1, 9, 0), david, asta2)
 
 # asta2.set_prezzo_bid(RealGZ(40)) # Cannot set attribute 'prezzo_bid' of an Asta that has one or more bids.
+# asta2.set_prezzo(RealGZ(30)) # AttributeError: Can't set attribute 'prezzo' of an Asta that has one or more bids.
+# asta2.set_scadenza(datetime.now() + timedelta(days=50)) # Can't set attribute 'scadenza' of an Asta that has one or more bids.
 
 print(f"Utente di b0: {bid0.privato()()}")
 print(f"Utente di b1: {bid1.privato()()}")
