@@ -1,19 +1,15 @@
 import './App.css';
 import { useState } from 'react';
-// import Persona from './useState/Persona';
-// import UserCrud from './UserCrud';
+import Persona from './useState/Persona';
 import 'bootstrap/dist/css/bootstrap.css';
-import RenderCondizionale from './conditional_render/RenderCondizionale';
+import Cards from './Esercizi/News/Cards';
 
 function App() {
-  // return (
-  //   <>
-  //       <UserCrud />
-  //   </>
-  // );
   return (
-    <RenderCondizionale />
-  )
+    <>
+      <Cards />
+    </>
+  );
 }
 
 export default App;
