@@ -1,13 +1,11 @@
 import './App.css';
-import { useState } from 'react';
-import Persona from './useState/Persona';
 import 'bootstrap/dist/css/bootstrap.css';
-import Cards from './Esercizi/News/Cards';
+import UserAlbum from './json_album/UserAlbum';
 
 function App() {
   return (
     <>
-      <Cards />
+      <UserAlbum></UserAlbum>
     </>
   );
 }

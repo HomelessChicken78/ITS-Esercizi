@@ -1,6 +1,6 @@
 import React from 'react'
 import { posts } from './dati'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 const Cards = () => {
     console.log(posts)
@@ -8,8 +8,12 @@ const Cards = () => {
     const [show, setShow] = useState(true)
     const [tema, setTema] = useState(true)
 
+    useEffect(() => {
+        document.body.style.backgroundColor = tema ? 'white' : 'black'
+    })
+
     return (
-        <div style={{ backgroundColor: tema ? "white" : "black" }}>
+        <div>
             <>
                 <div className="row">
                     <div className="col-4"></div>
