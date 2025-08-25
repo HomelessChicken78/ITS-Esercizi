@@ -4,11 +4,12 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import Component1 from './Lezioni/Props/Component1';
 import Clock from './Lezioni/Props/Clock';
 
-import Persona from './Esercizi/Map/Esercizio_1';
-import Tabellina from './Esercizi/Map/Esercizio_2';
-import Stampanumeri from './Esercizi/Map/Esercizio_3';
-import BetterStampanumeri from './Esercizi/Map/Esercizio_4';
-import Biblioteca from './Esercizi/Map/Esercizio_5'
+// import Persona from './Esercizi/Map/Esercizio_1';
+// import Tabellina from './Esercizi/Map/Esercizio_2';
+// import Stampanumeri from './Esercizi/Map/Esercizio_3';
+// import BetterStampanumeri from './Esercizi/Map/Esercizio_4';
+// import Biblioteca from './Esercizi/Map/Esercizio_5'
+import ProfiloUtenteExec from './Esercizi/Map/ProfiloUtente/ProfiloUtenteExec';
 
 // function getDate(date){
 //   return date.toLocaleDateString()+" "+ date.toLocaleTimeString()
@@ -23,11 +24,12 @@ function App() {
   return (
     <div className="App">
       {/* Esercizi sul map */}
-      <Persona name="Mario" cognome="Rossi"></Persona>
+      {/* <Persona name="Mario" cognome="Rossi"></Persona>
       <Tabellina multiplier="2"></Tabellina>
       <Stampanumeri></Stampanumeri>
       <BetterStampanumeri></BetterStampanumeri>
-      <Biblioteca></Biblioteca>
+      <Biblioteca></Biblioteca> */}
+      <ProfiloUtenteExec></ProfiloUtenteExec>
   
 
       <Component1>Roberto</Component1>
