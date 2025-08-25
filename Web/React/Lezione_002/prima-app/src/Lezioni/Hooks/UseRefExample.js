@@ -1,8 +1,7 @@
 import React from 'react'
-import UserForm from './UserForm'
 import { useRef, useState } from 'react'
 
-const UserCrud = () => {
+const UserAdder = () => {
     let id = useRef(null);
     let nome = useRef(null);
     let cognome = useRef(null);
@@ -105,4 +104,4 @@ const UserCrud = () => {
     )
 }
 
-export default UserCrud
+export default UserAdder
