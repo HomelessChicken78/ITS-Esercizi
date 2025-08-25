@@ -1,13 +1,11 @@
 import React from 'react'
 import { useState } from 'react'
 
-
-
 const Hidden = () => {
     const [show, setShow] = useState(true)
     return (
         <div>
-            <h1>Hidden</h1>
+            <h1>Ternary Operator</h1>
             {show && <Elemento />}
             <button onClick={() => setShow(!show)}>{show ? 'Nascondi' : 'Visualizza'}</button>
         </div>

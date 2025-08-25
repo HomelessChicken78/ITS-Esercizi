@@ -6,6 +6,8 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 // import Persona2 from './Lezioni/Hooks/useState/Persona2';
 // import UseStateSaluto from './Lezioni/Hooks/useState/UseStateSaluto';
 // import UserAdder from './Lezioni/Hooks/UseRefExample';
+import Hidden from './Lezioni/Conditional_render_Ternary_&_Short_Circuit/Hidden';
+import RenderCondizionale from './Lezioni/Conditional_render_Ternary_&_Short_Circuit/RenderCondizionale';
 
 // import Persona from './Esercizi/Map/Esercizio_1';
 // import Tabellina from './Esercizi/Map/Esercizio_2';
@@ -59,6 +61,8 @@ function App() {
 
       {/* Lezione su UseRef<br /> */}
       {/* <UserAdder></UserAdder> */}
+      <Hidden></Hidden>
+      <RenderCondizionale></RenderCondizionale>
     </div>
   );
 }
