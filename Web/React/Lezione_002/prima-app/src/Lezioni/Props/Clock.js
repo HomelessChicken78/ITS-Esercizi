@@ -8,3 +8,5 @@ const Clock = (props) => {
         <h2>In {props.country} sono le {new_time.toLocaleTimeString()} del giorno {new_time.toLocaleDateString()}</h2>
     )
 }
+
+export default Clock
