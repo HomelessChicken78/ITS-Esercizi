@@ -1,6 +1,7 @@
 import Component1 from './Lezioni/Props/Component1';
 import './App.css';
 import Clock from './Lezioni/Props/Clock';
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 
 import Persona from './Esercizi/Map/Esercizio_1';
