@@ -16,6 +16,7 @@ import RenderCondizionale from './Lezioni/Conditional_render_Ternary_&_Short_Cir
 // import Biblioteca from './Esercizi/Map/Esercizio_5'
 // import ProfiloUtenteExec from './Esercizi/Map/ProfiloUtente/ProfiloUtenteExec';
 // import Counter from './Esercizi/Hook/Counter';
+import Cards from './Esercizi/Conditional_render_Ternary_&_Short_Circuit/News/Cards';
 
 // function getDate(date){
 //   return date.toLocaleDateString()+" "+ date.toLocaleTimeString()
@@ -39,6 +40,10 @@ function App() {
 
       {/* Esercizi su UseState<br /> */}
       {/* <Counter></Counter> */}
+
+      {/*Esercizi su Short Circuit Evaluation, Ternary Operator e Conditional Render*/}
+      <Cards></Cards>
+
 
       {/* Prima Lezione<br /> */}
       {/* <h1>Prima app con React di {nome}</h1> */}
