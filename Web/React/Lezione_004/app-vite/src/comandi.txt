@@ -5,6 +5,6 @@ npm install -g json-server
 Installa globalmente json server
 -> creare il file db.json
 
-json-server --watch db.json --port 3001
+json-server --watch db.json --port 3238
 Starta il server json
 -> farlo in un altro terminale
