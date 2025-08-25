@@ -165,4 +165,3 @@ const UserCrud = () => {
   );
 };
 export default UserCrud;
-// sudo chown -R $USER:$USER ./nome-cartella-react

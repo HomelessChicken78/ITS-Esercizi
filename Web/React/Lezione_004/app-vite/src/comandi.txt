@@ -1,0 +1,10 @@
+sudo chown -R $USER:$USER ./nome-cartella-react
+Cambia il proprietario e il gruppo di nome-cartella-react (e tutto ciò che contiene) all'utente attualmente loggato.
+
+npm install -g json-server
+Installa globalmente json server
+-> creare il file db.json
+
+json-server --watch db.json --port 3001
+Starta il server json
+-> farlo in un altro terminale
