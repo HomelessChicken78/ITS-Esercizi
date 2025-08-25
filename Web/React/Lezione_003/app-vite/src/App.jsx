@@ -1,7 +1,7 @@
 import './App.css'
-import UserAlbum from './json_album/UserAlbum'
+import UserAlbum from './Esercizi/json_album/UserAlbum'
 import 'bootstrap/dist/css/bootstrap.css'
-import UserCrud from './UserCrud'
+import UserCrud from './Esercizi/UserCrud'
 
 function App() {
   return (
