@@ -1,5 +1,6 @@
 import React from 'react'
 
+// Esempio di come usare i props
 const Component1 = (props) => {
   return (
     <>
