@@ -1,6 +1,6 @@
-import Component1 from './Component1';
+import Component1 from './Lezioni/Props/Component1';
 import './App.css';
-import Clock from './Clock';
+import Clock from './Lezioni/Props/Clock';
 
 
 import Persona from './Esercizi/Map/Esercizio_1';
