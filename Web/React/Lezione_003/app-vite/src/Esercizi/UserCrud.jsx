@@ -77,7 +77,7 @@
 
 import { useEffect, useState } from "react";
 
-const urlUser = "http://localhost3238:/users";
+const urlUser = "http://localhost:3238/users";
 const UserCrud = () => {
   const [users, setUsers] = useState([]);
 

@@ -21,9 +21,9 @@ const UserAlbum = () => {
     // Selected user
     const handleUser = (e) => {
         setSelectedUser(e.target.value)
-            setAlbums([])
-            setSelectedAlbum('')
-            setPhotos([])
+        setAlbums([])
+        setSelectedAlbum('')
+        setPhotos([])
 
     };
 
@@ -55,37 +55,49 @@ const UserAlbum = () => {
 
 
     return (
-        <div className='container'>
-            <div className='row'>
-                <div className='col-6'>
-                    <select value={selectedUser} onChange={handleUser}>
-                        <option value=''>Seleziona Utente</option>
-                        {users.map((u) => {
-                            return (
-                                <option value={u.id} key={u.id}>
-                                    {u.name}
-                                </option>
-                            )
-                        })}
-                    </select>
-                    <select value={selectedAlbum} onChange={handleAlbum}>
-                        <option value=''>Seleziona Album</option>
-                        {selectedUser && albums.map((a) => {
-                            return (
-                                <option value={a.id} key={a.id}>
-                                    {a.title}
-                                </option>
-                            )
-                        })}
-                    </select>
-                    {selectedAlbum && photos.map((p) => {
-                        return (
-                            <div key={p.id}>{p.title}</div>
-                        )
-                    })}
+        <>
+            <div className='container'>
+                <div className='row'>
+                    <div className='col-3'></div>
+                    <div className='col-3'>
+                        <select value={selectedUser} onChange={handleUser} className='form-select'>
+                            <option value=''>Seleziona Utente</option>
+                            {users.map((u) => {
+                                return (
+                                    <option value={u.id} key={u.id}>
+                                        {u.name}
+                                    </option>
+                                )
+                            })}
+                        </select>
+                    </div>
+                    <div className='col-3'>
+                        <select value={selectedAlbum} onChange={handleAlbum} className='form-select'>
+                            <option value=''>Seleziona Album</option>
+                            {selectedUser && albums.map((a) => {
+                                return (
+                                    <option value={a.id} key={a.id}>
+                                        {a.title}
+                                    </option>
+                                )
+                            })}
+                        </select>
+                    </div>
+
                 </div>
+                {selectedAlbum && photos.map((p) => {
+                    return (
+                        <>
+                            <div className='row'>
+                                <div className='col-4'></div>
+                                <div className='col-4' key={p.id}>{p.title}</div>
+                                <div className='col-4'></div>
+                            </div>
+                        </>
+                    )
+                })}
             </div>
-        </div>
+        </>
     )
 }
 
