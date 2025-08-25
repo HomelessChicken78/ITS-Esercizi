@@ -3,6 +3,8 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 
 // import Component1 from './Lezioni/Props/Component1';
 // import Clock from './Lezioni/Props/Clock';
+// import Persona2 from './Lezioni/Hooks/useState/Persona2';
+// import UseStateSaluto from './Lezioni/Hooks/useState/UseStateSaluto';
 // import UserAdder from './Lezioni/Hooks/UseRefExample';
 
 // import Persona from './Esercizi/Map/Esercizio_1';
@@ -11,7 +13,6 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 // import BetterStampanumeri from './Esercizi/Map/Esercizio_4';
 // import Biblioteca from './Esercizi/Map/Esercizio_5'
 // import ProfiloUtenteExec from './Esercizi/Map/ProfiloUtente/ProfiloUtenteExec';
-
 // import Counter from './Esercizi/Hook/Counter';
 
 // function getDate(date){
@@ -51,6 +52,10 @@ function App() {
       <Clock timezone="7" country="Japan"></Clock> */}
       {/* <button onClick={saluta}> Ciao </button> */}
       {/* <button onClick={(e) => saluta(e)}>Saluta</button> */}
+
+      {/*Lezione su UseState */}
+      {/* <Persona2></Persona2>
+      <UseStateSaluto></UseStateSaluto> */}
 
       {/* Lezione su UseRef<br /> */}
       {/* <UserAdder></UserAdder> */}

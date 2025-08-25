@@ -1,8 +1,6 @@
-import './App.css';
 import { useState } from 'react';
-import Persona from './Persona';
 
-function App() {
+function Saluto() {
 
   // let saluto = "ciao"
 
@@ -23,7 +21,6 @@ function App() {
   // );
 
 
-  console.log(useState)
 
   let [saluto, setSaluto] = useState("buongiorno")
   console.log(saluto, "\n", setSaluto)
@@ -39,13 +36,11 @@ function App() {
   }
 
   return (
-    <div className='App'>
-      <h1>Componente principale</h1>
+    <div className='Saluto'>
       <h2>{saluto}</h2>
       <button onClick={cambioSaluto}>Cambia</button>
-      <Persona></Persona>
     </div>
   );
 }
 
-export default App;
+export default Saluto;

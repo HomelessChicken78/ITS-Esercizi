@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-const Persona = () => {
+const Persona2 = () => {
   let [persona, updatePerson] = useState({
     nome : "Cristiano",
     cognome : "Coccia",
@@ -23,4 +23,4 @@ const Persona = () => {
   )
 }
 
-export default Persona
+export default Persona2
