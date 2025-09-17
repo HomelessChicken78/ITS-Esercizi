@@ -45,15 +45,15 @@ class Fattura:
         del paziente da rimuovere, aggiornando poi il numero di fatture e il salario, richiamando il metodo get Fatture() e getSalary().
         Stampare "Alla lista del Dottor cognome è stato rimosso il paziente {codice_identificativo}".'''
 
-        found: bool = None
+        found: bool = False
 
         for p in self.__patient:
             if p.getidCode() == idCode:
-                found = p
+                found = True
                 self.__patient.remove(p)
                 break
             
-            if found == True:
-                print(f"Alla lista del Dottor {self.__doctor.getLastname()} è stato rimosso il paziente {idCode}")
-            else:
-                print(f"Non esiste alcun paziente con codice {idCode} nella lista del Dottor {self.__doctor.getLastname()}")
+        if found == True:
+            print(f"Alla lista del Dottor {self.__doctor.getLastname()} è stato rimosso il paziente {idCode}")
+        else:
+            print(f"Non esiste alcun paziente con codice {idCode} nella lista del Dottor {self.__doctor.getLastname()}")
