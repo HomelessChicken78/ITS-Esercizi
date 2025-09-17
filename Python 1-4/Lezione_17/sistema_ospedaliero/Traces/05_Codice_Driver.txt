@@ -1,6 +1,7 @@
 ### Codice Driver
 
-Scrivere, infine, il codice driver che gestisca due dottori e due liste di pazienti. La prima lista di pazienti deve contenere 3 pazienti, mentre la seconda 1 solo paziente.
+Scrivere, infine, il codice driver che gestisca due dottori e due liste di pazienti.
+La prima lista di pazienti deve contenere 3 pazienti, mentre la seconda 1 solo paziente.
 
     Impostare l'età di ogni medico, affinché i due medici risultino validi!
     Il primo medico e il secondo medico si presentano, richiamando il rispettivo metodo doctorGreet().
