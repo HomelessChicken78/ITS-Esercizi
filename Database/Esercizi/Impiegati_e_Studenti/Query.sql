@@ -25,7 +25,7 @@ where ruolo = 'Progettista';
 
 -- 5 Quanti sono i responsabili?
 
-select distinct count(resp_prog) -- Non select count(*)
+select count(distinct resp_prog) -- Non select count(*)
 from impiegato, progetto
 where progetto.resp_prog = impiegato.persona;
 
