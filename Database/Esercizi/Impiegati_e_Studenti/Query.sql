@@ -47,7 +47,7 @@ where persona.cf = studente.persona;
 
 select count(*)
 from impiegato, persona
-where impiegato.ruolo = 'Direttore' and persona.cf = impiegato.persona and persona.pos_uomo is not null;
+where impiegato.ruolo = 'Direttore' and persona.cf = impiegato.persona and persona.pos_uomo = 'Assolto'; -- Non persona.pos_uomo is not null
 
 -- 10. Quanti sono i progetti di cui è responsabile un'impiegata con almeno due figli?
 
