@@ -1,9 +1,10 @@
--- 1. Quali sono i nomi degli impiegati nati a partire dall'anno 
+-- 1. Quali sono i nomi degli impiegati nati a partire dall'anno 1965
 
 select nome
 from persona, impiegato
 where persona.cf = impiegato.persona
-order by data_nascita asc;
+and persona.data_nascita >= '1965-01-01';
+-- o: extract('year' from persona.data_nascita) >= 1965
 
 -- 2. Quali sono i nomi di tutti i progetti?
 
