@@ -39,7 +39,7 @@ where ruolo = 'Segretario';
 -- 8. Qual è l'età della/o studente meno giovane?
 -- usare select(date_part('year',age(current_date, <DATA DI NASCITA>))) as eta FROM [...];
 
-select max((date_part('year',age(current_date, data_nascita)))) as eta
+select max((date_part('year',age(current_date, data_nascita)))) as eta -- oppure (date_part('year',age(current_date, min(data_nascita)))) as eta
 from persona, studente
 where persona.cf = studente.persona;
 
