@@ -27,11 +27,9 @@ class PagamentoContanti(Pagamento):
         1 euro, 0,50 euro, 0,20 euro, 0,10 euro, 0,05 euro, 0,01 euro sono necessarie per pagare l'importo in contanti.'''
 
         rimanente: float = self.getImport() + 0.001
-
         banconote: list[float] = [500.00, 200.00, 100.00, 20.00, 10.00, 5.00, 2.00, 1.00, 0.5,  0.2, 0.1, 0.05, 0.02, 0.01]
 
         print("In pezzi da:")
-
         for b in banconote:
             if rimanente >= b:
                 contante = rimanente // b
