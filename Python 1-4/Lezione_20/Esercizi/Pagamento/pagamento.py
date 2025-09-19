@@ -28,82 +28,15 @@ class PagamentoContanti(Pagamento):
 
         rimanente: float = self.getImport() + 0.001
 
+        banconote: list[float] = [500.00, 200.00, 100.00, 20.00, 10.00, 5.00, 2.00, 1.00, 0.5,  0.2, 0.1, 0.05, 0.02, 0.01]
+
         print("In pezzi da:")
 
-        if rimanente >= 500:
-            banconote = rimanente // 500
-            print(f"500€: {banconote}")
-            rimanente -= banconote * 500
-
-        if rimanente >= 200:
-            banconote = rimanente // 200
-            print(f"200€: {banconote}")
-            rimanente -= banconote * 200
-        
-        if rimanente >= 100:
-            banconote = rimanente // 100
-            print(f"100€: {banconote}")
-            rimanente -= banconote * 100
-        
-        if rimanente >= 50:
-            banconote = rimanente // 50
-            print(f"50€: {banconote}")
-            rimanente -= banconote * 50
-
-        if rimanente >= 20:
-            banconote = rimanente // 20
-            print(f"20€: {banconote}")
-            rimanente -= banconote * 20
-        
-        if rimanente >= 10:
-            banconote = rimanente // 10
-            print(f"10€: {banconote}")
-            rimanente -= banconote * 10
-        
-        if rimanente >= 5:
-            banconote = rimanente // 5
-            print(f"5€: {banconote}")
-            rimanente -= banconote * 5
-
-        if rimanente >= 2:
-            banconote = rimanente // 2
-            print(f"2€: {banconote}")
-            rimanente -= banconote * 2
-        
-        if rimanente >= 1:
-            banconote = rimanente // 1
-            print(f"1€: {banconote}")
-            rimanente -= banconote * 1
-        
-        if rimanente >= 0.5:
-            banconote = rimanente // 0.5
-            print(f"0.50€: {banconote}")
-            rimanente -= banconote * 0.5
-        
-        if rimanente >= 0.2:
-            banconote = rimanente // 0.2
-            print(f"0.20€: {banconote}")
-            rimanente -= banconote * 0.2
-        
-        if rimanente >= 0.1:
-            banconote = rimanente // 0.1
-            print(f"0.10€: {banconote}")
-            rimanente -= banconote * 0.1
-        
-        if rimanente >= 0.05:
-            banconote = rimanente // 0.05
-            print(f"0.05€: {banconote}")
-            rimanente -= banconote * 0.05
-        
-        if rimanente >= 0.02:
-            banconote = rimanente // 0.02
-            print(f"0.02€: {banconote}")
-            rimanente -= banconote * 0.02
-        
-        if rimanente >= 0.01:
-            banconote = rimanente // 0.01
-            print(f"0.01€: {banconote}")
-            rimanente -= banconote * 0.01
+        for b in banconote:
+            if rimanente >= b:
+                contante = rimanente // b
+                print(f"{b:.2f}€: {contante}")
+                rimanente -= contante * b
 
 class PagamentoCartaDiCredito(Pagamento):
     def __init__(self, titolare: str, scadenza: str, numero_carta: str):
