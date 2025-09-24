@@ -162,9 +162,9 @@
       }
     },
     {
-      "id": "9",
       "name": "rob",
-      "email": "robe@del.it"
+      "email": "robe@del.it",
+      "id": "9"
     }
   ],
   "posts": [
@@ -179,5 +179,17 @@
       "body": "Roba da nerd qwerty"
     }
   ],
-  "comments": []
+  "comments": [],
+  "tasks": [
+    {
+      "id": "1",
+      "text": "Imparare le basi di React",
+      "completed": true
+    },
+    {
+      "id": "3",
+      "text": "Studiare Bootstrap 5",
+      "completed": false
+    }
+  ]
 }
