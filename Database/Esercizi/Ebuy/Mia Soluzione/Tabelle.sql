@@ -51,7 +51,7 @@ create table PostOggetto (
     foreign key (categoria) references Categoria(nome),
 
     check (istante_feedback is null or istante_feedback > pubblicazione)
-    check ( (ha_feedback = True and voto is not null) or (ha_feedback = False and voto is null and commento is null) )
+    check ( (ha_feedback = True and voto is not null and istante_feedback is not null) or (ha_feedback = False and voto is null and commento is null and istante_feedback is null) )
 );
 
 create table met_post (
