@@ -50,6 +50,7 @@ create table PostOggetto (
     categoria stringa not null,
     foreign key (categoria) references Categoria(nome),
 
+    check (istante_feedback is null or istante_feedback > pubblicazione)
     check ( (ha_feedback = True and voto is not null) or (ha_feedback = False and voto is null and commento is null) )
 );
 
