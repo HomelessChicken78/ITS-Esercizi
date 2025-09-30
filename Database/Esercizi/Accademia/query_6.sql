@@ -20,25 +20,25 @@ where attivitaprogetto.progetto = 1;
 
 -- 5. Quali sono le medie, i massimi e i minimi delle ore giornaliere dedicate al progetto
 --	‘Pegasus’ da ogni singolo docente?
-select persona.nome, persona.cognome, round(avg(ap.oredurata), 2) media, max(ap.oredurata) massimo, min(ap.oredurata) minimo
+select persona.nome, persona.cognome, avg(ap.oredurata) media, max(ap.oredurata) massimo, min(ap.oredurata) minimo
 from persona, attivitaprogetto ap
 where ap.progetto = 1 and ap.persona = persona.id
 group by persona.id;
 
 -- 6. Qual è il numero totale di ore dedicate alla didattica da ogni docente?
-select p.nome, p.cognome, sum(anp.oredurata) somma
+select p.nome, p.cognome, sum(anp.oredurata) ore_didattica
 from attivitanonprogettuale anp, persona p
 where anp.tipo = 'Didattica' and anp.persona = p.id
 group by p.id;
 
 -- 7. Qual è la media, il massimo e il minimo degli stipendi dei ricercatori?
-select round(avg(stipendio)) media, max(stipendio) massimo, min(stipendio) minimo
+select avg(stipendio) media, max(stipendio) massimo, min(stipendio) minimo
 from persona
 where posizione ='Ricercatore';
 
 -- 8. Quali sono le medie, i massimi e i minimi degli stipendi dei ricercatori, dei professori
 --	associati e dei professori ordinari?
-select posizione, round(avg(stipendio)) media, max(stipendio) massimo, min(stipendio) minimo
+select posizione, avg(stipendio) media, max(stipendio) massimo, min(stipendio) minimo
 from persona
 group by posizione;
 
