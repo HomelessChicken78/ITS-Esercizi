@@ -184,11 +184,36 @@
     {
       "id": "1",
       "text": "Imparare le basi di React",
-      "completed": true
+      "completed": false
     },
     {
       "id": "3",
       "text": "Studiare Bootstrap 5",
+      "completed": true
+    },
+    {
+      "id": "012a",
+      "text": "Dare l'esame di sicurezza 2",
+      "completed": false
+    },
+    {
+      "id": "2919",
+      "text": "Studiare Python 4",
+      "completed": true
+    },
+    {
+      "id": "ff11",
+      "text": "    Fare Code & Dragons",
+      "completed": false
+    },
+    {
+      "id": "2466",
+      "text": "Testare",
+      "completed": false
+    },
+    {
+      "id": "0fb7",
+      "text": "Finire Todolist",
       "completed": false
     }
   ]
