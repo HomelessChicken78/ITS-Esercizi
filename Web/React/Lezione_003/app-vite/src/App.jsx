@@ -14,6 +14,7 @@ import GalleriaFoto from './Esercizi/Vacanze/Esercizio_08/GalleriaFoto';
 import ModuloContatti from './Esercizi/Vacanze/Esercizio_09/ModuloContatti';
 import BlogApp from './Esercizi/Vacanze/Esercizio_10/BlogApp';
 import TodoApp from './Esercizi/Vacanze/Esercizio_11/TodoApp';
+import MainComponent from './Lezioni/MainComponent';
 
 function App() {
   let [currentPage, setPage] = useState("Saluto")
@@ -75,7 +76,10 @@ function App() {
 
       case "Todo App":
         return (
-          <TodoApp />
+          <>
+            <TodoApp />
+            <MainComponent />
+          </>
         )
     }
   }
