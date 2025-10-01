@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import TodoForm from "./TodoForm";
 import TodoList from "./TodoList";
+import { fetchTasksService, deleteTaskService, toggleTaskService, updateTaskService, addTaskService } from "./api";
 
 const API_URL = "http://localhost:3123/tasks";
 const TodoApp = () => {
@@ -10,9 +11,7 @@ const TodoApp = () => {
 
     const fetchTasks = async () => {
         try {
-            const response = await fetch(API_URL);
-            if (!response.ok) throw new Error("Errore nella fetch");
-            const data = await response.json();
+            const data = await fetchTasksService();
             setTasks(data);
         } catch (err) {
             setError(err);
@@ -22,34 +21,22 @@ const TodoApp = () => {
     };
 
     const deleteTask = async (id) => {
-        await fetch(API_URL + "/" + id, { method: "DELETE" })
+        await deleteTaskService(id)
         fetchTasks();
     }
 
     const toggleTask = async (id, completed) => {
-        await fetch(API_URL + "/" + id, {
-            method: "PATCH",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ completed: !completed })
-        })
+        await toggleTaskService(id, completed)
         fetchTasks();
     };
 
     const updateTask = async (id, text) => {
-        await fetch(API_URL + "/" + id, {
-            method: "PATCH",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ text })
-        })
+        await updateTaskService(id, text)
         fetchTasks();
     }
 
     const addTask = async (text) => {
-        await fetch(API_URL, {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ text, completed: false })
-        })
+        await addTaskService(text)
         fetchTasks();
 
     }
@@ -57,6 +44,7 @@ const TodoApp = () => {
     useEffect(() => {
         fetchTasks();
     }, []);
+    
     return (
         <div>
             <h1>Todolist</h1>

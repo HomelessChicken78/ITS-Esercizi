@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:3000/tasks";
+const API_URL = "http://localhost:3123/tasks";
 
 export const fetchTasksService = async () => {
   const response = await fetch(API_URL);
@@ -8,5 +8,29 @@ export const fetchTasksService = async () => {
 };
 
 export const deleteTaskService = async (id) => {
-    await fetch(API_URL + "/" + id, { method: "DELETE" });
-  };
+  await fetch(API_URL + "/" + id, { method: "DELETE" });
+};
+
+export const toggleTaskService = async (id, completed) => {
+  await fetch(API_URL + "/" + id, {
+    method: "PATCH",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ completed: !completed })
+  })
+};
+
+export const updateTaskService = async (id, text) => {
+  await fetch(API_URL + "/" + id, {
+    method: "PATCH",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ text })
+  })
+};
+
+export const addTaskService = async (text) => {
+  await fetch(API_URL, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ text, completed: false })
+  })
+};
