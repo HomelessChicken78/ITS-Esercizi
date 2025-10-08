@@ -15,12 +15,13 @@ import ModuloContatti from './Esercizi/Vacanze/Esercizio_09/ModuloContatti';
 import BlogApp from './Esercizi/Vacanze/Esercizio_10/BlogApp';
 import TodoApp from './Esercizi/Vacanze/Esercizio_11/TodoApp';
 import MainComponent from './Lezioni/MainComponent';
+import ProvaRoutes from './Lezioni/routes/ProvaRoutes';
 
 function App() {
   let [currentPage, setPage] = useState("Saluto")
   let Pages = ["Saluto", "Card Utente", "Menu Ristorante", "Termostato",
     "Campo Ricerca", "Messaggio Segreto", "Aggiorna Titolo",
-    "Galleria Foto", "Modulo Contatti", "Blog App", "Todo App"]
+    "Galleria Foto", "Modulo Contatti", "Blog App", "Todo App", "Prova Routes"]
   function RenderCondizionale() {
     switch (currentPage) {
       case "Saluto":
@@ -79,6 +80,13 @@ function App() {
           <>
             <TodoApp />
             <MainComponent />
+          </>
+        )
+
+      case "Prova Routes":
+        return (
+          <>
+            <ProvaRoutes />
           </>
         )
     }
