@@ -120,3 +120,15 @@ GROUP BY comp, D.massima_durata
 HAVING MAX(durataMinuti) = D.massima_durata;
 
 --14. Qual'è il nome delle compagnie che non hanno voli ?
+-- Determina tutte le compagnie che hanno voli.
+-- Per ogni compagnia, conta il numero di voli. Se queste compaiono, allora hanno un numero di voli > 1.
+-- Ora fai una seconda query, che, per ogni compagnia, controlla se questa compare nel risultato della prima query.
+with D as (
+select v.comp c_con_voli, count(*) numero_voli
+from volo v
+group by v.comp
+)
+
+select *
+from compagnia c
+where c.nome not in (select D.c_con_voli from D)
