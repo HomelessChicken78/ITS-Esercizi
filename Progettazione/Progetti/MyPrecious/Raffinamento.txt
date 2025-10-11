@@ -1,0 +1,57 @@
+1. Requisiti sulle opere:
+    1.1. nome
+    1.2. categoria
+    1.3. autore (v. req. 2)
+    1.4. anno di realizzazione
+    1.5. la tecnica (può anche non esserci)
+    1.6. correnti artistica (almeno una, anche piu di una)
+
+2. Requisiti sull'autore:
+    2.1. nome d'arte
+    2.2. luogo di nascita
+    2.3. data di nascita
+    2.4. data di morte (può anche non esserci)
+    2.5. opere realizzate di proprità del museo (v. req. 1)
+
+3. Requisiti sulle esposizioni:
+    3.1. opere esposte
+        3.1.1. per ogni opera il periodo di tempo per la quale è esposta
+    
+    3.2. esposizioni permanenti
+        3.2.1. nome
+    
+    3.3. esposizioni temporanee
+        3.3.1. nome
+        3.3.2. tema
+        3.3.3. intervallo di date
+        3.3.4. prezzo di accesso
+
+4. Requisiti sulle tariffe:
+    4.1. nome
+    4.2. prezzo base
+
+5. Requisiti sui biglietti:
+    5.1. la tariffa scelta (v. req. 4)
+    5.2. istante di vendita
+    5.3. data di validità
+    5.4. standard (accesso solo alle esposizioni permanenti, v. req. 3.2.)
+        5.4.1. prezzo (e` pari al prezzo base della tariffa scelta.)
+    5.5. extended access (accesso a tutte le esposizioni permanenti e a un insieme di esposizioni temporanee)
+        5.5.1. prezzo (e` calcolabile sommando al prezzo base della tariffa selezionata i prezzi di tutte le
+        esposizioni temporanee scelte.)
+
+999. Use case:
+    999.A. responsabili del patrimonio e management
+    999.1. Inserimento e rimozione di opere d'arte
+    999.2. di un'esposizione con le relative opere
+    999.3. aggiunta di un artista e modifica delle sue informazioni
+    999.4. registrazione della vendita di uno o più biglietti di una certa tipologia e validi per una certa data
+    999.5. calcolo degli introiti totali per una certa esposizione temporanea, in un dato periodo.
+
+    (Solo e unicamente per le funzionalita` di seguito, dare la specifica completa.)
+    999.6. Data un’esposizione temporanea e una data, calcolare il numero di biglietti Extended
+    access venduti per tale esposizione e validi per tale data.
+    999.7. Dato un periodo di tempo, calcolare le esposizioni temporanee per la quale `e stato
+    venduto il pi`u alto numero di biglietti Extended access nel periodo.
+    999.8. Dato un artista e un periodo di tempo, calcolare le opere realizzate dall’artista che non
+    sono mai state esposte nel periodo dato.
