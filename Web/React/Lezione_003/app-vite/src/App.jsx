@@ -9,7 +9,9 @@ import ProvaRoutes from './Lezioni/routes/ProvaRoutes';
 
 function App() {
   return (
-    <Navigation />
+    <>
+      <Navigation />
+    </>
   )
 }
 
