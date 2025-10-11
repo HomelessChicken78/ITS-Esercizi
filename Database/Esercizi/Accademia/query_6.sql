@@ -60,4 +60,4 @@ select p.id, p.nome, p.cognome
 from persona p, attivitaprogetto ap
 where p.posizione = 'Professore Associato' and p.id = ap.persona
 group by p.id
-having count(*) > 1;
+-- having count(*) > 1;
