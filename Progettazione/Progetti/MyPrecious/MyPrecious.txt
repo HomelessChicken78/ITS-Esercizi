@@ -1,0 +1,51 @@
+Si vuole progettare e realizzare MyPrecious, un sistema di gestione di opere d’arte e delle
+relative esposizioni per conto di un museo, finalizzato all’utilizzo interno. Tramite il sistema,
+si vuole che i responsabili del museo possano gestire il patrimonio artistico e organizzare
+delle esposizioni delle opere e che il management possa ottenere delle statistiche sulle visite.
+Gli utenti di MyPrecious sono i responsabili della gestione delle opere d’arte del museo e
+dell’organizzazione delle esposizioni.
+`E di interesse rappresentare le opere a disposizione del museo, con il nome, la categoria
+(p.es., dipinto, scultura, mosaico, manoscritto, ecc.), l’autore, l’anno di realizzazione, la
+tecnica (se rilevante) e le correnti artistiche alle quali `e associata.
+Di un autore interessano il nome d’arte, il luogo e la data di nascita, l’eventuale data di
+morte e le opere che ha realizzato che sono di propriet`a del museo.
+I responsabili della gestione del patrimonio del museo organizzano le esposizioni delle
+opere, le quali possono essere permanenti oppure temporanee. Un’esposizione espone un
+insieme di opere, ognuna per un certo periodo di tempo.
+Le esposizioni permanenti, tipicamente, espongono le opere pi`u importanti di propriet`a
+del museo e sono sempre attive.
+Le esposizioni temporanee, invece, sono esposizioni speciali che si tengono per periodi
+di tempo pi`u o meno brevi (in genere qualche mese) e hanno un tema particolare, come un
+artista, un gruppo di artisti, una corrente artistica o un periodo storico. Di un’esposizione
+temporanea interessa il nome, il l’intervallo di date all’interno delle quali si tiene, e il suo
+prezzo di accesso.
+Il museo vende dei biglietti con tariffazione flessibile, per permettere ai visitatori di
+scegliere quali esposizioni poter visitare e pagare un prezzo in proporzione a queste. Il sistema
+deve poter prevedere la creazione di diverse tariffe di biglietto. Di una tariffa interessano il
+nome e il prezzo base (un reale maggiore o uguale a zero).
+I biglietti sono acquistati dai visitatori e di essi interessa conoscere la tariffa scelta,
+l’istante in cui `e stato venduto, e la data per la quale `e valido, scelta dal visitatore al
+momento dell’acquisto.
+Ogni biglietto `e di uno di due tipi:
+• Standard, che d`a accesso a tutte e sole le esposizioni permanenti; il prezzo di un biglietto
+standard `e pari al prezzo base della tariffa scelta.
+• Extended access, che d`a accesso a tutte le esposizioni permanenti e a un insieme di
+esposizioni temporanee a scelta dell’acquirente. Il prezzo di un biglietto di questo
+tipo `e calcolabile sommando al prezzo base della tariffa selezionata i prezzi di tutte le
+esposizioni temporanee scelte.
+Il sistema deve offrire le seguenti funzionalit`a ai responsabili del patrimonio artistico e al
+management:
+• inserimento e rimozione di opere d’arte;
+• creazione di un’esposizione, con le opere relative;
+• aggiunta di un artista e modifica delle sue informazioni;
+• modifica delle informazioni di un’esposizione;
+• registrazione della vendita di uno o pi`u biglietti di una certa tipologia e validi per una
+certa data.
+• calcolo degli introiti totali per una certa esposizione temporanea, in un dato periodo.
+(Solo e unicamente per le funzionalit`a di seguito, dare la specifica completa.)
+• Data un’esposizione temporanea e una data, calcolare il numero di biglietti Extended
+access venduti per tale esposizione e validi per tale data.
+• Dato un periodo di tempo, calcolare le esposizioni temporanee per la quale `e stato
+venduto il pi`u alto numero di biglietti Extended access nel periodo.
+• Dato un artista e un periodo di tempo, calcolare le opere realizzate dall’artista che non
+sono mai state esposte nel periodo dato.
