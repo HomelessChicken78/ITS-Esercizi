@@ -1,0 +1,4 @@
+Specifica della classe Autore
+[v.Autore.morte_dopo_nascita] Un autore non può nascere dopo la sua morte
+
+Per ogni a:Autore, se e solo se a.data_morte è valorizzato, deve essere vero che a.data_nasc <= a.data_morte

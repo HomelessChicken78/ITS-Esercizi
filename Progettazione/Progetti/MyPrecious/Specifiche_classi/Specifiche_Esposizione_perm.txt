@@ -1,0 +1,4 @@
+Specifica della classe Esposizione_perm
+[v.Esposizione_perm.data_valida] Ogni opera deve avere istante di inizio in quella esposizione prima dell'istante di fine nella stessa esposizione
+
+Per ogni e:Esposizione_perm sia o:Opera, tale che (e, o):esp_op, deve essere vero che e.data_inizio <= (e, o).inizio_esposiz <= (e, o).fine_esposiz

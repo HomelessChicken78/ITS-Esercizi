@@ -1,0 +1,13 @@
+Specifiche della classe Biglietto
+[V.Biglietto.data_validita_dopo_istante_vendita] Un biglietto può esser valido solo lo stesso giorno o un giorno successivo a quello dell'istante della vendita.
+
+Per ogni b:Biglietto, deve essere vero che b.istante_vendita <= b.data_validita
+
+
+
+permanenti() :  Esposizione_perm[0..*]
+    precondizioni:
+        - nessuna
+    postcondizoni:
+        - L'operazione non modifica il livello estensionale
+        - Sia result l'insieme di tutte le ep:Esposizione_perm tali che ep.data_inizio <= this.data_validita

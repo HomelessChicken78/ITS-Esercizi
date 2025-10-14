@@ -1,0 +1,4 @@
+Specifica della classe Opera
+[v.Opera.anno_realizzazione_esistente] La realizzazione dell'opera deve essere prima della data di adesso
+
+Per ogni o:Opera, deve esser vero che o.anno_realizzazione <= adesso

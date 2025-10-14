@@ -1,0 +1,19 @@
+Specifica della classe Esposizione_temp
+[v.Esposizione_temp.intervallo_date_corretto] L'inizio dell'esposizione deve esser prima della data_fine
+
+Per ogni e:Esposizione_temp, deve esser vero che e.data_inizio <= e.data_fine
+
+
+
+[v.Esposizione_temp.data_valida] Ogni opera deve avere istante di inizio in quella esposizione prima dell'istante di fine nella stessa esposizione
+
+Per ogni e:Esposizione_temp sia o:Opera, tale che (e, o):esp_op, deve essere vero che e.data_inizio <= (e, o).inizio_esposiz <= (e, o).fine_esposiz <= e.data_fine
+
+
+
+durata(): Data:
+- precondizioni
+    - Nessuna
+- postcondizoni
+    - L'operazione non modifica il livello estensionale
+    - result = this.data_fine - this.data_inizio
