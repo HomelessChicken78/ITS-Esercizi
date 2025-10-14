@@ -4,15 +4,15 @@ si vuole che i responsabili del museo possano gestire il patrimonio artistico e 
 delle esposizioni delle opere e che il management possa ottenere delle statistiche sulle visite.
 Gli utenti di MyPrecious sono i responsabili della gestione delle opere d’arte del museo e
 dell’organizzazione delle esposizioni.
-`E di interesse rappresentare le opere a disposizione del museo, con il nome, la categoria
+È di interesse rappresentare le opere a disposizione del museo, con il nome, la categoria
 (p.es., dipinto, scultura, mosaico, manoscritto, ecc.), l’autore, l’anno di realizzazione, la
-tecnica (se rilevante) e le correnti artistiche alle quali `e associata.
+tecnica (se rilevante) e le correnti artistiche alle quali e` associata.
 Di un autore interessano il nome d’arte, il luogo e la data di nascita, l’eventuale data di
 morte e le opere che ha realizzato che sono di propriet`a del museo.
 I responsabili della gestione del patrimonio del museo organizzano le esposizioni delle
 opere, le quali possono essere permanenti oppure temporanee. Un’esposizione espone un
 insieme di opere, ognuna per un certo periodo di tempo.
-Le esposizioni permanenti, tipicamente, espongono le opere pi`u importanti di propriet`a
+Le esposizioni permanenti, tipicamente, espongono le opere più importanti di proprietà
 del museo e sono sempre attive.
 Le esposizioni temporanee, invece, sono esposizioni speciali che si tengono per periodi
 di tempo pi`u o meno brevi (in genere qualche mese) e hanno un tema particolare, come un
@@ -33,7 +33,7 @@ standard `e pari al prezzo base della tariffa scelta.
 esposizioni temporanee a scelta dell’acquirente. Il prezzo di un biglietto di questo
 tipo `e calcolabile sommando al prezzo base della tariffa selezionata i prezzi di tutte le
 esposizioni temporanee scelte.
-Il sistema deve offrire le seguenti funzionalit`a ai responsabili del patrimonio artistico e al
+Il sistema deve offrire le seguenti funzionalita` ai responsabili del patrimonio artistico e al
 management:
 • inserimento e rimozione di opere d’arte;
 • creazione di un’esposizione, con le opere relative;
