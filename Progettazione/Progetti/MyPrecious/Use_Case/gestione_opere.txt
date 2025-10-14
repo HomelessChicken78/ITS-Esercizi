@@ -1,0 +1,19 @@
+crea_opera(nome : Stringa, anno_realizzazione : Intero, tecnica : Stringa[0..1]) : Opera:
+    ...
+
+
+
+rimozione_opera(o: Opera):
+    ...
+
+
+
+opere_non_esposte(art: Autore, d_inizio: Data, d_fine: Data) : Opera[0..*] :
+    - precondizioni:
+        - Deve essere vero che d_inizio <= d_fine
+    - postcondizioni:
+        - result è l'insieme di tutte le o:Opera, tali che:
+            - fanno parte del link (art, o):aut_op
+            - Deve essere vero che,
+                per ogni e:Esposizione tale che (e, o):osp_op,
+                d_fine <= (e, o).inizio_esposiz oppure (e, o).fine_esposiz <= d_inizio

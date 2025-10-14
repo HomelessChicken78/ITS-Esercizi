@@ -1,0 +1,42 @@
+crea_esposizione(data_inizio : Data, nome : Stringa, temporanea : Booleano, tema : Stringa[0..1], data_fine : Data[0..1], prezzo_accesso : Reale >= 0 [0..1]) : Esposizione:
+    - precondizioni:
+        - tema, data_fine e prezzo_accesso sono valorizzati se e solo se temporanea = True
+    - postcondizioni:
+        ...
+
+
+
+opere_per_esposizione(e: Esposizione, op: Opera, inizio : DataOra, fine : DataOra) : esp_op:
+    ...
+
+
+
+calcola_bigl_venduti(e : Esposizione_temp, d_validita : Data) : Intero >= 0:
+    - precondizioni:
+        - Nessuna
+    - postcondizioni:
+        - Sia Bigl l'insieme di tutti i b:Bigl_Extended_access,
+            dove ogni b partecipa al link (e, b):extacc_temp e b.data_validita = d_validita
+        - result è la cardinalità di Bigl
+
+
+
+calcola_max_bigl_venduti(data_inizio : Data, data_fine : Data) : Esposizione_temp[0..*]:
+    - precondizioni:
+        - Deve essere vero che data_inizio <= data_fine
+    - postcondizioni:
+        - Sia Esp l'insieme di tutte le e:Esposizione_temp
+        - Per ogni e in Esp, calcola e.num_bigl:
+            - Sia Bigl l'insieme di tutti i b:Bigl_Extended_access,
+            dove ogni b partecipa al link (e, b):extacc_temp e data_inizio <= b.istante_vendita <= data_fine
+            - e.num_bigl è la cardinalita di Bigl
+        - Dato un e' in Esp, non deve esistere un e'' tale che e''.num_bigl > e'.num_bigl
+        - result è l'insieme di tutti gli e in Esp tali per cui valore di num_bigl = e'.num_bigl
+
+
+
+calcolo_guadagni_temp(e: Esposizione_temp, data_inizio : Data, data_fine : Data) : Reale >= 0:
+    - precondizioni:
+        - Deve essere vero che data_inizio <= data_fine
+    - postcondizioni:
+        ...

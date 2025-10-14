@@ -1,0 +1,7 @@
+crea_artista(nome_arte : Stringa, data_nasc : Data, data_morte : Data[0..1]) : Autore:
+    ...
+
+
+
+modifica_artista(art : Autore, nome_arte : Stringa, data_nasc : Data, data_morte : Data[0..1])
+    ...
