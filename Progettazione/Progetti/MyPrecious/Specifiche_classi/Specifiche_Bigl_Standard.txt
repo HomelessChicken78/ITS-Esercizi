@@ -1,0 +1,8 @@
+prezzo(): Reale >= 0 :
+e` pari al prezzo base della tariffa scelta.
+- precondizioni
+    - Nessuna
+- postcondizioni
+    - L'operazione non modifica il livello estensionale
+    - Sia t:Tariffa, tale che (this, t):bigl_tar
+    - result = t.prezzo_base

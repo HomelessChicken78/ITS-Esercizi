@@ -1,0 +1,16 @@
+ Specifica della classe Bigl_Extended_access
+[V.Bigl_Extended_access.esposizione_temporanea_valida] Un biglietto extended access può accedere solo alle esposizioni temporanee in corso
+
+Per ogni b:Bigl_Extended_access sia e:Esposizione_temp tale che (b, e):extacc_temp deve essere vero che e.data_inizio <= b.data_validita <= e.data_fine
+
+
+
+prezzo(): Reale >= 0:
+- precondizioni
+    - Nessuna
+- postcondizioni
+    - result è definito come segue:
+        - Sia t:Tariffa, tale che (this, t):bigl_tar
+        - Sia E l'insieme di tutte le esp:Esposizione_temp, tale che (this, e):extacc_temp
+        - Sia tot la somma di tutti i valori di e.prezzo_di_accesso per ogni esp in E
+        - result = tot + t.prezzo_base
