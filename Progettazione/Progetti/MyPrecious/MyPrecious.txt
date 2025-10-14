@@ -39,7 +39,7 @@ management:
 • creazione di un’esposizione, con le opere relative;
 • aggiunta di un artista e modifica delle sue informazioni;
 • modifica delle informazioni di un’esposizione;
-• registrazione della vendita di uno o pi`u biglietti di una certa tipologia e validi per una
+• registrazione della vendita di uno o più biglietti di una certa tipologia e validi per una
 certa data.
 • calcolo degli introiti totali per una certa esposizione temporanea, in un dato periodo.
 (Solo e unicamente per le funzionalit`a di seguito, dare la specifica completa.)
