@@ -43,7 +43,7 @@
 999. Use case:
     999.A. responsabili del patrimonio e management
     999.1. Inserimento e rimozione di opere d'arte
-    999.2. di un'esposizione con le relative opere
+    999.2. creazione di un’esposizione di un'esposizione con le relative opere
     999.3. aggiunta di un artista e modifica delle sue informazioni
     999.4. registrazione della vendita di uno o più biglietti di una certa tipologia e validi per una certa data
     999.5. calcolo degli introiti totali per una certa esposizione temporanea, in un dato periodo.
