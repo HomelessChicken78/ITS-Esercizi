@@ -14,6 +14,6 @@ opere_non_esposte(art: Autore, d_inizio: Data, d_fine: Data) : Opera[0..*] :
     - postcondizioni:
         - result è l'insieme di tutte le o:Opera, tali che:
             - fanno parte del link (art, o):aut_op
-            - Deve essere vero che,
+            - Non deve essere vero che,
                 per ogni e:Esposizione tale che (e, o):osp_op,
                 d_fine <= (e, o).inizio_esposiz oppure (e, o).fine_esposiz <= d_inizio
