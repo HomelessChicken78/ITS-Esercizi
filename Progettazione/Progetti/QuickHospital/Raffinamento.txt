@@ -1,0 +1,50 @@
+1. Requisiti sui Pazienti:
+    1.1. nome
+    1.2. cognome
+    1.3. data di nascita
+    1.4. recapiti telefonici (anche più di uno, univoci)
+    1.5. recapiti email (anche più di uno, univoci)
+    1.6. recapiti postali (anche più di uno, univoci)
+        1.6.1. via
+        1.6.2. numero civico
+        1.6.3. cap
+    1.7. ricoveri (anche più di uno) presso un posto letto (v. req. 3)
+        1.7.1. data del ricovero
+        1.7.2. data dimissione (può anche non esistere)
+    1.8. se è un paziente esterno
+        1.8.1. le prestazioni fatte da quale medico (v. req. 2)
+            1.8.1.1. specializzazione richiesta
+            1.8.1.2. data di richiesta
+            1.8.1.3. descrizione
+
+2. Requisiti sui Medici:
+    2.1. nome
+    2.2. cognome
+    2.3. data di nascita
+    2.4. pazienti che hanno in cura (v. req. 1)
+    2.5. specializzazione primaria
+    2.6. specializzazioni secondarie (anche più di una)
+
+3. Requisiti sui Posti Letto:
+    3.1. I pazienti ricoverati
+        3.1.1. data di ciascun ricovero
+    3.2. numero posti letto disponibili
+    3.3. la stanza alla quale appartiene (v. req. 4)
+
+4. Requisiti sulle Stanze:
+    4.1. Posti letto che possiede (v. req. 3, minimo 1 e massimo 8)
+    4.2. Piano (intero positivo, univoco insieme al settore)
+    4.3. Settore (intero positivo, univoco insieme al piano)
+
+999. Use case:
+    999.A. medici
+    999.B. personale amministrativo
+    999.C. personale ufficio prenotazioni.
+    999.1. registrazione del ricovero di un paziente e della sua dimissione ad opera del personale di accettazione
+    999.2. Il medico può calcolare il suo itinerario
+    999.3. registrazione dei pazienti e dei pazienti esterni (ad opera del personale addetto alle prenotazioni)
+    999.4. Data una prestazione richiesta da un paziente esterno (per una specializzazione s), il
+sistema deve restituire l’insieme dei medici maggiormente idonei a soddisfarla. Il criterio
+di idoneità è il seguente: se esistono medici con specializzazione primaria pari ad s, il
+risultato è l’insieme di tali medici. Altrimenti, il risultato è l’insieme dei medici che hanno
+s tra le loro specializzazioni secondarie.
