@@ -1,0 +1,20 @@
+Funzioni ausiliarie
+sovrapposti(i1 : DataOra, i2 : DataOra, f1 : DataOra, f2 : DataOra) : Booleano:
+- precondizioni:
+    - Deve essere vero che i1 <= f1 e che i2 <= f2
+- postcondizioni:
+    - result = false se i1 <= f2 e i2 <= f1 altrimenti result = true
+
+[V.Volo.Aeroporto.arr_e_part_diversi] Un volo non può avere l'arrivo e la partenza verso lo stesso aeroporto
+Per ogni v:Volo, sia arr:Aeroporto e part:Aeroporto, tali che (arr, v):partenza e che (part, v):arrivo.
+Deve essere che arr != part
+
+[V.Volo.Aeroporto.arrivo_dopo_partenza] L'istante di arrivo deve essere dopo quello di partenza
+Per ogni v:Volo, sia arr:Aeroporto e part:Aeroporto, tali che (arr, v):partenza e che (part, v):arrivo.
+Deve essere che (arr, v).istante > (part, v).istante
+
+[V.Aereo.Volo.Non_in_due_diversi_voli] Un aereo non può essere contemporaneameente in due voli diversi
+Per ogni a:Aereo, siano v1 e v2 tali che v1 != v2, (v1, a):aer_vol e che (v2, a):aer_vol.
+Sia arr1:Aeroporto e part1:Aeroporto, tali che (arr1, v1):partenza e che (part1, v1):arrivo.
+Sia arr2:Aeroporto e part2:Aeroporto, tali che (arr2, v2):partenza e che (part2, v2):arrivo.
+Non deve essere che sovrapposti((arr1, v1).istante, (arr2, v2).istante, (part1, v1).istante, (part2, v2).istante)
