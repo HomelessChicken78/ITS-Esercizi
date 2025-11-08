@@ -1,0 +1,51 @@
+1.  Requisiti sui Video:
+	1.1. Titolo
+	1.2. Durata
+	1.3. Descrizione
+	1.4. Utente che lo ha pubblicato (v. req. 2) 
+	1.5. Nome del file 
+	1.6. Categoria (solo una)
+		1.6.1. Nome della categoria
+	1.7. Tag (almeno una, anche più di una)
+		1.7.1. Nome del tag
+	1.8. Il video al quale risponde (nessuno o solo uno). Non può rispondere ad un video dello stesso utente che lo ha pubblicato|||||
+	1.9. Numero di visualizzazioni (v. req. 2.3.) 
+	1.10. Se è censurato
+		1.10.1. Il motivo della censura 
+		1.10.2. L’istante di censura
+		1.10.3. video censurato non può essere né visionato, né votato, né commentato, né aggiunto ad alcuna playlist, né restituito come
+		risultato di una ricerca.
+
+2. Requisiti sugli Utenti: 
+	2.1. Nome
+	2.2. Data di iscrizione 
+	2.3. Video visualizzati (v. req. 1) 
+		2.3.1. Commenti sui video visualizzati (anche più di uno)
+			2.3.1.1.  Istante del commento 
+		2.3.2. Valuitazioni sui video visualizzati (da 0 a 5, solo una) 
+			2.3.2.1. Non dall’utente che la ha pubblicata
+		2.3.3. Istante di visualizzazione 
+	2.4. Video pubblicati (v. req. 1) 
+
+3. Requisiti sulle Playlist: 
+	3.1. Nome 
+	3.2. Data di creazione 
+	3.3. Utente che la ha creata (v. req. 2.)
+	3.4. Video che contiene (anche più di uno, v. req. 1) 
+	3.5. Se è pubblica o privata 
+
+999. Use case: 
+	999.A. Utenti
+	999.B. Redazione
+	999.1. Registrazione utenti
+	999.2. Playlist pubbliche di un utente
+	999.3. Pubblicazione video
+	999.4. Creazione e modifica playlist 
+	999.5. Commenti e valutazioni sui video visionati 
+	999.6. ricerca di video: in particolare, data una categoria, un insieme di tag, ed un intero v tra  
+	0 e 5, si  vogliono restituire tutti i video non censurati disponibili di quella categoria che posseggono almeno 
+	uno tra i tag indicati, e che abbiano una valutazione media di almeno v (se un video non ha 
+	ancora alcuna valutazione, deve essere restituito comunque). 
+	999.7. Cercare, data una categoria, i video di quella categoria che hanno il numero maggiore di 
+	video in risposta, al fine di isolare le discussioni più animate tra gli utenti. 
+	999.8. Censura di video da parte della redazione 
