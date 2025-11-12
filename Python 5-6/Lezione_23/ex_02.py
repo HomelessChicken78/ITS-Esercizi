@@ -22,7 +22,7 @@ app = Flask(__name__)
 def home() -> str:
     return "<h1>Benvenuto!</h1>"
 
-@app.route("/user/<nome>")
+@app.route("/user/<string:nome>")
 def person(nome: str) -> str:
     return f"<h1>Benvenuto, {nome}!</h1>"
 
