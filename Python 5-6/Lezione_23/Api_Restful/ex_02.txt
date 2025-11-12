@@ -1,0 +1,12 @@
+2. Metodi HTTP e CRUD: Per ciascuna operazione indica il metodo HTTP e il codice di stato corretto:
+
+    Creare un nuovo corso
+        post /corsi -> 201
+    Aggiornare i dati di un istruttore
+        put /istruttori/21 -> 200
+    Eliminare un iscritto
+        delete /iscritti/67 -> 204
+    Ottenere l’elenco dei corsi
+        get /corsi -> 200
+    Tentare di accedere a un corso inesistente
+        get /corsi/13278 -> 404
