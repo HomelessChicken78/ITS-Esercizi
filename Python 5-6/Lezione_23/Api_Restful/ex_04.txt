@@ -28,7 +28,7 @@ Content-Type: application/json
     "cognome":"Nerini"
 }
 
-get /clienti/11/prenotazioni
+get /clienti/11/prenotazioni/23
 HTTP/1.1 200 OK
 Content-Type: application/json
 {
