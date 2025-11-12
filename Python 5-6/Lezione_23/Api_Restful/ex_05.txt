@@ -54,14 +54,11 @@ POST
 https://api.esempio.it/prenotazioni
 Content-Type: application/json
 {
-  "action": "crea_prenotazione",
-  "payload": {
-   "cliente": "Sara Bianchi",
-   "campo": 1,
-   "data": "2025-04-05",
-   "ora": "07:30",
-   "durata_ore": 1.5
-   }
+    "cliente": "Sara Bianchi",
+    "campo": 1,
+    "data": "2025-04-05",
+    "ora": "07:30",
+    "durata_ore": 1.5
 }
 
 HTTP/1.1 201 Created
