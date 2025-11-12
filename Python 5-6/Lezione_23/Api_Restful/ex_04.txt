@@ -2,7 +2,7 @@
 Definisci 5 endpoint REST (metodo + URI + esempio di risposta JSON).
 
 Endpoint:
-get /destinazioni
+get /destinazioni/7
 HTTP/1.1 200 OK
 Content-Type: application/json
 {
@@ -10,7 +10,7 @@ Content-Type: application/json
     "nome": "Roma"
 }
 
-get /clienti
+get /clienti/11
 HTTP/1.1 200 OK
 Content-Type: application/json
 {
@@ -28,7 +28,7 @@ Content-Type: application/json
     "cognome":"Nerini"
 }
 
-get /prenotazioni
+get /clienti/11/prenotazioni
 HTTP/1.1 200 OK
 Content-Type: application/json
 {
@@ -39,7 +39,7 @@ Content-Type: application/json
     "client_id": 11
 }
 
-post /prenotazioni
+post /clienti/12/prenotazioni
 HTTP/1.1 201 CREATED
 Content-Type: application/json
 {
