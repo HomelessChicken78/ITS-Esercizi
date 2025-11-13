@@ -1,0 +1,99 @@
+Specifica delle classi 
+
+Operazioni ausiliarie 
+
+sovrapposti(i1 : DataOra, i2 : DataOra, f1 : DataOra): Booleano: 
+
+    Pre: 
+
+    Deve essere che i1 <= f1 e che i2 <= f2 
+
+    Post: 
+
+    result = True se la seguente condizione è verificata 
+
+    Deve esistere un t:DataOra tale che i1 <= t <= f1 e che i2 <= t <= f2 
+
+    Altrimenti result = False 
+
+ 
+
+Specifica della classe Crociera 
+
+n_romantiche(): Intero >= 0: 
+
+    pre: 
+
+    Nessuna 
+
+    post: 
+
+    Sia itin:Itinerario tale che (itin, this):c_itin 
+
+    Sia R l'insieme di tutte le r:Romantiche tali che: 
+
+    Esista il link (r, itin):dest_itin, dove itin:itinerario 
+
+    Sia result = |R| 
+
+n_divertenti(): Intero >= 0: 
+
+    pre: 
+
+    Nessuna 
+
+    post: 
+
+    Sia itin:Itinerario tale che (itin, this):c_itin 
+
+    Sia D l'insieme di tutte le d:Divertente tali che: 
+
+    Esista il link (d, itin):dest_itin, dove itin:itinerario 
+
+    Sia result = |D| 
+
+[V.Crociera.date_coerenti] L’inizio deve essere prima della fine 
+
+Per ogni c:Crociera, deve essere vero che c.inizio <= c.fine 
+
+[V.Tradizionale.romantiche>=divertenti] Se una crociere è tradizionale, deve avere un numero di destinazioni romantiche >= al numero di destinazioni divertenti. 
+
+Per ogni c:Tradizionale, deve essere che c.n_romantiche() >= c.n_divertenti() 
+
+[V.Crociera.non_oltre_max_posti] Il numero totale di posti prenotati deve essere <= al numero di posti specificati nel relativo attributo della nave. 
+
+Per ogni c:Crociera, nav:Nave, tali che (c, nav):c_nav, 
+
+sia P l'insieme di tutte le pren:Prenotazione, tali che (c, pren):c_pren. 
+
+sia S la somma di tutti i valori per gli attributi pren.num_posti in P 
+
+Non deve essere che S > nav.max_pass 
+
+ 
+
+  
+
+Specifica della classe Nave 
+
+[V.Nave.Crociera.non_in_due_contemporaneamente] Una nave non può stare in due crociere contemporaneamente. 
+
+Per ogni c1:Crocierera, c2:Crociera e nav:Nave, tali che (c1, nav):c_nav e che (c2, nav):c_nav, non deve essere che sovrapposti(c1.inizio, c2.inizio, c1.fine, c2.fine). 
+
+ 
+
+Specifica della classe Posto 
+
+[V.Posto.date_coerenti] L’inizio deve essere prima della fine. 
+
+Per ogni p:Posto, deve essere che p.fascia_inizio <= p.fascia_fine. 
+
+ 
+
+Specifica della classe Destinazione 
+
+[V.Destinazione.Posto.nello_stesso_continente] I posti appartenenti alla destinazione, devono essere nello stesso continente della destinazione stessa. 
+
+Per ogni dest:Destinazione, p:Posto e cont:Continente, tali che (dest, cont):dest_cont, che (dest, p):dest_p, deve essere che esiste il link (p, cont):p_cont. 
+
+ 
