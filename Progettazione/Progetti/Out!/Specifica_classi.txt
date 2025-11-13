@@ -1,0 +1,79 @@
+Specifica delle classi 
+
+Operazioni ausiliari 
+
+sovrapposti(i1: DataOra, i2 : DataOra, f1 : DataOra, f2 : DataOra) : Booleano: 
+
+    Pre: 
+
+    Deve essere che i1 <= f1 e che i2 <= f2 
+
+    Post: 
+
+    result = True se la seguente condizione è verificata 
+
+    Deve esistere un t:DataOra tale che i1 <= t <= f1 e che i2 <= t <= f2 
+
+    Altrimenti result = False 
+
+Specifica della classe Rappresentazione 
+
+[V.Rappresentazione.date_consistenti] L’inizio deve essere dopo la fine 
+
+Per ogni rappr:Rappresentazione, deve essere che rappr.inizio < rappr.fine 
+
+ 
+
+[V.Rappresentazione.Sala.solo_una_rappr_contemp] Due rappresentazioni non possono svolgersi nella stessa sala contemporaneamente. 
+
+Per ogni r1:Rappresentazione, r2:Rappresentazione e s:Sala, tali che r1 =/= r2, che (r1, s):sal_rappr e che (r2, s):sal_rappr, non deve essere sovrapposti(r1.inizio, r2.inizio, r1.fine, r2.fine). 
+
+Specifica della classe Prenotazione 
+
+[V.Prenotazione.Posti.sono_della_sala_della_rappr] I posti indicati dalla rappresentazione devono far parte della stessa sala della quale fa parte la rappresentazione. 
+
+Per ogni pr:Prenotazione, p:Posto, s:Sala e rappr:Rappresentazione tali che (pr, p):pren_posto, che (s, p):sal_posto e che (pr, rappr):pren_rappr, deve essere che esista il link (s, rappr):sal_rappr. 
+
+ 
+
+[V.Prenotazione.istante_prima_fine_rappr] L’istante di prenotazione deve essere prima della fine della rappresentazione. 
+
+Per ogni pr:Prenotazione e rappr:Rappresentazione, tali che (pr, rappr):pren_rappr, deve essere che rappr.fine < pr.istante. 
+
+Specifica della classe Posto 
+
+[V.Posto.occupato_solo_una_volta] Lo stesso posto non può essere occupato due volte contemporaneamente. 
+
+Per ogni p:Posto, pr1:Prenotazione, pr2:Prenotazione, rappr1:Rappresentazione e rappr2:Rappresentazione tali che (p, pr1):pren_posto, che (p, pr2):pren_posto, che (pr1, rappr1):pren_rappr e che (pr2, rappr2):pren_rappr. Non deve essere che rappr1 = rappr2 
+
+Specifica della classe Sala 
+
+posti_disponibiliI(d : DataOra) : Intero >= 0: 
+
+    Pre: 
+
+    Nessuna 
+
+    Post: 
+
+    Sia P l'insieme di tutti i p:Posto, tali che: 
+
+    (p, this):sal_posto 
+
+    Non esistono una pren:Prenotazione e una rappr:Rappresentazione tali che: 
+
+    (pren, rappr):pren_rappr 
+
+    (pren, p):pren_posto 
+
+    rappr.inizio <= d <= rappr.fine 
+
+    result = |P| 
+
+Specifica della classe Utente 
+
+[V.Utente.solo_una_rappr_contemporaneamente] Un utente non può partecupare a due rappresentazioni contemporaneamente. 
+
+Per ogni ut:Utente, pr1:Prenotazione, pr2:Prenotazione, rappr1:Rappresentazione, rappr2:Rappresentazione, tali che pr1 =/= pr2, che (ut, pr1):ut_pren, che (ut, pr2):ut_pren, che (pr1, rappr1):pren_rapp e che (pr2, rappr2), non deve essere che sovrapposti(rappr1.inizio, rappr2.inizio, rappr1.fine, rappr2.fine). 
+
+ 
