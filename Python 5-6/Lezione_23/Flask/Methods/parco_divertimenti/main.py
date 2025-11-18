@@ -80,16 +80,6 @@ class Carousel(Ride):
             "categoria" : self.category(),
             "animals" : self.animals
         }
-'''
-Classe Park
-
-La classe Park rappresenta il contenitore principale del sistema, che gestisce tutte le attrazioni presenti nel parco.
-
-Metodi:
-
-    list_all(): restituisce una lista di tutte le attrazioni (puoi ordinare per categoria e nome, opzionale).
-
-'''
 
 class Park:
     def __init__(self) -> None:
