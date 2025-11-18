@@ -144,16 +144,16 @@ def list_rides() -> list[dict[str, str|int]]:
     for v in park.rides.values():
         new_lst.append(v.info())
     
-    return jsonify(new_lst)
+    return jsonify(new_lst), 200
 
 @app.route("/rides/<int:ride_id>")
 def get_ride(ride_id : int) -> dict:
-    return jsonify(park.get(ride_id).info())
+    return jsonify(park.get(ride_id).info()) if park.get(ride_id) is not None else jsonify({}), 404
 
 @app.route("/rides/<int:ride_id>/wait/<float:crowd>")
 def get_wait_ride(ride_id : int, crowd : float = 1.0) -> dict:
-    return jsonify({"wait time" : park.get(ride_id).wait_time(crowd)})
+    return jsonify({"wait time" : park.get(ride_id).wait_time(crowd)}), 200
 
 @app.route("/rides/<int:ride_id>/wait/")
 def get_wait_ride_2(ride_id : int) -> dict:
-    return jsonify({"wait time" : park.get(ride_id).wait_time()})
+    return jsonify({"wait time" : park.get(ride_id).wait_time()}), 200
