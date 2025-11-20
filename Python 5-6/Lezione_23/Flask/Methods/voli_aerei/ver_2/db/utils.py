@@ -1,7 +1,7 @@
 import json
 import os
 
-from data_model.classes import Nazione
+from data_models.classes import Nazione
 
 current_dir = os.path.curdir
 MOCKUP_DB_INIT_JSON_FILENAME = os.path.join(current_dir, "db", "mockup_db_init.json")
