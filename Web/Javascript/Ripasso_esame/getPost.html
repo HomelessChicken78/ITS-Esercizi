@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>get Posts ✉️</title>
+</head>
+<body>
+    <div id="root" style="padding: 10px; background-color: lightgray;"></div>
+    <script>
+        const urlBase="https://jsonplaceholder.typicode.com/";
+        const div=document.getElementById("root")
+        fetch(urlBase+"posts/1")
+        .then(res => res.json())
+        .then(post => {
+            div.innerHTML=`<h2>${post.title}</h2>`
+            const user = fetch(urlBase+"users/"+post.userId).then(resp => resp.json())
+            const comments = fetch(urlBase+"comments?postId="+post.id).then(resp => resp.json())
+            Promise.all([user, comments]).then(res => {
+                console.log(res);
+                const small = document.createElement("small")
+                small.textContent = res[0].name
+                div.appendChild(small);
+                const commenti = res[1];
+                commenti.forEach(el => {
+                    div.innerHTML += "<div>"+el.name+"</div>"
+                });
+            })
+        })
+
+        fetch(urlBase+"posts/1")
+        .then(res => res.json())
+        .then(json => console.log(json));
+
+        // async function getPost(){
+        //     const response = await fetch(urlBase+"posts/1")
+        //     const res = await response.json()
+
+        //     console.log("ASYNC ", res)
+        //     return res
+        // }
+
+        // const result = getPost()
+        // result.then(ris => console.log(ris))
+
+    </script>
+</body>
+</html>
