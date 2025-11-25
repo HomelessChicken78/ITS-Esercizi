@@ -1,4 +1,4 @@
-package java1;
+package java1.introduzione;
 
 public class HelloWorld {
 	public static void main (String[] args)
