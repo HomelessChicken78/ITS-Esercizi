@@ -30,5 +30,7 @@ public class Esempi {
 		for (char c : SecondoArray) {
 			System.out.print(c);
 		}
+		
+		// SecondoArray.length = 4; // Errore -> Non si può modificare
 	}
 }
