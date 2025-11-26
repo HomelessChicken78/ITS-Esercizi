@@ -14,19 +14,6 @@ public class ex_07 {
 		    • inserendo una coppia g, m che non corrisponde ad una data reale, si riceve un messaggio d’errore “valori giorno/mese non coerenti” */
 		
 		Scanner sc = new Scanner(System.in);
-		int g;
-		
-		System.out.println("Inserisci un giorno\n->\t");
-		do {
-			g = sc.nextInt();
-			
-			if (g <= 0) {
-				System.out.println("Inserire un numero > 0");
-			}
-		} while (g <= 0);
-		
-		System.out.println("Hai inserito\t" + g + "\n");
-		
 		int m;
 		
 		System.out.println("Inserisci un mese\n->\t");
@@ -39,6 +26,32 @@ public class ex_07 {
 		} while (m <= 0 || m > 12);
 		
 		int days = 0;
+		
+		int max_day;
+		switch (m) {
+			case 1, 3, 5, 7, 8, 10, 12:
+				max_day = 31;
+				break;
+			case 2:
+				max_day = 28;
+				break;
+			default:
+				max_day = 30;
+				break;
+		};
+		
+		int g;
+		
+		System.out.println("Inserisci un giorno\n->\t");
+		do {
+			g = sc.nextInt();
+			
+			if (g <= 0) {
+				System.out.println("Inserire un numero > 0");
+			}
+		} while (g <= 0);
+		
+		System.out.println("Hai inserito\t" + g + "\n");
 		
 		for (int contatore = 1; contatore < m; contatore++) {
 			if (contatore == 1 || contatore == 3 || contatore == 5 || contatore == 7 || contatore == 8 || contatore == 10 || contatore == 12) {
@@ -53,7 +66,7 @@ public class ex_07 {
 			}
 		}
 		
-		if (g <= 31 &&  (m == 1 || m == 3 || m == 5 || m == 7 || m == 8 || m == 10 || m == 12) || g <= 28 && m == 2 || g <= 30 && (m == 4 || m == 6 || m== 9 || m == 11)) {
+		if (g <= max_day) {
 			days += g;
 			days--;
 			System.out.println("Sono passati " + days + " giorni dall'inizio dell'anno");
