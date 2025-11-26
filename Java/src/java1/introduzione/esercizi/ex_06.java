@@ -41,7 +41,7 @@ public class ex_06 {
 			}
 			
 			if (primes == 1) {
-				System.out.println("\nIl numero è primo");
+				System.out.println("\nIl numero è primo!");
 			}
 		}
 	}
