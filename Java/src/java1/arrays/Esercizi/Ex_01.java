@@ -23,7 +23,6 @@ public class Ex_01 {
 		for (int i = 0; i < A.length; i++) {
 			System.out.print("Insert the " + (i + 1) + " element of the array -> ");
 			A[i] = scan.nextInt();
-			System.out.println();
 		}
 		
 		// Create a second array of the same size and populate it
@@ -34,8 +33,12 @@ public class Ex_01 {
 		
 		// result
 		System.out.print('[');
-		for (int num : B) {
-			System.out.print(num + ", ");
+		for (int i = 0; i < B.length; i++) {
+			if (i == B.length - 1) {
+				System.out.print(B[i]);
+			} else {
+				System.out.print(B[i] + ", ");
+			}
 		}
 		System.out.println(']');
 	}
