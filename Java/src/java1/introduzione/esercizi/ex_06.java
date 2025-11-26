@@ -23,22 +23,25 @@ public class ex_06 {
 		
 		System.out.println("Hai inserito\t" + n + "\n");
 		
-		System.out.print("I fattori di " + n + ": ");
-		
-		boolean first = true;
+		int primes = 0;
 		
 		while (n > 1) {
 			for (int contatore = 2; contatore <= n; contatore++) {
 				if (n % contatore == 0) {
-					if (first) {
+					if (primes == 0) {
+						System.out.print("I fattori di " + n + ": ");
 						System.out.print(contatore);
-						first=false;
 					} else {
 						System.out.print("*" + contatore);
 					}
+					primes++;
 					n /= contatore;
 					break;
 				}
+			}
+			
+			if (primes == 1) {
+				System.out.println("\nIl numero è primo");
 			}
 		}
 	}
