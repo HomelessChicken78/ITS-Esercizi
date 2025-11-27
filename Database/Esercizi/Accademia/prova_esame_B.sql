@@ -38,7 +38,7 @@ GROUP BY p.id
 -- professore ordinario. Per ogni professore ordinario,
 -- restituire nome, cognome, numero di progetti nei quali è
 -- coinvolto
-SELECT p.nome, p.cognome, count(pr.id)
+SELECT p.nome, p.cognome, count(DISTINCT    pr.id)
 FROM persona AS p
     JOIN AttivitaProgetto AS ap ON p.id = ap.persona
     JOIN Progetto AS pr ON ap.progetto = pr.id
