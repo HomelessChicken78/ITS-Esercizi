@@ -98,10 +98,9 @@ GROUP BY p.id
 -- di id ‘5’ del progetto con id ‘3’. Per ogni persona, restituire
 -- il numero totale di ore svolte in attività progettuali per il
 -- WP in questione
-SELECT DISTINCT sum(ap.oreDurata) tot_ore
+SELECT sum(ap.oreDurata) tot_ore
 FROM persona AS p
     JOIN AttivitaProgetto AS ap ON p.id = ap.persona
     JOIN Progetto AS pr ON ap.progetto = pr.id AND pr.id = 3
     JOIN WP ON wp.progetto = pr.id AND wp.id = 5
 GROUP BY p.id
-; -- !!! : Attento al distinct
