@@ -47,7 +47,7 @@ public class Ex_10 {
 			A[i] = scan.nextInt();
 		}
 
-		// int[] A = { 15, 6, 4, 10, 44, 10, 11, 2 }; -> for fast testing
+		// int[] A = { 15, 6, 4, 10, 44, 10, 11, 2 }; // -> for fast testing
 
 		for (int i = 0; i < A.length; i++) {
 			if (i < A.length) {
