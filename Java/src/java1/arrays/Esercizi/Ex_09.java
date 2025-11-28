@@ -20,7 +20,7 @@ public class Ex_09 {
 		}
 		
 		// Cheat code for testing
-		 System.out.print('[');
+		/* System.out.print('[');
 		for (int i = 0; i < lottery.length; i++) {
 			if (i == lottery.length - 1) {
 				System.out.print(lottery[i]);
@@ -28,7 +28,7 @@ public class Ex_09 {
 				System.out.print(lottery[i] + ", ");
 			}
 		}
-		System.out.println(']'); 
+		System.out.println(']'); */
 
 		Scanner scan = new Scanner(System.in);
 
