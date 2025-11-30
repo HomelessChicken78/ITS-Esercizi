@@ -1,0 +1,19 @@
+[V.Esposizione.Generalizzazione.temp_isa_esp]
+Per ogni esp:Esposizione deve essere che
+esp.fine, esp.tema e esp.prezzo_accesso sono valorizzate se e solo se esp.is_temp = true.
+
+[V.Esposizione.Biglietto.ext_temp.solo_se_esposizione_temporanea]
+Per ogni esp:Esposizione e ext:ExtendedAccess non deve essere che 
+esiste il link (ext, esp):ext_temp e che esp.is_temp = false
+
+[V.Biglietto.Generalizzazione.Disgiunzione]
+Per ogni bigl:Biglietto, st:Standard e ext:ExtendedAccess
+Non devono esistere contemporaneamente il link
+(st, bigl):st_isa_bigl
+e il link (ext, bigl):ext_isa_bigl
+
+[V.Biglietto.Generalizzazione.Completezza]
+Per ogni bigl:Biglietto, deve esistere
+il link (st, bigl):st_isa_bigl, dove st:Standard
+oppure deve esistere
+il link (ext, bigl):ext_bigl, dove ext:ExtendedAccess
