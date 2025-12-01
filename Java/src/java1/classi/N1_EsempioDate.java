@@ -2,7 +2,7 @@ package java1.classi;
 
 import java.util.Date;
 
-public class EsempioDate {
+public class N1_EsempioDate {
 	@SuppressWarnings("deprecation")
 	public static void main(String[] args) {
 		Date d = new Date();
