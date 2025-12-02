@@ -85,5 +85,7 @@ public class Ex_08 {
 			}
 		}
 		System.out.println(']');
+		
+		scan.close();
 	}
 }

@@ -43,5 +43,7 @@ public class Ex_05 {
 			}
 		}
 		System.out.println(']');
+		
+		scan.close();
 	}
 }

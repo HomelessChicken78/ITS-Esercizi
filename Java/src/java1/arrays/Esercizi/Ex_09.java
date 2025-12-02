@@ -68,5 +68,7 @@ public class Ex_09 {
 
 		// result
 		System.out.println("You guessed correctly " + amount_guessed + " numbers!");
+		
+		scan.close();
 	}
 }

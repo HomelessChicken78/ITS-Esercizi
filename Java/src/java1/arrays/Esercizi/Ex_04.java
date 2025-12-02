@@ -51,5 +51,7 @@ public class Ex_04 {
 		System.out.println("Sum of even indexes: " + even);
 		System.out.println("Sum of odd indexes: " + odd);
 		System.out.println("Mean of all the elements: "+ mean);
+		
+		scan.close();
 	}
 }

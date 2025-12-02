@@ -139,5 +139,7 @@ public class Ex_11 {
 			}
 		}
 		System.out.println(']');
+		
+		scan.close();
 	}
 }
