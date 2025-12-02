@@ -31,10 +31,10 @@ public class ConversioneData {
 		
 		int day = Integer.parseInt(inputText.substring(0, 2));
 		System.out.print(day);
-		
+
 		String month = monthList[Integer.parseInt(inputText.substring(3, 5)) - 1];
 		System.out.print(" " + month);
-		
+
 		int year = Integer.parseInt(inputText.substring(6, 10));
 		System.out.print(" " + year);
 
