@@ -1,0 +1,14 @@
+package java1.classi.esercizi.giocodadi;
+
+import java.util.Random;
+
+public class Dado {
+	final static int ricarico = 5;
+	
+	private Dado() {
+	}
+
+	public static int estrai() {
+		return new Random().nextInt(1, 7);
+	}
+}
