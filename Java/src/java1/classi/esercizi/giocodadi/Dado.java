@@ -3,7 +3,7 @@ package java1.classi.esercizi.giocodadi;
 import java.util.Random;
 
 public class Dado {
-	final static int ricarico = 5;
+	public final static int ricarico = 5;
 	
 	private Dado() {
 	}
