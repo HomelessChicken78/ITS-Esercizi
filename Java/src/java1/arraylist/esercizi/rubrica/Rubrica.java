@@ -1,4 +1,4 @@
-package arraylist.esercizi.rubrica;
+package java1.arraylist.esercizi.rubrica;
 
 import java.util.ArrayList;
 

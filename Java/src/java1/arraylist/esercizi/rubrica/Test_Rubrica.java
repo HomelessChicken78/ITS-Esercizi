@@ -1,4 +1,4 @@
-package arraylist.esercizi.rubrica;
+package java1.arraylist.esercizi.rubrica;
 
 public class Test_Rubrica {
 	public static void main(String[] args) {

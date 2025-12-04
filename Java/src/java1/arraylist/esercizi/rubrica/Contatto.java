@@ -1,4 +1,4 @@
-package arraylist.esercizi.rubrica;
+package java1.arraylist.esercizi.rubrica;
 
 public class Contatto {
 	private String nome;
