@@ -6,7 +6,11 @@ public class Impiegato {
 	private String nome;
 	private double salario;
 	private Date dataAssunzione;
-
+	public Impiegato(String nome, double salario, Date dataAssunzione) {
+		this.nome = nome;
+		this.salario = salario;
+		this.dataAssunzione = dataAssunzione;
+	}
 	public double getSalario() {
 		return salario;
 	}
@@ -19,17 +23,17 @@ public class Impiegato {
 	public Date getDataAssunzione() {
 		return dataAssunzione;
 	}
-
 	@Override
 	public String toString() {
-		return "Impiegato [nome=" + nome + ", salario=" + salario + ", dataAssunzione=" + dataAssunzione + "]";
+		return "Nome impiegato =" + nome + ", salario=" + salario + ", dataAssunzione=" + dataAssunzione;
 	}
 	
 	public int getAnnoAssunzione() {
-		return this.dataAssunzione.getYear();
+		return this.dataAssunzione.getYear() + 1900;
 	}
 	
-	public void incrSalario(double importo) {
-		salario += importo;
+	public void incrSalario(double aumento) {
+		this.salario += aumento;
 	}
+	
 }
