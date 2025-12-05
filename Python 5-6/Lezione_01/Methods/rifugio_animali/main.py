@@ -174,7 +174,7 @@ def get_food(animal_id : str) -> dict:
 @app.route("/animals/<string:animal_id>/adoption", methods = ['GET'])
 def get_adoption(animal_id : str) -> dict:
     if sh.get(animal_id) is not None:
-        return jsonify({"id" : animal_id, "daily_food_grams" : sh.adoptions[animal_id] if animal_id in sh.adoptions else "No adoption yet"})
+        return jsonify({"id" : animal_id, "adopter_name" : sh.adoptions[animal_id] if animal_id in sh.adoptions else "No adoption yet"})
     else:
         return "Not found", 404
 
