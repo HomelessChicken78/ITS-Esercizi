@@ -1,4 +1,4 @@
-package arraylist.azienda;
+package java1.arraylist.azienda;
 
 import java.util.Date;
 
