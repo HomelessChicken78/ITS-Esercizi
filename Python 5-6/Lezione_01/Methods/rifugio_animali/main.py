@@ -1,10 +1,9 @@
 from abc import ABC, abstractmethod
-from typing import Self
 
 class Animal(ABC):
     '''La classe Animal rappresenta un animale generico del rifugio.'''
 
-    ids: dict[int, Self] = dict()
+    ids: dict[int, "Animal"] = dict()
 
     def __init__(self, name : str, age_years : int, weight_kg : float):
         if Animal.ids:
