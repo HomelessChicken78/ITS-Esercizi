@@ -1,0 +1,37 @@
+<!-- Richiesto: realizzare un link con classe btn che si comporta come un pulsante e cambia stile
+quando il mouse passa sopra.
+Usare: classe CSS, pseudo-classe :hover.
+Risultato: pulsante con chiara differenza visiva tra stato normale e passaggio del mouse. -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>:hover</title>
+    <style>
+        .btn {
+            color: rgb(0, 53, 0);
+            font-weight: bolder;
+            background-color: green;
+            padding: 10px;
+            border-style: solid;
+            border-width: 10px;
+            border-color: darkgreen;
+            border-radius: 10px;
+        }
+
+        .btn:hover {
+            background-color: rgb(0, 255, 0);
+            padding : 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div style="margin-top: 60px;">
+        <a href="#" class="btn">Passa il mouse sopra</a>
+    </div>
+</body>
+
+</html>

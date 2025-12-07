@@ -1,0 +1,25 @@
+<!-- Richiesto: due campi input (testo e password) che mostrano un bordo colorato quando ricevono
+focus.
+Usare: pseudo-classe :focus.
+Risultato: campo evidenziato chiaramente mentre l’utente digita. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>:focus</title>
+    <style>
+        input:focus {
+            background-color: brown;
+            border-style: solid;
+            border-width: 10px;
+            border-color: rgb(122, 29, 29)
+        }
+    </style>
+</head>
+<body>
+    <label>Testo </label><input type="text" />
+    <label>Password </label><input type="password" />
+</body>
+</html>

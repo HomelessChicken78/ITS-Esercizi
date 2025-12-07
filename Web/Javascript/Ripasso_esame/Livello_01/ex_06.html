@@ -1,0 +1,59 @@
+<!-- Richiesto: mostrare un numero in pagina che aumenta ad ogni clic di un pulsante.
+Usare: gestione DOM, variabile JS, aggiornamento testo.
+Risultato: numero aggiornato visivamente ad ogni clic. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bottone incremento</title>
+
+
+
+    <style>
+        .btn {
+            color: rgb(0, 53, 0);
+            font-weight: bolder;
+            background-color: green;
+            padding: 10px;
+            border-style: solid;
+            border-width: 10px;
+            border-color: darkgreen;
+            border-radius: 10px;
+            width: 20%;
+            margin: 0 auto;
+            text-align: center;
+            user-select: none;
+        }
+
+        .btn:hover {
+            background-color: rgb(0, 255, 0);
+            cursor: pointer;
+        }
+
+        .number {
+            font-size: 100px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="number" id="currentNumber">1</div>
+    <div class="btn" id="btn">Cliccami</div>
+
+
+
+    <script>
+        let num = 1;
+        let currentNumber = document.getElementById("currentNumber");
+        let btn = document.getElementById("btn");
+
+        const incremento = () => {
+            num++;
+            currentNumber.innerHTML = num;
+        };
+
+        btn.addEventListener('click', incremento)
+    </script>
+</body>
+</html>

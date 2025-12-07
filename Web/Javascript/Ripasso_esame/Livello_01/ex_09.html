@@ -1,0 +1,50 @@
+<!-- Richiesto: campo di testo + pulsante; ad ogni invio aggiungere una voce alla lista.
+Usare: createElement, append; input text per contenuto.
+Risultato: lista che cresce dinamicamente -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>createElement + append</title>
+
+
+
+    <style>
+        .container {
+            width: 400px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div style="text-align: center;"><input type="text" id="text"></div>
+    <div style="text-align: center; margin-top: 10px;"><button id="send">Invia</button></div>
+
+    <div class="container">
+        <h2 style="text-align: center; margin-bottom: 0;">Lista elementi</h2>
+        <ul style="margin-top: 0;" id="listElements">
+        </ul>
+    </div>
+
+
+
+    <script>
+        let textInput = document.getElementById("text");
+        let sendBtn = document.getElementById("send");
+        let listElements = document.getElementById("listElements");
+
+        const sendText = () => {
+            let newElement = document.createElement("li");
+            newElement.innerHTML = textInput.value;
+            listElements.append(newElement);
+        };
+
+        sendBtn.addEventListener('click', sendText);
+    </script>
+</body>
+
+</html>

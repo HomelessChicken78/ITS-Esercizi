@@ -1,0 +1,42 @@
+<!-- Richiesto: un contenitore largo 400px centrato orizzontalmente, contenente una card con titolo,
+descrizione e area prezzo.
+Usare: margin per centratura, padding interno, bordo per distinzione.
+Risultato: card visibile e ben separata dal resto della pagina. -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card</title>
+    <style>
+        .container {
+            width: 400px;
+            margin: 0 auto;
+        }
+
+        .my-card {
+            background-color: aqua;
+            padding: 10px;
+            margin: auto;
+            border-style: solid;
+            border-width: 20px;
+            border-color: rgb(0, 104, 104);
+            border-radius: 30%;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="my-card">
+            <h1>Titolo</h1>
+            <div>Descrizione molto lunga di come funziona questa card specifica appena fatta in html.</div>
+            <div>Area prezzo</div>
+        </div>
+    </div>
+</body>
+
+</html>

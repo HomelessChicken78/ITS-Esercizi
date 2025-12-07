@@ -1,0 +1,27 @@
+<!-- Richiesto: prendere un oggetto JS e mostrarne le proprietà in una frase strutturata.
+Usare: template literal, inserimento nel DOM.
+Risultato: frase leggibile es. "Modello: Fiat Panda (1990)". -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oggetti javascript</title>
+</head>
+<body>
+    <div id="myObj"></div>
+
+    <script>
+        let text = document.getElementById("myObj");
+
+        car = {
+            "modello" : "Fiat Panda",
+            "anno" : 1990,
+            "proprietario" : "Giacomo Coccodrillini"
+        };
+
+        text.innerHTML = `${car["modello"]} (${car.anno}) - proprietario: ${car["proprietario"]}`;
+    </script>
+</body>
+</html>

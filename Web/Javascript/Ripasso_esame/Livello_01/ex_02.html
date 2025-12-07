@@ -1,0 +1,29 @@
+<!-- Richiesto: creare una lista ul con 4 elementi. Il 2° e il 4° devono avere stile diverso (bordo, colore
+sfondo, grassetto).
+Usare: selettore CSS nth-child, proprietà di bordo, sfondo, font-weight.
+Risultato: lista verticale dove alcuni elementi risultano evidenziati. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>nth-child</title>
+    <style>
+        li:nth-child(2) {
+            background-color: red; border-style: solid; border-width: 10px; border-color: darkred;  font-weight: bold;
+        }
+
+        li:nth-child(4) {
+            background-color: green; border-style: solid; border-width: 10px; border-color: darkgreen;  font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>Primo elemento</li>
+        <li style>Secondo elemento</li>
+        <li>Terzo elemento</li>
+        <li>Quarto elemento</li>
+    </ul>
+</body>
+</html>

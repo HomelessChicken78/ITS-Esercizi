@@ -1,0 +1,52 @@
+<!-- Richiesto: se il testo è più corto di una soglia, mostrare un messaggio di errore sotto l’input.
+Usare: controllo lunghezza stringa, manipolazione visibilità del messaggio.
+Risultato: indicazione chiara quando il testo non rispetta i requisiti. -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controllo lunghezza</title>
+
+
+
+    <style>
+        .error-msg {
+            color: red;
+            display: none;
+        }
+
+        .container {
+            width: 400px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div style="text-align: center;"><input type="text" id="text"></div>
+        <div class="error-msg" id="errorMsg">Errore: hai scritto un testo troppo lungo.</div>
+    </div>
+
+
+
+    <script>
+        let errorMsg = document.getElementById("errorMsg");
+        let textInput = document.getElementById("text");
+
+        const checkCorrectInput = () => {
+            if (textInput.value.length > 10) {
+                errorMsg.style.display = 'block';
+            } else {
+                errorMsg.style.display = 'none';
+            };
+        }
+
+        textInput.addEventListener('input', checkCorrectInput);
+    </script>
+</body>
+
+</html>
