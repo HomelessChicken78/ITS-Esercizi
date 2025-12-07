@@ -5,7 +5,7 @@ import java.util.Random;
 public class Dado {
 	public final static int ricarico = 5;
 	
-	private Dado() {
+	public Dado() {
 	}
 
 	public static int estrai() {
