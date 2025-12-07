@@ -1,0 +1,30 @@
+<!-- 17. Scambio Variabili
+Richiesto: invertire i valori di due variabili.
+Usare: destrutturazione di array in una riga.
+Risultato: valori scambiati senza variabili temporanee. -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destrutturazione</title>
+</head>
+
+<body>
+    <div id="here"></div>
+
+
+
+    <script>
+        result = document.getElementById("here")
+
+        let first = 10;
+        let second = 220;
+        [first, second] = [second, first];
+        result.innerHTML = `first=${first}; second=${second}`
+    </script>
+</body>
+
+</html>

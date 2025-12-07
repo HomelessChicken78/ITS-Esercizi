@@ -1,0 +1,53 @@
+<!-- Richiesto: struttura a due colonne, sidebar fissa e area contenuti flessibile.
+Usare: flexbox, larghezza fissa per sidebar, flessibilità per main.
+Risultato: layout tipico da pannello admin con menu laterale -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout Sidebar + Contenuto</title>
+
+
+
+    <style>
+        .container {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+        }
+
+        .sidebar {
+            width: 10%;
+            height: 100vh;
+            background-color: rgb(32, 32, 32, 0.95);
+            padding-top: 10px;
+        }
+
+        .panel {
+            height: 100%;
+            flex-grow: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <ul>
+                <li>Dashboard</li>
+                <li>Utenti</li>
+                <li>Ricerca</li>
+                <li>Chi siamo</li>
+            </ul>
+        </div>
+
+        <div class="panel">
+            <h1>Benvenuto nel pannello di amministrazione</h1>
+        </div>
+    </div>
+</body>
+
+</html>

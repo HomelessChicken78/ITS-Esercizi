@@ -1,0 +1,32 @@
+<!-- 18. Unione di Array
+Richiesto: creare un nuovo array contenente elementi di due array distinti.
+Usare: spread operator.
+Risultato: array completo con tutti gli elementi originali. -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unione di Array</title>
+</head>
+
+<body>
+    <div id="here"></div>
+
+
+
+    <script>
+        result = document.getElementById("here")
+
+        let first = [10, 202, -2];
+        let second = [42, 0];
+
+        let new_array = [...first, ...second];
+
+        result.innerHTML = `first=${first}; second=${second}; new_array=${new_array}`;
+    </script>
+</body>
+
+</html>

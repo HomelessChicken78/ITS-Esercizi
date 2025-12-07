@@ -1,0 +1,58 @@
+<!-- 20. Filtro Lista in Tempo Reale
+Richiesto: un campo input che filtra una lista di nomi mentre si digita.
+Usare: metodo filter, aggiornamento DOM.
+Risultato: elenco che si aggiorna istantaneamente con i risultati corrispondenti. -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filtro Lista in Tempo Reale</title>
+</head>
+
+<body>
+    <div id="here"></div>
+
+    <input type="text" id="inputText">
+    <ul id="nameList">
+        <li>Giacomo Coccodrillini</li>
+        <li>Drago Anonimo</li>
+        <li>David Divano</li>
+        <li>Mario Mela</li>
+        <li>Ferdinando Mortadellini</li>
+        <li>Giacomo Giacchetti</li>
+        <li>Maria Mela</li>
+        <li>Federico Nebbia</li>
+        <li>Damiano Della Lacuna</li>
+        <li>Gianfrancesco Marinetti</li>
+        <li>Alessandro Giaffettini</li>
+    </ul>
+
+    <script>
+        let inputText = document.getElementById("inputText");
+        let nameList = document.getElementById("nameList");
+        const arrayNames = ["Giacomo Coccodrillini", "Drago Anonimo", "David Divano", "Mario Mela", "Ferdinando Mortadellini", "Giacomo Giacchetti", "Maria Mela",
+            "Federico Nebbia", "Damiano Della Lacuna", "Gianfrancesco Marinetti", "Alessando Giaffettini"
+        ]
+
+        const filter = () => {
+            arrayToLi(arrayNames.filter((name) => name.toLowerCase().includes(inputText.value.toLowerCase())));
+        };
+
+        const arrayToLi = (array) => {
+            nameList.innerHTML = "";
+
+            for (element of array) {
+                let elementToLi = document.createElement("li");
+                elementToLi.innerHTML = element;
+                nameList.append(elementToLi);
+            }
+        }
+
+        inputText.addEventListener('input', filter)
+    </script>
+</body>
+
+</html>

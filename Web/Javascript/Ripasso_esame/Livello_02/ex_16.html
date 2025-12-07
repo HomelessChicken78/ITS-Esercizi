@@ -1,0 +1,39 @@
+<!-- Richiesto: estrarre valori da un oggetto con proprietà interne.
+Usare: destrutturazione oggetto con proprietà annidate.
+Risultato: variabili pronte all’uso contenenti dati estratti. -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destrutturazione</title>
+</head>
+
+<body>
+    <div id="here"></div>
+
+
+
+    <script>
+        const result = document.getElementById("here");
+        const person = {
+            "nome": "Giacomo",
+            "cognome": "Coccodrillini",
+            "age": 22,
+            "isTeacher": false,
+            "address": {
+                street: "Via delle Grazie, 15",
+                city: "Milano",
+                cap: "20121",
+                country: "Italia"
+            },
+        }
+
+        const {cognome: first, isTeacher : second} = person
+        result.innerHTML = `cognome = ${first}; isTeacher= ${second}`
+    </script>
+</body>
+
+</html>

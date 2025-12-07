@@ -1,0 +1,39 @@
+<!-- 19. Copia e Modifica Oggetto
+Richiesto: creare un nuovo oggetto basato su uno esistente modificando solo alcune proprietà.
+Usare: spread operator su oggetti.
+Risultato: oggetto modificato senza alterare l’originale. -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Copia e Modifica Oggetto</title>
+</head>
+
+<body>
+    <div id="here"></div>
+
+
+
+    <script>
+        result = document.getElementById("here")
+
+        post = {
+            id : 4,
+            name : "I divani",
+            year : 2002,
+            album : "Franceschini"
+        };
+
+        newPost = {
+            ...post,
+            name : "Draghi volanti"
+        }
+
+        result.innerHTML = `Post id: ${newPost.id}; ${newPost.name} - ${newPost.year}; album: ${newPost.album}`;
+    </script>
+</body>
+
+</html>
