@@ -33,7 +33,7 @@ public class Test_GiocoDadi {
 			do {
 				tmp_puntata = scan.nextInt();
 				if (tmp_puntata < 1 || tmp_puntata > 6)
-					System.out.print("Errore : Il numero deve essere tra 1 e 6 compresi. \nRiprova");
+					System.out.print("Errore : Il numero deve essere tra 1 e 6 compresi. \nRiprova: ");
 			} while (tmp_puntata < 1 || tmp_puntata > 6);
 
 			you.scommessa(tmp_budget_scommesso, tmp_puntata);
