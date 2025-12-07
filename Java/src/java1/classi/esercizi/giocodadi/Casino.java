@@ -26,7 +26,7 @@ public class Casino {
 		return "Casino " + nome + ", capitale=" + capitale;
 	}
 	
-	public void incassa(int importo) {
+	public void incassa(double importo) {
 		capitale += importo;
 	}
 	
