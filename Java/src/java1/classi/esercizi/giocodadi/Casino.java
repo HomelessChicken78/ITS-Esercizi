@@ -30,7 +30,7 @@ public class Casino {
 		capitale += importo;
 	}
 	
-	public void paga(int importo) {
+	public void paga(double importo) {
 		double toPay = Dado.ricarico * importo;
 		if (capitale >= toPay)
 			capitale -= toPay;
