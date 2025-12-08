@@ -1,0 +1,87 @@
+<!-- 30. Dashboard con Conteggi
+Richiesto: contare elementi completati e non completati.
+Usare: filter per due insiemi distinti.
+Risultato: dashboard con due valori numerici separati. -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard con Conteggi</title>
+</head>
+
+<body>
+    <h3>Numero elementi completati: </h3>
+    <div id="completed"></div>
+
+    <h3>Numero elementi non completati: </h3>
+    <div id="notCompleted"></div>
+
+
+
+    <script>
+        const numCompleted = document.getElementById("completed");
+        const numNotCompleted = document.getElementById("notCompleted");
+
+        let dashboard = [
+            {
+                "name": "Study react",
+                "isCompleted": false,
+            },
+            {
+                "name": "Learn what is uml",
+                "isCompleted": true
+            },
+            {
+                "name": "Exercise 23-33 Python",
+                "isCompleted": true,
+            },
+            {
+                "name": "Exercise 33 Java",
+                "isCompleted": false,
+            },
+            {
+                "name": "Math homeworks",
+                "isCompleted": false,
+            },
+            {
+                "name": "djfsliu",
+                "isCompleted": true
+            },
+            {
+                "name": "Finish React project",
+                "isCompleted": false,
+            },
+            {
+                "name": "Update portfolio",
+                "isCompleted": true,
+            },
+            {
+                "name": "Practice algorithm problems",
+                "isCompleted": false,
+            },
+            {
+                "name": "Learn about REST APIs",
+                "isCompleted": true,
+            },
+            {
+                "name": "Learn Flask",
+                "isCompleted": true,
+            },
+            {
+                "name": "Study progettazione 2",
+                "isCompleted": true,
+            },
+        ];
+
+        let completed = dashboard.filter((el) => el.isCompleted);
+        let uncompleted = dashboard.filter((el) => !el.isCompleted);
+
+        numCompleted.innerHTML = completed.length;
+        numNotCompleted.innerHTML = uncompleted.length;
+    </script>
+</body>
+
+</html>
