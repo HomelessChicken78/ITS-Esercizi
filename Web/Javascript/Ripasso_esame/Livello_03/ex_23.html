@@ -1,0 +1,32 @@
+<!-- 23. Calcolo Saldo con Reduce
+Richiesto: calcolare un saldo da entrate e uscite.
+Usare: reduce su array di movimenti.
+Risultato: valore totale come risultato finale. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reduce su array</title>
+</head>
+<body>
+    <div id="result"></div>
+
+
+
+    <script>
+        let result = document.getElementById('result');
+
+        const entrateUscite = [
+            20.19, 1200.00, -400.49, 10.20, -199.99,
+            189.24, -19.34, -44.67, 5.00, 1.21, -89.99,
+            29.33, 399.20, -322.44, 10.99, -222.22
+        ] 
+
+        result.innerHTML = entrateUscite.reduce((accum, num) => {
+            return accum + num;
+        }, 0);
+    </script>
+</body>
+</html>

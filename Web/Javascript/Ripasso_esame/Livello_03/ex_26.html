@@ -1,0 +1,35 @@
+<!-- 26. Recupero Dati con Fetch
+Richiesto: ottenere dati da API ed esibirli in pagina.
+Usare: fetch e parsing JSON.
+Risultato: titolo e contenuto mostrati nel layout. -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch</title>
+</head>
+
+<body>
+    <h2 id="title"></h2>
+    <div id="body"></div>
+
+
+
+    <script>
+        let title = document.getElementById('title');
+        let body = document.getElementById('body');
+
+        fetch("https://jsonplaceholder.typicode.com/posts?id=1")
+            .then((res) => res.json())
+            .then((post) => {
+                console.log(post[0]);
+                title.innerHTML = post[0].title;
+                body.innerHTML = post[0].body;
+            })
+    </script>
+</body>
+
+</html>
