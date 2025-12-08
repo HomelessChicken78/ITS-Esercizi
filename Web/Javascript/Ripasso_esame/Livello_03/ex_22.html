@@ -1,0 +1,92 @@
+<!-- 22. Filtro Condizionale
+Richiesto: mostrare solo gli oggetti che rispettano due condizioni (categoria e prezzo).
+Usare: filter con condizioni multiple.
+Risultato: elenco dei prodotti filtrati. -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filtro Condizionale</title>
+</head>
+
+<body>
+    <input type="text" id="inputCategory" />
+    <input type="number" id="inputPrice" />
+    <button id="submit">Invia</button>
+    <ul id="result">
+        <li>Smartphone - Categoria: Elettronica - Prezzo: 500</li>
+        <li>Sedia - Categoria: Casa - Prezzo: 40</li>
+        <li>Felpa - Categoria: Abbigliamento - Prezzo: 30</li>
+        <li>Laptop - Categoria: Elettronica - Prezzo: 900</li>
+        <li>Giacchetto - Categoria: Abbigliamento - Prezzo: 80</li>
+        <li>Tavolo - Categoria: Casa - Prezzo: 300</li>
+        <li>Scarpe - Categoria: Abbigliamento - Prezzo: 110</li>
+    </ul>
+
+    <script>
+        let inputCategory = document.getElementById('inputCategory');
+        let inputPrice = document.getElementById('inputPrice');
+        let submit = document.getElementById('submit');
+        let result = document.getElementById('result');
+
+        let elencoProdotti = [
+            {
+                name: "Smartphone",
+                category: "Elettronica",
+                price: 500.00
+            },
+            {
+                name: "Sedia",
+                category: "Casa",
+                price: 40.00
+            },
+            {
+                name: "Felpa",
+                category: "Abbigliamento",
+                price: 30.00
+            },
+            {
+                name: "Laptop",
+                category: "Elettronica",
+                price: 900.00
+            },
+            {
+                name: "Giacchetto",
+                category: "Abbigliamento",
+                price: 80.00
+            },
+            {
+                name: "Tavolo",
+                category: "Casa",
+                price: 300.00
+            },
+            {
+                name: "Scarpe",
+                category: "Abbigliamento",
+                price: 110.00
+            }
+        ];
+
+        const filterProdotti = () => {
+            result.innerHTML = "";
+
+            let filteredProdotti = elencoProdotti.filter(
+                prod => (prod.category.toLowerCase().includes(inputCategory.value.toLowerCase()) && prod.price <= parseFloat(inputPrice.value))
+            );
+
+            console.log(filteredProdotti);
+            for (prod of filteredProdotti) {
+                let li = document.createElement("li");
+                li.innerHTML = `${prod.name} - Categoria: ${prod.category} - Prezzo: ${prod.price}€`;
+                result.append(li);
+            }
+        }
+
+        submit.addEventListener('click', filterProdotti);
+    </script>
+</body>
+
+</html>

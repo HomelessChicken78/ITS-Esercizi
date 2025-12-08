@@ -1,0 +1,48 @@
+<!-- 21. Trasformazione Array con Map
+Richiesto: convertire elementi oggetto in stringhe Nome Cognome.
+Usare: map, template string.
+Risultato: array composto solo da stringhe. -->
+
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trasformazione Array con Map</title>
+</head>
+
+<body>
+    <div id="result"></div>
+
+
+
+    <script>
+        let result = document.getElementById('result')
+
+        let persone = [
+            {
+                nome: 'Giacomo',
+                cognome: 'Coccodrillini'
+            },
+            {
+                nome: 'David',
+                cognome: 'Divano'
+            },
+            {
+                nome: 'Ferdinando',
+                cognome: 'Mortadellini'
+            }
+        ];
+        let mappedArray = persone.map(p => `${p.nome} ${p.cognome}<br />`);
+
+        let finalResult = "";
+        for (p of mappedArray) {
+            finalResult += p
+        };
+
+        result.innerHTML = finalResult;
+    </script>
+</body>
+
+</html>
