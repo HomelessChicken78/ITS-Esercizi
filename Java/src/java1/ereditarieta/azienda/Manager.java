@@ -6,8 +6,9 @@ public class Manager extends Impiegato {
 
 	private String segretaria;
 
-	public Manager(String nome, Date dataAssunzione, double salario, String segretaria) {
-		super(nome, salario, dataAssunzione);
+	public Manager(String nome, double salario, Date dataAssunzione, String segretaria) {
+		super(nome, salario, dataAssunzione); // se non si mette proverebbe a chiamare super() (0 args constructor) e
+												// darebbe errore poichè non esiste.
 		this.segretaria = segretaria;
 	}
 
