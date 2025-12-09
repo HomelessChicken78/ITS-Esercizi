@@ -6,9 +6,10 @@ public class Manager extends Impiegato {
 
 	private String segretaria;
 
+	// se non si mette proverebbe a chiamare super() (0 args constructor) e
+	// darebbe errore poichè non esiste.
 	public Manager(String nome, double salario, Date dataAssunzione, String segretaria) {
-		super(nome, salario, dataAssunzione); // se non si mette proverebbe a chiamare super() (0 args constructor) e
-												// darebbe errore poichè non esiste.
+		super(nome, salario, dataAssunzione);
 		this.segretaria = segretaria;
 	}
 
@@ -35,6 +36,6 @@ public class Manager extends Impiegato {
 
 	@Override
 	public String toString() {
-		return "Manager : " + super.toString() + ", segretaria=" + segretaria; // riuso
+		return super.toString() + ", segretaria = " + segretaria; // riuso. Occhio a non usare this perchè crea una recursiva!
 	}
 }
