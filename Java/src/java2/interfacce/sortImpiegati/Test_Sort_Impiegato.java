@@ -11,7 +11,7 @@ public class Test_Sort_Impiegato {
 		listaImp.add(new Impiegato("David Divano", 2100, new Date(120, 1, 1)));
 		listaImp.add(new Impiegato("Mario Mela", 1850, new Date(125, 1, 1)));
 		listaImp.add(new Impiegato("Ferdinando Mortadellini", 1620, new Date(123, 1, 1)));
-		listaImp.add(new Impiegato("Drago Anonimo", 1315, new Date(117, 1, 1)));
+		listaImp.add(new Impiegato("Drago Anonimo", 1315, new Date(114, 1, 1)));
 		listaImp.add(new Impiegato("Anna Bianchi", 1105, new Date(118, 1, 1)));
 		
 		Collections.sort(listaImp);
