@@ -25,7 +25,8 @@ public class EsempioOrdinamenti {
 
 		System.out.println(nomi); // sorting in place
 		
-		Collections.sort(nomi, new StringComparator());
+		Collections.sort(nomi, new StringComparator()); // uso un comparator (che implementa un'interfaccia) per creare
+		// un ulteriore ordinam
 		
 		System.out.println(nomi);
 	}
