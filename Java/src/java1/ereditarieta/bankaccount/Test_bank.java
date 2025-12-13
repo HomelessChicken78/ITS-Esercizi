@@ -31,7 +31,7 @@ public class Test_bank {
 		// ^^^ Error: Not enough balance available
 		
 		myBank.transfer(standard, saving, 100, new Date());
-		saving.addInterest(new Date(125, 11, 25, 16, 30, 0));
+		saving.addInterest(new Date(125, 11, 25, 16, 30, 0)); // <<< ignora limite movimenti
 		
 		System.out.println(standard);
 
