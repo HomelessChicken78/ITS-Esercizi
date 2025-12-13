@@ -56,8 +56,10 @@ public class Ordine {
 	}
 	
 	public void chiudiOrdine() {
-		if (!isChiuso)
-			cliente.setSaldo(cliente.getSaldo() - calcolaTotale());
+		if (!isChiuso) {
+			cliente.paga(calcolaTotale());
+			isChiuso = true;
+		}
 		else
 			throw new RuntimeException("Ordine già chiuso");
 	}
