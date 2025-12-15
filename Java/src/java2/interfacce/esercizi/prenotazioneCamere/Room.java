@@ -3,13 +3,16 @@ package java2.interfacce.esercizi.prenotazioneCamere;
 import java.util.ArrayList;
 import java.util.Collections;
 
+import java2.eccezioni.MyExceptions.Values.InvalidIntervalDatesException;
+import java2.eccezioni.MyExceptions.Values.ValueOutOfRangeException;
+
 public class Room {
 	private final int numero;
 	private ArrayList<Reservation> listReservations = new ArrayList<>();
 	
-	Room(int numero) {
+	Room(int numero) throws ValueOutOfRangeException {
 		if (numero < 100 || numero > 599)
-			throw new RuntimeException("Il numero deve essere compreso tra 100 e 599 inclusi");
+			throw new ValueOutOfRangeException("Il numero deve essere compreso tra 100 e 599 inclusi");
 		this.numero = numero;
 	}
 
@@ -28,12 +31,12 @@ public class Room {
 		return res;
 	}
 	
-	public Reservation reserve(String nomeCliente, int inizioPrenotazione, int finePrenotazione) {
+	public Reservation reserve(String nomeCliente, int inizioPrenotazione, int finePrenotazione) throws Occupata, ValueOutOfRangeException, InvalidIntervalDatesException {
 		Reservation newReservation = new Reservation(nomeCliente, inizioPrenotazione, finePrenotazione);
 
 		for (Reservation reservation : listReservations) {
 			if (!(reservation.getFinePrenotazione() <= inizioPrenotazione || finePrenotazione <= reservation.getInizioPrenotazione()))
-				throw new RuntimeException("Stanza già occupata!");
+				throw new Occupata("Stanza già occupata!");
 		}
 		
 		listReservations.add(newReservation);
