@@ -2,8 +2,6 @@ package java2.interfacce.esercizi.traghetto;
 
 import java.util.ArrayList;
 
-import java2.eccezioni.MyExceptions.EmptyCollectionException;
-
 public class Test_Traghetto {
 
 	public static void main(String[] args) {
@@ -51,7 +49,7 @@ public class Test_Traghetto {
         
         try {
 			System.out.println("Ha appena pagato: " + bigl.riceviPagamento());
-		} catch (EmptyCollectionException e) {
+		} catch (CodaVuota e) {
 			e.printStackTrace();
 		}
         System.out.println("Cassa: " + bigl.getCassa());
@@ -61,7 +59,7 @@ public class Test_Traghetto {
         System.out.println();
         try {
 			System.out.println("Ha appena pagato: " + bigl.riceviPagamento());
-		} catch (EmptyCollectionException e) {
+		} catch (CodaVuota e) {
 			e.printStackTrace();
 		}
         System.out.println("Cassa: " + bigl.getCassa());
@@ -72,24 +70,24 @@ public class Test_Traghetto {
         System.out.println();
         try {
 			System.out.println("Ha appena pagato: " + bigl.riceviPagamento());
-		} catch (EmptyCollectionException e) {
+		} catch (CodaVuota e) {
 			e.printStackTrace();
 		}
         System.out.println("Cassa: " + bigl.getCassa());
         
         try {
 			bigl.riceviPagamento();
-		} catch (EmptyCollectionException e) {
+		} catch (CodaVuota e) {
 			e.printStackTrace();
 		}
         try {
 			bigl.riceviPagamento();
-		} catch (EmptyCollectionException e) {
+		} catch (CodaVuota e) {
 			e.printStackTrace();
 		}
         try {
 			bigl.riceviPagamento();
-		} catch (EmptyCollectionException e) {
+		} catch (CodaVuota e) {
 			e.printStackTrace();
 		}
         // bigl.riceviPagamento(); // La coda è vuota!
@@ -98,7 +96,7 @@ public class Test_Traghetto {
         
         try {
 			bigl.riceviPagamento();
-		} catch (EmptyCollectionException e) {
+		} catch (CodaVuota e) {
 			System.out.println(e.getMessage());
 		}
 		
