@@ -1,4 +1,4 @@
-package java2.eccezioni.MyExceptions;
+package java2.eccezioni.MyExceptions.Values;
 
 public class ValueNotAllowedException extends RuntimeException {
 
