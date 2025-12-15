@@ -2,8 +2,6 @@ package java2.interfacce.esercizi.traghetto;
 
 import java.util.ArrayList;
 
-import java2.eccezioni.MyExceptions.EmptyCollectionException;
-
 public class Biglietteria {
 	private double cassa = 0;;
 	private ArrayList<Tariffabile> coda = new ArrayList<>();
@@ -19,9 +17,9 @@ public class Biglietteria {
 		coda.add(nuovoTariffabile);
 	}
 
-	public Tariffabile riceviPagamento() throws EmptyCollectionException {
+	public Tariffabile riceviPagamento() throws CodaVuota {
 		if (coda.isEmpty())
-			throw new EmptyCollectionException("La coda è vuota!");
+			throw new CodaVuota("La coda è vuota!");
 
 		Tariffabile tariffabileRimosso = coda.remove(0);
 
