@@ -52,7 +52,6 @@ public class Test_Traghetto {
         try {
 			System.out.println("Ha appena pagato: " + bigl.riceviPagamento());
 		} catch (EmptyCollectionException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
         System.out.println("Cassa: " + bigl.getCassa());
@@ -96,6 +95,13 @@ public class Test_Traghetto {
         // bigl.riceviPagamento(); // La coda è vuota!
         
         System.out.println("\nFila finita. Cassa: " + bigl.getCassa());
+        
+        try {
+			bigl.riceviPagamento();
+		} catch (EmptyCollectionException e) {
+			System.out.println(e.getMessage());
+		}
+		
         
         ArrayList<Persona> listaLunga = new ArrayList<>();
         listaLunga.add(pers1);
