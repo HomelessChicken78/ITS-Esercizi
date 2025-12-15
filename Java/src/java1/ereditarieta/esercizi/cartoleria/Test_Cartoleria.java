@@ -10,7 +10,7 @@ public class Test_Cartoleria {
         Penna penna1 = new Penna("BIC", "Cristal", 0.80, "blu");
         Penna penna2 = new Penna("Pilot", "G2", 2.50, "nero");
         Penna penna3 = new Penna("Stabilo", "Bella", 1.90, "rosso");
-        
+
         mag.aggiungiArticolo(gomma1);
         mag.aggiungiArticolo(gomma2);
         mag.aggiungiArticolo(penna1);
