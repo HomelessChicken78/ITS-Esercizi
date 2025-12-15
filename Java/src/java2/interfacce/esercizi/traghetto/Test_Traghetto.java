@@ -2,6 +2,8 @@ package java2.interfacce.esercizi.traghetto;
 
 import java.util.ArrayList;
 
+import java2.eccezioni.MyExceptions.EmptyCollectionException;
+
 public class Test_Traghetto {
 
 	public static void main(String[] args) {
@@ -47,25 +49,50 @@ public class Test_Traghetto {
         bigl.aggiungiInCoda(pers8);
         bigl.aggiungiInCoda(mini);
         
-        System.out.println("Ha appena pagato: " + bigl.riceviPagamento());
+        try {
+			System.out.println("Ha appena pagato: " + bigl.riceviPagamento());
+		} catch (EmptyCollectionException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
         System.out.println("Cassa: " + bigl.getCassa());
 
         bigl.aggiungiInCoda(tir);
  
         System.out.println();
-        System.out.println("Ha appena pagato: " + bigl.riceviPagamento());
+        try {
+			System.out.println("Ha appena pagato: " + bigl.riceviPagamento());
+		} catch (EmptyCollectionException e) {
+			e.printStackTrace();
+		}
         System.out.println("Cassa: " + bigl.getCassa());
         
         bigl.aggiungiInCoda(suv);
         bigl.aggiungiInCoda(standard);
         
         System.out.println();
-        System.out.println("Ha appena pagato: " + bigl.riceviPagamento());
+        try {
+			System.out.println("Ha appena pagato: " + bigl.riceviPagamento());
+		} catch (EmptyCollectionException e) {
+			e.printStackTrace();
+		}
         System.out.println("Cassa: " + bigl.getCassa());
         
-        bigl.riceviPagamento();
-        bigl.riceviPagamento();
-        bigl.riceviPagamento();
+        try {
+			bigl.riceviPagamento();
+		} catch (EmptyCollectionException e) {
+			e.printStackTrace();
+		}
+        try {
+			bigl.riceviPagamento();
+		} catch (EmptyCollectionException e) {
+			e.printStackTrace();
+		}
+        try {
+			bigl.riceviPagamento();
+		} catch (EmptyCollectionException e) {
+			e.printStackTrace();
+		}
         // bigl.riceviPagamento(); // La coda è vuota!
         
         System.out.println("\nFila finita. Cassa: " + bigl.getCassa());
