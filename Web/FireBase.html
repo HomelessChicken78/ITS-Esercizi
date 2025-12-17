@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+    <script>
+        const URL_DB = "https://cloud-firebase-b7cb9-default-rtdb.europe-west1.firebasedatabase.app/tasks";
+  const id= Date.now();
+
+            const newTask={
+                text:"Primo task",
+                done:false
+            }
+
+            // fetch(URL_DB+id+".json",{
+            //     method:"PUT",
+            //     headers:{
+            //         "Content.Type":"application/json"
+            //     },
+            //     body:JSON.stringify(newTask)
+            // }).then(res=>res.json())
+            // .then(data=>console.log("Creato ",data))
+            // .catch(err=>console.error(err))
+ fetch(URL_DB+".json",{
+                method:"POST",
+                headers:{
+                    "Content.Type":"application/json"
+                },
+                body:JSON.stringify(newTask)
+            }).then(res=>res.json())
+            .then(data=>console.log("Creato ",data))
+            .catch(err=>console.error(err))
+    </script>
+</body>
+</html>
