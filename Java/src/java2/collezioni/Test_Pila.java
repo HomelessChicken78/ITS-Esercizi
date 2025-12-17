@@ -21,6 +21,6 @@ public class Test_Pila {
 		System.out.println(pila);
 		
 		pila.remove();
-		pila.remove();
+		// pila.remove();
 	}
 }
