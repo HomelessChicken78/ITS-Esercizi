@@ -1,4 +1,4 @@
-package java2.eccezioni.MyExceptions.Values;
+package java2.eccezioni.MyExceptions.ValidationExceptions;
 
 public class ValueZeroException extends ValueNotAllowedException {
 

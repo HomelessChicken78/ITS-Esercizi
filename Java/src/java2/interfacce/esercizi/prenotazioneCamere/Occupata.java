@@ -1,6 +1,8 @@
 package java2.interfacce.esercizi.prenotazioneCamere;
 
-public class Occupata extends Exception {
+import java2.eccezioni.MyExceptions.CollectionExceptions.AlreadyPresentException;
+
+public class Occupata extends AlreadyPresentException {
 
 	public Occupata() {
 	}

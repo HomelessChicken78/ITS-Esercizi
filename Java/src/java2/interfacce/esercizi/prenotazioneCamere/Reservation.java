@@ -1,7 +1,7 @@
 package java2.interfacce.esercizi.prenotazioneCamere;
 
-import java2.eccezioni.MyExceptions.Values.InvalidIntervalDatesException;
-import java2.eccezioni.MyExceptions.Values.ValueOutOfRangeException;
+import java2.eccezioni.MyExceptions.ValidationExceptions.InvalidIntervalDatesException;
+import java2.eccezioni.MyExceptions.ValidationExceptions.ValueOutOfRangeException;
 
 public class Reservation implements Comparable<Reservation> {
 	private String nomeCliente;

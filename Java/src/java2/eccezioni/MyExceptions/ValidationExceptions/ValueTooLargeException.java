@@ -1,6 +1,6 @@
-package java2.eccezioni.MyExceptions.Values;
+package java2.eccezioni.MyExceptions.ValidationExceptions;
 
-public class ValueTooLargeException extends ValueNotAllowedException {
+public class ValueTooLargeException extends ValueBoundaryException {
 
 	public ValueTooLargeException() {
 	}

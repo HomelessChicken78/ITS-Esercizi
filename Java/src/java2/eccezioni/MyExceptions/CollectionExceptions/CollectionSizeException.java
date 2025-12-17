@@ -1,6 +1,6 @@
-package java2.eccezioni.MyExceptions;
+package java2.eccezioni.MyExceptions.CollectionExceptions;
 
-public class CollectionSizeException extends Exception {
+public class CollectionSizeException extends CollectionException {
 
 	public CollectionSizeException() {
 	}

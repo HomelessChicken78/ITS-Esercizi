@@ -1,6 +1,6 @@
-package java2.eccezioni.MyExceptions.Values;
+package java2.eccezioni.MyExceptions.ValidationExceptions;
 
-public class EmptyStringException extends ValueNotAllowedException {
+public class EmptyStringException extends StringNotAllowedException {
 
 	public EmptyStringException() {
 	}

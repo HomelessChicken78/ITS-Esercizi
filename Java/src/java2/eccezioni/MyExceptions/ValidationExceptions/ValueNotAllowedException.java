@@ -1,6 +1,6 @@
-package java2.eccezioni.MyExceptions.Values;
+package java2.eccezioni.MyExceptions.ValidationExceptions;
 
-public class ValueNotAllowedException extends RuntimeException {
+public class ValueNotAllowedException extends ValidationException {
 
 	public ValueNotAllowedException() {
 	}

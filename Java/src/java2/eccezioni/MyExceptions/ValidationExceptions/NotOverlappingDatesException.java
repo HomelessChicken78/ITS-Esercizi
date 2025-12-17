@@ -1,6 +1,6 @@
-package java2.eccezioni.MyExceptions.Values;
+package java2.eccezioni.MyExceptions.ValidationExceptions;
 
-public class NotOverlappingDatesException extends ValueNotAllowedException {
+public class NotOverlappingDatesException extends DateNotAllowedException {
 
 	public NotOverlappingDatesException() {
 	}

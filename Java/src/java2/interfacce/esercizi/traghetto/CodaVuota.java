@@ -1,6 +1,6 @@
 package java2.interfacce.esercizi.traghetto;
 
-import java2.eccezioni.MyExceptions.EmptyCollectionException;
+import java2.eccezioni.MyExceptions.CollectionExceptions.EmptyCollectionException;
 
 public class CodaVuota extends EmptyCollectionException {
 

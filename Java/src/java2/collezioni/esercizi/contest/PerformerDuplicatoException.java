@@ -1,6 +1,6 @@
 package java2.collezioni.esercizi.contest;
 
-import java2.eccezioni.MyExceptions.AlreadyPresentException;
+import java2.eccezioni.MyExceptions.CollectionExceptions.AlreadyPresentException;
 
 public class PerformerDuplicatoException extends AlreadyPresentException {
 

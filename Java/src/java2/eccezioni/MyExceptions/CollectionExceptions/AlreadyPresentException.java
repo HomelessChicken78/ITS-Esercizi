@@ -1,6 +1,6 @@
-package java2.eccezioni.MyExceptions;
+package java2.eccezioni.MyExceptions.CollectionExceptions;
 
-public class AlreadyPresentException extends Exception {
+public class AlreadyPresentException extends CollectionException {
 
 	public AlreadyPresentException() {
 	}

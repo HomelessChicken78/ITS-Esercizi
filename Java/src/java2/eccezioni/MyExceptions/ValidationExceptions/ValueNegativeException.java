@@ -1,6 +1,6 @@
-package java2.eccezioni.MyExceptions.Values;
+package java2.eccezioni.MyExceptions.ValidationExceptions;
 
-public class ValueNegativeException extends ValueTooSmallException {
+public class ValueNegativeException extends ValueNotAllowedException {
 
 	public ValueNegativeException() {
 	}
