@@ -2,6 +2,8 @@ package java2.collezioni.esercizi.contest;
 
 import java.util.Random;
 
+import java2.eccezioni.MyExceptions.CollectionExceptions.ElementNotFoundException;
+
 public class Test_Contest {
 	public static void main(String[] args) {
 		Performer p1 = new Performer("aaa");
@@ -22,9 +24,13 @@ public class Test_Contest {
 		System.out.println(gara);
 
 		for (int i = 0; i < new Random().nextInt(10, 20); i++) {
-			gara.registerVoteFor(gara.getListaArtisti().get(new Random().nextInt(0, gara.getListaArtisti().size())));
+			try {
+				gara.registerVoteFor(gara.getListaArtisti().get(new Random().nextInt(0, gara.getListaArtisti().size())));
+			} catch (ElementNotFoundException e) {
+				e.printStackTrace();
+			}
 		}
-		
+
 		System.out.println("\n=====i voti sono stati registrati=====\n" + gara);
 		System.out.println("artista vincitore: " + gara.getWinner());
 	}

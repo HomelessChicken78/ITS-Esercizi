@@ -5,7 +5,8 @@ import java.util.HashSet;
 import java.util.NoSuchElementException;
 import java.util.TreeSet;
 
-import java2.eccezioni.MyExceptions.CollectionExceptions.AlreadyPresentException;
+import java2.eccezioni.MyExceptions.CollectionExceptions.DuplicateElementException;
+import java2.eccezioni.MyExceptions.CollectionExceptions.ElementNotFoundException;
 
 public class Carrello {
 	private HashSet<Prodotto> listaProdotti = new HashSet<>();
@@ -13,14 +14,14 @@ public class Carrello {
 	public Carrello() {
 	}
 	
-	public void aggiungiProdotto(Prodotto newProd) throws AlreadyPresentException {
+	public void aggiungiProdotto(Prodotto newProd) throws DuplicateElementException {
 		if (!listaProdotti.add(newProd))
-			throw new AlreadyPresentException("prodotto già presente nel carrello!");
+			throw new DuplicateElementException("prodotto già presente nel carrello!");
 	}
 	
-	public void rimuoviProdotto(Prodotto prod) throws NoSuchElementException {
+	public void rimuoviProdotto(Prodotto prod) throws ElementNotFoundException {
 		if (!listaProdotti.remove(prod))
-			throw new NoSuchElementException("Prodotto " + prod.getMarca() + " " + prod.getModello() + " non trovato nel carrello!");
+			throw new ElementNotFoundException("Prodotto \"" + prod.getMarca() + " " + prod.getModello() + "\" non trovato nel carrello!");
 	}
 	
 	public double calcolaPrezzoTotale() {

@@ -1,7 +1,8 @@
 package java2.collezioni.esercizi.contest;
 
 import java.util.LinkedList;
-import java.util.NoSuchElementException;
+
+import java2.eccezioni.MyExceptions.CollectionExceptions.ElementNotFoundException;
 
 public class Contest {
 	private LinkedList<Performer> listaArtisti = new LinkedList<>();
@@ -19,9 +20,9 @@ public class Contest {
 		listaArtisti.addLast(performer);
 	}
 	
-	public void registerVoteFor(Performer performer) throws NoSuchElementException {
+	public void registerVoteFor(Performer performer) throws ElementNotFoundException {
 		if (!listaArtisti.contains(performer))
-			throw new NoSuchElementException("L'artista non è nel contest!");
+			throw new ElementNotFoundException("L'artista non è nel contest!");
 		performer.incrementaVoto(1);
 	}
 	

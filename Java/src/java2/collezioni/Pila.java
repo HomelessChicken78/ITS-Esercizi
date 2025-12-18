@@ -1,7 +1,8 @@
 package java2.collezioni;
 
 import java.util.LinkedList;
-import java.util.NoSuchElementException;
+
+import java2.eccezioni.MyExceptions.CollectionExceptions.ElementNotFoundException;
 
 public class Pila<E> {
 	private LinkedList<E> listaElementi= new LinkedList();
@@ -13,7 +14,7 @@ public class Pila<E> {
 		listaElementi.addLast(obj);
 	}
 	
-	public void remove() throws NoSuchElementException{
+	public void remove() throws ElementNotFoundException{
 		listaElementi.removeLast();
 	}
 

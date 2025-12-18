@@ -1,8 +1,8 @@
 package java2.interfacce.esercizi.prenotazioneCamere;
 
-import java2.eccezioni.MyExceptions.CollectionExceptions.AlreadyPresentException;
+import java2.eccezioni.MyExceptions.CollectionExceptions.DuplicateElementException;
 
-public class Occupata extends AlreadyPresentException {
+public class Occupata extends DuplicateElementException {
 
 	public Occupata() {
 	}

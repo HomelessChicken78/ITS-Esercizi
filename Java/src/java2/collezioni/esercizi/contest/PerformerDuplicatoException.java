@@ -1,8 +1,8 @@
 package java2.collezioni.esercizi.contest;
 
-import java2.eccezioni.MyExceptions.CollectionExceptions.AlreadyPresentException;
+import java2.eccezioni.MyExceptions.CollectionExceptions.DuplicateElementException;
 
-public class PerformerDuplicatoException extends AlreadyPresentException {
+public class PerformerDuplicatoException extends DuplicateElementException {
 
 	public PerformerDuplicatoException() {
 	}

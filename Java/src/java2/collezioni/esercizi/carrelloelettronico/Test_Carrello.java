@@ -1,8 +1,7 @@
 package java2.collezioni.esercizi.carrelloelettronico;
 
-import java.util.NoSuchElementException;
-
-import java2.eccezioni.MyExceptions.CollectionExceptions.AlreadyPresentException;
+import java2.eccezioni.MyExceptions.CollectionExceptions.DuplicateElementException;
+import java2.eccezioni.MyExceptions.CollectionExceptions.ElementNotFoundException;
 
 public class Test_Carrello {
 
@@ -11,7 +10,7 @@ public class Test_Carrello {
 		Prodotto prod1 = null;
 		try {
 			prod1 = new Prodotto(1, "Samsung", "Galaxy S23", 799.99, 3);
-		} catch (AlreadyPresentException e) {
+		} catch (DuplicateElementException e) {
 			e.printStackTrace();
 		}
 
@@ -27,7 +26,7 @@ public class Test_Carrello {
 			mioCarrello.aggiungiProdotto(new Prodotto(9, "Canon", "EOS R6", 2499.99, 5));
 			mioCarrello.aggiungiProdotto(new Prodotto(10, "GoPro", "Hero 12", 399.99, 2));
 			mioCarrello.aggiungiProdotto(new Prodotto(10, "GoPro2", "Stesso codice", 399.99, 2));
-		} catch (AlreadyPresentException err) {
+		} catch (DuplicateElementException err) {
 			System.err.println("Errore nella creazione del prodotto: " + err.getMessage());
 		}
 
@@ -49,7 +48,7 @@ public class Test_Carrello {
 		try {
 			mioCarrello.rimuoviProdotto(prod1);
 			mioCarrello.rimuoviProdotto(new Prodotto(1568, "Non esisto", "2dd", 399.99, 2));
-		} catch (NoSuchElementException | AlreadyPresentException err) {
+		} catch (ElementNotFoundException | DuplicateElementException err) {
 			System.err.println("Errore nella rimozione del prodotto: " + err.getMessage());
 		}
 		

@@ -3,7 +3,7 @@ package java2.collezioni.esercizi.carrelloelettronico;
 import java.util.HashSet;
 import java.util.Objects;
 
-import java2.eccezioni.MyExceptions.CollectionExceptions.AlreadyPresentException;
+import java2.eccezioni.MyExceptions.CollectionExceptions.DuplicateElementException;
 
 public class Prodotto implements Comparable<Prodotto> {
 	private static final HashSet<Integer> listaId = new HashSet<>();
@@ -13,9 +13,9 @@ public class Prodotto implements Comparable<Prodotto> {
 	private double prezzoVendita;
 	private int giorniSpedizione;
 
-	public Prodotto(int id, String marca, String modello, double prezzoVendita, int giorniSpedizione) throws AlreadyPresentException {
+	public Prodotto(int id, String marca, String modello, double prezzoVendita, int giorniSpedizione) throws DuplicateElementException {
 		if (!listaId.add(id))
-			throw new AlreadyPresentException("Prodotto con id " + id + " già esistente");
+			throw new DuplicateElementException("Prodotto con id " + id + " già esistente");
 		this.id = id;
 		this.marca = marca;
 		this.modello = modello;
