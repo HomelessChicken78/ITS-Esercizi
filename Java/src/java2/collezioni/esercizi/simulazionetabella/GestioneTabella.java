@@ -97,12 +97,34 @@ public class GestioneTabella {
 	}
 
 	public Studente getStudenteGiovane() {
-		// TODO
-		return null;
+		if (tabella.isEmpty()) {
+			return null;
+		}
+		
+		Studente res = null;
+		
+		for (Studente studente : tabella.values()) {
+			if (res == null)
+				res = studente;
+			if (res.getDataImmatricolazione().compareTo(studente.getDataImmatricolazione()) < 0)
+				res = studente;
+		}
+
+		return res;
 	}
 
 	public ArrayList<Studente> visualizzaByCorso(String corso) {
-		// TODO
-		return null;
+		if (tabella.isEmpty()) {
+			return null;
+		}
+
+		ArrayList<Studente> res = new ArrayList<>();
+		
+		for (Studente studente : tabella.values()) {
+			if (studente.getCorsoLaurea().toLowerCase().equals(corso.toLowerCase()))
+				res.add(studente);
+		}
+
+		return res;
 	}
 }

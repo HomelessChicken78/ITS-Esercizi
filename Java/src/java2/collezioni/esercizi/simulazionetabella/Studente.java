@@ -59,7 +59,7 @@ public class Studente implements Serializable, Comparable<Studente> {
 
 	@Override
 	public String toString() {
-		return "\n\nSTUDENTE \nMATRICOLA : " + matricola + "\nNOME : " + nome + "\nCORSO DI LAUREA : " + corsoLaurea
+		return "STUDENTE \nMATRICOLA : " + matricola + "\nNOME : " + nome + "\nCORSO DI LAUREA : " + corsoLaurea
 				+ "\nDATA IMMATRICOLAZIONE: " + dataImmatricolazione ;
 	}
 
