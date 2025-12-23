@@ -79,6 +79,22 @@ response = requests.post(
 )
 print(json.dumps(response.json(), indent=4))
 
+print("\nPOST /vehicles - already exists")
+response = requests.post(
+    url=URL + "/vehicles",
+    headers=headers,
+    json={
+    "plate_id": "ABC123",
+    "model": "Van Model X",
+    "vehicle_type": "van",
+    "registration_year": 2018,
+    "status": "Retired",
+    "max_load_kg": 1500,
+    "require_special_license": True
+}
+)
+print(json.dumps(response.json(), indent=4))
+
 print("\nPUT /vehicles/ABC123 - Già esiste")
 response = requests.put(
     url=URL + "/vehicles/ABC123",
