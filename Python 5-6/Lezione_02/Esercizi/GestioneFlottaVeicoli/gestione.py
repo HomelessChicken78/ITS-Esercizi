@@ -9,11 +9,7 @@ class Status(Enum):
     RETIRED = "Retired"
 
 class Vehicle(ABC):
-    lista_id: set[str] = set()
-
     def __init__(self, plate_id: str, model: str, driver_name: str|None, registration_year: int, status: Status):
-        if plate_id in Vehicle.lista_id:
-            raise AttributeError("Chiave duplicata")
         self.plate_id = plate_id
         self.model = model
         self.driver_name = driver_name
@@ -54,8 +50,6 @@ class Vehicle(ABC):
         return int(self.base_cleaning_time() * factor + self.wear_level()*15)
     
 class Car(Vehicle):
-    lista_id: set[str] = set()
-
     def __init__(self, plate_id: str, model: str, driver_name: str|None, registration_year: int, status: Status, doors: int, is_cabrio: bool):
         super().__init__(plate_id, model, driver_name, registration_year, status)
         self.doors = doors
@@ -78,8 +72,6 @@ class Car(Vehicle):
         return pre
 
 class Van(Vehicle):
-    lista_id: set[str] = set()
-
     def __init__(self, plate_id: str, model: str, driver_name: str|None, registration_year: int, status: Status, max_load_kg: int, require_special_license: bool):
         super().__init__(plate_id, model, driver_name, registration_year, status)
         self.max_load_kg = max_load_kg
@@ -123,10 +115,12 @@ class FleetManager:
             self.vehicles.pop(plate_id)
         self.add(new_vehicle)
 
-    def patch_status(self, plate_id: str, new_status: Status) -> None:
+    def patch_status(self, plate_id: str, new_status: Status) -> bool:
         '''Aggiorna solo lo stato (status) del veicolo specificato con id plate_id (per simulare un PATCH).'''
         if plate_id in self.vehicles.keys() and new_status.value in [s.value for s in Status]:
             self.vehicles[plate_id].status = new_status
+            return True
+        return False
 
     def delete(self, plate_id: str) -> bool:
         '''Rimuove il veicolo dal dizionario.

@@ -38,14 +38,14 @@ print("\nPOST /vehicles - Wrong payload")
 response = requests.post(
     url=URL + "/vehicles",
     headers=headers,
-    data={
+    json={
     "model": "Sedan",
     "vehicle_type": "car",
     "registration_year": 2020,
     "status": "available"
 }
 )
-print(response.status_code)
+print(response.status_code, " " + json.dumps(response.json()))
 
 print("\nPOST /vehicles - Car")
 response = requests.post(
@@ -95,12 +95,12 @@ response = requests.post(
 )
 print(json.dumps(response.json(), indent=4))
 
-print("\nPUT /vehicles/ABC123 - Già esiste")
+print("\nPUT /vehicles/ABC123 - already exists")
 response = requests.put(
     url=URL + "/vehicles/ABC123",
     headers=headers,
     json={
-    "plate_id": "runydfeui",
+    "plate_id": "ABC123",
     "model": "Qualcosa",
     "vehicle_type": "car",
     "registration_year": 2025,
@@ -109,9 +109,9 @@ response = requests.put(
     "is_cabrio": True
 }
 )
-print(json.dumps(response.json(), indent=4))
+print(json.dumps(response.json(), indent=4)) #ABC123 removed. Added runydfeui
 
-print("\nPUT /vehicles/ABC123 - Non esiste")
+print("\nPUT /vehicles/fehiou - does not exist")
 response = requests.put(
     url=URL + "/vehicles/fehiou",
     headers=headers,
@@ -124,5 +124,49 @@ response = requests.put(
     "doors": 5,
     "is_cabrio": False
 }
+)
+print(json.dumps(response.json(), indent=4))
+
+print("\nPATCH /vehicles/NNN233/status - exists")
+response = requests.patch(
+    url=URL + "/vehicles/NNN233/status",
+    headers=headers,
+    json={
+        "status" : "reNTed"
+    }
+)
+print(json.dumps(response.json(), indent=4))
+
+print("\nPATCH /vehicles/iuybe/status - does not exists")
+response = requests.patch(
+    url=URL + "/vehicles/iuybe/status",
+    headers=headers,
+    json={
+        "status" : "Maintenance"
+    }
+)
+print(json.dumps(response.json(), indent=4))
+
+print("\nPATCH /vehicles/NNN233/status - status invalid")
+response = requests.patch(
+    url=URL + "/vehicles/NNN233/status",
+    headers=headers,
+    json={
+        "status" : "Cocco bello"
+    }
+)
+print(json.dumps(response.json(), indent=4))
+
+print("\nDELETE /vehicles/PPP000 - exists")
+response = requests.delete(
+    url=URL + "/vehicles/PPP000",
+    headers=headers,
+)
+print(json.dumps(response.json(), indent=4))
+
+print("\nDELETE /vehicles/uhidi - does not exists")
+response = requests.delete(
+    url=URL + "/vehicles/uhidi",
+    headers=headers,
 )
 print(json.dumps(response.json(), indent=4))

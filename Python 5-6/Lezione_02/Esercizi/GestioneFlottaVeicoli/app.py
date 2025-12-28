@@ -1,5 +1,5 @@
 from gestione import *
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify, request, url_for
 
 fm = FleetManager()
 
@@ -13,9 +13,15 @@ app = Flask(__name__)
 @app.route("/")
 def index():
     return jsonify({
-        "description" : "Welcome to Rent Service API",
-        "_links" : {
-            "Todo" : "TODO"
+        "description": "Welcome to Rent Service API",
+        "_links": {
+            "list_vehicles": url_for("list_all"),
+            "get_vehicle": url_for("get_vehicle", id="ABC123"),
+            "get_prep_time": url_for("get_prep_time", id="ABC123", factor=1.0),
+            "add_vehicle": url_for("post_vehicle"),
+            "update_vehicle": url_for("put_vehicle", id="ABC123"),
+            "patch_vehicle_status": url_for("patch_vehicle", id="ABC123"),
+            "delete_vehicle": url_for("delete_vehicle", id="ABC123")
         }
     })
 
@@ -24,7 +30,7 @@ def list_all():
     res: dict[str, dict[str, int|str|Status|bool]] = dict()
     for k, v in fm.vehicles.items():
         res[k] = v.info()
-    
+
     return jsonify(res)
 
 @app.route("/vehicles/<string:id>")
@@ -73,8 +79,7 @@ def post_vehicle():
     model = data["model"]
     driver_name = data["driver_name"] if "driver_name" in data else None
     registration_year = data['registration_year']
-    status = data["status"]
-    status = Status[status.upper()]
+    status = Status[data["status"].upper()]
 
     match data["vehicle_type"].lower():
         case "car":
@@ -127,8 +132,7 @@ def put_vehicle(id: str):
     model = data["model"]
     driver_name = data["driver_name"] if "driver_name" in data else None
     registration_year = data['registration_year']
-    status = data["status"]
-    status = Status[status.upper()]
+    status = Status[data["status"].upper()]
 
     match data["vehicle_type"].lower():
         case "car":
@@ -153,3 +157,26 @@ def put_vehicle(id: str):
     # Put il veicolo
     fm.update(id, veh)
     return jsonify(veh.info()), 201
+
+@app.route("/vehicles/<string:id>/status", methods=["PATCH"])
+def patch_vehicle(id: str):
+    data = request.get_json()
+
+    if "status" not in data:
+        return jsonify({"error": "Missing field: status"}), 400
+
+    if data["status"].lower() not in [s.value.lower() for s in Status]:
+        return jsonify({'error': 'Invalid status value'}), 400
+
+    status = Status[data["status"].upper()]
+
+    if fm.patch_status(id, status):
+        return jsonify(fm.get(id).info()), 200
+    return jsonify({"error": "Vehicle not found"}), 404
+
+@app.route("/vehicles/<string:id>", methods=["DELETE"])
+def delete_vehicle(id: str):
+    tmp: Vehicle = fm.get(id)
+    if fm.delete(id):
+        return jsonify(tmp.info(), 204)
+    return jsonify({"error": "Vehicle not found"}), 404
