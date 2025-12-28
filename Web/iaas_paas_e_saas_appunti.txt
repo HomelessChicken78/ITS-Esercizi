@@ -1,0 +1,13 @@
+iaas:   aws
+        azure
+        google
+==> Scalabili e flessibili
+
+paas:   google app
+        google run
+
+saas:   shopify
+        gmail
+        netflix
+        gpt
+        gemini
