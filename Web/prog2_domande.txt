@@ -1,0 +1,152 @@
+10 - Quale protocollo del Livello di Trasporto è "connectionless" e non affidabile, ma più veloce, utilizzato ad esempio per lo streaming video?  
+1 punto
+a) TCP (Transmission Control Protocol).
+b) UDP (User Datagram Protocol).
+c) IP (Internet Protocol).
+2 - Il Logic Layer (o Livello Applicativo) comunica con il Data Layer (Livello Persistenza) tipicamente tramite:  
+1 punto
+a) Solo HTML, CSS e JavaScript.
+b) Direttamente tramite comandi SQL non intermediati.
+c) Librerie (API).
+22 - Quale VERBO HTTP è specificamente utilizzato per l'aggiornamento parziale di una risorsa?  
+1 punto
+a) PUT.
+b) PATCH.
+c) GET.
+25 - Qual è il concetto chiave introdotto al Livello 2 (Verbi HTTP) del Richardson Maturity Model?  
+1 punto
+a) L'uso dei verbi HTTP (GET, POST, PUT, DELETE) in modo coerente e significativo in base all'azione sulla risorsa.
+b) L'uso di un unico endpoint per tutte le operazioni, come un tunnel.
+c) L'inclusione di link ipermediali per guidare il client.
+20 - Secondo la Scala di Maturità di Richardson, a quale Livello si inizia a superare la "Palude del POX" (Livello 0) organizzando l'intero servizio attorno al concetto di Risorsa e assegnando un URI unico a ciascuna di esse?  
+1 punto
+a) Livello 2 (Verbi HTTP).
+b) Livello 1 (Risorse).
+c) Livello 3 (HATEOAS).
+8 - Quale tipo di Record DNS permette a un dominio (es. www.miosito.it) di puntare a un altro dominio (es. miosito.it) invece che a un indirizzo IP?  
+1 punto
+a) Record A (Address).
+b) Record MX (Mail Exchange).
+c) Record CNAME (Canonical Name).
+18 - L'acronimo REST (REpresentational State Transfer) deriva dalla tesi di dottorato di:  
+1 punto
+a) Linus Torvalds.
+b) Roy Fielding.
+c) Tim Berners-Lee.
+4 - Qual è il ruolo del sistema DNS (Domain Name System) nel flusso di una richiesta web?   
+1 punto
+a) Gestire la sicurezza e la crittografia della comunicazione.
+b) Tradurre i nomi di dominio (es. www.google.com) in indirizzi IP numerici.
+c) Agire come il server, in attesa di ricevere ordini.
+3 - Nel contesto di un'applicazione client-server, cosa avviene nella fase di Elaborazione (Processing) da parte del server?  
+1 punto
+a) Il client invia la richiesta al server.
+b) Il DNS traduce il nome di dominio in un indirizzo IP.
+c) Il server riceve la richiesta, cerca i dati in un database o esegue un calcolo.
+23 - Quale vincolo architetturale REST impone che i componenti del sistema (client e server) debbano interagire attraverso un'interfaccia ben definita e standardizzata, favorendo la disaccoppiamento?  
+1 punto
+a) Uniform Interface (Interfaccia Uniforme).
+b) Cacheable.
+c) Code-on-Demand (Codice a Richiesta).
+27 - A quale concetto fa riferimento l'acronimo HATEOAS (Hypermedia as the Engine of Application State)?   
+1 punto
+a) L'uso esclusivo di API basate su XML.
+b) L'inclusione di link ipermediali all'interno della rappresentazione delle risorse, consentendo al client di navigare tra le funzionalità dell'API.
+c) L'obbligo per il server di mantenere lo stato della sessione del client.
+15 - Quale VERBO HTTP viene utilizzato in ambito REST per la cancellazione di una risorsa?  
+1 punto
+a) POST.
+b) PUT.
+c) DELETE.
+26 - Cosa si intende con Idempotenza nel contesto dei verbi HTTP?   
+1 punto
+a) La possibilità di annullare l'operazione in qualsiasi momento.
+b) L'esecuzione multipla dello stesso metodo non cambia il risultato oltre il primo tentativo (es. GET o PUT).
+c) L'operazione deve sempre modificare lo stato del server.
+6 - Qual è una caratteristica distintiva degli indirizzi IPv6 rispetto a IPv4?  
+1 punto
+a) Sono numeri a 32 bit.
+b) Sono rappresentati in notazione "dotted-quad" (separati da punti).
+c) Sono numeri a 128 bit e offrono uno spazio di indirizzamento quasi illimitato.
+29 - A cosa serve il meccanismo CORS (Cross-Origin Resource Sharing)?  
+1 punto
+a) Fornire automaticamente la crittografia SSL/TLS per tutte le richieste.
+b) Permettere a un server di autorizzare esplicitamente l'accesso alle sue risorse da parte di origini diverse dalla sua.
+c) Bloccare tutte le richieste HTTP che non provengono dallo stesso dominio.
+30 - Nelle richieste CORS complesse (come PUT o DELETE), il browser invia prima un tipo speciale di richiesta, noto come:  
+1 punto
+a) Richiesta CONNECT.
+b) Richiesta OPTIONS (Preflight Request).
+c) Richiesta HEAD.
+24 - Il vincolo Layered System (Sistema a Strati) in REST consente di interporre componenti intermediari (come proxy o load balancer) tra client e server. Qual è il principale vantaggio di questo vincolo?  
+1 punto
+a) Migliorare la scalabilità e la sicurezza nascondendo la topologia interna del sistema.
+b) Ridurre la necessità di usare il protocollo HTTP.
+c) Obbligare l'uso di un unico formato dati (es. JSON).
+1 - Qual è lo scopo principale del Client Layer (o Livello Presentazione) nell'architettura three-tier?  
+1 punto
+a) Elaborare la logica di business e le regole specifiche del sistema.
+b) Archiviare e gestire i dati persistenti.
+c) Visualizzare le informazioni e raccogliere dati dall'utente.
+9 - Quale strato del modello TCP/IP è responsabile di fornire i servizi di rete direttamente alle applicazioni software (come i browser e i client di posta)?
+1 punto
+a) Livello di Trasporto.
+b) Livello di Rete.
+c) Livello di Applicazione.
+17  - Che cos'è l'API (Application Programming Interface) in sintesi?  
+1 punto
+a) Un linguaggio di programmazione specifico per il backend.
+b) Un software di database per l'archiviazione.
+c) Un intermediario che stabilisce un insieme di regole precise affinché due componenti software possano comunicare.
+28 - Quale politica di sicurezza del browser impedisce a una pagina web di accedere a dati e risorse (es. via AJAX) da un dominio, protocollo o porta diversi da quelli della pagina stessa?  
+1 punto
+a) Content Security Policy (CSP).
+b) Same-Origin Policy (SOP).
+c) HSTS (HTTP Strict Transport Security).
+Nome e Cognome
+1 punto
+21 - Quale VERBO HTTP è definito come idempotente e viene usato per la sostituzione completa di una risorsa, richiedendo l'invio dell'intero payload?  
+1 punto
+a) POST.
+b) PUT.
+c) PATCH.
+16 - In ambito REST, qual è il formato dati più comune utilizzato per il payload (body) di una richiesta o risposta, grazie alla sua leggerezza e leggibilità?  
+1 punto
+a) XML (eXtensible Markup Language).
+b) JSON (JavaScript Object Notation).
+c) HTML (HyperText Markup Language).
+14 - Un certificato TLS/SSL che offre un processo di verifica completamente automatizzato, attestando unicamente il controllo del dominio, è un certificato di tipo:  
+1 punto
+a) Organization Validation (OV).
+b) Extended Validation (EV).
+c) Domain Validation (DV).
+5 - Un indirizzo IPv4 è rappresentato per comodità come quattro blocchi di numeri decimali separati da un punto. Qual è il numero massimo che può assumere ogni singolo blocco (ottetto)?  
+1 punto
+a) 128
+b) 255
+c) 512
+13 - Quale delle tre garanzie di sicurezza fondamentali di HTTPS viene garantita tramite la verifica del Certificato SSL/TLS?  
+1 punto
+a) Crittografia.
+b) Integrità.
+c) Autenticazione.
+19 - Qual è il vincolo fondamentale di REST che impone che ogni richiesta inviata dal client al server debba contenere tutte le informazioni necessarie per essere elaborata, senza che il server memorizzi lo stato del client tra una richiesta e l'altra?  
+1 punto
+a) Caching.
+b) Indipendenza di piattaforma.
+c) Stateless (Senza Stato).
+7 - Nella struttura gerarchica di un nome di dominio (es. mail.google.com), la parte più a destra, come .it o .org, è chiamata:  
+1 punto
+a) Dominio di Terzo Livello (Sottodominio).
+b) Dominio di Secondo Livello (SLD).
+c) Dominio di Primo Livello (TLD).
+11 - Qual è il protocollo fondamentale del Livello di Rete (o Internet) che si occupa di incapsulare i segmenti del Livello di Trasporto in pacchetti (datagrammi)?  
+1 punto
+a) ARP (Address Resolution Protocol).
+b) ICMP (Internet Control Message Protocol).
+c) IP (Internet Protocol).
+12 - Cosa significa l'acronimo HTTPS?  
+1 punto
+a) HyperText Transfer Protocol Session.
+b) HyperText Transfer Protocol Secure.
+c) Highly Technical Transfer Protocol Standard.
