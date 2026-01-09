@@ -111,7 +111,7 @@ public class Prodotto implements Comparable<Prodotto> {
 
 	@Override
 	public String toString() {
-		return "PRODOTTO: CODICE: " + codice + "\nDESCRIZIONE: " + descrizione  +"\nCATEGORIA: " + categoria + "\nQUANTITÀ: " + quantita
+		return "\n| PRODOTTO -> " + descrizione.toUpperCase() + " | " +  "\nCODICE: " + codice + "\nDESCRIZIONE: " + descrizione  +"\nCATEGORIA: " + categoria + "\nQUANTITÀ: " + quantita
 				+ "\nDISPONIBILITÀ: " + disponibile + "\nPREZZO: " + prezzo + "\nSCONTO: " + sconto;
 	}
 
