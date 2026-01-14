@@ -1,6 +1,10 @@
 package java3.multithreading.esercizi.bancanosync;
 
-public class ThreadConto implements Thread {
+import java.util.Random;
+
+import java2.eccezioni.MyExceptions.ValidationExceptions.ValueNegativeException;
+
+public class ThreadConto extends Thread {
 	private final int numero;
 	private final Banca bank;
 
@@ -23,5 +27,12 @@ public class ThreadConto implements Thread {
 		return "" + numero;
 	}
 
-	
+	public void run() {
+		while (true) {
+			try {
+				Thread.sleep(200);
+				bank.bonifico(numero, new Random().nextInt(1, 11), 500);
+			} catch (ValueNegativeException | IndexOutOfBoundsException | InterruptedException e) {}
+		}
+	}
 }
