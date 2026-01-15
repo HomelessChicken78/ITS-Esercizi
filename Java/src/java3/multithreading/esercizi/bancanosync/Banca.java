@@ -23,12 +23,16 @@ public class Banca {
 		ContiCorrenti.set(ccBeneficiario, ContiCorrenti.get(ccBeneficiario) + importo);
 	}
 
-	int getPatrimonio() {
+	public int getPatrimonio() {
 		int tot = 0;
 
 		for (Integer ccMoney : ContiCorrenti)
 			tot += ccMoney;
 
 		return tot;
+	}
+
+	public ArrayList<Integer> getContiCorrenti() {
+		return new ArrayList<>(ContiCorrenti);
 	}
 }
