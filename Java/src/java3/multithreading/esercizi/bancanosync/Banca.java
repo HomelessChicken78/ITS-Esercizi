@@ -2,7 +2,6 @@ package java3.multithreading.esercizi.bancanosync;
 
 import java.util.ArrayList;
 
-import java2.eccezioni.MyExceptions.ValidationExceptions.ValidationException;
 import java2.eccezioni.MyExceptions.ValidationExceptions.ValueNegativeException;
 
 public class Banca {
