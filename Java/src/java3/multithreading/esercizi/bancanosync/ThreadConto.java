@@ -36,7 +36,7 @@ public class ThreadConto extends Thread {
 		while (true) {
 			try {
 				Thread.sleep(200);
-				bank.bonifico(numero, new Random().nextInt(1, 11), 500);
+				bank.bonifico(numero, new Random().nextInt(0, 10), 500);
 			} catch (ValueNegativeException | IndexOutOfBoundsException | InterruptedException | StessoContoException e) {}
 		}
 	}
