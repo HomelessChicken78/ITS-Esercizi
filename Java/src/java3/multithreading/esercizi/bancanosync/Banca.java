@@ -22,7 +22,7 @@ public class Banca {
 			throw new ValueNegativeException("Non vi è abbastanza disponibilità");
 		
 		if (ccOrdinante == ccBeneficiario)
-			throw new StessoContoException();
+			throw new StessoContoException("Non posso fare un bonifico sullo stesso conto");
 
 		ContiCorrenti.set(ccOrdinante, ContiCorrenti.get(ccOrdinante) - importo);
 		ContiCorrenti.set(ccBeneficiario, ContiCorrenti.get(ccBeneficiario) + importo);
