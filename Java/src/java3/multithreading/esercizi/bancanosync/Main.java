@@ -9,7 +9,7 @@ public class Main {
 		ThreadPatrimonio patrimonio = new ThreadPatrimonio(banca);
 		patrimonio.start();
 
-		for (int i = 0; i < 1; i++) {
+		for (int i = 0; i < 10; i++) {
 			new ThreadConto(i, banca).start();
 		}
 	}
