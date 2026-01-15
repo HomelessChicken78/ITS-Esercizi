@@ -17,7 +17,9 @@ public class ThreadPatrimonio extends Thread {
 		while (true) {
 			try {
 				Thread.sleep(500);
-				System.out.println(bank.getPatrimonio());
+				System.out.println("Totale Patrimonio: " + bank.getPatrimonio());
+				System.out.println("Soldi nei conti correnti: " + bank.getContiCorrenti());
+				System.out.println();
 			} catch (InterruptedException e) {}
 		}
 	}
