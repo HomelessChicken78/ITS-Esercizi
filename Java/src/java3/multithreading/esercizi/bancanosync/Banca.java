@@ -36,7 +36,7 @@ public class Banca {
 		return tot;
 	}
 
-	public ArrayList<Integer> getContiCorrenti() {
+	synchronized public ArrayList<Integer> getContiCorrenti() {
 		return new ArrayList<>(ContiCorrenti);
 	}
 }
