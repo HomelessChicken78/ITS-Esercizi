@@ -2,6 +2,7 @@ package java3.multithreading.esercizi.bancanosync;
 
 import java.util.ArrayList;
 
+import java2.eccezioni.MyExceptions.ValidationExceptions.ValidationException;
 import java2.eccezioni.MyExceptions.ValidationExceptions.ValueNegativeException;
 
 public class Banca {
@@ -16,9 +17,13 @@ public class Banca {
 	}
 
 	void bonifico(int ccOrdinante,
-			int ccBeneficiario,int importo) throws ValueNegativeException, IndexOutOfBoundsException {
+			int ccBeneficiario,int importo) throws ValueNegativeException, IndexOutOfBoundsException, StessoContoException {
 		if (ContiCorrenti.get(ccOrdinante) - importo < 0)
 			throw new ValueNegativeException("Non vi è abbastanza disponibilità");
+		
+		if (ccOrdinante == ccBeneficiario)
+			throw new StessoContoException();
+
 		ContiCorrenti.set(ccOrdinante, ContiCorrenti.get(ccOrdinante) - importo);
 		ContiCorrenti.set(ccBeneficiario, ContiCorrenti.get(ccBeneficiario) + importo);
 	}
