@@ -15,7 +15,7 @@ public class Banca {
 		}
 	}
 
-	void bonifico(int ccOrdinante,
+	synchronized void bonifico(int ccOrdinante,
 			int ccBeneficiario,int importo) throws ValueNegativeException, IndexOutOfBoundsException, StessoContoException {
 		if (ContiCorrenti.get(ccOrdinante) - importo < 0)
 			throw new ValueNegativeException("Non vi è abbastanza disponibilità");
@@ -27,7 +27,7 @@ public class Banca {
 		ContiCorrenti.set(ccBeneficiario, ContiCorrenti.get(ccBeneficiario) + importo);
 	}
 
-	public int getPatrimonio() {
+	synchronized public int getPatrimonio() {
 		int tot = 0;
 
 		for (Integer ccMoney : ContiCorrenti)
