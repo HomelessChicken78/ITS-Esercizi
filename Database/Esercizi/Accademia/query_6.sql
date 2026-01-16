@@ -61,3 +61,11 @@ from persona p, attivitaprogetto ap
 where p.posizione = 'Professore Associato' and p.id = ap.persona
 group by p.id
 -- having count(*) > 1;
+;
+select p.nome, p.cognome
+from persona as p
+	join attivitaprogetto as ap on ap.persona = p.id
+		join progetto as pr on pr.id = ap.progetto
+where p.posizione = 'Professore Associato'
+group by p.id
+having count(distinct pr.id) >= 2
