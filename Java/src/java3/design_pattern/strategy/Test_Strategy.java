@@ -1,7 +1,5 @@
 package java3.design_pattern.strategy;
 
-import java.time.LocalDate;
-import java.time.Month;
 import java.util.Arrays;
 
 public class Test_Strategy {
