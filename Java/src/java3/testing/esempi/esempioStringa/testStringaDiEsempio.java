@@ -1,10 +1,8 @@
-package java3.testing.testsEsempioStringa;
+package java3.testing.esempi.esempioStringa;
 
 import static org.junit.Assert.*;
 
 import org.junit.jupiter.api.Test;
-
-import java3.testing.EsempioStringa;
 
 class testStringaDiEsempio {
 

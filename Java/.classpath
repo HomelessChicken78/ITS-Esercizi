@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="/home/its/Scaricati/apache-log4j-2.3.2-bin/log4j-api-2.3.2.jar"/>
+	<classpathentry exported="true" kind="lib" path="/home/its/Scaricati/apache-log4j-2.3.2-bin/log4j-core-2.3.2.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/5"/>
+	<classpathentry kind="lib" path="/home/its/Scaricati/objenesis-3.3.jar"/>
+	<classpathentry kind="lib" path="/home/its/Scaricati/byte-buddy-agent-1.15.11.jar"/>
+	<classpathentry kind="lib" path="/home/its/Scaricati/byte-buddy-1.15.11.jar"/>
+	<classpathentry kind="lib" path="/home/its/Scaricati/mockito-core-5.21.0.jar"/>
+	<classpathentry kind="lib" path="/home/its/Scaricati/mockito-junit-jupiter-5.15.2.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

@@ -1,4 +1,4 @@
-package java3.testing.calcolatrice;
+package java3.testing.esempi.calcolatrice;
 
 //*import static org.junit.jupiter.api.Assertions.*  -> we can avoid inserting 'Assetions', so we can write for example -> assertEquals(2, calcolatrice.somma(1,1));;
 import org.junit.jupiter.api.Assertions;

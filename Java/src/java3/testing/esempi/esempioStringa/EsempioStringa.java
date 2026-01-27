@@ -1,4 +1,4 @@
-package java3.testing;
+package java3.testing.esempi.esempioStringa;
 
 import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.LogManager;

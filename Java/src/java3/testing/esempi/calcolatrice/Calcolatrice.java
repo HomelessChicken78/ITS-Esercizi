@@ -1,4 +1,4 @@
-package java3.testing.calcolatrice;
+package java3.testing.esempi.calcolatrice;
 
 /*  
  ? Adding simple class Calcolatrice to test it with JUnit

@@ -6,7 +6,7 @@
             <PatternLayout pattern="%d{HH:mm:ss} %-5level %c{1} - %msg%n"/>
         </Console>
 
-        <File name="FileLogger" fileName="src/java3/deblogtest/logs/biblioteca.log" append="true">
+        <File name="FileLogger" fileName="src/java3/testing/esempi/esempioStringa/logs/biblioteca.log" append="true">
             <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss} %-5level %c - %msg%n"/>
         </File>
     </Appenders>
