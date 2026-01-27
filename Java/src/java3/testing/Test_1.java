@@ -1,4 +1,4 @@
-package java3.deblogtest;
+package java3.testing;
 
 public class Test_1 {
 	public static void main(String[] args) {
