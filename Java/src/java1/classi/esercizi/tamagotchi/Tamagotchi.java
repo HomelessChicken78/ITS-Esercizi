@@ -91,7 +91,7 @@ public class Tamagotchi {
 
 	public boolean gioca() {
 		if (energia - 1 >= 0 && energia - 1 <= 10 && peso - 100 > 0) {
-			energia++;
+			energia--;
 			return true;
 		} else {
 			return false;
