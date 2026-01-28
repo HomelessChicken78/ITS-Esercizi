@@ -1,6 +1,6 @@
 package java3.testing.esercizi.tamagotchi;
 
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 

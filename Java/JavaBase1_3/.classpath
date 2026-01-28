@@ -1,6 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="/home/its/Scaricati/objenesis-3.3.jar"/>
+	<classpathentry exported="true" kind="lib" path="/home/its/Scaricati/byte-buddy-agent-1.15.11.jar"/>
+	<classpathentry exported="true" kind="lib" path="/home/its/Scaricati/byte-buddy-1.15.11.jar"/>
+	<classpathentry exported="true" kind="lib" path="/home/its/Scaricati/mockito-junit-jupiter-5.15.2.jar"/>
+	<classpathentry exported="true" kind="lib" path="/home/its/Scaricati/mockito-core-5.21.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="/home/its/Scaricati/junit-jupiter-api-5.10.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="/home/its/Scaricati/apache-log4j-2.3.2-bin/log4j-core-2.3.2.jar"/>
+	<classpathentry exported="true" kind="lib" path="/home/its/Scaricati/apache-log4j-2.3.2-bin/log4j-api-2.3.2.jar"/>
+	<classpathentry exported="true" kind="lib" path="/home/its/Scaricati/opentest4j-1.3.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="/home/its/Scaricati/junit-platform-suite-engine-1.10.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="/home/its/Scaricati/junit-platform-suite-api-1.10.1.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

@@ -1,6 +1,6 @@
 package java3.testing.esempi.esempioStringa;
 
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
@@ -16,7 +16,8 @@ class testStringaDiEsempio {
 		EsempioStringa es = new EsempioStringa();
 		String testo="Giacomo sta facendo java e si diverte";
 		int occ = 3;
-		assertEquals("Il numero di occorrenze atteso", occ, es.contaOccorrenze(testo, "o"));
+		// Il numero di occorrenze atteso
+		assertEquals(occ, es.contaOccorrenze(testo, "o"));
 	}
 
 	@Test
