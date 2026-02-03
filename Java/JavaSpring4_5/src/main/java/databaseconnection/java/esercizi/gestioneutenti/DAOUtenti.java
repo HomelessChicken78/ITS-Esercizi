@@ -3,6 +3,8 @@ package databaseconnection.java.esercizi.gestioneutenti;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.Collection;
 
 public class DAOUtenti {
 	public static void registra(Utente user) throws SQLException, UsernameGiaInUso {
@@ -61,7 +63,13 @@ public class DAOUtenti {
 		}
 	}
 
-	public static ResultSet listaUtenti() throws SQLException {
-		return Database.getConnection().prepareStatement("SELECT username,nome, cognome, annoNascita FROM utente AS u;").executeQuery();
+	public static Collection<Utente> listaUtenti() throws SQLException {
+		ArrayList<Utente> listaCompleta = new ArrayList<>();
+		ResultSet res = Database.getConnection().prepareStatement("SELECT username,nome, cognome, annoNascita FROM utente AS u;").executeQuery();
+
+		while (res.next())
+			listaCompleta.add(new Utente(res.getString("nome"), res.getString("cognome"), res.getString("username"), "", res.getInt("annoNascita")));
+
+		return listaCompleta;
 	}
 }

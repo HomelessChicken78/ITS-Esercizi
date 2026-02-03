@@ -3,6 +3,7 @@ package databaseconnection.java.esercizi.gestioneutenti;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Collection;
 import java.util.Scanner;
 
 public class Main {
@@ -91,10 +92,11 @@ public class Main {
 			case 4:
 				System.out.println("===== VISUALIZZA UTENTI =====");
 
-				ResultSet res = DAOUtenti.listaUtenti();
+				Collection<Utente> res = DAOUtenti.listaUtenti();
 
-				while (res.next())
-					System.out.println(res.getString("username") + " ||| anagrafica: " + res.getString("nome") + " " + res.getString("cognome") + " " + res.getString("annoNascita"));
+				for (Utente ut : res) {
+					System.out.println(ut);
+				}
 				break;
 
 			default:
