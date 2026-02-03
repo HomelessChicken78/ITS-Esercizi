@@ -1,15 +1,17 @@
 package com.spring.java.service;
 
+import com.spring.java.dao.DAOUtenteMappa;
 import com.spring.java.entity.Utente;
 
 public class UtenteService {
+
+	private DAOUtenteMappa dao = new DAOUtenteMappa();
 	// metodo di registrazione FAKE
 	public boolean registra(Utente utente) {
-		System.out.println("registrazione avvenuta: " + utente);
-		return true;
+		return dao.insert(utente);
 	}
 
 	public Utente cercaPerId(int idUtente) {
-		return new Utente("mario", "rossi", "red@gmail.com", "112233", idUtente);
+		return dao.selectById(idUtente);
 	}
 }
