@@ -11,6 +11,9 @@ public class Main {
 			//System.out.println("Creo impiegato 1 -> " + DAOImpiegato.aggiungiNuovo(1005, "Francesco Blu", 1900, 450, 7, "Frontend Developer", 1800.00, 3400.00));
 			//System.out.println("Creo impiegato 2 -> " + DAOImpiegato.aggiungiNuovo(1006, "Mario Mela", 2600, 250, 2));
 			//System.out.println("Creo impiegato 3 -> " + DAOImpiegato.aggiungiNuovo(new Impiegato(1007, "Simone Draghieri", 1600, 100, new Mansione(1, "Junior Developer", 1400.00, 2200.00))));
+			for (Impiegato imp : DAOImpiegato.getAllImpiegati()) {
+				System.out.println(imp);
+			}
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}

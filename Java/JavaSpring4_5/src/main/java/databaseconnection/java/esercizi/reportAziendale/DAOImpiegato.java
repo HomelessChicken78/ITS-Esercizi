@@ -3,6 +3,8 @@ package databaseconnection.java.esercizi.reportAziendale;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class DAOImpiegato {
 	public static Impiegato aggiungiNuovo(int matricola, String nome, double salario_mensile, double bonus_annuale,
@@ -63,5 +65,19 @@ public class DAOImpiegato {
 		ps.setInt(1, matricola);
 
 		return ps.executeQuery().next();
+	}
+
+	public static List<Impiegato> getAllImpiegati() throws SQLException {
+		ArrayList<Impiegato> res = new ArrayList<>();
+
+		ResultSet allImpiegati = Database.getConnection().prepareStatement("SELECT matricola, imp.nome imp_nome, salario_mensile, bonus_annuale, mansione_id, m.nome m_nome, stipendio_min, stipendio_max FROM impiegati AS imp JOIN mansioni AS m ON imp.mansione_id = m.id").executeQuery();
+
+		while (allImpiegati.next()) {
+			Mansione mansioneImpiegato = new Mansione(allImpiegati.getInt("mansione_id"), allImpiegati.getString("m_nome"), allImpiegati.getDouble("stipendio_min"), allImpiegati.getDouble("stipendio_max"));
+			Impiegato impiegatoToReturn = new Impiegato(allImpiegati.getInt("matricola"), allImpiegati.getString("imp_nome"), allImpiegati.getDouble("salario_mensile"), allImpiegati.getDouble("bonus_annuale"), mansioneImpiegato);
+			res.add(impiegatoToReturn);
+		}
+
+		return res;
 	}
 }
