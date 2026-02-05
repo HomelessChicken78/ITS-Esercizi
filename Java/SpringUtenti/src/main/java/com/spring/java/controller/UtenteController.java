@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.spring.java.dto.NomiUtentiENumeroDTO;
+import com.spring.java.dto.UtenteDTO;
 import com.spring.java.entity.Utente;
 import com.spring.java.service.UtenteService;
 
@@ -18,12 +20,12 @@ public class UtenteController {
 	private UtenteService service = new UtenteService();
 
 	@GetMapping(path = "/salva", consumes = "application/json")
-	public boolean salva(@RequestBody Utente utente) {
+	public boolean salva(@RequestBody UtenteDTO utente) {
 		return service.registra(utente);
 	}
 
 	@GetMapping(path = "/cerca/{idUtente}", produces = "application/json")
-	public Utente visualizza(@PathVariable int idUtente) {
+	public UtenteDTO visualizza(@PathVariable int idUtente) {
 		return service.cercaPerId(idUtente);
 	}
 
@@ -55,5 +57,10 @@ public class UtenteController {
 	@GetMapping(path = "/cercaNome", produces = "application/json")
 	public List<Utente> cercaUtentiPerNome(String nome) {
 		return service.cercaPerNome(nome);
+	}
+
+	@GetMapping(path = "/nomiNumero", produces = "application/json")
+	public NomiUtentiENumeroDTO getNomiNumeroUtenti() {
+		return service.getNomiNumeroUtenti();
 	}
 }
