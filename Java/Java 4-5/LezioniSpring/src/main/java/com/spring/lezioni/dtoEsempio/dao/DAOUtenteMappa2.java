@@ -5,14 +5,14 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import com.spring.lezioni.dtoEsempio.entity.Utente;
+import com.spring.lezioni.dtoEsempio.entity.Utente2;
 
 
-public class DAOUtenteMappa {
+public class DAOUtenteMappa2 {
 
-	private Map<Integer, Utente> mappa = new HashMap<>();
+	private Map<Integer, Utente2> mappa = new HashMap<>();
 
-	public boolean insert(Utente utente) {
+	public boolean insert(Utente2 utente) {
 		if(mappa.containsKey(utente.getIdUtente()))
 			return false;
 		
@@ -20,16 +20,16 @@ public class DAOUtenteMappa {
 		return true;
 
 	}
-	public List<Utente> selectAll(){
+	public List<Utente2> selectAll(){
 		return new ArrayList<>(mappa.values());
 	}
 
-	public Utente selectById(Integer idUtente) {
+	public Utente2 selectById(Integer idUtente) {
 		return mappa.get(idUtente);
 	}
 	
-	public Utente delete(Integer idUtente) {
-		Utente utente = mappa.remove(idUtente);
+	public Utente2 delete(Integer idUtente) {
+		Utente2 utente = mappa.remove(idUtente);
 		return utente;
 	}
 }

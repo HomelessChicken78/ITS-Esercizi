@@ -2,11 +2,11 @@ package com.spring.lezioni.dtoEsempio.dto;
 
 import java.util.List;
 
-public class NomiUtentiENumeroDTO {
+public class NomiUtentiENumeroDTO2 {
 	private List<String> nomi;
 	private int numeroNomi;
 
-	public NomiUtentiENumeroDTO(List<String> nomi, int numeroNomi) {
+	public NomiUtentiENumeroDTO2(List<String> nomi, int numeroNomi) {
 		super();
 		this.nomi = nomi;
 		this.numeroNomi = numeroNomi;
