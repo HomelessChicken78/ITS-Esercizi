@@ -1,4 +1,4 @@
-package databaseconnection.java.esercizi.reportAziendale;
+package reportAziendale;
 
 import java.sql.PreparedStatement;
 import java.sql.SQLException;

@@ -1,4 +1,4 @@
-package databaseconnection.java.esercizi.gestioneutenti;
+package gestioneutenti;
 
 public class UsernameErrata extends Exception {
 	public UsernameErrata() {

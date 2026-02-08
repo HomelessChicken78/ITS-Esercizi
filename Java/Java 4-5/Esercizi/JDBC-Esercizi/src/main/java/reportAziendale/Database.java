@@ -1,4 +1,4 @@
-package databaseconnection.java.esercizi.gestioneutenti;
+package reportAziendale;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -11,7 +11,7 @@ public class Database {
     //private static final String URL="jdbc:postgresql://localhost:5432/gestioneutenti";
     ///private static final String USER="postgres";
     //private static final String PASS="postgres";
-    private static final String PROPS_FILE="/dbUtenti.properties";
+    private static final String PROPS_FILE="/dbReportAziendale.properties";
     private static final Properties props=new Properties();
 
     public static Connection getConnection() throws SQLException {

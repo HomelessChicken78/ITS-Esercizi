@@ -1,4 +1,4 @@
-package databaseconnection.java.esercizi.gestioneutenti;
+package gestioneutenti;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
