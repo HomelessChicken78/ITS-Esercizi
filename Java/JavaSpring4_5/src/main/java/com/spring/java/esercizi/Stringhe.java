@@ -3,7 +3,6 @@ package com.spring.java.esercizi;
 import java.time.LocalDate;
 import java.time.Month;
 
-import com.spring.java.introduzione.CalcolatriceController;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -11,11 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping(path = "/stringhe")
 public class Stringhe {
-
-	private final CalcolatriceController calcolatriceController;
-
-	Stringhe(CalcolatriceController calcolatriceController) {
-		this.calcolatriceController = calcolatriceController;
+	Stringhe() {
 	}
 
 	@GetMapping(path = "/isNumeric")
