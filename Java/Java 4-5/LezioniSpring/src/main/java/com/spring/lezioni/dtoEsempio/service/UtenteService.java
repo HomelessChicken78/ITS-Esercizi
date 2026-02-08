@@ -3,10 +3,12 @@ package com.spring.lezioni.dtoEsempio.service;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.spring.java.dtoEsempio.dao.DAOUtenteMappa;
-import com.spring.java.dtoEsempio.dto.NomiUtentiENumeroDTO;
-import com.spring.java.dtoEsempio.dto.UtenteDTO;
-import com.spring.java.dtoEsempio.entity.Utente;
+import com.spring.lezioni.dtoEsempio.dao.DAOUtenteMappa;
+import com.spring.lezioni.dtoEsempio.dto.NomiUtentiENumeroDTO;
+import com.spring.lezioni.dtoEsempio.dto.UtenteDTO;
+import com.spring.lezioni.dtoEsempio.entity.Utente;
+
+
 
 
 public class UtenteService {

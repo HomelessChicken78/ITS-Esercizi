@@ -5,7 +5,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import com.spring.java.dtoEsempio.entity.Utente;
+import com.spring.lezioni.dtoEsempio.entity.Utente;
+
 
 public class DAOUtenteMappa {
 

@@ -9,10 +9,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.spring.java.dtoEsempio.dto.NomiUtentiENumeroDTO;
-import com.spring.java.dtoEsempio.dto.UtenteDTO;
-import com.spring.java.dtoEsempio.entity.Utente;
-import com.spring.java.dtoEsempio.service.UtenteService;
+import com.spring.lezioni.dtoEsempio.dto.NomiUtentiENumeroDTO;
+import com.spring.lezioni.dtoEsempio.dto.UtenteDTO;
+import com.spring.lezioni.dtoEsempio.service.UtenteService;
+
+
 
 
 
