@@ -1,4 +1,4 @@
-package com.spring.java.dtoEsempio.dto;
+package com.spring.lezioni.dtoEsempio.dto;
 
 import java.util.List;
 

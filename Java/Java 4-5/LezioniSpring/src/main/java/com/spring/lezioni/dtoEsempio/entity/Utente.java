@@ -1,4 +1,4 @@
-package com.spring.java.producesEConsumes.entity;
+package com.spring.lezioni.dtoEsempio.entity;
 
 public class Utente {
 	private String nome, cognome, mail, telefono;

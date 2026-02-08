@@ -1,4 +1,4 @@
-package com.spring.java.introduzione;
+package com.spring.lezioni.introduzione;
 
 import java.time.LocalDate;
 

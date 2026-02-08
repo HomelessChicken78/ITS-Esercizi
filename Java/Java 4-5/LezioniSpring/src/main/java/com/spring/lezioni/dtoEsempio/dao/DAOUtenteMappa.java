@@ -1,4 +1,4 @@
-package com.spring.java.dtoEsempio.dao;
+package com.spring.lezioni.dtoEsempio.dao;
 
 import java.util.ArrayList;
 import java.util.HashMap;

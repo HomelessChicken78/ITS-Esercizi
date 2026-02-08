@@ -1,4 +1,4 @@
-package com.spring.java.dtoEsempio.service;
+package com.spring.lezioni.dtoEsempio.service;
 
 import java.util.ArrayList;
 import java.util.List;

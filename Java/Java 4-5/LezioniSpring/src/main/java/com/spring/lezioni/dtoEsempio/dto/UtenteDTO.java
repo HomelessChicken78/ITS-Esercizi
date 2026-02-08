@@ -1,10 +1,10 @@
-package com.spring.java.dtoEsempio.entity;
+package com.spring.lezioni.dtoEsempio.dto;
 
-public class Utente {
+public class UtenteDTO {
 	private String nome, cognome, mail, telefono;
 	private int idUtente;
 
-	public Utente(String nome, String cognome, String mail, String telefono, int idUtente) {
+	public UtenteDTO(String nome, String cognome, String mail, String telefono, int idUtente) {
 		super();
 		this.nome = nome;
 		this.cognome = cognome;
@@ -13,7 +13,7 @@ public class Utente {
 		this.idUtente = idUtente;
 	}
 
-	public Utente() {
+	public UtenteDTO() {
 		System.out.println("spring sta costruendo l'utente");
 	}
 
@@ -65,3 +65,4 @@ public class Utente {
 				+ idUtente;
 	}
 }
+

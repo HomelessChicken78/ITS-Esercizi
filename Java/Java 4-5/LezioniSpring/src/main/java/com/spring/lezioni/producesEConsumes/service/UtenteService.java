@@ -1,6 +1,6 @@
-package com.spring.java.producesEConsumes.service;
+package com.spring.lezioni.producesEConsumes.service;
 
-import com.spring.java.producesEConsumes.entity.Utente;
+import com.spring.lezioni.producesEConsumes.entity.Utente;
 
 public class UtenteService {
 	// metodo di registrazione FAKE
