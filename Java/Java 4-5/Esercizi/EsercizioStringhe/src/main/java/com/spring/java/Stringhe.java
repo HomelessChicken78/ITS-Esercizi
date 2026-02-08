@@ -1,4 +1,4 @@
-package com.spring.java.esercizi;
+package com.spring.java;
 
 import java.time.LocalDate;
 import java.time.Month;
