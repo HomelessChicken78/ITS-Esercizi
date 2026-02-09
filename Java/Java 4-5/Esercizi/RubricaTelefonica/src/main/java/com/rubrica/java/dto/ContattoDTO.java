@@ -4,21 +4,30 @@ import java.time.LocalDate;
 import java.util.Objects;
 
 public class ContattoDTO {
+	private int id;
 	private String nome, cognome, numero, gruppoAppartenenza;
 	private LocalDate dataNascita;
 	private boolean isPreferito;
 
 	public ContattoDTO() {}
 
-	public ContattoDTO(String nome, String cognome, String numero, String gruppoAppartenenza, LocalDate dataNascita,
+	public ContattoDTO(int id, String nome, String cognome, String numero, String gruppoAppartenenza, LocalDate dataNascita,
 			boolean isPreferito) {
-		super();
+		this.id = id;
 		this.nome = nome;
 		this.cognome = cognome;
 		this.numero = numero;
 		this.gruppoAppartenenza = gruppoAppartenenza;
 		this.dataNascita = dataNascita;
 		this.isPreferito = isPreferito;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	public String getNome() {
@@ -71,7 +80,7 @@ public class ContattoDTO {
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(numero);
+		return Objects.hash(id);
 	}
 
 	@Override
@@ -83,6 +92,6 @@ public class ContattoDTO {
 		if (getClass() != obj.getClass())
 			return false;
 		ContattoDTO other = (ContattoDTO) obj;
-		return Objects.equals(numero, other.numero);
+		return id == other.id;
 	}
 }

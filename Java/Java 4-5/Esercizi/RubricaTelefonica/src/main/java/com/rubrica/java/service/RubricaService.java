@@ -1,7 +1,6 @@
 package com.rubrica.java.service;
 
 import java.util.List;
-import java.util.NoSuchElementException;
 
 import com.rubrica.java.dao.DAORubrica;
 import com.rubrica.java.dto.ContattoDTO;
@@ -49,6 +48,7 @@ public class RubricaService {
 		ContattoDTO dto = new ContattoDTO();
 
 		if (entity != null) {
+			dto.setId(entity.getId());
 			dto.setNome(entity.getNome());
 			dto.setCognome(entity.getCognome());
 			dto.setNumero(entity.getNumero());
@@ -64,6 +64,7 @@ public class RubricaService {
 		Contatto entity = new Contatto();
 
 		if (entity != null) {
+			entity.setId(dto.getId());
 			entity.setNome(dto.getNome());
 			entity.setCognome(dto.getCognome());
 			entity.setNumero(dto.getNumero());
@@ -129,15 +130,10 @@ public class RubricaService {
 	}
 
 	public ProprietarioAndAnnoCreazioneRubrica piuVecchia() {
-		Rubrica res = null;
-		try {
-			res = dao.visualizzaTutti()
+		Rubrica res = dao.visualizzaTutti()
 				.stream()
 				.sorted((r1, r2) -> Integer.compare(r1.getAnnoCreazione(), r2.getAnnoCreazione()))
-				.findFirst().get();
-		} catch (NoSuchElementException err) {
-			return null;
-		}
+				.findFirst().orElse(null);
 
 		return new ProprietarioAndAnnoCreazioneRubrica(res.getProprietario(), res.getAnnoCreazione());
 	}
@@ -150,7 +146,143 @@ public class RubricaService {
 				.toList();
 	}
 
-	public ProprietarioAndNumeroContatti statisticheRubrica() {
-		
+	
+	public ProprietarioAndNumeroContatti statisticheRubrica(int idRubrica) {
+		RubricaDTO rubrica = visualizzaRubricaPerId(idRubrica);
+
+		if (rubrica != null)
+			return new ProprietarioAndNumeroContatti(rubrica.getProprietario(), rubrica.getListaContatti().size());
+
+		return null;
+	}
+
+	public boolean nuovoContatto(int idRubrica, ContattoDTO contatto) {
+		return dao.cercaPerId(idRubrica).addContatto(ContattoDTO2Entity(contatto));
+	}
+
+	public ContattoDTO visualizzaContattoPerId(int idRubrica, int idContatto) {
+		RubricaDTO rubrica = visualizzaRubricaPerId(idRubrica);
+
+		if (rubrica != null)
+			return
+				rubrica.getListaContatti()
+				.stream()
+				.filter(c -> c.getId() == idContatto)
+				.findAny().orElse(null);
+
+		return null;
+	}
+
+	public ContattoDTO modicaContatto(int idRubrica, int idContatto, ContattoDTO contattoAggiornato) {
+		contattoAggiornato.setId(idContatto);
+		cancellaContatto(idRubrica, idContatto);
+		nuovoContatto(idRubrica, contattoAggiornato);
+
+		return contattoAggiornato;
+	}
+
+	public ContattoDTO cancellaContatto(int idRubrica, int idContatto) {
+		Rubrica rubrica = dao.cercaPerId(idRubrica);
+
+		if (rubrica != null)
+			return ContattoEntity2DTO(rubrica.removeContatto(idContatto));
+
+		return null;
+	}
+
+	public List<ContattoDTO> visualizzaTuttiContatti(int idRubrica) {
+		RubricaDTO rubrica = visualizzaRubricaPerId(idRubrica);
+
+		if (rubrica != null)
+			return rubrica.getListaContatti();
+
+		return null;
+	}
+
+	public int visualizzaNumeroContatti(int idRubrica) {
+		RubricaDTO rubrica = visualizzaRubricaPerId(idRubrica);
+
+		if (rubrica != null)
+			return rubrica.getListaContatti().size();
+
+		return 0;
+	}
+
+	public ContattoDTO visualizzaContattoPerNumero(int idRubrica, String numero) {
+		RubricaDTO rubrica = visualizzaRubricaPerId(idRubrica);
+
+		if (rubrica != null)
+			return
+				rubrica.getListaContatti()
+				.stream()
+				.filter(c -> c.getNumero().equals(numero))
+				.findFirst().orElse(null);
+
+		return null;
+	}
+
+	public List<ContattoDTO> nomeAndCognomeContattiDiUnGruppo(int idRubrica, String gruppo) {
+		RubricaDTO rubrica = visualizzaRubricaPerId(idRubrica);
+
+		if (rubrica != null)
+			return
+				rubrica.getListaContatti()
+				.stream()
+				.filter(c -> c.getGruppoAppartenenza().equals(gruppo))
+				.toList();
+
+		return null;
+	}
+
+	public int numeroContattiGruppo(int idRubrica, String gruppo) {
+		RubricaDTO rubrica = visualizzaRubricaPerId(idRubrica);
+
+		if (rubrica != null) {
+			List<ContattoDTO> res = nomeAndCognomeContattiDiUnGruppo(idRubrica, gruppo);
+
+			if (res != null)
+				return res.size();
+		}
+
+		return 0;
+	}
+
+	public void cancellaGruppo(int idRubrica, String gruppo) {
+		Rubrica rubrica = dao.cercaPerId(idRubrica);
+
+		if (rubrica != null)
+			rubrica.getListaContatti()
+				.stream()
+				.filter(c -> c.getGruppoAppartenenza().equals(gruppo))
+				.forEach(c -> cancellaContatto(idRubrica, c.getId()));
+	}
+
+	public boolean mettiPreferito(int idRubrica, int idContatto) {
+		if (visualizzaContattoPerId(idRubrica, idContatto) != null) {
+			Contatto trovato = dao.cercaPerId(idRubrica).getListaContatti()
+			.stream()
+			.filter(c -> c.getId() == idContatto)
+			.findAny().orElse(null);
+
+			if (trovato != null) {
+				trovato.setPreferito(true);
+				return true;
+			}
+		}
+
+		return false;
+	}
+
+	public List<ContattoDTO> visualizzaPreferiti(int idRubrica) {
+		RubricaDTO rubrica = visualizzaRubricaPerId(idRubrica);
+
+		if (rubrica != null)
+			return
+				rubrica.getListaContatti()
+				.stream()
+				.filter(c -> c.isPreferito())
+				.toList();
+
+		return null;
 	}
 }

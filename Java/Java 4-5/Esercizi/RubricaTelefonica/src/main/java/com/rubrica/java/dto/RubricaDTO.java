@@ -44,15 +44,17 @@ public class RubricaDTO {
 		return new ArrayList<>(listaContatti);
 	}
 
-	public void addContattoDTO(ContattoDTO contatto) {
-		listaContatti.add(contatto);
+	public boolean addContattoDTO(ContattoDTO contatto) {
+		return listaContatti.add(contatto);
 	}
 
-	public void removeContattoDTO(ContattoDTO contatto) {
-		listaContatti.remove(contatto);
-	}
+	public ContattoDTO removeContattoDTO(int idContatto) {
+		for (ContattoDTO c : listaContatti)
+			if (c.getId() == idContatto) {
+				listaContatti.remove(c);
+				return c;
+			}
 
-	public void removeContattoDTO(int index) {
-		listaContatti.remove(index);
+		return null;
 	}
 }
