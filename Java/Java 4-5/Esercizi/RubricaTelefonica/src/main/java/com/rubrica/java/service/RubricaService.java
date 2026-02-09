@@ -1,10 +1,13 @@
 package com.rubrica.java.service;
 
 import java.util.List;
+import java.util.NoSuchElementException;
 
 import com.rubrica.java.dao.DAORubrica;
 import com.rubrica.java.dto.ContattoDTO;
+import com.rubrica.java.dto.ElencoNomiProprietariAndNumeroTotaleProprietari;
 import com.rubrica.java.dto.ProprietarioAndAnnoCreazioneRubrica;
+import com.rubrica.java.dto.ProprietarioAndNumeroContatti;
 import com.rubrica.java.dto.RubricaDTO;
 import com.rubrica.java.entity.Contatto;
 import com.rubrica.java.entity.Rubrica;
@@ -113,5 +116,41 @@ public class RubricaService {
 		dao.insert(rubricaDaAggiornare);
 
 		return RubricaEntity2DTO(rubricaDaAggiornare);
+	}
+
+	public ElencoNomiProprietariAndNumeroTotaleProprietari nomiProprietariAndNumero() {
+		List<String> elenco = dao.visualizzaTutti()
+				.stream()
+				.map(r -> r.getProprietario())
+				.toList();
+		int numero = elenco.size();
+
+		return new ElencoNomiProprietariAndNumeroTotaleProprietari(elenco, numero);
+	}
+
+	public ProprietarioAndAnnoCreazioneRubrica piuVecchia() {
+		Rubrica res = null;
+		try {
+			res = dao.visualizzaTutti()
+				.stream()
+				.sorted((r1, r2) -> Integer.compare(r1.getAnnoCreazione(), r2.getAnnoCreazione()))
+				.findFirst().get();
+		} catch (NoSuchElementException err) {
+			return null;
+		}
+
+		return new ProprietarioAndAnnoCreazioneRubrica(res.getProprietario(), res.getAnnoCreazione());
+	}
+
+	public List<Integer> listaAnniCreazione() {
+		return dao.visualizzaTutti()
+				.stream()
+				.map(r -> r.getAnnoCreazione())
+				.sorted((y1, y2) -> Integer.compare(y1, y2))
+				.toList();
+	}
+
+	public ProprietarioAndNumeroContatti statisticheRubrica() {
+		
 	}
 }
