@@ -3,14 +3,20 @@ package com.spring.java.service;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 import com.spring.java.dao.DAOUtenteMappa;
 import com.spring.java.dto.NomiUtentiENumeroDTO;
 import com.spring.java.dto.UtenteDTO;
 import com.spring.java.entity.Utente;
 
+@Service
 public class UtenteService {
 
-	private DAOUtenteMappa dao = new DAOUtenteMappa();
+	@Autowired
+	private DAOUtenteMappa dao;
+
 	public boolean registra(UtenteDTO dto) {
 		Utente utente = new Utente();
 		utente.setCognome(dto.getCognome());

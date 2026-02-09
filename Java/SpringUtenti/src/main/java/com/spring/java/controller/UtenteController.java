@@ -3,6 +3,7 @@ package com.spring.java.controller;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -17,7 +18,8 @@ import com.spring.java.service.UtenteService;
 @RestController
 @RequestMapping(path = "/utenti")
 public class UtenteController {
-	private UtenteService service = new UtenteService();
+	@Autowired
+	private UtenteService service;
 
 	@GetMapping(path = "/salva", consumes = "application/json")
 	public boolean salva(@RequestBody UtenteDTO utente) {
