@@ -101,7 +101,7 @@ public class RubricaService {
 		return new ProprietarioAndAnnoCreazioneRubrica(res.getProprietario(), res.getAnnoCreazione());
 	}
 
-	public RubricaDTO modicaProprietario(int idRubrica, String nuovoProprietario) {
+	public RubricaDTO modificaProprietario(int idRubrica, String nuovoProprietario) {
 		Rubrica rubricaDaAggiornare = dao.cercaPerId(idRubrica);
 		dao.cancella(idRubrica);
 		rubricaDaAggiornare.setProprietario(nuovoProprietario);
@@ -110,7 +110,7 @@ public class RubricaService {
 		return RubricaEntity2DTO(rubricaDaAggiornare);
 	}
 
-	public RubricaDTO modicaAnnoCreazione(int idRubrica, int annoCreazione) {
+	public RubricaDTO modificaAnnoCreazione(int idRubrica, int annoCreazione) {
 		Rubrica rubricaDaAggiornare = dao.cercaPerId(idRubrica);
 		dao.cancella(idRubrica);
 		rubricaDaAggiornare.setAnnoCreazione(annoCreazione);
@@ -122,7 +122,8 @@ public class RubricaService {
 	public ElencoNomiProprietariAndNumeroTotaleProprietari nomiProprietariAndNumero() {
 		List<String> elenco = dao.visualizzaTutti()
 				.stream()
-				.map(r -> r.getProprietario())
+				.map(r -> r.getProprietario().toLowerCase())
+				.distinct()
 				.toList();
 		int numero = elenco.size();
 
@@ -143,6 +144,7 @@ public class RubricaService {
 				.stream()
 				.map(r -> r.getAnnoCreazione())
 				.sorted((y1, y2) -> Integer.compare(y1, y2))
+				.distinct()
 				.toList();
 	}
 

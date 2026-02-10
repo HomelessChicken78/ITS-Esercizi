@@ -5,14 +5,6 @@ import java.util.List;
 
 public class Rubrica {
 	private int id;
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
-	}
-
 	private String proprietario;
 	private int annoCreazione;
 	private List<Contatto> listaContatti = new ArrayList<>();
@@ -22,6 +14,14 @@ public class Rubrica {
 	public Rubrica(String proprietario, int annoCreazione) {
 		this.proprietario = proprietario;
 		this.annoCreazione = annoCreazione;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	public String getProprietario() {
