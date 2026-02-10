@@ -10,11 +10,6 @@ import org.aspectj.lang.ProceedingJoinPoint;
 @Component
 @Aspect
 public class SpettatoreAdvice {
-    private final CalcolatriceController calcolatriceController;
-
-    SpettatoreAdvice(CalcolatriceController calcolatriceController) {
-        this.calcolatriceController = calcolatriceController;    }
-
 	@Around("execution (* com.spring.lezioni.aop.entity.Artista.perform(..))")
 	public void filtro(ProceedingJoinPoint jp) {
 		// pre-processing
