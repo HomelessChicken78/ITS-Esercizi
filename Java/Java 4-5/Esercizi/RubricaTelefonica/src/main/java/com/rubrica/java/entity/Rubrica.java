@@ -1,13 +1,15 @@
 package com.rubrica.java.entity;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class Rubrica {
 	private int id;
 	private String proprietario;
 	private int annoCreazione;
-	private List<Contatto> listaContatti = new ArrayList<>();
+	private Set<Contatto> listaContatti = new HashSet<>();
 
 	public Rubrica() {}
 

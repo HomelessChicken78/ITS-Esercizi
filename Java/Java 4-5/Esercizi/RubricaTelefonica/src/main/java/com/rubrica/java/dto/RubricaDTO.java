@@ -1,13 +1,15 @@
 package com.rubrica.java.dto;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class RubricaDTO {
 	private int id;
 	private String proprietario;
 	private int annoCreazione;
-	private List<ContattoDTO> listaContatti = new ArrayList<>();
+	private Set<ContattoDTO> listaContatti = new HashSet<>();
 
 	public RubricaDTO() {}
 
