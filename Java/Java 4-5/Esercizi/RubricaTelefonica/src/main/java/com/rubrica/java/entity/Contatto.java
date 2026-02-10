@@ -94,4 +94,12 @@ public class Contatto {
 		Contatto other = (Contatto) obj;
 		return id == other.id;
 	}
+
+	@Override
+	public String toString() {
+		return "id=" + id + ", nome=" + nome + ", cognome=" + cognome + ", numero=" + numero + ", gruppoAppartenenza="
+				+ gruppoAppartenenza + ", dataNascita=" + dataNascita + ", isPreferito=" + isPreferito;
+	}
+
+	
 }

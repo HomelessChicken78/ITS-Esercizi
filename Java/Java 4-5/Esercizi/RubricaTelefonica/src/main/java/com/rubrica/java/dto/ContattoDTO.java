@@ -94,4 +94,10 @@ public class ContattoDTO {
 		ContattoDTO other = (ContattoDTO) obj;
 		return id == other.id;
 	}
+
+	@Override
+	public String toString() {
+		return "id=" + id + ", nome=" + nome + ", cognome=" + cognome + ", numero=" + numero + ", gruppoAppartenenza="
+				+ gruppoAppartenenza + ", dataNascita=" + dataNascita + ", isPreferito=" + isPreferito;
+	}
 }

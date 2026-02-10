@@ -10,7 +10,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
+import com.rubrica.java.RubricaTelefonicaApplication;
+import com.rubrica.java.dto.ContattoDTO;
 import com.rubrica.java.dto.ElencoNomiProprietariAndNumeroTotaleProprietari;
 import com.rubrica.java.dto.ProprietarioAndAnnoCreazioneRubrica;
 import com.rubrica.java.dto.ProprietarioAndNumeroContatti;
@@ -75,5 +76,10 @@ public class RubricaController {
 	@GetMapping(path = "/{idRubrica}/proprietarioENumeroContatti", produces = "application/json")
 	public ProprietarioAndNumeroContatti proprietarioENumeroContatti(@PathVariable int idRubrica) {
 		return service.statisticheRubrica(idRubrica);
+	}
+
+	@PostMapping(path = "/{idRubrica}/contatti", consumes = "application/json")
+	public boolean aggiungiContatto(@PathVariable int idRubrica, @RequestBody ContattoDTO contatto) {
+		return service.nuovoContatto(idRubrica, contatto);
 	}
 }
