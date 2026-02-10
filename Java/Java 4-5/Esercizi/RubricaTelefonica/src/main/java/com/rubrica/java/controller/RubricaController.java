@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import com.rubrica.java.RubricaTelefonicaApplication;
 import com.rubrica.java.dto.ContattoDTO;
 import com.rubrica.java.dto.ElencoNomiProprietariAndNumeroTotaleProprietari;
 import com.rubrica.java.dto.ProprietarioAndAnnoCreazioneRubrica;
@@ -20,7 +19,7 @@ import com.rubrica.java.service.RubricaService;
 
 @RestController
 @RequestMapping(path = "/rubriche")
-public class RubricaController {
+public class RubricaController {	
 	private RubricaService service = new RubricaService();
 
 	@PostMapping(consumes = "application/json")
