@@ -223,7 +223,7 @@ public class RubricaService {
 		return null;
 	}
 
-	public List<ContattoDTO> nomeAndCognomeContattiDiUnGruppo(int idRubrica, String gruppo) {
+	public List<String> nomeAndCognomeContattiDiUnGruppo(int idRubrica, String gruppo) {
 		RubricaDTO rubrica = visualizzaRubricaPerId(idRubrica);
 
 		if (rubrica != null)
@@ -231,6 +231,7 @@ public class RubricaService {
 				rubrica.getListaContatti()
 				.stream()
 				.filter(c -> c.getGruppoAppartenenza().equals(gruppo))
+				.map(c -> c.getNome() + " " + c.getCognome())
 				.toList();
 
 		return null;
@@ -240,9 +241,9 @@ public class RubricaService {
 		RubricaDTO rubrica = visualizzaRubricaPerId(idRubrica);
 
 		if (rubrica != null) {
-			List<ContattoDTO> res = nomeAndCognomeContattiDiUnGruppo(idRubrica, gruppo);
+			List<String> res = nomeAndCognomeContattiDiUnGruppo(idRubrica, gruppo);
 
-			if (res != null)
+			if (res != null && res.size() > 0)
 				return res.size();
 		}
 
