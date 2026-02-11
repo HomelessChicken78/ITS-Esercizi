@@ -37,12 +37,12 @@ public class CalcolatriceController {
 		return service1.divide(n1, n2);
 	}
 
-	@GetMapping(path = "/report")
+	@GetMapping(path = "/report", produces = "application/json")
 	public ReportDTO report() {
 		return service2.reportComplessivo();
 	}
 
-	@GetMapping(path = "/report/{operation}")
+	@GetMapping(path = "/report/{operation}", produces = "application/json")
 	public ReportDTO statOperazione(@PathVariable String operation) {
 		return service2.frequenzaSingolaOperazione(operation);
 	}
