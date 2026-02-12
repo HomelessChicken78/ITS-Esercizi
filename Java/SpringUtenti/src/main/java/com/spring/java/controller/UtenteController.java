@@ -1,15 +1,18 @@
 package com.spring.java.controller;
 
-
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.spring.java.dto.ErroreDTO;
 import com.spring.java.dto.NomiUtentiENumeroDTO;
 import com.spring.java.dto.UtenteDTO;
 import com.spring.java.entity.Utente;
@@ -22,8 +25,8 @@ public class UtenteController {
 	private UtenteService service;
 
 	@GetMapping(path = "/salva", consumes = "application/json")
-	public boolean salva(@RequestBody UtenteDTO utente) {
-		return service.registra(utente);
+	public void salva(@RequestBody UtenteDTO utente) {
+		service.registra(utente);
 	}
 
 	@GetMapping(path = "/cerca/{idUtente}", produces = "application/json")
@@ -64,5 +67,16 @@ public class UtenteController {
 	@GetMapping(path = "/nomiNumero", produces = "application/json")
 	public NomiUtentiENumeroDTO getNomiNumeroUtenti() {
 		return service.getNomiNumeroUtenti();
+	}
+
+	// --------------- gestore degli errori
+	// ------------------------------------------
+
+	@ExceptionHandler
+	public ResponseEntity<ErroreDTO> handler(RuntimeException ex) {
+		ErroreDTO errore = new ErroreDTO();
+		errore.setMessage(ex.getMessage());
+
+		return new ResponseEntity<ErroreDTO>(errore, HttpStatus.BAD_REQUEST);
 	}
 }

@@ -17,7 +17,7 @@ public class UtenteService {
 	@Autowired
 	private DAOUtenteMappa dao;
 
-	public boolean registra(UtenteDTO dto) {
+	public void registra(UtenteDTO dto) {
 		Utente utente = new Utente();
 		utente.setCognome(dto.getCognome());
 		utente.setIdUtente(dto.getIdUtente());
@@ -25,7 +25,7 @@ public class UtenteService {
 		utente.setNome(dto.getNome());
 		utente.setTelefono(dto.getTelefono());
 
-		return dao.insert(utente);
+		dao.insert(utente);
 	}
 
 	public UtenteDTO cercaPerId(int idUtente) {
