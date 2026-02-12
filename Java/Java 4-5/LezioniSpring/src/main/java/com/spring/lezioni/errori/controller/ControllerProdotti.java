@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.spring.lezioni.errori.DuplicateIdException;
+import com.spring.lezioni.errori.NotFoundException;
 import com.spring.lezioni.errori.dto.ErrorDTO;
 import com.spring.lezioni.errori.dto.ProductDTO;
 import com.spring.lezioni.errori.service.ServiceProd;
@@ -39,10 +40,10 @@ public class ControllerProdotti {
 	}
 
 	@ExceptionHandler
-	public ResponseEntity<ErrorDTO> second(DuplicateIdException err) {
+	public ResponseEntity<ErrorDTO> second(NotFoundException err) {
 		ErrorDTO returningError = new ErrorDTO();
 		returningError.setMessage(err.getMessage());
 
-		return new ResponseEntity<ErrorDTO>(returningError, HttpStatus.BAD_REQUEST);
+		return new ResponseEntity<ErrorDTO>(returningError, HttpStatus.NOT_FOUND);
 	}
 }
