@@ -148,7 +148,7 @@ public class OrderServiceImpl implements OrderService {
 		Order ord = dao.selectById(idOrder);
 
 		if (!ord.getStatus().equals(OrderStatus.CREATED))
-			throw new InvalidOrderStateException();
+			throw new InvalidOrderStateException("Only created orders can be confirmed");
 
 		for (OrderItem item : ord.getOrderItemList()) {
 			Product prod = prods.selectById(item.getProductId());
@@ -165,8 +165,7 @@ public class OrderServiceImpl implements OrderService {
 
 	@Override
 	public OrderResponseDTO shipOrder(int idOrder) {
-		// TODO Auto-generated method stub
-		return null;
+		
 	}
 
 	@Override
