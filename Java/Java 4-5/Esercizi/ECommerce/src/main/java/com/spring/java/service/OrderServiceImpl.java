@@ -17,6 +17,7 @@ import com.spring.java.dto.OrderResponseDTO;
 import com.spring.java.entity.Order;
 import com.spring.java.entity.OrderItem;
 import com.spring.java.entity.Product;
+import com.spring.java.entity.status.OrderStatus;
 import com.spring.java.exception.InsufficientStockException;
 import com.spring.java.exception.ProductNotFoundException;
 
@@ -120,20 +121,26 @@ public class OrderServiceImpl implements OrderService {
 
 	@Override
 	public Collection<OrderResponseDTO> searchOrdersCreated() {
-		// TODO Auto-generated method stub
-		return null;
+		return dao.findAll().stream()
+				.map(ord -> orderEntity2DTO(ord))
+				.filter(ord -> ord.getStatus().equals(OrderStatus.CREATED))
+				.toList();
 	}
 
 	@Override
 	public Collection<OrderResponseDTO> searchOrdersConfirmed() {
-		// TODO Auto-generated method stub
-		return null;
+		return dao.findAll().stream()
+				.map(ord -> orderEntity2DTO(ord))
+				.filter(ord -> ord.getStatus().equals(OrderStatus.CONFIRMED))
+				.toList();
 	}
 
 	@Override
 	public Collection<OrderResponseDTO> searchOrdersShipped() {
-		// TODO Auto-generated method stub
-		return null;
+		return dao.findAll().stream()
+				.map(ord -> orderEntity2DTO(ord))
+				.filter(ord -> ord.getStatus().equals(OrderStatus.SHIPPED))
+				.toList();
 	}
 
 	@Override
