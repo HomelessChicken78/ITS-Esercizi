@@ -1,6 +1,6 @@
 package com.spring.java.exception;
 
-public class InvalidOrderStateException extends RuntimeException {
+public class InvalidOrderStateException extends ConflictException {
 	public InvalidOrderStateException() {
 	}
 

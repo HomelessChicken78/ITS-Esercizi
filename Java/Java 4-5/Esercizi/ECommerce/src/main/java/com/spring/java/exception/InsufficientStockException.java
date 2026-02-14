@@ -1,6 +1,6 @@
 package com.spring.java.exception;
 
-public class InsufficientStockException extends RuntimeException {
+public class InsufficientStockException extends ConflictException {
 	public InsufficientStockException() {
 	}
 

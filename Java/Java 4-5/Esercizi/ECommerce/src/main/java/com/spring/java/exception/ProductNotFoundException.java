@@ -1,6 +1,6 @@
 package com.spring.java.exception;
 
-public class ProductNotFoundException extends RuntimeException {
+public class ProductNotFoundException extends NotFoundException {
 	public ProductNotFoundException() {
 	}
 

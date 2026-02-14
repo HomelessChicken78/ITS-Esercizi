@@ -1,6 +1,6 @@
 package com.spring.java.exception;
 
-public class OrderNotFoundException extends RuntimeException {
+public class OrderNotFoundException extends NotFoundException {
 	public OrderNotFoundException() {
 		super();
 	}
