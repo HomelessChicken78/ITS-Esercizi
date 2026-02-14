@@ -41,7 +41,12 @@ public class ProductManagerImpl implements ProductManager {
 
 	@Override
 	public Product selectById(int idProd) {
-		return mappa.get(idProd);
+		Product prod = mappa.get(idProd);
+
+		if (prod == null)
+			throw new ProductNotFoundException("Could not find any product with ID " + idProd);
+
+		return prod;
 	}
 
 	@Override
