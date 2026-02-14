@@ -1,5 +1,6 @@
 package com.spring.java.controller;
 
+import java.util.Collection;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.spring.java.dto.OrderCreateRequestDTO;
 import com.spring.java.dto.OrderResponseDTO;
+import com.spring.java.exception.InvalidFieldException;
 import com.spring.java.service.OrderService;
 
 @RequestMapping(path = "/orders")
@@ -38,4 +40,27 @@ public class ControllerECommerce {
 	public OrderResponseDTO searchOrderById(@PathVariable int orderId) {
 		return service.searchOrderById(orderId);
 	}
+
+	@GetMapping(produces = "application/json")
+    @ResponseStatus(HttpStatus.OK)
+    public Collection<OrderResponseDTO> getOrdersByStatus(String status) {
+        
+        if (status == null) {
+            throw new InvalidFieldException("Status parameter is required");
+        }
+
+        switch (status.toLowerCase()) {
+            case "created":
+                return service.searchOrdersCreated();
+                
+            case "confirmed":
+                return service.searchOrdersConfirmed();
+                
+            case "shipped":
+                return service.searchOrdersShipped();
+                
+            default:
+                throw new InvalidFieldException(status + " is not a valid field for \"status\"");
+        }
+    }
 }
