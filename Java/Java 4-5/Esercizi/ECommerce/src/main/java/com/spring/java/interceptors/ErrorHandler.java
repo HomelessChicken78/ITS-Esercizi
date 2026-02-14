@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 import com.spring.java.dto.ErrorDTO;
 import com.spring.java.exception.ConflictException;
-import com.spring.java.exception.InvalidFieldForQueryStringException;
+import com.spring.java.exception.InvalidFieldException;
 import com.spring.java.exception.NotFoundException;
 
 @RestControllerAdvice
@@ -25,7 +25,7 @@ public class ErrorHandler {
 	}
 
 	@ExceptionHandler
-	public ResponseEntity<ErrorDTO> invalidQueryStringHandler(InvalidFieldForQueryStringException err400) {
+	public ResponseEntity<ErrorDTO> invalidQueryStringHandler(InvalidFieldException err400) {
 		ErrorDTO json = new ErrorDTO(400, err400.getMessage());
 		return new ResponseEntity<ErrorDTO>(json, HttpStatus.BAD_REQUEST);
 	}
