@@ -35,7 +35,7 @@ public class OrderManagerImpl implements OrderManager {
 	@Override
 	public Order selectById(int idOrd) {
 		if(mappa.containsKey(idOrd))
-			throw new OrderNotFoundException("Could not find product with ID " + idOrd);
+			throw new OrderNotFoundException("Could not find order with ID " + idOrd);
 
 		return mappa.get(idOrd);
 	}
@@ -48,7 +48,7 @@ public class OrderManagerImpl implements OrderManager {
 	@Override
 	public Order delete(int idOrd) {
 		if(mappa.containsKey(idOrd))
-			throw new OrderNotFoundException("Could not find product with ID " + idOrd);
+			throw new OrderNotFoundException("Could not find order with ID " + idOrd);
 
 		return mappa.remove(idOrd);
 	}
