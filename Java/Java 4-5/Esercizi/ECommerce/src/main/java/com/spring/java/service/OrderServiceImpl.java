@@ -19,7 +19,7 @@ import com.spring.java.entity.OrderItem;
 import com.spring.java.entity.Product;
 import com.spring.java.entity.status.OrderStatus;
 import com.spring.java.exception.InsufficientStockException;
-import com.spring.java.exception.ProductNotFoundException;
+import com.spring.java.exception.InvalidOrderStateException;
 
 @Repository
 public class OrderServiceImpl implements OrderService {
@@ -94,7 +94,7 @@ public class OrderServiceImpl implements OrderService {
 			Product prod = prods.selectById(ordered.getProductId());
 
 			if (prod.getStock() < ordered.getQuantity())
-				throw new InsufficientStockException();
+				throw new InsufficientStockException("Stock for product " + prod.getName() + " is not enough to create this order");
 
 			ordered.setUnitPrice(prod.getPrice());
 		}
@@ -144,27 +144,41 @@ public class OrderServiceImpl implements OrderService {
 	}
 
 	@Override
-	public void confirmOrder(int idOrder) {
-		// TODO Auto-generated method stub
+	public OrderResponseDTO confirmOrder(int idOrder) {
+		Order ord = dao.selectById(idOrder);
 
+		if (!ord.getStatus().equals(OrderStatus.CREATED))
+			throw new InvalidOrderStateException();
+
+		for (OrderItem item : ord.getOrderItemList()) {
+			Product prod = prods.selectById(item.getProductId());
+
+			if (prod.getStock() < item.getQuantity())
+				throw new InsufficientStockException("Stock for product " + prod.getName() + " is not enough to confirm this order");
+
+			prods.updateStockById(idOrder, prod.getStock() - item.getQuantity());
+		}
+
+		ord.setStatus(OrderStatus.CONFIRMED);
+		return orderEntity2DTO(ord);
 	}
 
 	@Override
-	public void shipOrder(int idOrder) {
+	public OrderResponseDTO shipOrder(int idOrder) {
 		// TODO Auto-generated method stub
-
+		return null;
 	}
 
 	@Override
-	public void deliverOrder(int idOrder) {
+	public OrderResponseDTO deliverOrder(int idOrder) {
 		// TODO Auto-generated method stub
-
+		return null;
 	}
 
 	@Override
-	public void cancelOrder(int idOrder) {
+	public OrderResponseDTO cancelOrder(int idOrder) {
 		// TODO Auto-generated method stub
-
+		return null;
 	}
 
 }
