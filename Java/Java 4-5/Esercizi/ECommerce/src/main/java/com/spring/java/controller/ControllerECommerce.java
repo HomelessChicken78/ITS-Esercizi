@@ -6,6 +6,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -16,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.spring.java.dto.OrderCreateRequestDTO;
 import com.spring.java.dto.OrderResponseDTO;
 import com.spring.java.exception.InvalidFieldException;
+import com.spring.java.exception.InvalidOrderStateException;
 import com.spring.java.service.OrderService;
 
 @RequestMapping(path = "/orders")
@@ -42,25 +44,49 @@ public class ControllerECommerce {
 	}
 
 	@GetMapping(produces = "application/json")
-    @ResponseStatus(HttpStatus.OK)
-    public Collection<OrderResponseDTO> getOrdersByStatus(String status) {
-        
-        if (status == null) {
-            throw new InvalidFieldException("Status parameter is required");
-        }
+	@ResponseStatus(HttpStatus.OK)
+	public Collection<OrderResponseDTO> getOrdersByStatus(String status) {
+		if (status == null)
+			throw new InvalidFieldException("Status parameter is required");
 
-        switch (status.toLowerCase()) {
-            case "created":
-                return service.searchOrdersCreated();
-                
-            case "confirmed":
-                return service.searchOrdersConfirmed();
-                
-            case "shipped":
-                return service.searchOrdersShipped();
-                
-            default:
-                throw new InvalidFieldException(status + " is not a valid field for \"status\"");
-        }
-    }
+		switch (status.toLowerCase()) {
+			case "created":
+				return service.searchOrdersCreated();
+
+			case "confirmed":
+				return service.searchOrdersConfirmed();
+
+			case "shipped":
+				return service.searchOrdersShipped();
+
+			default:
+				throw new InvalidFieldException(status + " is not a valid field for \"status\"");
+		}
+	}
+
+	@PatchMapping(path = "/{orderId}", produces = "application/json")
+	public OrderResponseDTO updateOrderStatus(@PathVariable int orderId, String status) {
+		if (status == null)
+			throw new InvalidFieldException("Status parameter is required");
+
+		switch (status.toLowerCase()) {
+			case "created":
+				throw new InvalidOrderStateException("Can't change order to created");
+
+			case "confirmed":
+				return service.confirmOrder(orderId);
+
+			case "shipped":
+				return service.shipOrder(orderId);
+
+			case "delivered":
+				return service.deliverOrder(orderId);
+
+			case "cancelled":
+				return service.cancelOrder(orderId);
+
+			default:
+				throw new InvalidFieldException(status + " is not a valid field for \"status\"");
+		}
+	}
 }

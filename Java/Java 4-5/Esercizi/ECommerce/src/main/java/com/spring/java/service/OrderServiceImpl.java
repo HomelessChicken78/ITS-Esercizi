@@ -156,7 +156,7 @@ public class OrderServiceImpl implements OrderService {
 			if (prod.getStock() < item.getQuantity())
 				throw new InsufficientStockException("Stock for product " + prod.getName() + " is not enough to confirm this order");
 
-			prods.updateStockById(idOrder, prod.getStock() - item.getQuantity());
+			prods.updateStockById(prod.getId(), prod.getStock() - item.getQuantity());
 		}
 
 		ord.setStatus(OrderStatus.CONFIRMED);
@@ -165,19 +165,42 @@ public class OrderServiceImpl implements OrderService {
 
 	@Override
 	public OrderResponseDTO shipOrder(int idOrder) {
-		
+		Order ord = dao.selectById(idOrder);
+
+		if (!ord.getStatus().equals(OrderStatus.CONFIRMED))
+			throw new InvalidOrderStateException("Only confirmed orders can be shipped");
+
+		ord.setStatus(OrderStatus.SHIPPED);
+		return orderEntity2DTO(ord);
 	}
 
 	@Override
 	public OrderResponseDTO deliverOrder(int idOrder) {
-		// TODO Auto-generated method stub
-		return null;
+		Order ord = dao.selectById(idOrder);
+
+		if (!ord.getStatus().equals(OrderStatus.SHIPPED))
+			throw new InvalidOrderStateException("Only shipped orders can be delivered");
+
+		ord.setStatus(OrderStatus.DELIVERED);
+		return orderEntity2DTO(ord);
 	}
 
 	@Override
 	public OrderResponseDTO cancelOrder(int idOrder) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+		Order ord = dao.selectById(idOrder);
 
+		if (ord.getStatus().equals(OrderStatus.SHIPPED) || ord.getStatus().equals(OrderStatus.DELIVERED) || ord.getStatus().equals(OrderStatus.CANCELLED))
+			throw new InvalidOrderStateException("Only created and confirmed orders can be cancelled");
+
+		if (ord.getStatus().equals(OrderStatus.CONFIRMED)) {
+			for (OrderItem item : ord.getOrderItemList()) {
+				Product prod = prods.selectById(item.getProductId());
+
+				prods.updateStockById(prod.getId(), prod.getStock() + item.getQuantity());
+			}
+		}
+
+		ord.setStatus(OrderStatus.CANCELLED);
+		return orderEntity2DTO(ord);
+	}
 }
