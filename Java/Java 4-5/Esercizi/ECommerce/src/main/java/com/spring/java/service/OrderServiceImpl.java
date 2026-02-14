@@ -92,9 +92,6 @@ public class OrderServiceImpl implements OrderService {
 		for (OrderItem ordered : setOrderItems) {
 			Product prod = prods.selectById(ordered.getProductId());
 
-			if (prod == null)
-				throw new ProductNotFoundException();
-
 			if (prod.getStock() < ordered.getQuantity())
 				throw new InsufficientStockException();
 
@@ -106,6 +103,7 @@ public class OrderServiceImpl implements OrderService {
 		return orderEntity2DTO(newOrder);
 	}
 
+	@Override
 	public List<OrderResponseDTO> createListOrders(List<OrderCreateRequestDTO> listOrds) {
 		List<OrderResponseDTO> res = new ArrayList<>();
 
@@ -117,8 +115,7 @@ public class OrderServiceImpl implements OrderService {
 
 	@Override
 	public OrderResponseDTO searchOrderById(int idOrd) {
-		// TODO Auto-generated method stub
-		return null;
+		return orderEntity2DTO(dao.selectById(idOrd));
 	}
 
 	@Override
