@@ -19,11 +19,11 @@ public interface OrderService {
 
 	public Collection<OrderResponseDTO> searchOrdersShipped();
 
-	public void confirmOrder(int idOrder);
+	public OrderResponseDTO confirmOrder(int idOrder);
 
-	public void shipOrder(int idOrder);
+	public OrderResponseDTO shipOrder(int idOrder);
 
-	public void deliverOrder(int idOrder);
+	public OrderResponseDTO deliverOrder(int idOrder);
 
-	public void cancelOrder(int idOrder);
+	public OrderResponseDTO cancelOrder(int idOrder);
 }
