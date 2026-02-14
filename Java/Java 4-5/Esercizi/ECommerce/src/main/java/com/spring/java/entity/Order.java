@@ -1,14 +1,14 @@
 package com.spring.java.entity;
 
 import java.time.LocalDate;
+import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
-import java.util.TreeSet;
 
 import com.spring.java.entity.status.OrderStatus;
 
 public class Order {
-	private int id;
+	private Integer id;
 	private Set<OrderItem> orderItemList;
 	private double totalAmount;
 	private OrderStatus status;
@@ -19,13 +19,21 @@ public class Order {
 
 	public Order(int id, Set<OrderItem> orderItemList, double totalAmount, OrderStatus status, LocalDate createdAt) {
 		this.id = id;
-		this.orderItemList = new TreeSet<>(orderItemList);
+		this.orderItemList = new HashSet<>(orderItemList);
 		this.totalAmount = totalAmount;
 		this.status = status;
 		this.createdAt = createdAt;
 	}
 
-	public int getId() {
+	public Order(Set<OrderItem> orderItemList) {
+		this.id = null;
+		this.orderItemList = new HashSet<>(orderItemList);
+		this.totalAmount = orderItemList.stream().mapToDouble(it -> it.getUnitPrice() * it.getQuantity()).sum();
+		this.status = OrderStatus.CREATED;
+		this.createdAt = LocalDate.now();
+	}
+
+	public Integer getId() {
 		return id;
 	}
 
@@ -34,11 +42,11 @@ public class Order {
 	}
 
 	public Set<OrderItem> getOrderItemList() {
-		return new TreeSet<>(orderItemList);
+		return new HashSet<>(orderItemList);
 	}
 
 	public void setOrderItemList(Set<OrderItem> orderItemList) {
-		this.orderItemList = new TreeSet<>(orderItemList);
+		this.orderItemList = new HashSet<>(orderItemList);
 	}
 
 	public double getTotalAmount() {
