@@ -34,7 +34,7 @@ public class ControllerECommerce {
 		return service.createListOrders(listOrds);
 	}
 
-	@GetMapping(path = "{orderId}")
+	@GetMapping(path = "{orderId}", produces = "application/json")
 	public OrderResponseDTO searchOrderById(@PathVariable int orderId) {
 		return service.searchOrderById(orderId);
 	}
