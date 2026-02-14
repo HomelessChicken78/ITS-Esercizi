@@ -14,10 +14,14 @@ public class OrderCreateRequestDTO {
 	}
 
 	public List<OrderItemDTO> getListOrderedProducts() {
+		if (listOrderedProducts == null)
+			this.listOrderedProducts = new ArrayList<>();
 		return new ArrayList<>(listOrderedProducts);
 	}
 
 	public void setListOrderedProducts(List<OrderItemDTO> listOrderedProducts) {
+		if (listOrderedProducts == null)
+			this.listOrderedProducts = new ArrayList<>();
 		this.listOrderedProducts = new ArrayList<>(listOrderedProducts);
 	}
 }
