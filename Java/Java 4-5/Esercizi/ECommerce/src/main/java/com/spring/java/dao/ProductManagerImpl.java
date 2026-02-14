@@ -1,0 +1,61 @@
+package com.spring.java.dao;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import org.springframework.stereotype.Repository;
+
+import com.spring.java.entity.Product;
+import com.spring.java.exception.DuplicateIDException;
+import com.spring.java.exception.ProductNotFoundException;
+
+@Repository
+public class ProductManagerImpl implements ProductManager {
+
+	private Map<Integer, Product> mappa = new HashMap<>();
+
+	public ProductManagerImpl() {
+		mappa.put(1, new Product(1, "Laptop", 999.99, 10));
+		mappa.put(2, new Product(2, "Smartphone", 699.99, 25));
+		mappa.put(3, new Product(3, "Tablet", 399.99, 15));
+		mappa.put(4, new Product(4, "Monitor 24\"", 179.99, 20));
+		mappa.put(5, new Product(5, "Tastiera Meccanica", 89.99, 30));
+		mappa.put(6, new Product(6, "Mouse Wireless", 39.99, 50));
+		mappa.put(7, new Product(7, "Stampante", 149.99, 12));
+		mappa.put(8, new Product(8, "Hard Disk 1TB", 59.99, 40));
+		mappa.put(9, new Product(9, "SSD 500GB", 79.99, 35));
+		mappa.put(10, new Product(10, "Webcam HD", 49.99, 18));
+		mappa.put(11, new Product(11, "Cuffie Bluetooth", 99.99, 22));
+		mappa.put(12, new Product(12, "Microfono USB", 69.99, 16));
+		mappa.put(13, new Product(13, "Router WiFi", 89.99, 14));
+		mappa.put(14, new Product(14, "Power Bank", 29.99, 60));
+		mappa.put(15, new Product(15, "Smartwatch", 199.99, 27));
+		mappa.put(16, new Product(16, "TV 55\"", 599.99, 8));
+		mappa.put(17, new Product(17, "Console Gaming", 499.99, 6));
+		mappa.put(18, new Product(18, "Controller Wireless", 59.99, 45));
+		mappa.put(19, new Product(19, "Speaker Bluetooth", 79.99, 33));
+		mappa.put(20, new Product(20, "Notebook 15\"", 849.99, 11));
+	}
+
+	@Override
+	public Product selectById(int idProd) {
+		return mappa.get(idProd);
+	}
+
+	@Override
+	public int selectStockById(int idProd) {
+		return selectById(idProd).getStock();
+	}
+
+	@Override
+	public void updateStockById(int idProd, int newStock) {
+		selectById(idProd).setStock(newStock);
+	}
+
+	@Override
+	public List<Product> findAll() {
+		return new ArrayList<Product>(mappa.values());
+	}
+}
