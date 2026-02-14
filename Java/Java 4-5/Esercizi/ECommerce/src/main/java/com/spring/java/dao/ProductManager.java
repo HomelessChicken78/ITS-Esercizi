@@ -1,0 +1,15 @@
+package com.spring.java.dao;
+
+import java.util.List;
+
+import com.spring.java.entity.Product;
+
+public interface ProductManager {
+	public Product selectById(int idProd);
+
+	public int selectStockById(int idProd);
+
+	public void updateStockById(int idProd, int newStock);
+
+	public List<Product> findAll();
+}
