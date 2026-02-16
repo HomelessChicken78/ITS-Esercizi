@@ -7,6 +7,7 @@ import java.util.Map;
 
 import org.springframework.stereotype.Repository;
 
+import com.spring.java.entity.AccessCredentials;
 import com.spring.java.entity.Product;
 import com.spring.java.exception.DuplicateIDException;
 import com.spring.java.exception.ProductNotFoundException;
@@ -37,6 +38,14 @@ public class ProductManagerImpl implements ProductManager {
 		mappa.put(18, new Product(18, "Controller Wireless", 59.99, 45));
 		mappa.put(19, new Product(19, "Speaker Bluetooth", 79.99, 33));
 		mappa.put(20, new Product(20, "Notebook 15\"", 849.99, 11));
+	}
+
+	@Override
+	public void insert(Product prod) {
+		if (mappa.containsKey(prod.getId()))
+			throw new DuplicateIDException();
+
+		mappa.put(prod.getId(), prod);
 	}
 
 	@Override
