@@ -1,5 +1,7 @@
 package com.spring.java.interceptors;
 
+import javax.security.sasl.AuthenticationException;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -28,5 +30,11 @@ public class ErrorHandler {
 	public ResponseEntity<ErrorDTO> invalidQueryStringHandler(InvalidFieldException err400) {
 		ErrorDTO json = new ErrorDTO(400, err400.getMessage());
 		return new ResponseEntity<ErrorDTO>(json, HttpStatus.BAD_REQUEST);
+	}
+
+	@ExceptionHandler
+	public ResponseEntity<ErrorDTO> authenticationFailed(AuthenticationException err401) {
+		ErrorDTO json = new ErrorDTO(401, err401.getMessage());
+		return new ResponseEntity<ErrorDTO>(json, HttpStatus.UNAUTHORIZED);
 	}
 }
