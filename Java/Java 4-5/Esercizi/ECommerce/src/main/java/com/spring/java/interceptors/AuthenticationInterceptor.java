@@ -2,6 +2,7 @@ package com.spring.java.interceptors;
 
 import javax.security.sasl.AuthenticationException;
 
+import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
@@ -23,11 +24,12 @@ public class AuthenticationInterceptor {
 	public void operation() {
 	}
 
-	@Around("operation()")
-	public Object authenticate(ProceedingJoinPoint jp) throws Throwable {
+	@Before("operation()")
+	public void authenticate(JoinPoint jp) throws Throwable {
 		Object[] args = jp.getArgs();
 
 		ProductAndCredentialsDTO credentials = null;
+
 		for (Object arg : args) {
 			if (arg instanceof ProductAndCredentialsDTO) {
 				credentials = (ProductAndCredentialsDTO) arg;
@@ -35,12 +37,8 @@ public class AuthenticationInterceptor {
 			}
 		}
 
-		if (credentials != null)
-			 if (dao.authenticate(credentials.getUsername(), credentials.getPassword()))
-				 return jp.proceed();
-			 else
-				 throw new AuthenticationException("Unauthorized");
-		else
-			return jp.proceed();
+		if (credentials != null && !dao.authenticate(credentials.getUsername(), credentials.getPassword())) {
+			throw new AuthenticationException("Unauthorized");
+		}
 	}
 }
