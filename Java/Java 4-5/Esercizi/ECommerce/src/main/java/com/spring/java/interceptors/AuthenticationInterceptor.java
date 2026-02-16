@@ -24,7 +24,7 @@ public class AuthenticationInterceptor {
 	}
 
 	@Around("operation()")
-	public void authenticate(ProceedingJoinPoint jp) throws Throwable {
+	public Object authenticate(ProceedingJoinPoint jp) throws Throwable {
 		Object[] args = jp.getArgs();
 
 		ProductAndCredentialsDTO credentials = null;
@@ -37,10 +37,10 @@ public class AuthenticationInterceptor {
 
 		if (credentials != null)
 			 if (dao.authenticate(credentials.getUsername(), credentials.getPassword()))
-				 jp.proceed();
+				 return jp.proceed();
 			 else
 				 throw new AuthenticationException("Unauthorized");
 		else
-			jp.proceed();
+			return jp.proceed();
 	}
 }
