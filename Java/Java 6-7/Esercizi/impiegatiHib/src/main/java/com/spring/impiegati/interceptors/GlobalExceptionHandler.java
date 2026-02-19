@@ -3,8 +3,9 @@ package com.spring.impiegati.interceptors;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 import com.spring.impiegati.dto.ErrorDTO;
+import com.spring.impiegati.exception.BadRequestException;
 import com.spring.impiegati.exception.NotFoundException;
-import com.spring.impiegati.service.SalarioInvalidoException;
+import com.spring.impiegati.exception.SalarioInvalidoException;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -20,7 +21,7 @@ public class GlobalExceptionHandler {
 	}
 
 	@ExceptionHandler
-	public ResponseEntity<ErrorDTO> SalarioInvalidoHandler(SalarioInvalidoException err400) { 
+	public ResponseEntity<ErrorDTO> BadRequestHandler(BadRequestException err400) { 
 		ErrorDTO responseDTO = new ErrorDTO(err400.getMessage());
 
 		return new ResponseEntity<ErrorDTO>(responseDTO, HttpStatus.BAD_REQUEST);

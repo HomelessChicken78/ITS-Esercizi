@@ -40,37 +40,42 @@ public class ImpiegatoController {
 		return service.visualizzaTutti();
 	}
 
-	@GetMapping("/{matricola}")
+	@GetMapping(path = "/{matricola}")
 	public ImpiegatoDTO cercaPerMatricola(@PathVariable String matricola) {
 		return service.cercaPerMatricola(matricola);
 	}
 
-	@PatchMapping("/{matricola}/salario")
+	@PatchMapping(path = "/{matricola}/salario")
 	public ImpiegatoDTO modificaSalario(@PathVariable String matricola, double nuovoSalario) {
 		return service.modificaSalario(matricola, nuovoSalario);
 	}
 
-	@DeleteMapping("/{matricola}")
+	@DeleteMapping(path = "/{matricola}")
 	public NomeAndCognomeImpiegatoDTO elimina(@PathVariable String matricola) {
 		return service.eliminaPerMatricola(matricola);
 	}
 
-	@GetMapping("/nomiAndCognomi")
+	@GetMapping(path = "/ordinaCognome")
+	public List<ImpiegatoDTO> ordinaPerCognome() {
+		return service.impiegatiOrdinatiPerCognome();
+	}
+
+	@GetMapping(path = "/ordinaMatricola")
 	public List<NomeAndCognomeImpiegatoDTO> nomiAndCognomiOrdinati() {
 		return service.nomiAndCognomiOrdinatiPerMatricola();
 	}
 
-	@GetMapping("/totaleSalari")
+	@GetMapping(path = "/totaleSalari")
 	public TotaleSalariDTO getTotaleSalari() {
 		return service.totaleSalariPagato();
 	}
 
-	@GetMapping("/piuAnziano")
+	@GetMapping(path = "/piuAnziano")
 	public ImpiegatoDTO getAssuntoDaPiuTempo() {
 		return service.assuntoDaPiuTempo();
 	}
 
-	@GetMapping("/salarioPiuElevato")
+	@GetMapping(path = "/salarioPiuElevato")
 	public ImpiegatoDTO getSalarioMaggioreDopoData(LocalDate data) {
 		return service.salarioMaggioreDopoData(data);
 	}
