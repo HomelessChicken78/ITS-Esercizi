@@ -1,17 +1,14 @@
 package com.spring.impiegati.service;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import com.spring.impiegati.dto.ImpiegatoDTO;
-import com.spring.impiegati.dto.NomeAndCognomeImpiegatoDTO;
-import com.spring.impiegati.dto.TotaleSalariDTO;
+import com.spring.impiegati.dto.*;
 import com.spring.impiegati.entity.Impiegato;
-import com.spring.impiegati.exception.DuplicateIDException;
-import com.spring.impiegati.exception.NotFoundException;
-import com.spring.impiegati.exception.SalarioInvalidoException;
+import com.spring.impiegati.exception.*;
 
 import static com.spring.impiegati.mapper.Mapper.*;
 import com.spring.impiegati.repository.RepositoryImpiegati;
@@ -95,11 +92,7 @@ public class ServiceImpiegatoImpl implements ServiceImpiegato {
 
 	@Override
 	public List<ImpiegatoDTO> impiegatiOrdinatiPerCognome() {
-		return dao.findAll()
-				.stream()
-				.sorted((imp1, imp2) -> imp1.getCognome().compareTo(imp2.getCognome()))
-				.map(imp -> entity2DTO(imp))
-				.toList();
+		return new ArrayList<>(entity2DTO(dao.ordinaPerCognome()));
 	}
 
 	@Override
