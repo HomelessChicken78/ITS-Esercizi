@@ -1,4 +1,4 @@
-package com.spring.impiegati.service;
+package com.spring.impiegati.exception;
 
 public class SalarioInvalidoException extends RuntimeException {
 	public SalarioInvalidoException() {

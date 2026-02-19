@@ -11,6 +11,7 @@ import com.spring.impiegati.dto.TotaleSalariDTO;
 import com.spring.impiegati.entity.Impiegato;
 import com.spring.impiegati.exception.DuplicateIDException;
 import com.spring.impiegati.exception.NotFoundException;
+import com.spring.impiegati.exception.SalarioInvalidoException;
 
 import static com.spring.impiegati.mapper.Mapper.*;
 import com.spring.impiegati.repository.RepositoryImpiegati;
@@ -25,8 +26,9 @@ public class ServiceImpiegatoImpl implements ServiceImpiegato {
 
 	@Override
 	public void assumi(ImpiegatoDTO impiegato) {
-		if (dao.save(DTO2Entity(impiegato)) == null)
+		if (dao.findById(impiegato.getMatricola()).isPresent())
 			throw new DuplicateIDException("Esiste già un impiegato con matricola " + impiegato.getMatricola());
+		dao.save(DTO2Entity(impiegato));
 	}
 
 	@Override
