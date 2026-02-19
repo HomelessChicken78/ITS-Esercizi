@@ -73,9 +73,8 @@ public class ServiceImpiegatoImpl implements ServiceImpiegato {
 
 	@Override
 	public List<NomeAndCognomeImpiegatoDTO> nomiAndCognomiOrdinatiPerMatricola() {
-		return dao.findAll()
+		return dao.ordinaPerMatricola()
 				.stream()
-				.sorted((imp1, imp2) -> imp1.getMatricola().compareTo(imp2.getMatricola()))
 				.map(imp -> new NomeAndCognomeImpiegatoDTO(imp.getNome(), imp.getCognome()))
 				.toList();
 	}
