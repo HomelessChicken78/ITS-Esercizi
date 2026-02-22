@@ -93,7 +93,7 @@ public class ServiceVenditoreImpl implements ServiceVenditore {
 		        .findFirst()
 		        .orElseThrow(() -> new NotFoundException(prodotto404 + idProdotto));
 
-		daModificare.setQuantita(idProdotto);
+		daModificare.setQuantita(nuovaQuantita);
 		return toDTO(daModificare);
 	}
 }
