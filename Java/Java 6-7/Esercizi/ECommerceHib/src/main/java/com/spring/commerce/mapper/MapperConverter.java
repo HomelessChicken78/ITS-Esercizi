@@ -8,8 +8,16 @@ public class MapperConverter {
 		if (prodotto == null)
 			return null;
 
-		return new ProdottoDTO(prodotto.getDescrizione(), prodotto.getQuantita(), prodotto.getPrezzoUnitario(),
-				prodotto.getSconto(), prodotto.getCategoria());
+		ProdottoDTO dto = new ProdottoDTO(
+				prodotto.getDescrizione(), 
+				prodotto.getQuantita(), 
+				prodotto.getPrezzoUnitario(),
+				prodotto.getSconto(), 
+				prodotto.getCategoria()
+			);
+
+			dto.setId(prodotto.getId());
+			return dto;
 	}
 
 	public static Prodotto toEntity(ProdottoDTO dto) {
