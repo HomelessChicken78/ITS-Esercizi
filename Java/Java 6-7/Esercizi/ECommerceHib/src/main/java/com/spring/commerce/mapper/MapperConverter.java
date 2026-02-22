@@ -16,7 +16,6 @@ public class MapperConverter {
 				prodotto.getCategoria()
 			);
 
-			dto.setId(prodotto.getId());
 			return dto;
 	}
 
