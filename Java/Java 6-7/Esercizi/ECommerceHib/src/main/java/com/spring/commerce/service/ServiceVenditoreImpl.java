@@ -4,7 +4,6 @@ import java.util.ArrayList;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import com.spring.commerce.ECommerceHibApplication;
 import com.spring.commerce.dao.VenditoreDAO;
 import com.spring.commerce.dto.*;
 import com.spring.commerce.entity.Prodotto;
