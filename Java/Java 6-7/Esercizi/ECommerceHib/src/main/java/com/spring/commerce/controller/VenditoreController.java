@@ -1,6 +1,7 @@
 package com.spring.commerce.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import com.spring.commerce.dto.*;
@@ -15,6 +16,7 @@ public class VenditoreController {
 
 	private static final String json = "application/json";
 
+	@ResponseStatus(code = HttpStatus.CREATED)
 	@PostMapping(consumes = json, produces = json)
 	public VenditoreDTO inserisciVenditore(@RequestBody VenditoreCreateRequestDTO dto) {
 		return service.inserisciVenditore(dto);
@@ -35,6 +37,7 @@ public class VenditoreController {
 		return service.modificaPassword(idVenditore, nuovaPassword.getPassword());
 	}
 
+	@ResponseStatus(code = HttpStatus.CREATED)
 	@PostMapping(path = "/{idVenditore}/prodotti", consumes = json)
 	public ProdottoDTO aggiungiProdottoAdUnVenditore(@PathVariable int idVenditore, @RequestBody ProdottoDTO prodotto) {
 		return service.aggiungiProdotto(idVenditore, prodotto);
