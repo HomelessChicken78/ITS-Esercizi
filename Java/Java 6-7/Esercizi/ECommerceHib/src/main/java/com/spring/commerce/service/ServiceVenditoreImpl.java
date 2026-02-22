@@ -68,20 +68,8 @@ public class ServiceVenditoreImpl implements ServiceVenditore {
 		Prodotto daAggiungere = toEntity(nuovoProdotto); // daAggiungere qui ha ID = 0 poichè nuovoProdotto non ha ID (aka è 0 - che è il default)
 		trovato.add(daAggiungere); // aggiunge alla lista daAggiungere -> auto genera un ID -> non viene modificato in daAggiungere perchè daAggiungere non è managed
 		// quindi daAggiungere ha ancora ID = 0
-
-		// return toDTO(daAggiungere); // Dunque quello che succede qui è che ritorna con ID 0
-		// Nota: Questa è una soluzione "grezza" che ho avuto: funziona, ma se ci sono due prodotti uguali tranne per l'ID (identici ma non uguali),
-		// il server potrebbe restituire l'ID sbagliato
-		dao.flush(); // flush è necessario, altrimenti hibernate aggiorna l'ID di daAggiungere solo alla fine del metodo dunque l'ID rimane 0
-		return trovato.getProdottiVenduti().stream()
-	            .filter(p -> p.getDescrizione().equals(nuovoProdotto.getDescrizione())
-	                    && p.getCategoria().equals(nuovoProdotto.getCategoria())
-	                    && p.getQuantita() == nuovoProdotto.getQuantita() 
-	                    && p.getSconto() == nuovoProdotto.getSconto()
-	                    && p.getPrezzoUnitario() == nuovoProdotto.getPrezzoUnitario())
-	            .findAny()
-	            .map(p -> toDTO(p))
-	            .orElseThrow(() -> new NotFoundException("Non è stato possibile recuperare il prodotto salvato"));
+		dao.flush(); // SOLUZIONE: flush è necessario, altrimenti hibernate aggiorna l'ID di daAggiungere solo alla fine del metodo dunque l'ID rimane 0
+		return toDTO(daAggiungere); // Dunque quello che succede qui è che ritorna con ID 0
 	}
 
 	@Override
