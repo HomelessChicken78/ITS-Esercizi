@@ -15,8 +15,9 @@ public class MapperConverter {
 				prodotto.getSconto(), 
 				prodotto.getCategoria()
 			);
+		dto.setId(prodotto.getId());
 
-			return dto;
+		return dto;
 	}
 
 	public static Prodotto toEntity(ProdottoDTO dto) {
