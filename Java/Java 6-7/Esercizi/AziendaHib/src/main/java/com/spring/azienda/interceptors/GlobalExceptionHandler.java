@@ -17,4 +17,9 @@ public class GlobalExceptionHandler {
 	public ResponseEntity<ErrorDTO> conflict(ConflictException err409) {
 		return new ResponseEntity<ErrorDTO>(new ErrorDTO(409, err409.getMessage()), HttpStatus.CONFLICT);
 	}
+
+	@ExceptionHandler
+	public ResponseEntity<ErrorDTO> badRequest(BadRequestException err400) {
+		return new ResponseEntity<ErrorDTO>(new ErrorDTO(400, err400.getMessage()), HttpStatus.BAD_REQUEST);
+	}
 }
