@@ -33,7 +33,7 @@ public class MapperConverter {
 			return null;
 
 		DipendenteDTO dto = new DipendenteDTO(entity.getMatricola(), entity.getNome(), entity.getCognome(),
-				entity.getSalario());
+				entity.getSalario(), toDTO(entity.getPostoAuto()));
 		return dto;
 	}
 
@@ -41,7 +41,8 @@ public class MapperConverter {
 		if (dto == null)
 			return null;
 
-		Dipendente entity = new Dipendente(dto.getMatricola(), dto.getNome(), dto.getCognome(), dto.getSalario());
+		Dipendente entity = new Dipendente(dto.getMatricola(), dto.getNome(), dto.getCognome(), dto.getSalario(),
+				toEntity(dto.getPostoAuto()));
 		return entity;
 	}
 
@@ -57,7 +58,7 @@ public class MapperConverter {
 		if (entity == null)
 			return null;
 
-		PostoAutoDTO dto = new PostoAutoDTO(entity.getPosizione(), toDTO(entity.getDipendente()));
+		PostoAutoDTO dto = new PostoAutoDTO(entity.getPosizione());
 		dto.setId(entity.getId());
 
 		return dto;
@@ -67,7 +68,7 @@ public class MapperConverter {
 		if (dto == null)
 			return null;
 
-		PostoAuto entity = new PostoAuto(dto.getPosizione(), toEntity(dto.getDipendente()));
+		PostoAuto entity = new PostoAuto(dto.getPosizione());
 		entity.setId(dto.getId());
 
 		return entity;
