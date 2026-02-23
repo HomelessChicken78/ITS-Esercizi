@@ -73,4 +73,22 @@ public class MapperConverter {
 
 		return entity;
 	}
+
+	public NominativoDipendente simplify(DipendenteDTO dipendente) {
+		return new NominativoDipendente(dipendente.getNome(), dipendente.getCognome());
+	}
+
+	public AziendaDatiBaseDTO simplify(AziendaDatiBaseAndNumeroDipendentiDTO aziendaENumDip) {
+		AziendaDatiBaseDTO simplified = new AziendaDatiBaseDTO(aziendaENumDip.getIntestazione(), aziendaENumDip.getCapitaleSociale());
+		simplified.setId(aziendaENumDip.getId());
+	
+		return simplified;
+	}
+
+	public AziendaDatiBaseDTO simplify(AziendaDTO azienda) {
+		AziendaDatiBaseDTO simplified = new AziendaDatiBaseDTO(azienda.getIntestazione(), azienda.getCapitaleSociale());
+		simplified.setId(azienda.getId());
+	
+		return simplified;
+	}
 }
