@@ -5,12 +5,12 @@ public class PostoAutoDTO {
 
 	private String posizione;
 
-	private String dipendente;
+	private DipendenteDTO dipendente;
 
 	public PostoAutoDTO() {
 	}
 
-	public PostoAutoDTO(String posizione, String dipendente) {
+	public PostoAutoDTO(String posizione, DipendenteDTO dipendente) {
 		this.posizione = posizione;
 		this.dipendente = dipendente;
 	}
@@ -31,11 +31,11 @@ public class PostoAutoDTO {
 		this.posizione = posizione;
 	}
 
-	public String getDipendente() {
+	public DipendenteDTO getDipendente() {
 		return dipendente;
 	}
 
-	public void setDipendente(String dipendente) {
+	public void setDipendente(DipendenteDTO dipendente) {
 		this.dipendente = dipendente;
 	}
 }
