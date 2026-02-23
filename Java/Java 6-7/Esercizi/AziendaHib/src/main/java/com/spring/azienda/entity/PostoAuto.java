@@ -10,7 +10,7 @@ public class PostoAuto {
 
 	private String posizione;
 
-	@OneToOne
+	@OneToOne(cascade = CascadeType.PERSIST)
 	private Dipendente dipendente;
 
 	public PostoAuto() {
