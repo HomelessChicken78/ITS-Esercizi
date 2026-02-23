@@ -13,7 +13,7 @@ public interface AziendaService {
 
 	public Collection<AziendaDTO> visualizzaTutte();
 
-	public AziendaDatiBaseAndNumeroDipendentiDTO aziendaConPiuCapitaleSociale(int idAzienda);
+	public AziendaDatiBaseAndNumeroDipendentiDTO aziendaConPiuCapitaleSociale();
 
 	public AziendaDatiBaseDTO modificaCapitaleSociale(int idAzienda, double nuovoCapitaleSociale);
 
