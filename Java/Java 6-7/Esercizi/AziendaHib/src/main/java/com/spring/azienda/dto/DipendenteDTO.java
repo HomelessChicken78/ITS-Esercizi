@@ -2,10 +2,9 @@ package com.spring.azienda.dto;
 
 import java.util.Objects;
 
-public class DipendenteDTO {
+public class DipendenteDTO extends NominativoDipendente {
 	private String matricola;
 
-	private String nome, cognome;
 	private double salario;
 	private PostoAutoDTO postoAuto;
 
@@ -13,9 +12,8 @@ public class DipendenteDTO {
 	}
 
 	public DipendenteDTO(String matricola, String nome, String cognome, double salario, PostoAutoDTO postoAuto) {
+		super(nome, cognome);
 		this.matricola = matricola;
-		this.nome = nome;
-		this.cognome = cognome;
 		this.salario = salario;
 		this.postoAuto = postoAuto;
 	}
@@ -26,22 +24,6 @@ public class DipendenteDTO {
 
 	public void setMatricola(String matricola) {
 		this.matricola = matricola;
-	}
-
-	public String getNome() {
-		return nome;
-	}
-
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
-
-	public String getCognome() {
-		return cognome;
-	}
-
-	public void setCognome(String cognome) {
-		this.cognome = cognome;
 	}
 
 	public double getSalario() {
