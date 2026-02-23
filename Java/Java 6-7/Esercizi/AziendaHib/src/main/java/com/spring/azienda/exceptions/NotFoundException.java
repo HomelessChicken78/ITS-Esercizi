@@ -1,6 +1,7 @@
 package com.spring.azienda.exceptions;
 
-public class NotFoundException extends RuntimeException {
+@SuppressWarnings("serial")
+public class NotFoundException extends BadRequestException {
 	public NotFoundException() {
 	}
 

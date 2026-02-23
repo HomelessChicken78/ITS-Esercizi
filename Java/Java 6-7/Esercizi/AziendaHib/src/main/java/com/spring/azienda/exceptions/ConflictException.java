@@ -1,6 +1,7 @@
 package com.spring.azienda.exceptions;
 
-public class ConflictException extends RuntimeException {
+@SuppressWarnings("serial")
+public class ConflictException extends BadRequestException {
 	public ConflictException() {
 		super();
 	}

@@ -1,5 +1,6 @@
 package com.spring.azienda.exceptions;
 
+@SuppressWarnings("serial")
 public class MatricolaDuplicataException extends ConflictException {
 	public MatricolaDuplicataException() {
 	}
