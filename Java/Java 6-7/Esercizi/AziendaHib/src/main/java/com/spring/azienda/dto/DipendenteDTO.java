@@ -2,19 +2,17 @@ package com.spring.azienda.dto;
 
 import java.util.Objects;
 
-import com.spring.azienda.entity.PostoAuto;
-
 public class DipendenteDTO {
 	private String matricola;
 
 	private String nome, cognome;
 	private double salario;
-	private PostoAuto postoAuto;
+	private PostoAutoDTO postoAuto;
 
 	public DipendenteDTO() {
 	}
 
-	public DipendenteDTO(String matricola, String nome, String cognome, double salario, PostoAuto postoAuto) {
+	public DipendenteDTO(String matricola, String nome, String cognome, double salario, PostoAutoDTO postoAuto) {
 		this.matricola = matricola;
 		this.nome = nome;
 		this.cognome = cognome;
@@ -54,11 +52,11 @@ public class DipendenteDTO {
 		this.salario = salario;
 	}
 
-	public PostoAuto getPostoAuto() {
+	public PostoAutoDTO getPostoAuto() {
 		return postoAuto;
 	}
 
-	public void setPostoAuto(PostoAuto postoAuto) {
+	public void setPostoAuto(PostoAutoDTO postoAuto) {
 		this.postoAuto = postoAuto;
 	}
 
