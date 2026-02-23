@@ -1,5 +1,5 @@
 package com.spring.azienda.service;
 
-public interface ImpiegatoService {
+public interface DipendenteService {
 
 }
