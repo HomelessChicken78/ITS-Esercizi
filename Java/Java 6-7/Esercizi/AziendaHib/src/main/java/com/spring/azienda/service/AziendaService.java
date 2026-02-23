@@ -14,4 +14,28 @@ public interface AziendaService {
 	public Collection<AziendaDTO> visualizzaTutte();
 
 	public AziendaDatiBaseAndNumeroDipendentiDTO visualizzaDatiBaseENumeroDipendenti(int idAzienda);
+
+	public AziendaDatiBaseDTO modificaCapitaleSociale(int idAzienda, double nuovoCapitaleSociale);
+
+	public AziendaDatiBaseDTO modificaIntestazione(int idAzienda, String nuovaIntestazione);
+
+	public AziendaDTO cancellaAzienda(int idAzienda);
+
+	public DipendenteDTO inserisciDipendente(int idAzienda, DipendenteDTO dipendente);
+
+	public DipendenteDTO inserisciDipendente(int idAzienda, DipendenteDTO dipendente, PostoAutoDTO postoAuto);
+
+	public DipendenteDTO inserisciDipendente(int idAzienda, DipendenteDTO dipente, int idPostoAuto);
+
+	public Collection<DipendenteDTO> visualizzaTuttiDipendenti(int idAzienda);
+
+	public Collection<NominativoDipendente> visualizzaNominativi(int idAzienda);
+
+	public Collection<DipendenteDTO> ricercaPerSalario(int idAzienda, double salario);
+
+	public DipendenteDTO cancellaPerMatricola(int idAzienda, String matricolaImpiegato);
+
+	public NominativoDipendente cancellaPerMatricolaSoloNominativo(int idAzienda, String matricolaImpiegato);
+
+	public SpostamentoDipendente spostaDipendente(int idAziendaVecchia, String matricolaImpiegato, int idAziendaNuova);
 }
