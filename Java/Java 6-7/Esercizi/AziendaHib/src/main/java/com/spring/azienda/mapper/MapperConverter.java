@@ -6,7 +6,7 @@ import com.spring.azienda.dto.*;
 import com.spring.azienda.entity.*;
 
 public class MapperConverter {
-	public AziendaDTO toDTO(Azienda entity) {
+	public static AziendaDTO toDTO(Azienda entity) {
 		if (entity == null)
 			return null;
 
@@ -17,7 +17,7 @@ public class MapperConverter {
 		return dto;
 	}
 
-	public Azienda toEntity(AziendaDTO dto) {
+	public static Azienda toEntity(AziendaDTO dto) {
 		if (dto == null)
 			return null;
 
@@ -28,7 +28,7 @@ public class MapperConverter {
 		return entity;
 	}
 
-	public DipendenteDTO toDTO(Dipendente entity) {
+	public static DipendenteDTO toDTO(Dipendente entity) {
 		if (entity == null)
 			return null;
 
@@ -37,7 +37,7 @@ public class MapperConverter {
 		return dto;
 	}
 
-	public Dipendente toEntity(DipendenteDTO dto) {
+	public static Dipendente toEntity(DipendenteDTO dto) {
 		if (dto == null)
 			return null;
 
@@ -46,15 +46,15 @@ public class MapperConverter {
 		return entity;
 	}
 
-	public Collection<DipendenteDTO> toDTO(Collection<Dipendente> entities) {
+	public static Collection<DipendenteDTO> toDTO(Collection<Dipendente> entities) {
 		return entities.stream().map(dip -> toDTO(dip)).toList();
 	}
 
-	public Collection<Dipendente> toEntity(Collection<DipendenteDTO> dtos) {
+	public static Collection<Dipendente> toEntity(Collection<DipendenteDTO> dtos) {
 		return dtos.stream().map(dip -> toEntity(dip)).toList();
 	}
 
-	public PostoAutoDTO toDTO(PostoAuto entity) {
+	public static PostoAutoDTO toDTO(PostoAuto entity) {
 		if (entity == null)
 			return null;
 
@@ -64,7 +64,7 @@ public class MapperConverter {
 		return dto;
 	}
 
-	public PostoAuto toEntity(PostoAutoDTO dto) {
+	public static PostoAuto toEntity(PostoAutoDTO dto) {
 		if (dto == null)
 			return null;
 
@@ -74,18 +74,18 @@ public class MapperConverter {
 		return entity;
 	}
 
-	public NominativoDipendente simplify(DipendenteDTO dipendente) {
+	public static NominativoDipendente simplify(DipendenteDTO dipendente) {
 		return new NominativoDipendente(dipendente.getNome(), dipendente.getCognome());
 	}
 
-	public AziendaDatiBaseDTO simplify(AziendaDatiBaseAndNumeroDipendentiDTO aziendaENumDip) {
+	public static AziendaDatiBaseDTO simplify(AziendaDatiBaseAndNumeroDipendentiDTO aziendaENumDip) {
 		AziendaDatiBaseDTO simplified = new AziendaDatiBaseDTO(aziendaENumDip.getIntestazione(), aziendaENumDip.getCapitaleSociale());
 		simplified.setId(aziendaENumDip.getId());
 	
 		return simplified;
 	}
 
-	public AziendaDatiBaseDTO simplify(AziendaDTO azienda) {
+	public static AziendaDatiBaseDTO simplify(AziendaDTO azienda) {
 		AziendaDatiBaseDTO simplified = new AziendaDatiBaseDTO(azienda.getIntestazione(), azienda.getCapitaleSociale());
 		simplified.setId(azienda.getId());
 	
