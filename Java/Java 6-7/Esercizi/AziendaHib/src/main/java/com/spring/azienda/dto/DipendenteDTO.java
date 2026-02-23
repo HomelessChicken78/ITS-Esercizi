@@ -2,21 +2,24 @@ package com.spring.azienda.dto;
 
 import java.util.Objects;
 
+import com.spring.azienda.entity.PostoAuto;
+
 public class DipendenteDTO {
 	private String matricola;
 
 	private String nome, cognome;
 	private double salario;
+	private PostoAuto postoAuto;
 
 	public DipendenteDTO() {
 	}
 
-	public DipendenteDTO(String matricola, String nome, String cognome, double salario) {
-		super();
+	public DipendenteDTO(String matricola, String nome, String cognome, double salario, PostoAuto postoAuto) {
 		this.matricola = matricola;
 		this.nome = nome;
 		this.cognome = cognome;
 		this.salario = salario;
+		this.postoAuto = postoAuto;
 	}
 
 	public String getMatricola() {
@@ -49,6 +52,14 @@ public class DipendenteDTO {
 
 	public void setSalario(double salario) {
 		this.salario = salario;
+	}
+
+	public PostoAuto getPostoAuto() {
+		return postoAuto;
+	}
+
+	public void setPostoAuto(PostoAuto postoAuto) {
+		this.postoAuto = postoAuto;
 	}
 
 	@Override

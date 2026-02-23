@@ -10,15 +10,11 @@ public class PostoAuto {
 
 	private String posizione;
 
-	@OneToOne(cascade = CascadeType.PERSIST)
-	private Dipendente dipendente;
-
 	public PostoAuto() {
 	}
 
-	public PostoAuto(String posizione, Dipendente dipendente) {
+	public PostoAuto(String posizione) {
 		this.posizione = posizione;
-		this.dipendente = dipendente;
 	}
 
 	public int getId() {
@@ -35,13 +31,5 @@ public class PostoAuto {
 
 	public void setPosizione(String posizione) {
 		this.posizione = posizione;
-	}
-
-	public Dipendente getDipendente() {
-		return dipendente;
-	}
-
-	public void setDipendente(Dipendente dipendente) {
-		this.dipendente = dipendente;
 	}
 }

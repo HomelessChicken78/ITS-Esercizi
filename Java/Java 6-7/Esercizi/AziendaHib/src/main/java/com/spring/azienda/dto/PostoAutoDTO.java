@@ -5,14 +5,11 @@ public class PostoAutoDTO {
 
 	private String posizione;
 
-	private DipendenteDTO dipendente;
-
 	public PostoAutoDTO() {
 	}
 
-	public PostoAutoDTO(String posizione, DipendenteDTO dipendente) {
+	public PostoAutoDTO(String posizione) {
 		this.posizione = posizione;
-		this.dipendente = dipendente;
 	}
 
 	public int getId() {
@@ -29,13 +26,5 @@ public class PostoAutoDTO {
 
 	public void setPosizione(String posizione) {
 		this.posizione = posizione;
-	}
-
-	public DipendenteDTO getDipendente() {
-		return dipendente;
-	}
-
-	public void setDipendente(DipendenteDTO dipendente) {
-		this.dipendente = dipendente;
 	}
 }
