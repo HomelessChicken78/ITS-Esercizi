@@ -5,7 +5,7 @@ CREATE TABLE Category (
 );
 
 CREATE TABLE City (
-    citiName VARCHAR(255) PRIMARY KEY,
+    cityName VARCHAR(255) PRIMARY KEY,
     region VARCHAR(255) NOT NULL
 );
 
