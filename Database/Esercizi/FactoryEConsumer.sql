@@ -14,3 +14,6 @@ CREATE TABLE ExportType (
     name VARCHAR(255) NOT NULL
 );
 COMMIT;
+
+INSERT INTO exporttype (name) 
+factoryeconsumer-# VALUES ('JsonExporter'), ('CsvExporter');
