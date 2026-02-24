@@ -1,0 +1,22 @@
+package terra.di.mezzo;
+
+public class UnicoAnello {
+
+    // EAGER: L'istanza viene creata subito, all'avvio del programma.
+    // È "final" perché l'Unico non si cambia.
+    private static final UnicoAnello ISTANZA = new UnicoAnello();
+
+    // Costruttore privato: Sauron non accetta duplicati.
+    private UnicoAnello() {
+        System.out.println(">>> [LOG] Forgiato nel fuoco del Monte Fato. È già qui. <<<");
+    }
+
+    public static UnicoAnello dammiIlMioTesssoro() {
+        System.out.println(">>> [LOG] Un Anello per domarli tutti... rieccolo.");
+        return ISTANZA;
+    }
+
+    public void scompari() {
+        System.out.println("Ti sei messo l'anello. Ora i Nazgûl sanno dove abiti.");
+    }
+}
