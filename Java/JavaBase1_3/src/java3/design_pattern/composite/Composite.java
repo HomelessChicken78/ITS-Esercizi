@@ -1,4 +1,4 @@
-package java3.design_pattern.composite;
+package java3.design_pattern.composite.esempio;
 
 import java.util.ArrayList;
 import java.util.List;

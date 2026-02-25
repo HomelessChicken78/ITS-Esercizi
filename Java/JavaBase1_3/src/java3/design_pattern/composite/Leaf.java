@@ -1,4 +1,4 @@
-package java3.design_pattern.composite;
+package java3.design_pattern.composite.esempio;
 
 public class Leaf extends Component {
 	public Leaf(String name) {
