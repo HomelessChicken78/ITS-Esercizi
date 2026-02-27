@@ -14,6 +14,7 @@ public class ProdottoMapper {
 		dto.setPrezzoUnitario(entity.getPrezzoUnitario());
 		dto.setQuantitaDisponibile(entity.getQuantitaDisponibile());
 		dto.setCategoria(entity.getCategoria());
+		dto.setVersion(entity.getVersion());
 
 		return dto;
 	}
@@ -26,6 +27,7 @@ public class ProdottoMapper {
 		entity.setPrezzoUnitario(dto.getPrezzoUnitario());
 		entity.setQuantitaDisponibile(dto.getQuantitaDisponibile());
 		entity.setCategoria(dto.getCategoria());
+		entity.setVersion(dto.getVersion());
 
 		return entity;
 	}

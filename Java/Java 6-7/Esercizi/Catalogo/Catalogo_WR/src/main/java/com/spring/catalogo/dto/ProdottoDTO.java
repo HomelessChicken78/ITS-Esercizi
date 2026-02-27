@@ -24,7 +24,7 @@ public class ProdottoDTO {
 		this.id = id;
 	}
 
-	public int getId() {
+	public Integer getId() {
 		return id;
 	}
 

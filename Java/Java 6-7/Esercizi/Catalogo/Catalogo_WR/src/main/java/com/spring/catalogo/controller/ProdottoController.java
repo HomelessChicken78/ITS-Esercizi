@@ -9,31 +9,32 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("/prodotti")
 public class ProdottoController {
+	private static final String json = "application/json";
 	@Autowired
 	private ServiceWriteProdotto service;
 
-	@PostMapping
+	@PostMapping(produces = json, consumes = json)
 	@ResponseStatus(code = HttpStatus.CREATED)
 	public ProdottoDTO aggiungiProdotto(@RequestBody ProdottoDTO nuovoProdotto) {
 		return service.aggiungiProdotto(nuovoProdotto);
 	}
 
-	@DeleteMapping("/{idProd}")
+	@DeleteMapping(path = "/{idProd}", produces = json)
 	public ProdottoDTO eliminaProdotto(@PathVariable int idProd) {
 		return service.eliminaProdotto(idProd);
 	}
 
-	@PutMapping("/{idProd}/quantita")
+	@PutMapping(path = "/{idProd}/quantita", produces = json)
 	public ProdottoDTO cambiaQuantita(@PathVariable int idProd, @RequestParam int nuovaQuantita) {
 		return service.cambiaQuantita(idProd, nuovaQuantita);
 	}
 
-	@GetMapping("/{idProd}")
+	@GetMapping(path = "/{idProd}", produces = json)
 	public ProdottoDTO getProdotto(@PathVariable int idProd) {
 		return service.getProdotto(idProd);
 	}
 
-	@GetMapping("/{idProd}/versione")
+	@GetMapping(path = "/{idProd}/versione", produces = json)
 	public Integer getVersion(@PathVariable int idProd) {
 		return service.getVersion(idProd);
 	}
