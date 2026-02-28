@@ -1,8 +1,6 @@
 package com.spring.catalogo.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cloud.netflix.ribbon.RibbonClient;
-import org.springframework.cloud.netflix.ribbon.apache.HttpClientRibbonConfiguration;
 import org.springframework.stereotype.Service;
 
 import com.spring.catalogo.dto.*;
@@ -16,7 +14,6 @@ import static com.spring.catalogo.utility.ProdottoMapper.*;
 
 @Service
 @Transactional
-@RibbonClient(name = "catalogo-WR",configuration = HttpClientRibbonConfiguration.class)
 public class ServiceProdottoImpl implements ServiceProdotto {
 	private static String msg404 = "Non è stato possibile trovare un prodotto con id ";
 
@@ -46,7 +43,9 @@ public class ServiceProdottoImpl implements ServiceProdotto {
 				throw new NotFoundException(msg404 + idProd);
 			}
 
-			dao.save(toEntity(trovatoAltroDB));
+			Prodotto toUpdate = toEntity(trovatoAltroDB);
+			toUpdate.setVersion(version);
+			dao.save(toUpdate);
 
 			return trovatoAltroDB;
 		}

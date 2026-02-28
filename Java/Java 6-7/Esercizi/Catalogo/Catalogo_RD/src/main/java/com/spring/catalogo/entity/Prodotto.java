@@ -11,7 +11,6 @@ public class Prodotto {
 	private int quantitaDisponibile;
 	private String categoria;
 
-	@Version
 	private int version;
 
 	public Prodotto() {
