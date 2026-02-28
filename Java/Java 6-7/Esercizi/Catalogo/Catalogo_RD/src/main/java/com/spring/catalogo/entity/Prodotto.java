@@ -5,34 +5,35 @@ import jakarta.persistence.*;
 @Entity
 public class Prodotto {
 	@Id
-	private int id;
+	private Integer id;
 	private String nome;
 	private double prezzoUnitario;
 	private int quantitaDisponibile;
 	private String categoria;
+
+	@Version
 	private int version;
 
 	public Prodotto() {
 	}
 
-	public Prodotto(String nome, double prezzoUnitario, int quantitaDisponibile, String categoria, int version) {
+	public Prodotto(String nome, double prezzoUnitario, int quantitaDisponibile, String categoria) {
 		this.nome = nome;
 		this.prezzoUnitario = prezzoUnitario;
 		this.quantitaDisponibile = quantitaDisponibile;
 		this.categoria = categoria;
-		this.version = version;
 	}
 
-	public Prodotto(int id, String nome, double prezzoUnitario, int quantitaDisponibile, String categoria, int version) {
-		this(nome, prezzoUnitario, quantitaDisponibile, categoria, version);
+	public Prodotto(int id, String nome, double prezzoUnitario, int quantitaDisponibile, String categoria) {
+		this(nome, prezzoUnitario, quantitaDisponibile, categoria);
 		this.id = id;
 	}
 
-	public int getId() {
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 

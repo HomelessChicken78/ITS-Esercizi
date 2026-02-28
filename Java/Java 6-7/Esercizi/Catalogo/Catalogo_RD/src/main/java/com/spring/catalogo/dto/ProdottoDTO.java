@@ -2,7 +2,7 @@ package com.spring.catalogo.dto;
 
 
 public class ProdottoDTO {
-	private int id;
+	private Integer id;
 	private String nome;
 	private double prezzoUnitario;
 	private int quantitaDisponibile;
@@ -19,16 +19,16 @@ public class ProdottoDTO {
 		this.categoria = categoria;
 	}
 
-	public ProdottoDTO(int id, String nome, double prezzoUnitario, int quantitaDisponibile, String categoria, int version) {
+	public ProdottoDTO(Integer id, String nome, double prezzoUnitario, int quantitaDisponibile, String categoria, int version) {
 		this(nome, prezzoUnitario, quantitaDisponibile, categoria, version);
 		this.id = id;
 	}
 
-	public int getId() {
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 
