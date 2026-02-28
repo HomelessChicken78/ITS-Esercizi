@@ -59,11 +59,6 @@ public class ServiceWriteProdottoImpl implements ServiceWriteProdotto {
 
 	@Override
 	public Integer getVersion(int idProd) {
-		Prodotto trovato = dao.findById(idProd).orElse(null);
-
-		if (trovato == null)
-			return null;
-
-		return trovato.getVersion();
+		return getOrThrow(idProd).getVersion();
 	}
 }
