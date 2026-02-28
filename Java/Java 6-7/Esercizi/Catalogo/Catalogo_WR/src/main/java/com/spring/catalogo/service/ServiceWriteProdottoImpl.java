@@ -59,6 +59,6 @@ public class ServiceWriteProdottoImpl implements ServiceWriteProdotto {
 
 	@Override
 	public int getVersion(int idProd) {
-		return getProdotto(idProd).getVersion();
+		return getOrThrow(idProd).getVersion();
 	}
 }

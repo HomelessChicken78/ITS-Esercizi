@@ -7,20 +7,19 @@ public class ProdottoDTO {
 	private double prezzoUnitario;
 	private int quantitaDisponibile;
 	private String categoria;
-	private int version;
 
 	public ProdottoDTO() {
 	}
 
-	public ProdottoDTO(String nome, double prezzoUnitario, int quantitaDisponibile, String categoria, int version) {
+	public ProdottoDTO(String nome, double prezzoUnitario, int quantitaDisponibile, String categoria) {
 		this.nome = nome;
 		this.prezzoUnitario = prezzoUnitario;
 		this.quantitaDisponibile = quantitaDisponibile;
 		this.categoria = categoria;
 	}
 
-	public ProdottoDTO(Integer id, String nome, double prezzoUnitario, int quantitaDisponibile, String categoria, int version) {
-		this(nome, prezzoUnitario, quantitaDisponibile, categoria, version);
+	public ProdottoDTO(Integer id, String nome, double prezzoUnitario, int quantitaDisponibile, String categoria) {
+		this(nome, prezzoUnitario, quantitaDisponibile, categoria);
 		this.id = id;
 	}
 
@@ -62,13 +61,5 @@ public class ProdottoDTO {
 
 	public void setCategoria(String categoria) {
 		this.categoria = categoria;
-	}
-
-	public int getVersion() {
-		return version;
-	}
-
-	public void setVersion(int version) {
-		this.version = version;
 	}
 }
