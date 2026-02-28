@@ -19,10 +19,10 @@ public class ProdottoController {
 		return service.aggiungiProdotto(nuovoProdotto);
 	}
 
-	@DeleteMapping(path = "/{idProd}", produces = json)
+	/*@DeleteMapping(path = "/{idProd}", produces = json)
 	public ProdottoDTO eliminaProdotto(@PathVariable int idProd) {
 		return service.eliminaProdotto(idProd);
-	}
+	}*/
 
 	@PutMapping(path = "/{idProd}/quantita", produces = json)
 	public ProdottoDTO cambiaQuantita(@PathVariable int idProd, @RequestParam int nuovaQuantita) {

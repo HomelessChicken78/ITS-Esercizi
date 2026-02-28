@@ -35,13 +35,13 @@ public class ServiceWriteProdottoImpl implements ServiceWriteProdotto {
 		return toDTO(salvato);
 	}
 
-	@Override
+	/*@Override
 	public ProdottoDTO eliminaProdotto(int idProd) {
 		Prodotto eliminato = getOrThrow(idProd);
 		dao.delete(eliminato);
 
 		return toDTO(eliminato);
-	}
+	}*/
 
 	@Override
 	public ProdottoDTO cambiaQuantita(int idProd, int nuovaQuantita) {
@@ -58,7 +58,12 @@ public class ServiceWriteProdottoImpl implements ServiceWriteProdotto {
 	}
 
 	@Override
-	public int getVersion(int idProd) {
-		return getOrThrow(idProd).getVersion();
+	public Integer getVersion(int idProd) {
+		Prodotto trovato = dao.findById(idProd).orElse(null);
+
+		if (trovato == null)
+			return null;
+
+		return trovato.getVersion();
 	}
 }
