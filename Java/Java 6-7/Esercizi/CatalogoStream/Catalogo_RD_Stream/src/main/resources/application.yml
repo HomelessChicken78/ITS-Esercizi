@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: catalogo-RD-Stream
+
+  config:
+    import: optional:configserver:http://localhost:8071
+
+  profiles:
+    active: dev
+
+  cloud:
+    stream:
+      bindings:
+        productConsumer-in-0:
+          destination: product-catalog
+          group: consumer
+
+# attiva l'end point dell'actuator per il refresh delle proprietà di configurazione
+# lette dal server di configurazione
+management:
+  endpoints:
+    web:
+      exposure:
+        include: refresh
