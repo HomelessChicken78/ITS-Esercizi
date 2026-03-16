@@ -5,15 +5,11 @@ import jakarta.persistence.*;
 @Entity
 public class Prodotto {
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	private String nome;
 	private double prezzoUnitario;
 	private int quantitaDisponibile;
 	private String categoria;
-
-	@Version
-	private int version;
 
 	public Prodotto() {
 	}
@@ -68,13 +64,5 @@ public class Prodotto {
 
 	public void setCategoria(String categoria) {
 		this.categoria = categoria;
-	}
-
-	public int getVersion() {
-		return version;
-	}
-
-	public void setVersion(int version) {
-		this.version = version;
 	}
 }

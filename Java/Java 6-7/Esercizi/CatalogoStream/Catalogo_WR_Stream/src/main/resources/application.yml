@@ -11,7 +11,7 @@ spring:
   cloud:
     stream:
       bindings:
-        myProducer-out-0:
+        productProducer-out-0:
           destination: product-catalog
       kafka:
         binder:

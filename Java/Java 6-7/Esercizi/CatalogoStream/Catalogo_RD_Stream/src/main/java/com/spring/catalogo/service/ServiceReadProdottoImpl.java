@@ -14,7 +14,7 @@ import static com.spring.catalogo.utility.ProdottoMapper.*;
 
 @Service
 @Transactional
-public class ServiceWriteProdottoImpl implements ServiceWriteProdotto {
+public class ServiceReadProdottoImpl implements ServiceReadProdotto {
 	@Autowired
 	RepositoryProdotto dao;
 
@@ -23,42 +23,8 @@ public class ServiceWriteProdottoImpl implements ServiceWriteProdotto {
 	private Prodotto getOrThrow(int idProd) {
 		return dao.findById(idProd).orElseThrow(() -> new NotFoundException(msg404 + idProd));
 	}
-	
-	@Override
-	public ProdottoDTO aggiungiProdotto(ProdottoDTO nuovoProdotto) {
-		nuovoProdotto.setId(null);
-		Prodotto salvato = toEntity(nuovoProdotto);
-		dao.save(salvato);
 
-		dao.flush();
-
-		return toDTO(salvato);
-	}
-
-	/*@Override
-	public ProdottoDTO eliminaProdotto(int idProd) {
-		Prodotto eliminato = getOrThrow(idProd);
-		dao.delete(eliminato);
-
-		return toDTO(eliminato);
-	}*/
-
-	@Override
-	public ProdottoDTO cambiaQuantita(int idProd, int nuovaQuantita) {
-		Prodotto modificato = getOrThrow(idProd);
-
-		modificato.setQuantitaDisponibile(nuovaQuantita);
-
-		return toDTO(modificato);
-	}
-
-	@Override
 	public ProdottoDTO getProdotto(int idProd) {
 		return toDTO(getOrThrow(idProd));
-	}
-
-	@Override
-	public Integer getVersion(int idProd) {
-		return getOrThrow(idProd).getVersion();
 	}
 }

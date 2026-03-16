@@ -27,7 +27,7 @@ public class ServiceWriteProdottoImpl implements ServiceWriteProdotto {
 	private Prodotto getOrThrow(int idProd) {
 		return dao.findById(idProd).orElseThrow(() -> new NotFoundException(msg404 + idProd));
 	}
-	
+		
 	@Override
 	public ProdottoDTO aggiungiProdotto(ProdottoDTO nuovoProdotto) {
 		nuovoProdotto.setId(null);
