@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.example</groupId>
-	<artifactId>Catalogo_WR_Stream</artifactId>
+	<artifactId>Catalogo_WR_Stream_Outbox</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>MM_quiz_WR_Stream</name>
+	<name>MM_quiz_WR_Stream_Outbox</name>
 	<description>Demo project for Spring Boot</description>
 	<url/>
 	<licenses>
