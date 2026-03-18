@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class CatalogoWrStreamApplication {
+public class CatalogoWrStreamOutboxApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(CatalogoWrStreamApplication.class, args);
+		SpringApplication.run(CatalogoWrStreamOutboxApplication.class, args);
 	}
 
 }
