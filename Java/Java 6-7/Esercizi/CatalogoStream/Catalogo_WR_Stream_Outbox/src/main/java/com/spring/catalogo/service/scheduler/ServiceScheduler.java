@@ -5,10 +5,12 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.stream.function.StreamBridge;
+import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
 import com.spring.catalogo.domains.StatoEvento;
+import com.spring.catalogo.domains.TipoEvento;
 import com.spring.catalogo.entity.EventOutbox;
 import com.spring.catalogo.repository.RepositoryEventOutbox;
 
@@ -16,41 +18,41 @@ import jakarta.transaction.Transactional;
 
 
 @Service
+@Transactional
 public class ServiceScheduler {
 	@Autowired
-	RepositoryEventOutbox outboxRepo;
+    RepositoryEventOutbox outboxRepo;
 
-	@Autowired
-	StreamBridge streamBridge;
+   @Autowired
+    KafkaTemplate<String, String> kafkaTemplate;
 
-	@Scheduled(fixedDelay = 5000)
-	@Transactional
-	public void inviaMessaggi() {
-
+   @Scheduled(fixedDelay = 5000) 
+   @Transactional
+   public void inviaMessaggi() {
 		List<EventOutbox> eventi = outboxRepo.findPendingForUpdate();
 
 		for (EventOutbox evento : eventi) {
+	           
+            if (evento.getNumeroTentativi() > 5) {
+                evento.setStatoEvento(StatoEvento.FAILED); 
+                outboxRepo.save(evento);
+                continue;
+            }
 
-			if (evento.getNumeroTentativi() > 5) {
-				evento.setStatoEvento(StatoEvento.FAILED);
-				outboxRepo.save(evento);
-				continue;
-			}
+            try {
+               
+                kafkaTemplate.send("product-catalog", evento.getPayload()).get(); 
 
-			try {
-				if (streamBridge.send("productCatalog-out-0", evento.getPayload())) {
-					evento.setStatoEvento(StatoEvento.SENT);
-				} else {
-	                evento.setStatoEvento(StatoEvento.FAILED);
-	            }
-
-				evento.setNumeroTentativi(evento.getNumeroTentativi() + 1);
-			} catch (Exception e) {
-				evento.setNumeroTentativi(evento.getNumeroTentativi() + 1);
-			}
-
-			evento.setDataUltimaModifica(LocalDate.now());
-			outboxRepo.save(evento);
-		}
+                
+                evento.setStatoEvento(StatoEvento.SENT); 
+                evento.setNumeroTentativi(evento.getNumeroTentativi() + 1); 
+            } catch (Exception e) {
+                
+                evento.setNumeroTentativi(evento.getNumeroTentativi() + 1); 
+            }
+            
+            evento.setDataUltimaModifica(LocalDate.now()); 
+            outboxRepo.save(evento);
+        }
 	}
 }
