@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: catalogo-WR-Stream-Outbox
+
+  config:
+    import: optional:configserver:http://localhost:8071
+
+  profiles:
+    active: dev
+
+  cloud:
+    stream:
+      bindings:
+        productProducer-out-0:
+          destination: product-catalog
+      kafka:
+        binder:
+          brokers: localhost:9092
+
+# attiva l'end point dell'actuator per il refresh delle propriet� di configurazione
+# lette dal server di configurazione
+management:
+  endpoints:
+    web:
+      exposure:
+        include: refresh
