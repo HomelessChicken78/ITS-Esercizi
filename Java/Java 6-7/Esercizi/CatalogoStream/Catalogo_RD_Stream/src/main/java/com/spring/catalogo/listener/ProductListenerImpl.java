@@ -6,14 +6,10 @@ import org.springframework.stereotype.Service;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.spring.catalogo.dto.ProdottoDTO;
 import com.spring.catalogo.entity.Prodotto;
-import com.spring.catalogo.exceptions.*;
 import com.spring.catalogo.repository.*;
 
 import jakarta.transaction.Transactional;
-
-import static com.spring.catalogo.utility.ProdottoMapper.*;
 
 @Service
 @Transactional
