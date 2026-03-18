@@ -12,13 +12,13 @@ public class EventOutbox {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer idEvento;
 
-	@Enumerated
+	@Enumerated(EnumType.STRING)
 	private TipoEvento tipoEvento;
 
 	private LocalDate dataCreazione, dataUltimaModifica;
 	private Integer numeroTentativi;
 
-	@Enumerated
+	@Enumerated(EnumType.STRING)
 	private StatoEvento statoEvento;
 
 	private String payload;
